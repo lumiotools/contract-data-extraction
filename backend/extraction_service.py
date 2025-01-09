@@ -303,7 +303,10 @@ class ContractDataExtractionService:
 
         response = chat.send_message("""
                           Extract all the tables in the attached contract in json format.
-                          Extract Only the Tables of type 'zone_incentive'
+                          Extract Only the Tables of Zone Adjustment Incentives
+                          They will be having the Service name as Header on Table
+                          The Table Contains Zones like (081,082,083,....)
+                          And Incentive Adjustment Percentage like (-65.00%,...)
                           Start with the first table.
                           Max Table Count to extract is 10.
                           Mention the remaining tables to be extracted.
@@ -349,7 +352,10 @@ class ContractDataExtractionService:
         
         response = chat.send_message("""
                           Extract all the tables in the attached contract in json format.
-                          Extract Only the Tables of type 'zone_incentive'
+                          Extract Only the Tables of Zone Adjustment Incentives
+                          They will be having the Service name as Header on Table
+                          The Table Contains Zones like (081,082,083,....)
+                          And Incentive Adjustment Percentage like (-65.00%,...)
                           Start with the first table.
                           Max Table Count to extract is 10.
                           Mention the remaining tables to be extracted.
@@ -519,20 +525,20 @@ class ContractDataExtractionService:
     
     @classmethod
     def extract(cls, contract: UploadFile):
-        # uploadedFile = genai.upload_file(
-        #     contract.file, mime_type=contract.content_type)
-        uploadedFile = File({
-            'name': 'files/58b847xaxn35',
-            'display_name': '',
-            'mime_type': 'application/pdf',
-            'sha256_hash': 'MGQzNTVkNTA1NWFjZmEzMDAwYWEzYThkNjRhNTA4ZTlmMDlmOWE0M2Q1ZTgxY2U3OGVlNjM2OTkyYWQ5OTk0MA==',
-            'size_bytes': '152520',
-            'state': 'ACTIVE',
-            'uri': 'https://generativelanguage.googleapis.com/v1beta/files/58b847xaxn35',
-            'create_time': '2025-01-08T09:30:44.476571Z',
-            'expiration_time': '2025-01-10T09:30:44.463407310Z',
-            'update_time': '2025-01-08T09:30:44.476571Z'
-        })
+        uploadedFile = genai.upload_file(
+            contract.file, mime_type=contract.content_type)
+        # uploadedFile = File({
+        #     'name': 'files/58b847xaxn35',
+        #     'display_name': '',
+        #     'mime_type': 'application/pdf',
+        #     'sha256_hash': 'MGQzNTVkNTA1NWFjZmEzMDAwYWEzYThkNjRhNTA4ZTlmMDlmOWE0M2Q1ZTgxY2U3OGVlNjM2OTkyYWQ5OTk0MA==',
+        #     'size_bytes': '152520',
+        #     'state': 'ACTIVE',
+        #     'uri': 'https://generativelanguage.googleapis.com/v1beta/files/58b847xaxn35',
+        #     'create_time': '2025-01-08T09:30:44.476571Z',
+        #     'expiration_time': '2025-01-10T09:30:44.463407310Z',
+        #     'update_time': '2025-01-08T09:30:44.476571Z'
+        # })
         print(uploadedFile.name)
         
         chat = model.start_chat(history=[
