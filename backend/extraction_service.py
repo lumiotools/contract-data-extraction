@@ -6,6 +6,8 @@ import json
 from fastapi import UploadFile
 from google.generativeai import ChatSession
 from concurrent.futures import ThreadPoolExecutor
+import time
+from threading import Lock
 
 load_dotenv()
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
@@ -24,10 +26,20 @@ generation_config = {
 model = genai.GenerativeModel("gemini-2.0-flash-exp")
 
 class ContractDataExtractionService:
+  
+    _lock = Lock()
+    
+    @classmethod
+    def rate_limited_call(cls, func, *args, **kwargs):
+        cls._lock.acquire_lock()
+        time.sleep(2)
+        cls._lock.release_lock()
+        print("Calling Gemini API")
+        return func(*args, **kwargs)
     
     @classmethod
     def extract_weight_destination_zone_bands_incentives(cls, chat: ChatSession):
-        response = chat.send_message("""
+        response = cls.rate_limited_call(chat.send_message,"""
                           Extract all the tables in the attached contract in json format which match with following conditions:
                             1. Table has 'Weight (lbs)', 'Zones' and 'Discount' columns. Table Type: `weight_zone_incentive`
                             2. Table has 'Zones', 'Bands ($)'and 'Discount' columns. Table Type: `zone_bands_incentive`
@@ -80,7 +92,7 @@ class ContractDataExtractionService:
         print("Data Part 1")
         print(len(data_part1["tables"]))
         
-        response = chat.send_message("""
+        response = cls.rate_limited_call(chat.send_message, """
                           Extract all the tables in the attached contract in json format which match with following conditions:
                             1. Table has 'Weight (lbs)', 'Zones' and 'Discount' columns. Table Type: `weight_zone_incentive`
                             2. Table has 'Zones', 'Bands ($)'and 'Discount' columns. Table Type: `zone_bands_incentive`
@@ -144,7 +156,7 @@ class ContractDataExtractionService:
     
     @classmethod
     def extract_service_incentive_tables(cls, chat: ChatSession):
-        response = chat.send_message("""
+        response = cls.rate_limited_call(chat.send_message, """
                             Extract all the incentives mentioned in textual form from the attached contract in json format.
                             Skip all the tabular data strictly.
                             
@@ -182,7 +194,7 @@ class ContractDataExtractionService:
     @classmethod
     def extract_portfolio_tier_incentives_table(cls, chat: ChatSession):
         
-        response = chat.send_message("""
+        response = cls.rate_limited_call(chat.send_message, """
                             Extract Portfolio Tier Incentive Table from the attached contract in json format.
                             
                             Extract All 38 Service(s) for First 2 Weekly Charges Bands only (ie, 76 data entries total).
@@ -221,7 +233,7 @@ class ContractDataExtractionService:
       
         print(len(data_part1["table"]["data"]))
         
-        response = chat.send_message("""
+        response = cls.rate_limited_call(chat.send_message, """
                             Extract Portfolio Tier Incentive Table from the attached contract in json format.
                             
                             Extract All 38 Service(s) for Next 2 Weekly Charges Bands only (ie, 76 data entries total).
@@ -258,7 +270,7 @@ class ContractDataExtractionService:
         
         table["data"].extend(data_part2["table"]["data"])
         
-        response = chat.send_message("""
+        response = cls.rate_limited_call(chat.send_message, """
                             Extract Portfolio Tier Incentive Table from the attached contract in json format.
                             
                             Extract All 38 Service(s) for Next 2 Weekly Charges Bands only (ie, 76 data entries total).
@@ -301,7 +313,7 @@ class ContractDataExtractionService:
     @classmethod
     def extract_zone_incentives_tables(cls, chat: ChatSession):
 
-        response = chat.send_message("""
+        response = cls.rate_limited_call(chat.send_message, """
                           Extract all the tables in the attached contract in json format.
                           Extract Only the Tables of Zone Adjustment Incentives
                           They will be having the Service name as Header on Table
@@ -350,7 +362,7 @@ class ContractDataExtractionService:
         print("Extracted: ",data_part1["extracted_tables_count"])
         print("Remaining: ",data_part1["remaining_tables_count"])
         
-        response = chat.send_message("""
+        response = cls.rate_limited_call(chat.send_message, """
                           Extract all the tables in the attached contract in json format.
                           Extract Only the Tables of Zone Adjustment Incentives
                           They will be having the Service name as Header on Table
@@ -407,7 +419,7 @@ class ContractDataExtractionService:
     @classmethod
     def extract_service_min_per_zone_base_rate_adjustment_table(cls, chat: ChatSession):
       
-      response = chat.send_message("""
+      response = cls.rate_limited_call(chat.send_message, """
                             Extract the table having all the following headers from the attached contract in json format.
                               1. 'Service' 
                               2. 'Minimum Per'
@@ -453,7 +465,7 @@ class ContractDataExtractionService:
     @classmethod
     def extract_additional_handling_charge_table(cls, chat: ChatSession):
       
-      response = chat.send_message("""
+      response = cls.rate_limited_call(chat.send_message, """
                             Extract the table having the headers 'Service(s)', 'Land/Zone', 'Incentives', with the title 'Additional Handling Charge ($)'
                             from the attached contract in json format.
                             
@@ -490,7 +502,7 @@ class ContractDataExtractionService:
     @classmethod
     def extract_electronic_pld_bonus_table(cls, chat: ChatSession):
       
-      response = chat.send_message("""
+      response = cls.rate_limited_call(chat.send_message, """
                             Extract the table having the headers 'Service(s)' & 'Electronic PLD Bonus'
                             from the attached contract in json format.
                             
