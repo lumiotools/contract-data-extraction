@@ -5,6 +5,7 @@ load_dotenv()
 
 class UPSApiRates:
     def get_rates(self):
+        return [{'serviceLevel': 'UPS 2nd Day Air®', 'amount': '84.77'}, {'serviceLevel': 'UPS Next Day Air Saver®', 'amount': '119.88'}, {'serviceLevel': 'UPS 2nd Day Air® A.M.', 'amount': '95.18'}, {'serviceLevel': 'UPS 3 Day Select®', 'amount': '80.28'}, {'serviceLevel': 'UPS® Ground', 'amount': '79.98'}, {'serviceLevel': 'UPS Next Day Air®', 'amount': '124.77'}, {'serviceLevel': 'UPS Next Day Air® Early', 'amount': '154.77'}]
         headers = {
             "Authorization": "ShippoToken " + os.getenv("SHIPPO_API_KEY")
         }
