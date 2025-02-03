@@ -29,11 +29,13 @@ app = FastAPI()
 # Allow CORS from all origins
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allow all domains (use specific domains in production)
+    # Allow all domains (use specific domains in production)
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],  # Allow all HTTP methods (GET, POST, OPTIONS, etc.)
     allow_headers=["*"],  # Allow all headers
 )
+
 
 class DiscountInput(BaseModel):
     weekly_price: float
@@ -173,8 +175,9 @@ async def calculate_discount(input_data: DiscountInput):
     # Print the API response for debugging
     # print("UPS API Response:", rates)
 
-    portfolio_incentives = get_portfolio_tier_incentive(table_data, weekly_price)
-    
+    portfolio_incentives = get_portfolio_tier_incentive(
+        table_data, weekly_price)
+
     discounts = []
 
     for incentive in portfolio_incentives:
@@ -183,14 +186,15 @@ async def calculate_discount(input_data: DiscountInput):
         final_discount = service_discount
 
         incentive_off_executive = get_incentive_off_executive(table_data,
-            service_name, weekly_price)
+                                                              service_name, weekly_price)
         final_discount = 100 - (100 - service_discount) * \
             (100 - incentive_off_executive) / 100
 
         service_amount = next((float(rate["amount"]) for rate in rates if find_best_match(
             rate["serviceLevel"], [service_name])), None)
         if service_amount:
-            applied_discount_rate = round(service_amount * abs(final_discount) / 100, 2)
+            applied_discount_rate = round(
+                service_amount * abs(final_discount) / 100, 2)
 
         # print("\nservice_name", service_name)
         # print("service_discount", service_discount)
@@ -199,18 +203,21 @@ async def calculate_discount(input_data: DiscountInput):
         # print("service_amount", service_amount)
         # print("applied_discount_rate", applied_discount_rate)
 
-        maximum_possible_discount = get_maximum_possible_discount(table_data, service_name)
+        maximum_possible_discount = get_maximum_possible_discount(
+            table_data, service_name)
         is_over_discounted = applied_discount_rate > maximum_possible_discount
         # print("maximum_possible_discount", maximum_possible_discount)
         # print("is_over_discounted", is_over_discounted)
 
         if service_amount:
-            final_amount = applied_discount_rate if not is_over_discounted else round(
-                float(service_amount) * (100 - maximum_possible_discount) / 100, 2)
-            # print("final_amount", final_amount)
+            if final_discount == 0:
+                final_amount = service_amount
+            else:
+                final_amount = applied_discount_rate if not is_over_discounted else round(
+                    service_amount * maximum_possible_discount / 100, 2)
         else:
             final_amount = None
-            
+
         discounts.append({
             "service_name": service_name,
             "service_discount": final_discount,
