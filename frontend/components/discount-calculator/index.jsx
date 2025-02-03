@@ -9,38 +9,44 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Alert, AlertDescription } from "@/components/ui/alert"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 
 const schema = z.object({
   weeklyCharges: z.number().positive("Weekly charges must be positive"),
-  zone: z.string().min(1, "Zone is required"),
-  baseRate: z.number().positive("Base rate must be positive"),
 })
 
-const zones = ["401", "402", "403"] // Add more zones as needed
+// Sample data matching the expected API response format
+// const sampleData = [
+//   {
+//     service_name: "UPS Worldwide Express® - Export - Letter - PrepaidAll",
+//     portfolio_incentive_applied: "42.0%",
+//     service_incentive_applied: "-53.0%",
+//     discounted_amount: 473.0,
+//     zone_incentive_applied: "-68.0%",
+//     zone_incentive_amount: 321.64,
+//     final_amount: 151.36,
+//   },
+//   {
+//     service_name: "UPS Worldwide Express® - Export - Package - PrepaidAll",
+//     portfolio_incentive_applied: "42.0%",
+//     service_incentive_applied: "-50.0%",
+//     discounted_amount: 490.0,
+//     zone_incentive_applied: "-65.0%",
+//     zone_incentive_amount: 318.5,
+//     final_amount: 171.5,
+//   },
+//   {
+//     service_name: "UPS Worldwide Saver® - Export - Letter - PrepaidAll",
+//     portfolio_incentive_applied: "42.0%",
+//     service_incentive_applied: "-55.0%",
+//     discounted_amount: 464.0,
+//     zone_incentive_applied: "-70.0%",
+//     zone_incentive_amount: 324.8,
+//     final_amount: 139.2,
+//   },
+// ]
 
-// Sample data
-const sampleResults = [
-  {
-    service_name: "UPS Worldwide Express® - Export - Letter - PrepaidAll",
-    portfolio_tier_incentive_applied: "42.0%",
-    service_incentive_applied: "-53.0%",
-    total_incentive_applied: "-11.0%",
-    discounted_amount: 473.0,
-    zone_incentive_applied: "-68.0%",
-    final_amount: 473.0,
-  },
-  {
-    service_name: "UPS Worldwide Express® - Export - Package - PrepaidAll",
-    portfolio_tier_incentive_applied: "42.0%",
-    service_incentive_applied: "-50.0%",
-    total_incentive_applied: "-8.0%",
-    discounted_amount: 490.0,
-    zone_incentive_applied: "-65.0%",
-    final_amount: 490.0,
-  },
-]
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000"
 
 export default function DiscountCalculator() {
   const {
@@ -56,24 +62,34 @@ export default function DiscountCalculator() {
   const onSubmit = async (data) => {
     setIsLoading(true)
     try {
-      // Commented out API call
-      // const response = await fetch('/api/calculate-discounts', {
-      //   method: 'POST',
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //   },
-      //   body: JSON.stringify(data),
-      // })
+      const response = await fetch(`${API_URL}/calculate_discount`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          weekly_price: data.weeklyCharges,
+        }),
+      })
 
-      // if (!response.ok) {
-      //   throw new Error('Failed to calculate discounts')
-      // }
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`)
+      }
 
-      // const calculationResults = await response.json()
-      // setResults(calculationResults)
+      const calculationResults = await response.json()
+      setResults(calculationResults)
 
-      // Using sample data instead
-      setResults(sampleResults)
+      // await new Promise((resolve) => setTimeout(resolve, 1000))
+
+      // // Filter sample data based on weekly charges (for demonstration purposes)
+      // const filteredResults = sampleData.map((item) => ({
+      //   ...item,
+      //   discounted_amount: item.discounted_amount * (data.weeklyCharges / 1000),
+      //   zone_incentive_amount: item.zone_incentive_amount * (data.weeklyCharges / 1000),
+      //   final_amount: item.final_amount * (data.weeklyCharges / 1000),
+      // }))
+
+      // setResults(filteredResults)
     } catch (error) {
       console.error("Error calculating discounts:", error)
       setResults([{ error: error.message }])
@@ -108,48 +124,6 @@ export default function DiscountCalculator() {
             {errors.weeklyCharges && <p className="text-destructive text-sm mt-1">{errors.weeklyCharges.message}</p>}
           </div>
 
-          <div>
-            <Label htmlFor="zone">Zone</Label>
-            <Controller
-              name="zone"
-              control={control}
-              render={({ field }) => (
-                <Select onValueChange={field.onChange} defaultValue={field.value}>
-                  <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Select a zone" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {zones.map((zone) => (
-                      <SelectItem key={zone} value={zone}>
-                        {zone}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              )}
-            />
-            {errors.zone && <p className="text-destructive text-sm mt-1">{errors.zone.message}</p>}
-          </div>
-
-          <div>
-            <Label htmlFor="baseRate">Base Rate ($)</Label>
-            <Controller
-              name="baseRate"
-              control={control}
-              render={({ field }) => (
-                <Input
-                  id="baseRate"
-                  type="number"
-                  step="0.01"
-                  {...field}
-                  onChange={(e) => field.onChange(Number.parseFloat(e.target.value))}
-                  aria-invalid={errors.baseRate ? "true" : "false"}
-                />
-              )}
-            />
-            {errors.baseRate && <p className="text-destructive text-sm mt-1">{errors.baseRate.message}</p>}
-          </div>
-
           <Button type="submit" disabled={isLoading}>
             {isLoading ? "Calculating..." : "Calculate"}
           </Button>
@@ -161,11 +135,11 @@ export default function DiscountCalculator() {
               <TableHeader>
                 <TableRow>
                   <TableHead>Service Name</TableHead>
-                  <TableHead>Portfolio Tier Incentive</TableHead>
-                  <TableHead>Service Incentive</TableHead>
-                  <TableHead>Total Incentive</TableHead>
+                  <TableHead>Portfolio Incentive</TableHead>
+                  <TableHead>Incentive Off Effective Rates</TableHead>
                   <TableHead>Discounted Amount ($)</TableHead>
-                  <TableHead>Zone Incentive</TableHead>
+                  <TableHead>Minimum Net Discount</TableHead>
+                  <TableHead>Minimum Net Amount ($)</TableHead>
                   <TableHead>Final Amount ($)</TableHead>
                 </TableRow>
               </TableHeader>
@@ -173,11 +147,11 @@ export default function DiscountCalculator() {
                 {results.map((result, index) => (
                   <TableRow key={index}>
                     <TableCell>{result.service_name}</TableCell>
-                    <TableCell>{result.portfolio_tier_incentive_applied}</TableCell>
+                    <TableCell>{result.portfolio_incentive_applied}</TableCell>
                     <TableCell>{result.service_incentive_applied}</TableCell>
-                    <TableCell>{result.total_incentive_applied}</TableCell>
                     <TableCell>{result.discounted_amount.toFixed(2)}</TableCell>
                     <TableCell>{result.zone_incentive_applied}</TableCell>
+                    <TableCell>{result.zone_incentive_amount.toFixed(2)}</TableCell>
                     <TableCell>{result.final_amount.toFixed(2)}</TableCell>
                   </TableRow>
                 ))}
