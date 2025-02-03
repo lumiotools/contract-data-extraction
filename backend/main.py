@@ -1,17 +1,30 @@
+import json
+import re
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from fastapi import File, UploadFile
-from pydantic import BaseModel  
+from pydantic import BaseModel
 from extraction_service import ContractDataExtractionService
+
+
+# Load dummy data from JSON file
+def load_dummy_data():
+    with open("constants/dummyData.json", "r") as file:
+        return json.load(file)
+
+DUMMY_DATA = load_dummy_data()  # Load dummy data
+
 
 class DiscountInput(BaseModel):
     weekly_price: float
     base_amount: float
     zone: str
 
+
 app = FastAPI()
 
+# Allow CORS from all origins
 app.add_middleware(CORSMiddleware, allow_origins=["*"])
 
 
@@ -22,104 +35,127 @@ async def read_root():
 
 @app.post("/api/extract")
 async def extract(file: UploadFile = File(...)):
-
     extracted_data = ContractDataExtractionService.extract(file)
     return JSONResponse(content={"success": True, "message": "Extracted data", "tables": extracted_data})
 
 
+# Function to extract incentives from dummy data
+def extract_incentives(dummy_data):
+    zone_incentives = []
+    service_incentives = []
+    portfolio_incentives = []
+
+    for table in dummy_data["tables"]:
+        if table["table_type"] == "weight_zone_incentive":
+            for row in table["data"]:
+                zone_incentives.append({
+                    "zone": row["zone"],
+                    "incentive": abs(float(row["incentive"].strip('%')))
+                })
+        
+        if table["table_type"] == "service_incentives":
+            for row in table["data"]:
+                service_incentives.append({
+                    "service": row["service"],
+                    "incentive": abs(float(row["incentive"].strip('%')))
+                })
+        
+        if table["table_type"] == "portfolio_tier_incentives":
+            for row in table["data"]:
+                band = row["band"].split(" - ")
+                lower_bound = float(band[0].replace(",", ""))
+                upper_bound = float(band[1].replace(",", ""))
+                portfolio_incentives.append({
+                    "service": row["service"],
+                    "land_zone": row["land/zone"],
+                    "band": {"lower_bound": lower_bound, "upper_bound": upper_bound},
+                    "incentive": abs(float(row["incentive"].strip('%')))
+                })
+
+    return {
+        "zone_incentives": zone_incentives,
+        "service_incentives": service_incentives,
+        "portfolio_incentives": portfolio_incentives
+    }
 
 
-
-
-# Mock data from your previous JSON structure
-portfolio_tier_incentives = [
-    {"service": "UPS Next Day Air® - Letter - Prepaid\nFrtFC TP UP RS RTP", "land/zone": "ALL", "band": "0.01 - 19,429.99", "incentive": "0.00%"},
-    {"service": "UPS Next Day Air® - Letter - Prepaid\nFrtFC TP UP RS RTP", "land/zone": "ALL", "band": "19,430.00 - 25,904.99", "incentive": "42.00%"}
-]
-
-service_incentives = [
-    {"service": "UPS Worldwide Express® - Export - Letter - PrepaidAll", "incentive": "-53.00%"},
-    {"service": "UPS Worldwide Express® - Export - Document - PrepaidAll", "incentive": "-53.00%"},
-    {"service": "UPS Worldwide Express® - Export - Pak - PrepaidAll", "incentive": "-53.00%"}
-]
-
-zone_incentives = {
-    "081": -68.00,
-    "082": -68.00
-}
-
-
-# Helper function to find the portfolio tier incentive based on the weekly price
+# Helper function to get portfolio tier incentive based on weekly price
 def get_portfolio_tier_incentive(weekly_price: float):
-    for tier in portfolio_tier_incentives:
-        # Extract the price range from the 'band' field
-        band = tier["band"].split(" - ")
-        lower_bound = float(band[0].replace(",", ""))  # Remove commas before converting to float
-        upper_bound = float(band[1].replace(",", ""))  # Remove commas before converting to float
+    for tier in DUMMY_DATA["tables"]:
+        if tier["table_type"] == "portfolio_tier_incentives":
+            for row in tier["data"]:
+                band = row["band"].split(" - ")
+                lower_bound = float(band[0].replace(",", ""))
+                upper_bound = float(band[1].replace(",", ""))
+                if lower_bound <= weekly_price <= upper_bound:
+                    return abs(float(row["incentive"].strip('%')))
+    return 0
 
-        if lower_bound <= weekly_price <= upper_bound:
-            return float(tier["incentive"].strip('%'))  # Return the incentive as a percentage
-    
-    return 0  # Default incentive if no match found
 
-# Helper function to get the service incentive for a given service name
+# Helper function to get service incentive for a given service name
 def get_service_incentive(service_name: str):
-    for service in service_incentives:
-        if service["service"] == service_name:
-            return abs(float(service["incentive"].strip('%')))  # Convert negative to positive
-    return 0  # Default incentive if no match found
+    for tier in DUMMY_DATA["tables"]:
+        if tier["table_type"] == "service_incentives":
+            for row in tier["data"]:
+                if row["service"] == service_name:
+                    # Remove unnecessary text and convert to positive
+                    incentive_str = row["incentive"].strip('%')
+                    incentive_value = re.sub(r'[^0-9.]', '', incentive_str)
+                    return abs(float(incentive_value))  # Return positive value
+    return 0
 
-# Sample BaseModel for input
-class DiscountInput(BaseModel):  # Define the model to parse and validate the input
-    weekly_price: float
-    base_amount: float
-    zone: str
 
-# API endpoint to calculate the discount for all services
+# Helper function to get zone incentive for a given zone
+def get_zone_incentive(zone: str):
+    for tier in DUMMY_DATA["tables"]:
+        if tier["table_type"] == "weight_zone_incentive":
+            for row in tier["data"]:
+                if row["zone"] == zone:
+                    return abs(float(row["incentive"].strip('%')))
+    return 0
+
+
 @app.post("/calculate_discount")
 async def calculate_discount(input_data: DiscountInput):
     weekly_price = input_data.weekly_price
     base_amount = input_data.base_amount
     zone = input_data.zone
 
-    # Calculate Portfolio Tier Incentive (negated)
+    # Step 1: Apply Portfolio Tier Incentive to the base amount
     portfolio_incentive = get_portfolio_tier_incentive(weekly_price)
-    # Apply the negated portfolio tier incentive (treat as a positive discount)
-    discounted_base_amount = base_amount * (1 + portfolio_incentive / 100)
+    portfolio_discounted_amount = base_amount * (1 - portfolio_incentive / 100)
 
-    # Initialize results
-    results = []
+    # Step 2: Apply Service Incentives on the portfolio discounted amount
+    service_incentives = []
+    for tier in DUMMY_DATA["tables"]:
+        if tier["table_type"] == "service_incentives":
+            for row in tier["data"]:
+                service_incentive = get_service_incentive(row["service"])
+                service_discounted_amount = portfolio_discounted_amount * (1 - service_incentive / 100)
+                service_incentives.append({
+                    "service_name": row["service"],
+                    "portfolio_incentive_applied": f"{portfolio_incentive}%",
+                    "service_incentive_applied": f"{service_incentive}%",
+                    "discounted_amount": round(service_discounted_amount, 2)
+                })
 
-    # Iterate over each service and apply the discount logic
-    for service in service_incentives:
-        service_name = service["service"]
-        
-        # Step 1: Apply Service Incentive
-        service_incentive = get_service_incentive(service_name)  # Now positive
-        discounted_amount = discounted_base_amount * (1 - service_incentive / 100)
+    # Step 3: Get Zone Incentive and apply it to the base amount
+    zone_incentive = get_zone_incentive(zone)
+    zone_incentive_applied = zone_incentive
+    zone_incentive_amount = base_amount * (1 - zone_incentive / 100)
 
-        # Step 2: Apply Zone Incentive (Check if calculated discount exceeds zone incentive)
-        zone_incentive = abs(zone_incentives.get(zone, 0))  # Convert to positive
-        total_discount = portfolio_incentive + service_incentive
+    # Step 4: Final Amount Logic: If the discounted amount exceeds the zone incentive, use zone incentive amount as final amount
+    final_amount = service_discounted_amount
+    if service_discounted_amount < zone_incentive_amount:
+        final_amount = zone_incentive_amount
 
-        if total_discount > zone_incentive:
-            final_amount = discounted_amount * (1 - zone_incentive / 100)
-            zone_incentive_applied = zone_incentive
-        else:
-            final_amount = discounted_amount
-            zone_incentive_applied = 0
-
-        # Prepare the result for this service
-        result = {
-            "service_name": service_name,
-            "portfolio_tier_incentive_applied": f"{portfolio_incentive}%",  # Still showing the original portfolio incentive as a percentage
-            "service_incentive_applied": f"{service_incentive}%",
-            "total_incentive_applied": f"{total_discount}%",
-            "discounted_amount": round(discounted_amount, 2),
-            "zone_incentive_applied": f"{zone_incentive_applied}%",
-            "final_amount": round(final_amount, 2)
-        }
-
-        results.append(result)
-
-    return results
+    # Return the results
+    return [{
+        "service_name": service_incentive["service_name"],
+        "portfolio_incentive_applied": service_incentive["portfolio_incentive_applied"],
+        "service_incentive_applied": service_incentive["service_incentive_applied"],
+        "discounted_amount": service_incentive["discounted_amount"],
+        "zone_incentive_applied": f"{zone_incentive_applied}%",
+        "zone_incentive_amount": round(zone_incentive_amount, 2),
+        "final_amount": round(final_amount, 2)
+    }]
