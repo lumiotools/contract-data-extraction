@@ -214,7 +214,7 @@ async def calculate_discount(input_data: DiscountInput):
             "final_amount": final_amount
         })
 
-    return JSONResponse(content={"success": True, "message": "Discount calculated", "data": discounts})
+    return JSONResponse(content={"success": True, "message": "Discount calculated", "data": discounts}, status_code=200)
 
 
 # import json
