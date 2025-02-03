@@ -10,6 +10,7 @@ import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
+import { DUMMY_DATA } from "@/constants/dummyData"
 
 const schema = z.object({
   weeklyCharges: z.number().positive("Weekly charges must be positive"),
@@ -46,7 +47,7 @@ const schema = z.object({
 //   },
 // ]
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000"
+
 
 export default function DiscountCalculator() {
   const {
@@ -61,23 +62,29 @@ export default function DiscountCalculator() {
 
   const onSubmit = async (data) => {
     setIsLoading(true)
+
+   
     try {
-      const response = await fetch(`${API_URL}/calculate_discount`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/calculate_discount`, {
+        // mode:"no-cors",
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
           weekly_price: data.weeklyCharges,
+          tables_json: JSON.stringify(DUMMY_DATA),
         }),
       })
+      
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`)
       }
 
-      const calculationResults = await response.json()
-      setResults(calculationResults)
+      const calculationResults = await response.json();
+      console.log("Response",calculationResults);
+      setResults(calculationResults.data)
 
       // await new Promise((resolve) => setTimeout(resolve, 1000))
 
@@ -135,11 +142,9 @@ export default function DiscountCalculator() {
               <TableHeader>
                 <TableRow>
                   <TableHead>Service Name</TableHead>
-                  <TableHead>Portfolio Incentive</TableHead>
-                  <TableHead>Incentive Off Effective Rates</TableHead>
-                  <TableHead>Discounted Amount ($)</TableHead>
-                  <TableHead>Minimum Net Discount</TableHead>
-                  <TableHead>Minimum Net Amount ($)</TableHead>
+                  <TableHead>Discount</TableHead>
+                  <TableHead>Is Minimum Rate Reached</TableHead>
+                  <TableHead>Base Amount ($)</TableHead>
                   <TableHead>Final Amount ($)</TableHead>
                 </TableRow>
               </TableHeader>
@@ -147,12 +152,10 @@ export default function DiscountCalculator() {
                 {results.map((result, index) => (
                   <TableRow key={index}>
                     <TableCell>{result.service_name}</TableCell>
-                    <TableCell>{result.portfolio_incentive_applied}</TableCell>
-                    <TableCell>{result.service_incentive_applied}</TableCell>
-                    <TableCell>{result.discounted_amount.toFixed(2)}</TableCell>
-                    <TableCell>{result.zone_incentive_applied}</TableCell>
-                    <TableCell>{result.zone_incentive_amount.toFixed(2)}</TableCell>
-                    <TableCell>{result.final_amount.toFixed(2)}</TableCell>
+                    <TableCell>{result.service_discount?.toFixed(2) ?? "-"}%</TableCell>
+                    <TableCell>{result.is_over_discounted ? "Yes" : "No"}</TableCell>
+                    <TableCell>{result.base_amount?.toFixed(2) ?? "-" }</TableCell>
+                    <TableCell>{result.final_amount?.toFixed(2) ?? "-"}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
