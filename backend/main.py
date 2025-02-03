@@ -27,8 +27,13 @@ load_dotenv()  # Load environment variables from .env file
 app = FastAPI()
 
 # Allow CORS from all origins
-app.add_middleware(CORSMiddleware, allow_origins=["*"])
-
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allow all domains (use specific domains in production)
+    allow_credentials=True,
+    allow_methods=["*"],  # Allow all HTTP methods (GET, POST, OPTIONS, etc.)
+    allow_headers=["*"],  # Allow all headers
+)
 
 class DiscountInput(BaseModel):
     weekly_price: float
