@@ -112,7 +112,7 @@ export default function ResultsPage() {
               </p>
             </div>
 
-            <Card className="bg-[#2A2A36] border-gray-700 mb-6">
+            <Card className="bg-[#2A2A36] border-gray-700 mb-6 rounded-xl">
               <div className="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-6">
                   <div>
