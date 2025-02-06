@@ -1,6 +1,8 @@
 import requests
 import os
 from pydantic import BaseModel
+from ups_rates import calculate_shipping
+
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -20,65 +22,67 @@ class Parcel(BaseModel):
 
 class APIRates:
     def get_ups_rates(address_to: Address, address_from: Address, parcel: Parcel):
-        headers = {
-            "Authorization": "ShippoToken " + os.getenv("SHIPPO_API_KEY")
-        }
-        body = {
-            "address_to": {
-                "street1": address_to.street,
-                "city": address_to.city,
-                "state": address_to.state,
-                "zip": address_to.zip,
-                "country": address_to.country
-            },
-            "address_from": {
-                "street1": address_from.street,
-                "city": address_from.city,
-                "state": address_from.state,
-                "zip": address_from.zip,
-                "country": address_from.country
-            },
-            "parcels": [
-                {
-                    "length": str(parcel.length),
-                    "width": str(parcel.width),
-                    "height": str(parcel.height),
-                    "distance_unit": "in",
-                    "weight": str(parcel.weight),
-                    "mass_unit": "lb"
-                }
-            ],
-            "async": False,
-            "carrier_accounts": [
-                os.getenv("SHIPPO_UPS_ACCOUNT_ID")
-            ]
-        }
-        response = requests.post(
-            "https://api.goshippo.com/shipments", headers=headers, json=body)
+        rates = calculate_shipping(address_from, address_to, parcel)
+        return  rates
+        # headers = {
+        #     "Authorization": "ShippoToken " + os.getenv("SHIPPO_API_KEY")
+        # }
+        # body = {
+        #     "address_to": {
+        #         "street1": address_to.street,
+        #         "city": address_to.city,
+        #         "state": address_to.state,
+        #         "zip": address_to.zip,
+        #         "country": address_to.country
+        #     },
+        #     "address_from": {
+        #         "street1": address_from.street,
+        #         "city": address_from.city,
+        #         "state": address_from.state,
+        #         "zip": address_from.zip,
+        #         "country": address_from.country
+        #     },
+        #     "parcels": [
+        #         {
+        #             "length": str(parcel.length),
+        #             "width": str(parcel.width),
+        #             "height": str(parcel.height),
+        #             "distance_unit": "in",
+        #             "weight": str(parcel.weight),
+        #             "mass_unit": "lb"
+        #         }
+        #     ],
+        #     "async": False,
+        #     "carrier_accounts": [
+        #         os.getenv("SHIPPO_UPS_ACCOUNT_ID")
+        #     ]
+        # }
+        # response = requests.post(
+        #     "https://api.goshippo.com/shipments", headers=headers, json=body)
 
-        if response.status_code != 201:
-            return []
+        # if response.status_code != 201:
+        #     return []
 
-        data = response.json()
-        print(data)
+        # data = response.json()
+        # print(data)
 
-        if data["status"] != "SUCCESS":
-            for message in data.get("messages", []):
-                print(f"Error from {message['source']}: {message['text']}")
-            return []
+        # if data["status"] != "SUCCESS":
+        #     for message in data.get("messages", []):
+        #         print(f"Error from {message['source']}: {message['text']}")
+        #     return []
         
-        for rate in data["rates"]:
-            print("\n\n")
-            print(rate)
+        # for rate in data["rates"]:
+        #     print("\n\n")
+        #     print(rate)
 
-        rates = [
-            {
-                "serviceName": rate["servicelevel"]["display_name"],
-                "amount": rate["amount"],
-            } for rate in data["rates"]
-        ]
+        # rates = [
+        #     {
+        #         "serviceName": rate["servicelevel"]["display_name"],
+        #         "amount": rate["amount"],
+        #     } for rate in data["rates"]
+        # ]
 
-        return rates
+        # return rates
     
     def get_fedex_rates(address_to: Address, address_from: Address, parcel: Parcel):
         auth_response = requests.post(
