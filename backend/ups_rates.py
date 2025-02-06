@@ -32,7 +32,7 @@ def download_zone_file(origin_zip: str) -> str:
         response = requests.get(
             zone_url, 
             headers={
-                'User-Agent': 'PostmanRuntime/7.43.0',
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
                 "Accept": "*/*",
                 "Accept-Encoding": "gzip, deflate, br",
                 "Connection": "keep-alive",
@@ -65,7 +65,7 @@ def download_rates_file() -> str:
         response = requests.get(
             rates_url, 
             headers={
-                'User-Agent': 'PostmanRuntime/7.43.0',
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
                 "Accept": "*/*",
                 "Accept-Encoding": "gzip, deflate, br",
                 "Connection": "keep-alive",
