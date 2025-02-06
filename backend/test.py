@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 import pandas as pd
-from typing import Tuple
+from typing import Dict, Optional
 import requests
 import os
 
@@ -20,12 +20,13 @@ class Parcel:
     weight: float
 
 def download_zone_file(origin_zip: str) -> str:
+    """
+    Download zone file using exact headers from successful curl request
+    """
     origin_prefix = origin_zip[:3]
     zone_url = f"https://www.ups.com/media/us/currentrates/zone-csv/{origin_prefix}.xls"
     
-    print(f"\n[1. DOWNLOADING ZONE FILE]")
-    print(f"Origin ZIP prefix: {origin_prefix}")
-    print(f"URL: {zone_url}")
+    print(f"\nDownloading zone file for prefix {origin_prefix}")
     
     headers = {
         'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
@@ -76,46 +77,10 @@ def download_zone_file(origin_zip: str) -> str:
         print(f"✗ Error downloading zone file: {str(e)}")
         return None
 
-def get_zone_info(zone_file: str, dest_zip: str) -> int:
-    dest_prefix = dest_zip[:3]
-    
-    print(f"\n[2. EXTRACTING ZONE INFORMATION]")
-    print(f"Reading file: {zone_file}")
-    print(f"Destination ZIP prefix: {dest_prefix}")
-    
-    try:
-        # Read the zone chart Excel file
-        df = pd.read_excel(zone_file, skiprows=8)
-        
-        print("\nZone Chart Structure:")
-        print(f"Columns found: {', '.join(df.columns.tolist())}")
-        print(f"Total rows: {len(df)}")
-        print("\nFirst few rows of the zone chart:")
-        print(df.head())
-        
-        # Find the zone based on destination ZIP prefix
-        zone_row = df[df['Dest. ZIP'] == dest_prefix]
-        
-        if len(zone_row) == 0:
-            print(f"✗ No zone found for destination ZIP prefix {dest_prefix}")
-            return None
-            
-        zone = zone_row.iloc[0]['Ground']
-        print(f"\n✓ Found matching row:")
-        print(zone_row)
-        print(f"✓ Ground Zone: {zone}")
-        
-        return int(zone)
-        
-    except Exception as e:
-        print(f"✗ Error getting zone information: {str(e)}")
-        return None
-
 def download_rates_file() -> str:
     rates_url = "https://www.ups.com/assets/resources/webcontent/en_US/daily_rates.xlsx"
     
-    print("\n[3. DOWNLOADING RATES FILE]")
-    print(f"URL: {rates_url}")
+    print("\nDownloading rates file")
     
     headers = {
         'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
@@ -141,60 +106,118 @@ def download_rates_file() -> str:
         print(f"✗ Error downloading rates file: {str(e)}")
         return None
 
-def get_shipping_rate(rates_file: str, weight: float, zone: int, service_type: str = "UPS Ground") -> float:
-    print(f"\n[4. CALCULATING SHIPPING RATE]")
-    print(f"Service Type: {service_type}")
+def get_service_sheet_name(service: str) -> str:
+    """
+    Map zone file service names to rate file sheet names
+    """
+    mapping = {
+        'Ground': 'UPS Ground',
+        '3 Day Select': 'UPS 3DA Select',
+        '2nd Day Air': 'UPS 2DA',
+        '2nd Day Air A.M.': 'UPS 2DA A.M.',
+        'Next Day Air Saver': 'UPS NDA Saver',
+        'Next Day Air': 'UPS NDA'
+    }
+    return mapping.get(service)
+
+def get_all_service_rates(zone_file: str, rates_file: str, dest_zip: str, weight: float) -> Dict[str, Optional[float]]:
+    """
+    Get rates for all available services based on destination ZIP and weight
+    """
+    print(f"\n[CALCULATING RATES FOR ALL SERVICES]")
+    print(f"Destination ZIP: {dest_zip}")
     print(f"Package Weight: {weight} lbs")
-    print(f"Shipping Zone: {zone}")
     
     try:
-        print(f"\nReading rates file: {rates_file}")
-        # Read the daily rates Excel file
-        df = pd.read_excel(rates_file, sheet_name=service_type, header=None)
+        # Read the zone file to get available services and their zones
+        zone_df = pd.read_excel(zone_file, skiprows=8)
+        dest_prefix = dest_zip[:3]
         
-        # Find the row with "Zones" to identify the zone columns
-        zones_row = df[df[1] == "Zones"].iloc[0]
-        print("\nZones row found:", zones_row.tolist())
+        # Remove any unnamed columns
+        zone_df = zone_df[[col for col in zone_df.columns if not col.startswith('Unnamed')]]
         
-        # Get the column index for our target zone
-        zone_col = None
-        for col in range(len(zones_row)):
-            if zones_row[col] == zone:
-                zone_col = col
-                break
+        print("\nZone file columns found:")
+        print(zone_df.columns.tolist())
+        
+        # Get the row for our destination ZIP
+        zone_row = zone_df[zone_df['Dest. ZIP'] == dest_prefix]
+        if zone_row.empty:
+            print(f"✗ No zones found for destination ZIP prefix {dest_prefix}")
+            return {}
+            
+        print("\nZones found for each service:")
+        rates = {}
+        
+        # Get zones for each service from all columns except 'Dest. ZIP'
+        available_services = [col for col in zone_df.columns if col != 'Dest. ZIP']
+        
+        for service in available_services:
+            zone = zone_row.iloc[0][service]
+            print(f"{service}: Zone {zone}")
+            
+            if pd.isna(zone) or zone == '-':
+                print(f"✗ {service} not available for this route")
+                rates[service] = None
+                continue
+            
+            sheet_name = get_service_sheet_name(service)
+            if not sheet_name:
+                print(f"✗ No rate sheet mapping found for {service}")
+                rates[service] = None
+                continue
                 
-        if zone_col is None:
-            print(f"✗ Zone {zone} not found in rate table")
-            return None
-            
-        print(f"Zone {zone} found in column {zone_col}")
+            try:
+                # Read rates file
+                rate_df = pd.read_excel(rates_file, sheet_name=sheet_name, header=None)
+                
+                # Find the row with "Zones" to identify the zone columns
+                zones_row = rate_df[rate_df[1] == "Zones"].iloc[0]
+                
+                # Get the column index for our zone
+                zone_col = None
+                zone_value = int(str(zone).split('.')[0])  # Handle decimal zones
+                for col in range(len(zones_row)):
+                    if zones_row[col] == zone_value:
+                        zone_col = col
+                        break
+                
+                if zone_col is None:
+                    print(f"✗ Zone {zone} not found in rate table for {service}")
+                    rates[service] = None
+                    continue
+                
+                # Convert weights to numeric, handling the "Lbs." text
+                rate_df[1] = rate_df[1].astype(str).str.replace(' Lbs.', '').replace('', '0')
+                rate_df[1] = pd.to_numeric(rate_df[1], errors='coerce')
+                
+                # Filter rows with valid weights
+                rate_rows = rate_df[rate_df[1].notna() & (rate_df[1] <= weight)].sort_values(1, ascending=False)
+                
+                if rate_rows.empty:
+                    print(f"✗ No valid rate found for {service} with weight {weight}")
+                    rates[service] = None
+                    continue
+                
+                rate = rate_rows.iloc[0][zone_col]
+                rates[service] = float(rate)
+                print(f"✓ {service}: ${rate:.2f}")
+                
+            except Exception as e:
+                print(f"✗ Error getting rate for {service}: {str(e)}")
+                rates[service] = None
         
-        # Convert weights to numeric, handling the "Lbs." text
-        df[1] = df[1].astype(str).str.replace(' Lbs.', '').replace('', '0')
-        df[1] = pd.to_numeric(df[1], errors='coerce')
-        
-        # Filter rows with valid weights
-        rate_rows = df[df[1].notna() & (df[1] <= weight)].sort_values(1, ascending=False)
-        
-        if rate_rows.empty:
-            print("✗ No valid rate found for the given weight")
-            return None
-            
-        print("\nMatching rate row:")
-        print(rate_rows.iloc[0].tolist())
-        
-        rate = rate_rows.iloc[0][zone_col]
-        print(f"\n✓ Found Rate: ${rate:.2f}")
-        return float(rate)
+        return rates
         
     except Exception as e:
-        print(f"✗ Error getting shipping rate: {str(e)}")
-        print(f"✗ Error details: {str(e)}")
-        return None
+        print(f"✗ Error calculating service rates: {str(e)}")
+        return {}
     
 
     
-def calculate_shipping(origin: Address, destination: Address, parcel: Parcel) -> Tuple[int, float]:
+def calculate_shipping(origin: Address, destination: Address, parcel: Parcel) -> Dict[str, Optional[float]]:
+    """
+    Calculate shipping rates for all available services
+    """
     print("\n[STARTING SHIPPING CALCULATION]")
     print("-" * 50)
     print("Origin Address:")
@@ -202,14 +225,12 @@ def calculate_shipping(origin: Address, destination: Address, parcel: Parcel) ->
     print(f"  City: {origin.city}")
     print(f"  State: {origin.state}")
     print(f"  ZIP: {origin.zip}")
-    print(f"  Country: {origin.country}")
     
     print("\nDestination Address:")
     print(f"  Street: {destination.street}")
     print(f"  City: {destination.city}")
     print(f"  State: {destination.state}")
     print(f"  ZIP: {destination.zip}")
-    print(f"  Country: {destination.country}")
     
     print("\nParcel Details:")
     print(f"  Dimensions: {parcel.length} x {parcel.width} x {parcel.height} inches")
@@ -218,26 +239,19 @@ def calculate_shipping(origin: Address, destination: Address, parcel: Parcel) ->
     
     # Download required files
     zone_file = download_zone_file(origin.zip)
+    rates_file = download_rates_file()
     
     try:
-        if zone_file:
-            # Get the zone number
-            zone = get_zone_info(zone_file, destination.zip)
+        if zone_file and rates_file:
+            # Get rates for all services
+            rates = get_all_service_rates(zone_file, rates_file, destination.zip, parcel.weight)
             
-            if zone is not None:
-                # Download and process rates
-                rates_file = download_rates_file()
-                
-                if rates_file:
-                    # Get the shipping rate
-                    rate = get_shipping_rate(rates_file, parcel.weight, zone)
-                    
-                    # Clean up downloaded files
-                    os.remove(zone_file)
-                    os.remove(rates_file)
-                    
-                    return zone, rate
-                
+            # Clean up downloaded files
+            os.remove(zone_file)
+            os.remove(rates_file)
+            
+            return rates
+            
     except Exception as e:
         print(f"\n✗ Error in shipping calculation: {str(e)}")
         
@@ -248,10 +262,10 @@ def calculate_shipping(origin: Address, destination: Address, parcel: Parcel) ->
         if 'rates_file' in locals() and rates_file and os.path.exists(rates_file):
             os.remove(rates_file)
     
-    return None, None
+    return {}
 
 if __name__ == "__main__":
-    # Create address objects
+    # Example usage
     origin = Address(
         street="465 DEVON PARK DR",
         city="WAYNE",
@@ -268,7 +282,6 @@ if __name__ == "__main__":
         country="US"
     )
     
-    # Create parcel object
     parcel = Parcel(
         length=10,
         width=15,
@@ -276,14 +289,18 @@ if __name__ == "__main__":
         weight=100
     )
     
-    # Calculate shipping
-    zone, rate = calculate_shipping(origin, destination, parcel)
+    # Calculate rates for all services
+    rates = calculate_shipping(origin, destination, parcel)
     
     print("\n[FINAL RESULTS]")
     print("-" * 50)
-    if zone is not None and rate is not None:
-        print(f"Shipping Zone: {zone}")
-        print(f"Shipping Rate: ${rate:.2f}")
+    if rates:
+        print("Available Services and Rates:")
+        for service, rate in rates.items():
+            if rate is not None:
+                print(f"{service}: ${rate:.2f}")
+            else:
+                print(f"{service}: Not available")
     else:
-        print("✗ Error calculating shipping details")
+        print("✗ Error calculating shipping rates")
     print("-" * 50)
