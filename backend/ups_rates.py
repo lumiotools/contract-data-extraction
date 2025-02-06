@@ -31,7 +31,13 @@ def download_zone_file(origin_zip: str) -> str:
     try:
         response = requests.get(
             zone_url, 
-            headers={'User-Agent': 'PostmanRuntime/7.43.0'},
+            headers={
+                'User-Agent': 'PostmanRuntime/7.43.0',
+                "Accept": "*/*",
+                "Accept-Encoding": "gzip, deflate, br",
+                "Connection": "keep-alive",
+                "Cookie": "",
+                },
             timeout=30
         )
         
@@ -58,7 +64,13 @@ def download_rates_file() -> str:
     try:
         response = requests.get(
             rates_url, 
-            headers={'User-Agent': 'PostmanRuntime/7.43.0'},
+            headers={
+                'User-Agent': 'PostmanRuntime/7.43.0',
+                "Accept": "*/*",
+                "Accept-Encoding": "gzip, deflate, br",
+                "Connection": "keep-alive",
+                "Cookie": "",
+                },
             timeout=30
         )
         
