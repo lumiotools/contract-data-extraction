@@ -535,6 +535,57 @@ class ContractDataExtractionService:
       except:
         return []
     
+    
+    @classmethod
+    def extract_address(cls, chat: ChatSession):
+        response = cls.rate_limited_call(chat.send_message, """
+                            Extract ALL the addresses from the Account Numbers section of the contract.
+                            Format each address into a list of addresses.
+                            Only include addresses that have a complete street address (including street number).
+                            
+                            Output Format:
+                            {
+                                "addresses": [
+                                    {
+                                        "name": "string",
+                                        "street1": "string",
+                                        "city": "string",
+                                        "state": "string",
+                                        "zip": "string",
+                                        "country": "US"
+                                    }
+                                ]
+                        }
+                            """)
+        
+        print(response.text.replace("```json\n", "").replace("\n```", ""))
+        
+        try:
+            data = json.loads(response.text.replace("```json\n", "").replace("\n```", ""))
+            return data["address"]
+        except:
+            return None
+
+    @classmethod
+    def extract_contract_type(cls, chat: ChatSession):
+        response = cls.rate_limited_call(chat.send_message, """
+                            Determine if this is a UPS or FedEx contract based on the content.
+                            Return only "ups" or "fedex" in lowercase.
+                            
+                            Output Format:
+                            {
+                                "contract_type": "string"
+                            }
+                            """)
+        
+        print(response.text.replace("```json\n", "").replace("\n```", ""))
+        
+        try:
+            data = json.loads(response.text.replace("```json\n", "").replace("\n```", ""))
+            return data["contract_type"]
+        except:
+            return None
+        
     @classmethod
     def extract(cls, contract: UploadFile):
         uploadedFile = genai.upload_file(
@@ -563,6 +614,7 @@ class ContractDataExtractionService:
             }
         ])
         
+        
         with ThreadPoolExecutor() as executor:
           extracted_weight_zone_incentives_tables_future = executor.submit(cls.extract_weight_destination_zone_bands_incentives, chat)
           extracted_service_incentive_tables_future = executor.submit(cls.extract_service_incentive_tables, chat)
@@ -571,6 +623,8 @@ class ContractDataExtractionService:
           extracted_service_min_per_zone_base_rate_adjustment_table_future = executor.submit(cls.extract_service_min_per_zone_base_rate_adjustment_table, chat)
           extracted_additional_handling_charge_table_future = executor.submit(cls.extract_additional_handling_charge_table, chat)
           extracted_electronic_pld_bonus_table_future = executor.submit(cls.extract_electronic_pld_bonus_table, chat)
+          extracted_address_future = executor.submit(cls.extract_address, chat)
+          extracted_contract_type_future = executor.submit(cls.extract_contract_type, chat)
           
           extracted_weight_zone_incentives_tables = extracted_weight_zone_incentives_tables_future.result()
           extracted_service_incentive_tables = extracted_service_incentive_tables_future.result()
@@ -579,6 +633,8 @@ class ContractDataExtractionService:
           extracted_service_min_per_zone_base_rate_adjustment_table = extracted_service_min_per_zone_base_rate_adjustment_table_future.result()
           extracted_additional_handling_charge_table = extracted_additional_handling_charge_table_future.result()
           extracted_electronic_pld_bonus_table = extracted_electronic_pld_bonus_table_future.result()
+          extracted_address = extracted_address_future.result()
+          extracted_contract_type = extracted_contract_type_future.result()
         
         tables = []
         tables.extend(extracted_weight_zone_incentives_tables)
@@ -588,4 +644,8 @@ class ContractDataExtractionService:
         tables.extend(extracted_service_min_per_zone_base_rate_adjustment_table)
         tables.extend(extracted_additional_handling_charge_table)
         tables.extend(extracted_electronic_pld_bonus_table)
-        return tables
+        return {
+          "tables": tables,
+          "address": extracted_address,
+          "contract_type": extracted_contract_type
+        }
