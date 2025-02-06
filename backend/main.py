@@ -10,7 +10,7 @@ from api_rates import UPSApiRates  # Import UPSApiRates class from ups_api.py
 import os
 import difflib
 from dotenv import load_dotenv
-
+from api_rates import Address  # Adjust the import path based on your project structure
 load_dotenv()  # Load environment variables from .env file
 
 # Load dummy data from JSON file
@@ -39,8 +39,10 @@ app.add_middleware(
 
 class DiscountInput(BaseModel):
     weekly_price: float
-    destination_address: str 
+    start_address: Address
+    destination_address: Address 
     tables_json: str
+    contract_type: str
 
 
 @app.get("/")
@@ -163,13 +165,17 @@ def get_maximum_possible_discount(table_data, service_name: str):
 @app.post("/calculate_discount")
 async def calculate_discount(input_data: DiscountInput):
     weekly_price = input_data.weekly_price
+    start_address = input_data.start_address
     destination_address = input_data.destination_address
     tables_json = input_data.tables_json
+    contract_type = input_data.contract_type
     table_data = json.loads(tables_json)
 
     print(f"Processing discount calculation:")
     print(f"Weekly Price: ${weekly_price}")
-    print(f"Destination Address: {destination_address}")
+    print(f"Start Address: {start_address.street}, {start_address.city}, {start_address.state} {start_address.zip}, {start_address.country}")
+    print(f"Destination Address: {destination_address.street}, {destination_address.city}, {destination_address.state} {destination_address.zip}, {destination_address.country}")
+    print(f"Contract Type: {contract_type}")
     print(f"Number of tables in input: {len(table_data)}")
 
     # Step 1: Get Service Rates (fetch from UPS API)
