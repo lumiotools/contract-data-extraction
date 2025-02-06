@@ -20,7 +20,7 @@ app.add_middleware(
     CORSMiddleware,
     # Allow all domains (use specific domains in production)
     allow_origins=["*"],
-    allow_credentials=True,
+    allow_credentials=False,
     allow_methods=["*"],  # Allow all HTTP methods (GET, POST, OPTIONS, etc.)
     allow_headers=["*"],  # Allow all headers
 )
