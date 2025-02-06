@@ -253,43 +253,43 @@ def calculate_shipping(origin: Address, destination: Address, parcel: Parcel) ->
     
     return {}
 
-if __name__ == "__main__":
-    # Example usage
-    origin = Address(
-        street="465 DEVON PARK DR",
-        city="WAYNE",
-        state="PA",
-        zip="19087",
-        country="US"
-    )
+# if __name__ == "__main__":
+#     # Example usage
+#     origin = Address(
+#         street="465 DEVON PARK DR",
+#         city="WAYNE",
+#         state="PA",
+#         zip="19087",
+#         country="US"
+#     )
     
-    destination = Address(
-        street="350 5th Ave",
-        city="New York",
-        state="NY",
-        zip="10118",
-        country="US"
-    )
+#     destination = Address(
+#         street="350 5th Ave",
+#         city="New York",
+#         state="NY",
+#         zip="10118",
+#         country="US"
+#     )
     
-    parcel = Parcel(
-        length=10,
-        width=15,
-        height=12,
-        weight=100
-    )
+#     parcel = Parcel(
+#         length=10,
+#         width=15,
+#         height=12,
+#         weight=100
+#     )
     
-    # Calculate rates for all services
-    rates = calculate_shipping(origin, destination, parcel)
+#     # Calculate rates for all services
+#     rates = calculate_shipping(origin, destination, parcel)
     
-    print("\n[FINAL RESULTS]")
-    print("-" * 50)
-    if rates:
-        print("Available Services and Rates:")
-        for rate in rates:
-            if rate is not None:
-                print(f"{rate["serviceName"]}: ${rate["amount"]:.2f}")
-            else:
-                print(f"{rate["serviceName"]}: Not available")
-    else:
-        print("✗ Error calculating shipping rates")
-    print("-" * 50)
+#     print("\n[FINAL RESULTS]")
+#     print("-" * 50)
+#     if rates:
+#         print("Available Services and Rates:")
+#         for rate in rates:
+#             if rate is not None:
+#                 print(f"{rate["serviceName"]}: ${rate["amount"]:.2f}")
+#             else:
+#                 print(f"{rate["serviceName"]}: Not available")
+#     else:
+#         print("✗ Error calculating shipping rates")
+#     print("-" * 50)
