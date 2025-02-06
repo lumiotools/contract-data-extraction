@@ -207,16 +207,16 @@ async def calculate_discount(input_data: DiscountInput):
             applied_discount_rate = round(
                 service_amount * abs(final_discount) / 100, 2)
 
-        print("\nservice_name", service_name)
-        print("service_discount", service_discount)
-        print("incentive_off_executive", incentive_off_executive)
-        print("final_discount", final_discount)
-        print("service_amount", service_amount)
-        print("applied_discount_rate", applied_discount_rate)
+        # print("\nservice_name", service_name)
+        # print("service_discount", service_discount)
+        # print("incentive_off_executive", incentive_off_executive)
+        # print("final_discount", final_discount)
+        # print("service_amount", service_amount)
+        # print("applied_discount_rate", applied_discount_rate)
 
         maximum_possible_discount = get_maximum_possible_discount(
             table_data, service_name)
-        is_over_discounted = applied_discount_rate > maximum_possible_discount
+        is_over_discounted = final_discount > maximum_possible_discount
         print("maximum_possible_discount", maximum_possible_discount)
         print("is_over_discounted", is_over_discounted)
 
