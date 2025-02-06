@@ -178,7 +178,7 @@ export default function HomePage() {
 
       if (response.ok) {
         const data = await response.json();
-        localStorage.setItem("extractedData", JSON.stringify(data)); // Save API response to localStorage
+        localStorage.setItem("extractedData", JSON.stringify(data.data)); // Save API response to localStorage
         router.push("/results");
       } else {
         console.error("Error: Extraction API failed", response.statusText);
