@@ -27,39 +27,12 @@ def download_zone_file(origin_zip: str) -> str:
     zone_url = f"https://www.ups.com/media/us/currentrates/zone-csv/{origin_prefix}.xls"
     
     print(f"\nDownloading zone file for prefix {origin_prefix}")
-    
-    headers = {
-        'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
-        'accept-language': 'en-GB,en;q=0.5',
-        'priority': 'u=0, i',
-        'sec-ch-ua': '"Not A(Brand";v="8", "Chromium";v="132", "Brave";v="132"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"macOS"',
-        'sec-fetch-dest': 'document',
-        'sec-fetch-mode': 'navigate',
-        'sec-fetch-site': 'none',
-        'sec-fetch-user': '?1',
-        'sec-gpc': '1',
-        'upgrade-insecure-requests': '1',
-        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36'
-    }
-    
-    cookies = {
-        'ups_language_preference': 'en_US',
-        'sharedsession': '8a686f22-80cb-4e0d-9228-9e26b1396402:w',
-        'HASSEENRECNOTICE': 'TRUE',
-        'PIM-SESSION-ID': 'oNkI4Kve8GrUiVk1',
-        'BCSessionID': 'cf430c98-6e4c-4f5f-a382-30d322853e74',
-        'jedi_loc': 'eyJibG9ja2VkIjp0cnVlfQ%3D%3D',
-        'JSESSIONID': '7E8164E2C0C8375C84E9B37EEFAB466A'
-    }
-    
+
     try:
         response = requests.get(
             zone_url, 
-            headers=headers,
-            cookies=cookies,
-            allow_redirects=True
+            headers={'User-Agent': 'PostmanRuntime/7.43.0'},
+            timeout=30
         )
         
         if response.status_code == 200:
@@ -82,14 +55,12 @@ def download_rates_file() -> str:
     
     print("\nDownloading rates file")
     
-    headers = {
-        'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
-        'accept-language': 'en-GB,en;q=0.5',
-        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36'
-    }
-    
     try:
-        response = requests.get(rates_url, headers=headers, allow_redirects=True)
+        response = requests.get(
+            rates_url, 
+            headers={'User-Agent': 'PostmanRuntime/7.43.0'},
+            timeout=30
+        )
         
         if response.status_code == 200:
             file_name = "daily_rates.xlsx"
@@ -146,7 +117,7 @@ def get_all_service_rates(zone_file: str, rates_file: str, dest_zip: str, weight
             return {}
             
         print("\nZones found for each service:")
-        rates = {}
+        rates = []
         
         # Get zones for each service from all columns except 'Dest. ZIP'
         available_services = [col for col in zone_df.columns if col != 'Dest. ZIP']
@@ -157,13 +128,19 @@ def get_all_service_rates(zone_file: str, rates_file: str, dest_zip: str, weight
             
             if pd.isna(zone) or zone == '-':
                 print(f"✗ {service} not available for this route")
-                rates[service] = None
+                rates.append({
+                    "serviceName": service,
+                    "amount": None
+                })
                 continue
             
             sheet_name = get_service_sheet_name(service)
             if not sheet_name:
                 print(f"✗ No rate sheet mapping found for {service}")
-                rates[service] = None
+                rates.append({
+                    "serviceName": service,
+                    "amount": None
+                })
                 continue
                 
             try:
@@ -183,7 +160,10 @@ def get_all_service_rates(zone_file: str, rates_file: str, dest_zip: str, weight
                 
                 if zone_col is None:
                     print(f"✗ Zone {zone} not found in rate table for {service}")
-                    rates[service] = None
+                    rates.append({
+                        "serviceName": service,
+                        "amount": None
+                    })
                     continue
                 
                 # Convert weights to numeric, handling the "Lbs." text
@@ -195,16 +175,25 @@ def get_all_service_rates(zone_file: str, rates_file: str, dest_zip: str, weight
                 
                 if rate_rows.empty:
                     print(f"✗ No valid rate found for {service} with weight {weight}")
-                    rates[service] = None
+                    rates.append({
+                        "serviceName": service,
+                        "amount": None
+                    })
                     continue
                 
                 rate = rate_rows.iloc[0][zone_col]
-                rates[service] = float(rate)
+                rates.append({
+                    "serviceName": service,
+                    "amount": float(rate)
+                })
                 print(f"✓ {service}: ${rate:.2f}")
                 
             except Exception as e:
                 print(f"✗ Error getting rate for {service}: {str(e)}")
-                rates[service] = None
+                rates.append({
+                    "serviceName": service,
+                    "amount": None
+                })
         
         return rates
         
@@ -296,11 +285,11 @@ if __name__ == "__main__":
     print("-" * 50)
     if rates:
         print("Available Services and Rates:")
-        for service, rate in rates.items():
+        for rate in rates:
             if rate is not None:
-                print(f"{service}: ${rate:.2f}")
+                print(f"{rate["serviceName"]}: ${rate["amount"]:.2f}")
             else:
-                print(f"{service}: Not available")
+                print(f"{rate["serviceName"]}: Not available")
     else:
         print("✗ Error calculating shipping rates")
     print("-" * 50)
