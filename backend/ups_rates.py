@@ -38,7 +38,7 @@ def download_zone_file(origin_zip: str) -> str:
                 "Connection": "keep-alive",
                 "Cookie": "",
                 },
-            timeout=30
+            timeout=60
         )
         
         if response.status_code == 200:
