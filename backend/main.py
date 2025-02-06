@@ -9,7 +9,7 @@ from extraction_service import ContractDataExtractionService
 from api_rates import APIRates  # Import APIRates class from api_rates.py
 import difflib
 from dotenv import load_dotenv
-from api_rates import Address  # Adjust the import path based on your project structure
+from api_rates import Address, Parcel  # Adjust the import path based on your project structure
 load_dotenv()  # Load environment variables from .env file
 
 # FastAPI setup
@@ -30,6 +30,7 @@ class DiscountInput(BaseModel):
     weekly_price: float
     start_address: Address
     destination_address: Address 
+    parcel: Parcel
     tables_json: str
     contract_type: str
 
@@ -163,6 +164,7 @@ async def calculate_discount(input_data: DiscountInput):
     weekly_price = input_data.weekly_price
     start_address = input_data.start_address
     destination_address = input_data.destination_address
+    parcel = input_data.parcel
     tables_json = input_data.tables_json
     contract_type = input_data.contract_type
     table_data = json.loads(tables_json)
@@ -171,14 +173,15 @@ async def calculate_discount(input_data: DiscountInput):
     print(f"Weekly Price: ${weekly_price}")
     print(f"Start Address: {start_address.street}, {start_address.city}, {start_address.state} {start_address.zip}, {start_address.country}")
     print(f"Destination Address: {destination_address.street}, {destination_address.city}, {destination_address.state} {destination_address.zip}, {destination_address.country}")
+    print(f"Parcel: {parcel.length}x{parcel.width}x{parcel.height} {parcel.weight} lbs")
     print(f"Contract Type: {contract_type}")
     print(f"Number of tables in input: {len(table_data)}")
 
     # Step 1: Get Service Rates (fetch from UPS API)
     if contract_type == "ups":
-        rates = APIRates.get_ups_rates(start_address, destination_address)
+        rates = APIRates.get_ups_rates(start_address, destination_address, parcel)
     else:
-        rates = APIRates.get_fedex_rates(start_address, destination_address)
+        rates = APIRates.get_fedex_rates(start_address, destination_address, parcel)
 
     # Print the API response for debugging
     print("Rates API Response:", rates)
