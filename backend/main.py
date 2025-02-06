@@ -39,6 +39,7 @@ app.add_middleware(
 
 class DiscountInput(BaseModel):
     weekly_price: float
+    destination_address: str 
     tables_json: str
 
 
@@ -162,8 +163,14 @@ def get_maximum_possible_discount(table_data, service_name: str):
 @app.post("/calculate_discount")
 async def calculate_discount(input_data: DiscountInput):
     weekly_price = input_data.weekly_price
+    destination_address = input_data.destination_address
     tables_json = input_data.tables_json
     table_data = json.loads(tables_json)
+
+    print(f"Processing discount calculation:")
+    print(f"Weekly Price: ${weekly_price}")
+    print(f"Destination Address: {destination_address}")
+    print(f"Number of tables in input: {len(table_data)}")
 
     # Step 1: Get Service Rates (fetch from UPS API)
     ups_api = UPSApiRates()
