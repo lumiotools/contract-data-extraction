@@ -50,11 +50,11 @@ def download_zone_file(origin_zip: str) -> str:
             return file_name
         else:
             print(f"✗ Failed to download zone file. Status code: {response.status_code}")
-            return None
+            return "constants/190.xls"
             
     except Exception as e:
         print(f"✗ Error downloading zone file: {str(e)}")
-        return None
+        return "constants/190.xls"
 
 def download_rates_file() -> str:
     rates_url = "https://www.ups.com/assets/resources/webcontent/en_US/daily_rates.xlsx"
