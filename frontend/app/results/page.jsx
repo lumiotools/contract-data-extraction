@@ -17,6 +17,7 @@ export default function ResultsPage() {
     const [activateCalculateButton, setActivateCalculateButton] = useState(false)
 
     useEffect(() => {
+        if(discountData) return
         if (!addressDetails.street || !parcelDetails.weight || !weeklyCharges) return
         const fetchData = async () => {
             setActivateCalculateButton(false)
@@ -69,7 +70,7 @@ export default function ResultsPage() {
 
         
         fetchData()
-    }, [addressDetails, parcelDetails, weeklyCharges])
+    }, [addressDetails, parcelDetails, weeklyCharges, discountData])
 
     const handleAddressChange = (e) => {
         setActivateCalculateButton(true)
