@@ -17,6 +17,7 @@ export default function ResultsPage() {
     const [activateCalculateButton, setActivateCalculateButton] = useState(false)
 
     useEffect(() => {
+        if (!addressDetails.street || !parcelDetails.weight || !weeklyCharges) return
         const fetchData = async () => {
             setActivateCalculateButton(false)
             setLoading(true)
@@ -66,10 +67,9 @@ export default function ResultsPage() {
             }
         }
 
-        setTimeout(()=>{
-            fetchData()
-        },1000)
-    }, [])
+        
+        fetchData()
+    }, [addressDetails, parcelDetails, weeklyCharges])
 
     const handleAddressChange = (e) => {
         setActivateCalculateButton(true)
