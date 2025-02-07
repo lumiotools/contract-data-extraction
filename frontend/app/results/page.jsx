@@ -1,36 +1,28 @@
-"use client";
+"use client"
 
-import { useEffect, useState } from "react";
-import { Card } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
-import { useAnalysis } from "@/lib/Context";
-import { Loader2, Package, DollarSign, TrendingUp, MapPin } from "lucide-react";
+import { useEffect, useState } from "react"
+import { Card } from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { Button } from "@/components/ui/button"
+import { useAnalysis } from "@/lib/Context"
+import { Loader2, Package, DollarSign, TrendingUp, MapPin } from "lucide-react"
 
 export default function ResultsPage() {
-    const {
-        addressDetails,
-        parcelDetails,
-        weeklyCharges,
-        updateAddressDetails,
-        updateParcelDetails,
-        setWeeklyCharges,
-    } = useAnalysis();
-    const [loading, setLoading] = useState(false);
-    const [discountData, setDiscountData] = useState(null);
-    const [error, setError] = useState(null);
-    const [activateCalculateButton, setActivateCalculateButton] = useState(false);
+    const { addressDetails, parcelDetails, weeklyCharges, updateAddressDetails, updateParcelDetails, setWeeklyCharges } =
+        useAnalysis()
+    const [loading, setLoading] = useState(false)
+    const [discountData, setDiscountData] = useState(null)
+    const [error, setError] = useState(null)
+    const [activateCalculateButton, setActivateCalculateButton] = useState(false)
 
     useEffect(() => {
         const fetchData = async () => {
-            setActivateCalculateButton(false);
-            setLoading(true);
-            setError(null);
+            setActivateCalculateButton(false)
+            setLoading(true)
+            setError(null)
             try {
-                const extractedData = JSON.parse(
-                    localStorage.getItem("extractedData") || "{}"
-                );
+                const extractedData = JSON.parse(localStorage.getItem("extractedData") || "{}")
                 const apiData = {
                     weekly_price: Number.parseFloat(weeklyCharges),
                     start_address: {
@@ -55,23 +47,22 @@ export default function ResultsPage() {
                     },
                     tables_json: JSON.stringify({ tables: extractedData.tables } || []),
                     contract_type: extractedData.contract_type || "ups",
-                };
+                }
 
-                const apiBaseUrl =
-                    process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000";
+                const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000"
                 const response = await fetch(`${apiBaseUrl}/calculate_discount`, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(apiData),
-                });
+                })
 
-                if (!response.ok) throw new Error("Failed to calculate discounts");
-                const data = await response.json();
-                setDiscountData(data.data);
+                if (!response.ok) throw new Error("Failed to calculate discounts")
+                const data = await response.json()
+                setDiscountData(data.data)
             } catch (err) {
-                setError(err.message);
+                setError(err.message)
             } finally {
-                setLoading(false);
+                setLoading(false)
             }
         }
 
@@ -79,27 +70,25 @@ export default function ResultsPage() {
     }, [])
 
     const handleAddressChange = (e) => {
-        setActivateCalculateButton(true);
-        updateAddressDetails({ [e.target.name]: e.target.value });
-    };
+        setActivateCalculateButton(true)
+        updateAddressDetails({ [e.target.name]: e.target.value })
+    }
 
     const handleParcelChange = (e) => {
-        setActivateCalculateButton(true);
-        updateParcelDetails({ [e.target.name]: e.target.value });
-    };
+        setActivateCalculateButton(true)
+        updateParcelDetails({ [e.target.name]: e.target.value })
+    }
 
     const handleWeeklyChargesChange = (e) => {
-        setActivateCalculateButton(true);
-        setWeeklyCharges(e.target.value);
-    };
+        setActivateCalculateButton(true)
+        setWeeklyCharges(e.target.value)
+    }
 
     const calculateDiscounts = async () => {
-        setLoading(true);
-        setError(null);
+        setLoading(true)
+        setError(null)
         try {
-            const extractedData = JSON.parse(
-                localStorage.getItem("extractedData") || "{}"
-            );
+            const extractedData = JSON.parse(localStorage.getItem("extractedData") || "{}")
             const apiData = {
                 weekly_price: Number.parseFloat(weeklyCharges),
                 start_address: {
@@ -124,38 +113,37 @@ export default function ResultsPage() {
                 },
                 tables_json: JSON.stringify({ tables: extractedData.tables } || []),
                 contract_type: extractedData.contract_type || "ups",
-            };
+            }
 
-            const apiBaseUrl =
-                process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000";
+            const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000"
             const response = await fetch(`${apiBaseUrl}/calculate_discount`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(apiData),
-            });
+            })
 
-            if (!response.ok) throw new Error("Failed to calculate discounts");
-            const data = await response.json();
-            setDiscountData(data.data);
+            if (!response.ok) throw new Error("Failed to calculate discounts")
+            const data = await response.json()
+            setDiscountData(data.data)
         } catch (err) {
-            setError(err.message);
+            setError(err.message)
         } finally {
-            setLoading(false);
-            setActivateCalculateButton(false);
+            setLoading(false)
+            setActivateCalculateButton(false)
         }
-    };
+    }
 
     const getDiscountColor = (percentage) => {
-        if (percentage >= 60) return "bg-emerald-500";
-        if (percentage >= 30) return "bg-orange-500";
-        return "bg-red-500";
-    };
+        if (percentage >= 60) return "bg-emerald-500"
+        if (percentage >= 30) return "bg-orange-500"
+        return "bg-red-500"
+    }
 
     const getTextColor = (percentage) => {
-        if (percentage >= 60) return "text-emerald-500";
-        if (percentage >= 30) return "text-orange-500";
-        return "text-red-500";
-    };
+        if (percentage >= 60) return "text-emerald-500"
+        if (percentage >= 30) return "text-orange-500"
+        return "text-red-500"
+    }
 
     return (
         <div className="min-h-screen bg-[#1C1C28] flex items-center justify-center w-full">
@@ -168,9 +156,7 @@ export default function ResultsPage() {
                             <h1 className="text-4xl lg:text-5xl font-bold text-white mb-3">
                                 Shipping <span className="text-orange-500">Details</span>
                             </h1>
-                            <p className="text-xl text-gray-400">
-                                Review and calculate your discounts
-                            </p>
+                            <p className="text-xl text-gray-400">Review and calculate your discounts</p>
                         </div>
 
                         <Card className="bg-[#2A2A36] border-gray-700 mb-6 rounded-xl">
@@ -323,9 +309,7 @@ export default function ResultsPage() {
                                                 </div>
                                                 <div>
                                                     <p className="text-sm text-gray-400">Weekly Volume</p>
-                                                    <p className="text-xl font-semibold text-white">
-                                                        ${weeklyCharges}
-                                                    </p>
+                                                    <p className="text-xl font-semibold text-white">${weeklyCharges}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -337,16 +321,11 @@ export default function ResultsPage() {
                                                     <DollarSign className="w-6 h-6 text-orange-500" />
                                                 </div>
                                                 <div>
-                                                    <p className="text-sm text-gray-400">
-                                                        Average Savings
-                                                    </p>
+                                                    <p className="text-sm text-gray-400">Average Savings</p>
                                                     <p className="text-xl font-semibold text-white">
                                                         {(
-                                                            discountData.reduce(
-                                                                (sum, service) =>
-                                                                    sum + service.service_discount,
-                                                                0
-                                                            ) / discountData.length
+                                                            discountData.reduce((sum, service) => sum + service.service_discount, 0) /
+                                                            discountData.length
                                                         ).toFixed(2)}
                                                         %
                                                     </p>
@@ -361,16 +340,9 @@ export default function ResultsPage() {
                                                     <TrendingUp className="w-6 h-6 text-emerald-500" />
                                                 </div>
                                                 <div>
-                                                    <p className="text-sm text-gray-400">
-                                                        Best Service Savings
-                                                    </p>
+                                                    <p className="text-sm text-gray-400">Best Service Savings</p>
                                                     <p className="text-xl font-semibold text-white">
-                                                        {Math.max(
-                                                            ...discountData.map(
-                                                                (service) => service.service_discount
-                                                            )
-                                                        ).toFixed(2)}
-                                                        %
+                                                        {Math.max(...discountData.map((service) => service.service_discount)).toFixed(2)}%
                                                     </p>
                                                 </div>
                                             </div>
@@ -380,48 +352,39 @@ export default function ResultsPage() {
 
                                 <Card className="bg-[#2A2A36] border-gray-700 rounded-xl">
                                     <div className="p-6">
-                                        <div className="grid grid-cols-4 gap-4 mb-4 text-sm font-medium text-gray-400 px-4">
-                                            <div>Service Name</div>
-                                            <div>Actual Rate</div>
-                                            <div>Discounted Rate</div>
-                                            <div>Discount</div>
+                                        <div className="grid grid-cols-5 gap-6 mb-4 text-sm font-medium text-gray-400 px-4">
+                                            <div className="col-span-2">Service Name</div>
+                                            <div className="text-center">Actual Rate</div>
+                                            <div className="text-center">Discounted Rate</div>
+                                            <div className="text-center">Discount</div>
                                         </div>
 
                                         <div className="space-y-2">
                                             {discountData.map((service, index) => (
-                                                <div
-                                                    key={index}
-                                                    className="grid grid-cols-4 gap-4 items-center bg-[#23232F] rounded-xl p-4"
-                                                >
-                                                    <div className="font-medium text-white">
+                                                <div key={index} className="grid grid-cols-5 gap-6 items-center bg-[#23232F] rounded-xl p-4">
+                                                    <div className="col-span-2 font-medium text-white">
                                                         {service.service_name}
-                                                        {service.is_over_discounted && 
-                                                        <span className="bg-amber-400 ml-2 px-1 py-1 rounded">
-                                                            <span className="font-bold text-white">BEST</span>
-                                                        </span>}
+                                                        {service.is_over_discounted && (
+                                                            <span
+                                                            className="bg-[#499D822E] ml-2 border border-[#0FBA82] rounded-[6px] px-[10px] py-[4px] text-green-600 text-xs font-medium"
+                                                            style={{ width: "57px", height: "29px" }}
+                                                        >
+                                                            BEST
+                                                        </span>
+                                                        )}
                                                     </div>
-                                                    <div className="text-gray-400">
-                                                        {service.base_amount ? service.base_amount : "-"}
-                                                    </div>
-                                                    <div className="text-gray-400">
-                                                        {service.final_amount ? service.final_amount : "-"}
-                                                    </div>
+                                                    <div className="text-gray-400 text-center">{service.base_amount ? service.base_amount : "-"}</div>
+                                                    <div className="text-gray-400 text-center">{service.final_amount ? service.final_amount : "-"}</div>
                                                     <div className="flex items-center gap-3">
                                                         <div className="flex-1 h-2 bg-gray-700 rounded-full overflow-hidden">
                                                             <div
-                                                                className={`h-full ${getDiscountColor(
-                                                                    service.service_discount
-                                                                )} transition-all`}
+                                                                className={`h-full ${getDiscountColor(service.service_discount)} transition-all`}
                                                                 style={{
                                                                     width: `${service.service_discount}%`,
                                                                 }}
                                                             />
                                                         </div>
-                                                        <span
-                                                            className={`min-w-[3rem] ${getTextColor(
-                                                                service.service_discount
-                                                            )}`}
-                                                        >
+                                                        <span className={`min-w-[3rem] ${getTextColor(service.service_discount)}`}>
                                                             {service.service_discount.toFixed(2)}%
                                                         </span>
                                                     </div>
@@ -437,5 +400,6 @@ export default function ResultsPage() {
             </div>
             {/* </div> */}
         </div>
-    );
+    )
 }
+
