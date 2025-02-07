@@ -121,13 +121,17 @@ def get_incentive_off_executive(table_data, service_name: str, weekly_price: flo
     incentives = []
     for tier in table_data["tables"]:
         if tier["table_type"] == "weight_zone_incentive" and tier.get("name", None) and (service_name in tier["name"] or find_best_match(service_name, [tier["name"]])):
-            for row in tier["data"] and row["incentive"]:
+            for row in tier["data"]:
+                if not row["incentive"]:
+                    continue
                 incentives.append(
                     abs(float(row["incentive"].replace("%", "").replace("- ","")))
                 )
 
         if tier["table_type"] == "zone_bands_incentive" and tier.get("name", None) and (service_name in tier["name"] or find_best_match(service_name, [tier["name"]])):
-            for row in tier["data"] and row["incentive"]:
+            for row in tier["data"]:
+                if not row["incentive"]:
+                    continue
                 min_band, max_band = parse_band(row["band"])
                 if min_band is not None and max_band is not None:
                     if min_band <= weekly_price <= max_band:
@@ -136,13 +140,17 @@ def get_incentive_off_executive(table_data, service_name: str, weekly_price: flo
                         )
         
         if tier["table_type"] == "zone_incentive" and tier.get("name", None) and (service_name in tier["name"] or find_best_match(service_name, [tier["name"]])):
-            for row in tier["data"] and row["incentive"]:
+            for row in tier["data"]:
+                if not row["incentive"]:
+                    continue
                 incentives.append(
                     abs(float(row["incentive"].replace("%", "").replace("- ","")))
                 )
 
         if tier["table_type"] == "service_incentives":
-            for row in tier["data"] and row["incentive"]:
+            for row in tier["data"]:
+                if not row["incentive"]:
+                    continue
                 if (service_name in row["service"] or find_best_match(service_name, [row["service"]])):
                     incentives.append(
                         abs(float(row["incentive"].replace("%", "").replace("- ","")))
