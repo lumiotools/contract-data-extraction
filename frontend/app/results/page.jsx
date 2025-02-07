@@ -11,7 +11,7 @@ import { Loader2, Package, DollarSign, TrendingUp, MapPin } from "lucide-react"
 export default function ResultsPage() {
     const { addressDetails, parcelDetails, weeklyCharges, updateAddressDetails, updateParcelDetails, setWeeklyCharges } =
         useAnalysis()
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
     const [discountData, setDiscountData] = useState(null)
     const [error, setError] = useState(null)
     const [activateCalculateButton, setActivateCalculateButton] = useState(false)
@@ -66,7 +66,9 @@ export default function ResultsPage() {
             }
         }
 
-        fetchData()
+        setTimeout(()=>{
+            fetchData()
+        },1000)
     }, [])
 
     const handleAddressChange = (e) => {

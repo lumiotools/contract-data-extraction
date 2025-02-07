@@ -1,6 +1,6 @@
 "use client"
 
-import { createContext, useState, useContext } from "react"
+import { createContext, useState, useContext, useEffect } from "react"
 
 const AnalysisContext = createContext()
 
@@ -28,6 +28,16 @@ export const AnalysisProvider = ({ children }) => {
   const updateParcelDetails = (newDetails) => {
     setParcelDetails((prev) => ({ ...prev, ...newDetails }))
   }
+
+  useEffect(()=>{
+    const formData = JSON.parse(localStorage.getItem("formData"));
+
+    if(formData){
+      setAddressDetails(formData.addressDetails);
+      setParcelDetails(formData.parcelDetails);
+      setWeeklyCharges(formData.weeklyCharges);
+    }
+  },[])
 
   return (
     <AnalysisContext.Provider
