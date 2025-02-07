@@ -395,7 +395,10 @@ export default function ResultsPage() {
                                                 >
                                                     <div className="font-medium text-white">
                                                         {service.service_name}
-                                                        {service.is_over_discounted && <span className="font-bold text-amber-400">BEST</span>}
+                                                        {service.is_over_discounted && 
+                                                        <span className="bg-amber-400 ml-2 px-1 py-1 rounded">
+                                                            <span className="font-bold text-white">BEST</span>
+                                                        </span>}
                                                     </div>
                                                     <div className="text-gray-400">
                                                         {service.base_amount ? service.base_amount : "-"}
