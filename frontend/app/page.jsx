@@ -200,6 +200,7 @@ export default function HomePage() {
   const [isUploaded, setIsUploaded] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({});
+  const [error, setError] = useState("");
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
@@ -241,6 +242,7 @@ export default function HomePage() {
     e.preventDefault();
     if (!validateForm()) return;
 
+    setError(null);
     setLoading(true);
 
     // Save form data to localStorage
@@ -269,10 +271,13 @@ export default function HomePage() {
         localStorage.setItem("extractedData", JSON.stringify(data.data)); // Save API response to localStorage
         router.push("/results");
       } else {
-        console.error("Error: Extraction API failed", response.statusText);
+        const errorData = await response.json()
+        setError(errorData.message || "An error occurred")
+        console.error("Error: Extraction API failed", response.statusText)
       }
     } catch (error) {
-      console.error("Error:", error);
+      setError(error.message)
+      console.error("Error:", error)
     } finally {
       setLoading(false);
     }
@@ -306,11 +311,10 @@ export default function HomePage() {
                   <div className="relative">
                     <label
                       htmlFor="contractFile"
-                      className={`flex flex-col items-center justify-center w-full h-40 border-2 border-dashed rounded-xl cursor-pointer transition-colors ${
-                        isUploaded
-                          ? "border-green-500 bg-green-500/10"
-                          : "border-gray-600 hover:bg-[#2A2A36]"
-                      }`}
+                      className={`flex flex-col items-center justify-center w-full h-40 border-2 border-dashed rounded-xl cursor-pointer transition-colors ${isUploaded
+                        ? "border-green-500 bg-green-500/10"
+                        : "border-gray-600 hover:bg-[#2A2A36]"
+                        }`}
                     >
                       <div className="flex flex-col items-center justify-center py-4">
                         {isUploaded ? (
@@ -412,9 +416,8 @@ export default function HomePage() {
                       <div key={key} className="space-y-1">
                         <Input
                           name={key}
-                          placeholder={`${
-                            key.charAt(0).toUpperCase() + key.slice(1)
-                          } (${key === "weight" ? "lbs" : "inches"})`}
+                          placeholder={`${key.charAt(0).toUpperCase() + key.slice(1)
+                            } (${key === "weight" ? "lbs" : "inches"})`}
                           type="number"
                           value={value}
                           onChange={(e) => handleInputChange(e, "parcel")}
@@ -442,6 +445,11 @@ export default function HomePage() {
                   )}
                 </Button>
               </form>
+              {error && (
+                <div className="mb-6 bg-red-500/10 p-4 rounded-lg border border-red-500">
+                  <p className="text-red-500">{error}</p>
+                </div>
+              )}
             </Card>
 
             {/* Feature highlights */}
@@ -476,6 +484,8 @@ export default function HomePage() {
           </div>
         </div>
       </div>
+
+
     </div>
     //{" "}
     // </div>
