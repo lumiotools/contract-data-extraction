@@ -281,7 +281,7 @@ export default function ResultsPage() {
                                         disabled={!activateCalculateButton && loading}
                                         className={`w-full ${activateCalculateButton ? `bg-orange-500 hover:bg-orange-600 text-black` : `bg-gray-500 hover:bg-gray-500 text-white cursor-not-allowed`} text-lg font-semibold h-12 rounded-xl`}
                                     >
-                                        {activateCalculateButton && loading ? (
+                                        {loading ? (
                                             <>
                                                 <Loader2 className="w-4 h-4 mr-2 animate-spin" />
                                                 Calculating...
