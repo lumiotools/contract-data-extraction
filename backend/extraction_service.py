@@ -329,7 +329,7 @@ class ContractDataExtractionService:
                           {{
                               "tables": [
                                 {
-                                  "table_type": "zone_incentive",
+                                  "table_type": "zone_incentive_min_charge",
                                   "name": "string",
                                   "data": [
                                     {
@@ -346,7 +346,7 @@ class ContractDataExtractionService:
                           **How to Select**:
                             1. Match the table's structure to the schema fields.
                             2. Use appropriate schema based on the table's purpose:
-                               - Zone Adjustment → `zone_incentive`.                          
+                               - Zone Adjustment → `zone_incentive_min_charge`.                          
                           
                           """)
 
@@ -378,7 +378,7 @@ class ContractDataExtractionService:
                           {{
                               "tables": [
                                 {
-                                  "table_type": "zone_incentive",
+                                  "table_type": "zone_incentive_min_charge",
                                   "name": "string",
                                   "data": [
                                     {
@@ -395,7 +395,7 @@ class ContractDataExtractionService:
                           **How to Select**:
                             1. Match the table's structure to the schema fields.
                             2. Use appropriate schema based on the table's purpose:
-                               - Zone Adjustment → `zone_incentive`.                          
+                               - Zone Adjustment → `zone_incentive_min_charge`.                          
                           
                           """.replace("first",str(data_part1["extracted_tables_count"])))
 
@@ -550,11 +550,11 @@ class ContractDataExtractionService:
                                 "addresses": [
                                     {
                                         "name": "string",
-                                        "street1": "string",
+                                        "street": "string",
                                         "city": "string",
-                                        "state": "string",
-                                        "zip": "string",
-                                        "country": "US"
+                                        "stateCode": "string",
+                                        "zipCode": "string",
+                                        "countryCode": "US"
                                     }
                                 ]
                         }
@@ -564,7 +564,7 @@ class ContractDataExtractionService:
         
         try:
             data = json.loads(response.text.replace("```json\n", "").replace("\n```", ""))
-            return data["address"]
+            return data["addresses"][0]
         except:
             return None
 
@@ -625,8 +625,6 @@ class ContractDataExtractionService:
           extracted_service_min_per_zone_base_rate_adjustment_table_future = executor.submit(cls.extract_service_min_per_zone_base_rate_adjustment_table, chat)
           extracted_additional_handling_charge_table_future = executor.submit(cls.extract_additional_handling_charge_table, chat)
           extracted_electronic_pld_bonus_table_future = executor.submit(cls.extract_electronic_pld_bonus_table, chat)
-          extracted_address_future = executor.submit(cls.extract_address, chat)
-          extracted_contract_type_future = executor.submit(cls.extract_contract_type, chat)
           
           extracted_weight_zone_incentives_tables = extracted_weight_zone_incentives_tables_future.result()
           extracted_service_incentive_tables = extracted_service_incentive_tables_future.result()
@@ -635,6 +633,11 @@ class ContractDataExtractionService:
           extracted_service_min_per_zone_base_rate_adjustment_table = extracted_service_min_per_zone_base_rate_adjustment_table_future.result()
           extracted_additional_handling_charge_table = extracted_additional_handling_charge_table_future.result()
           extracted_electronic_pld_bonus_table = extracted_electronic_pld_bonus_table_future.result()
+          
+        with ThreadPoolExecutor() as executor:
+          extracted_address_future = executor.submit(cls.extract_address, chat)
+          extracted_contract_type_future = executor.submit(cls.extract_contract_type, chat)
+          
           extracted_address = extracted_address_future.result()
           extracted_contract_type = extracted_contract_type_future.result()
         
@@ -646,6 +649,8 @@ class ContractDataExtractionService:
         tables.extend(extracted_service_min_per_zone_base_rate_adjustment_table)
         tables.extend(extracted_additional_handling_charge_table)
         tables.extend(extracted_electronic_pld_bonus_table)
+        
+        print("Address: ", extracted_address)
         return {
           "tables": tables,
           "address": extracted_address,

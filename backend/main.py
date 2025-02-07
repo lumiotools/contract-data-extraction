@@ -110,9 +110,9 @@ def get_portfolio_tier_incentive(table_data, weekly_price: float):
                     if min_band <= weekly_price <= max_band:
                         applicable_services.append({
                             "service": entry["service"],
-                            "incentive": float(entry["incentive"].replace("%", ""))
+                            "incentive": float(entry["incentive"].replace("%", "").replace("- ",""))
                         })
-                        # applicable_services[entry["service"]] = float(entry["incentive"].replace("%", ""))
+                        # applicable_services[entry["service"]] = float(entry["incentive"].replace("%", "").replace("- ",""))
 
     return applicable_services
 
@@ -120,32 +120,32 @@ def get_portfolio_tier_incentive(table_data, weekly_price: float):
 def get_incentive_off_executive(table_data, service_name: str, weekly_price: float):
     incentives = []
     for tier in table_data["tables"]:
-        if tier["table_type"] == "weight_zone_incentive" and (service_name in tier["name"] or find_best_match(service_name, [tier["name"]])):
+        if tier["table_type"] == "weight_zone_incentive" and tier.get("name", None) and (service_name in tier["name"] or find_best_match(service_name, [tier["name"]])):
             for row in tier["data"]:
                 incentives.append(
-                    abs(float(row["incentive"].replace("%", "")))
+                    abs(float(row["incentive"].replace("%", "").replace("- ","")))
                 )
 
-        if tier["table_type"] == "zone_bands_incentive" and (service_name in tier["name"] or find_best_match(service_name, [tier["name"]])):
+        if tier["table_type"] == "zone_bands_incentive" and tier.get("name", None) and (service_name in tier["name"] or find_best_match(service_name, [tier["name"]])):
             for row in tier["data"]:
                 min_band, max_band = parse_band(row["band"])
                 if min_band is not None and max_band is not None:
                     if min_band <= weekly_price <= max_band:
                         incentives.append(
-                            abs(float(row["incentive"].replace("%", "")))
+                            abs(float(row["incentive"].replace("%", "").replace("- ","")))
                         )
-
-        if tier["table_type"] == "zone_incentive" and (service_name in tier["name"] or find_best_match(service_name, [tier["name"]])):
+        
+        if tier["table_type"] == "zone_incentive" and tier.get("name", None) and (service_name in tier["name"] or find_best_match(service_name, [tier["name"]])):
             for row in tier["data"]:
                 incentives.append(
-                    abs(float(row["incentive"].replace("%", "")))
+                    abs(float(row["incentive"].replace("%", "").replace("- ","")))
                 )
 
         if tier["table_type"] == "service_incentives":
             for row in tier["data"]:
                 if (service_name in row["service"] or find_best_match(service_name, [row["service"]])):
                     incentives.append(
-                        abs(float(row["incentive"].replace("%", "")))
+                        abs(float(row["incentive"].replace("%", "").replace("- ","")))
                     )
 
     return sum(incentives) / len(incentives) if incentives else 0
@@ -154,17 +154,17 @@ def get_incentive_off_executive(table_data, service_name: str, weekly_price: flo
 def get_maximum_possible_discount(table_data, service_name: str):
     incentives = []
     for tier in table_data["tables"]:
-        if tier["table_type"] == "zone_incentive" and (service_name in tier["name"] or find_best_match(service_name, [tier["name"]])):
+        if tier["table_type"] == "zone_incentive_min_charge" and tier.get("name", None) and (service_name in tier["name"] or find_best_match(service_name, [tier["name"]])):
             for row in tier["data"]:
                 incentives.append(
-                    abs(float(row["incentive"].replace("%", "")))
+                    abs(float(row["incentive"].replace("%", "").replace("- ","")))
                 )
         if tier["table_type"] == "service_min_per_zone_base_rate_adjustment":
             for row in tier["data"]:
                 print("min", row["service"])
                 if (service_name in row["service"] or find_best_match(service_name, [row["service"]])):
                     incentives.append(
-                        abs(float(row["incentive"].replace("%", "")))
+                        abs(float(row["incentive"].replace("%", "").replace("- ","")))
                     )
 
     maximum_possible_discount = max(incentives) if incentives else 100
@@ -188,12 +188,15 @@ async def calculate_discount(input_data: DiscountInput):
     print(f"Parcel: {parcel.length}x{parcel.width}x{parcel.height} {parcel.weight} lbs")
     print(f"Contract Type: {contract_type}")
     print(f"Number of tables in input: {len(table_data['tables'])}")
+    
+    if not destination_address.zip or not start_address.zip:
+        return JSONResponse(content={"success": False, "message": "Invalid Address"}, status_code=400)
 
     # Step 1: Get Service Rates (fetch from UPS API)
     if contract_type == "ups":
-        rates = APIRates.get_ups_rates(start_address, destination_address, parcel)
+        rates = APIRates.get_ups_rates(destination_address, start_address, parcel)
     else:
-        rates = APIRates.get_fedex_rates(start_address, destination_address, parcel)
+        rates = APIRates.get_fedex_rates(destination_address, start_address, parcel)
 
     # Print the API response for debugging
     print("Rates API Response:", rates)
@@ -242,7 +245,7 @@ async def calculate_discount(input_data: DiscountInput):
 
         discounts.append({
             "service_name": service_name,
-            "service_discount": final_discount,
+            "service_discount": maximum_possible_discount if is_over_discounted else final_discount,
             "is_over_discounted": is_over_discounted,
             "base_amount": service_amount,
             "final_amount": final_amount

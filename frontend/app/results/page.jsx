@@ -26,11 +26,11 @@ export default function ResultsPage() {
                 const apiData = {
                     weekly_price: Number.parseFloat(weeklyCharges),
                     start_address: {
-                        street: "UPS HQ",
-                        city: "Atlanta",
-                        state: "GA",
-                        zip: "30328",
-                        country: "USA",
+                        street: extractedData?.source_address?.street || "",
+                        city: extractedData?.source_address?.city || "",
+                        state:  extractedData?.source_address?.stateCode || "",
+                        zip: extractedData?.source_address?.zipCode || "",
+                        country: extractedData?.source_address?.countryCode || "",
                     },
                     destination_address: {
                         street: addressDetails.street,
@@ -92,11 +92,11 @@ export default function ResultsPage() {
             const apiData = {
                 weekly_price: Number.parseFloat(weeklyCharges),
                 start_address: {
-                    street: "UPS HQ",
-                    city: "Atlanta",
-                    state: "GA",
-                    zip: "30328",
-                    country: "USA",
+                    street: extractedData?.source_address?.street || "",
+                    city: extractedData?.source_address?.city || "",
+                    state:  extractedData?.source_address?.stateCode || "",
+                    zip: extractedData?.source_address?.zipCode || "",
+                    country: extractedData?.source_address?.countryCode || "",
                 },
                 destination_address: {
                     street: addressDetails.street,
