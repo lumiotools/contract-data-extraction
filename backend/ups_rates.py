@@ -24,7 +24,7 @@ def download_zone_file(origin_zip: str) -> str:
     Download zone file using exact headers from successful curl request
     """
     origin_prefix = origin_zip[:3]
-    zone_url = f"https://www.ups.com/media/us/currentrates/zone-csv/{origin_prefix}.xls"
+    zone_url = f"https://ups.com/media/us/currentrates/zone-csv/{origin_prefix}.xls"
     
     print(f"\nDownloading zone file for prefix {origin_prefix}")
 

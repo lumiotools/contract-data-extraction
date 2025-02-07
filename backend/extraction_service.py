@@ -197,7 +197,7 @@ class ContractDataExtractionService:
         response = cls.rate_limited_call(chat.send_message, """
                             Extract Portfolio Tier Incentive Table from the attached contract in json format.
                             
-                            Extract All 38 Service(s) for First 2 Weekly Charges Bands only (ie, 76 data entries total).
+                            Extract All 38 Service(s) for First 2 ("0.01 - 19,429.99", "19,430.00 - 25,904.99") Weekly Charges Bands only (ie, 76 data entries total).
                             
                             Use the following schemas to structure output.
                             
@@ -212,7 +212,7 @@ class ContractDataExtractionService:
                                     {
                                       "service": "string", // Name of the service (e.g., "UPS Worldwide Express - Export - Document - Prepaid")
                                       "land/zone": "string", // Land or Zone (e.g., "ALL", "403", "693", ...)
-                                      "band": "string", // Band Range (e.g., "0.01 - 19,429.99", ...)
+                                      "band": "string", // Band Range (e.g., "0.01 - 19,429.99", "19,430.00 - 25,904.99", ...)
                                       "incentive": "percentage" // Discount percentage (e.g., "18.00%")
                                     }
                                   ]
@@ -236,7 +236,7 @@ class ContractDataExtractionService:
         response = cls.rate_limited_call(chat.send_message, """
                             Extract Portfolio Tier Incentive Table from the attached contract in json format.
                             
-                            Extract All 38 Service(s) for Next 2 Weekly Charges Bands only (ie, 76 data entries total).
+                            Extract All 38 Service(s) for Next 2 ("25,905.00 - 37,779.99", "37,780.00 - 43,174.99") Weekly Charges Bands only (ie, 76 data entries total).
                             
                             Use the following schemas to structure output.
                             
@@ -251,7 +251,7 @@ class ContractDataExtractionService:
                                     {
                                       "service": "string", // Name of the service (e.g., "UPS Worldwide Express - Export - Document - Prepaid")
                                       "land/zone": "string", // Land or Zone (e.g., "ALL", "403", "693", ...)
-                                      "band": "string", // Band Range (e.g., "0.01 - 19,429.99", ...)
+                                      "band": "string", // Band Range (e.g., "25,905.00 - 37,779.99", "37,780.00 - 43,174.99", ...)
                                       "incentive": "percentage" // Discount percentage (e.g., "18.00%")
                                     }
                                   ]
@@ -273,7 +273,7 @@ class ContractDataExtractionService:
         response = cls.rate_limited_call(chat.send_message, """
                             Extract Portfolio Tier Incentive Table from the attached contract in json format.
                             
-                            Extract All 38 Service(s) for Next 2 Weekly Charges Bands only (ie, 76 data entries total).
+                            Extract All 38 Service(s) for Next 2 ("43,175.00 - 48,569.99", "48,570.00 and up") Weekly Charges Bands only (ie, 76 data entries total).
                             
                             Use the following schemas to structure output.
                             
@@ -288,7 +288,7 @@ class ContractDataExtractionService:
                                     {
                                       "service": "string", // Name of the service (e.g., "UPS Worldwide Express - Export - Document - Prepaid")
                                       "land/zone": "string", // Land or Zone (e.g., "ALL", "403", "693", ...)
-                                      "band": "string", // Band Range (e.g., "0.01 - 19,429.99", ...)
+                                      "band": "string", // Band Range (e.g., "43,175.00 - 48,569.99", "48,570.00 and up", ...)
                                       "incentive": "percentage" // Discount percentage (e.g., "18.00%")
                                     }
                                   ]
@@ -429,6 +429,8 @@ class ContractDataExtractionService:
                             
                             Target Only Tabular Data.
                             Skip the table if it has even a single missing header from above.
+                            
+                            There are 2 such tables in the contract, extract both.
                             
                             Use the following schemas to structure output.
                             

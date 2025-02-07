@@ -79,7 +79,12 @@ def find_best_match(service_name, service_list):
 
 def parse_band(band):
     """Parses the incentive band to get min and max range as floats."""
-    band = band.replace(",", "")  # Remove commas
+    band = band.replace(",", "").replace("\n", " ").replace("  ", " ")  # Remove commas and extra spaces
+    if "and up" in band:
+        try:
+            return float(band.split(" ")[0]), float("inf")
+        except ValueError:
+            pass
     parts = band.split(" - ")
     if len(parts) == 2:
         try:
@@ -154,6 +159,13 @@ def get_maximum_possible_discount(table_data, service_name: str):
                 incentives.append(
                     abs(float(row["incentive"].replace("%", "")))
                 )
+        if tier["table_type"] == "service_min_per_zone_base_rate_adjustment":
+            for row in tier["data"]:
+                print("min", row["service"])
+                if (service_name in row["service"] or find_best_match(service_name, [row["service"]])):
+                    incentives.append(
+                        abs(float(row["incentive"].replace("%", "")))
+                    )
 
     maximum_possible_discount = max(incentives) if incentives else 100
     return maximum_possible_discount if maximum_possible_discount else 100
@@ -175,7 +187,7 @@ async def calculate_discount(input_data: DiscountInput):
     print(f"Destination Address: {destination_address.street}, {destination_address.city}, {destination_address.state} {destination_address.zip}, {destination_address.country}")
     print(f"Parcel: {parcel.length}x{parcel.width}x{parcel.height} {parcel.weight} lbs")
     print(f"Contract Type: {contract_type}")
-    print(f"Number of tables in input: {len(table_data)}")
+    print(f"Number of tables in input: {len(table_data['tables'])}")
 
     # Step 1: Get Service Rates (fetch from UPS API)
     if contract_type == "ups":
@@ -186,8 +198,7 @@ async def calculate_discount(input_data: DiscountInput):
     # Print the API response for debugging
     print("Rates API Response:", rates)
 
-    portfolio_incentives = get_portfolio_tier_incentive(
-        table_data, weekly_price)
+    portfolio_incentives = get_portfolio_tier_incentive(table_data, weekly_price)
 
     discounts = []
 
@@ -207,11 +218,11 @@ async def calculate_discount(input_data: DiscountInput):
             applied_discount_rate = round(
                 service_amount * abs(final_discount) / 100, 2)
 
-        # print("\nservice_name", service_name)
-        # print("service_discount", service_discount)
-        # print("incentive_off_executive", incentive_off_executive)
-        # print("final_discount", final_discount)
-        # print("service_amount", service_amount)
+        print("\nservice_name", service_name)
+        print("service_discount", service_discount)
+        print("incentive_off_executive", incentive_off_executive)
+        print("final_discount", final_discount)
+        print("service_amount", service_amount)
         # print("applied_discount_rate", applied_discount_rate)
 
         maximum_possible_discount = get_maximum_possible_discount(
