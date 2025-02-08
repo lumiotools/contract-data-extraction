@@ -3,6 +3,12 @@ import pandas as pd
 from typing import Dict, Optional
 import requests
 import os
+from pathlib import Path
+import datetime
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
+import urllib3
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)  # Suppress SSL warnings
 
 @dataclass
 class Address:
@@ -19,80 +25,137 @@ class Parcel:
     height: float
     weight: float
 
-def download_zone_file(origin_zip: str) -> str:
-    """
-    Download zone file using exact headers from successful curl request
-    """
+def ensure_constants_dir():
+    """Ensure the constants directory exists"""
+    current_dir = Path(os.path.dirname(os.path.abspath(__file__)))
+    constants_dir = current_dir / 'constants'
+    constants_dir.mkdir(exist_ok=True)
+    return constants_dir
+
+def download_zone_file(origin_zip: str) -> tuple[str, bool]:
+    """Download zone file with proper path handling and fallback"""
+    constants_dir = ensure_constants_dir()
+    fallback_files = [
+        constants_dir / 'fallback_190.xls',
+        constants_dir / '190.xls'
+    ]
+    
     origin_prefix = origin_zip[:3]
-    zone_url = f"https://ups.com/media/us/currentrates/zone-csv/{origin_prefix}.xls"
+    urls = [
+        f"https://www.ups.com/media/us/currentrates/zone-csv/{origin_prefix}.xls",
+        f"https://ups.com/media/us/currentrates/zone-csv/{origin_prefix}.xls"
+    ]
     
-    print(f"\nDownloading zone file for prefix {origin_prefix}")
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
+        "Accept": "*/*",
+        "Accept-Encoding": "gzip, deflate, br",
+        "Connection": "keep-alive",
+        "Cookie": "",
+    }
 
-    try:
-        response = requests.get(
-            zone_url, 
-            headers={
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
-                "Accept": "*/*",
-                "Accept-Encoding": "gzip, deflate, br",
-                "Connection": "keep-alive",
-                "Cookie": "",
-                },
-            timeout=30
-        )
-        
-        if response.status_code == 200:
-            file_name = f"zone_{origin_prefix}.xls"
-            with open(file_name, 'wb') as f:
-                f.write(response.content)
-            print(f"✓ Successfully downloaded zone file: {file_name}")
-            print(f"✓ File size: {len(response.content)} bytes")
-            return file_name
-        else:
-            print(f"✗ Failed to download zone file. Status code: {response.status_code}")
-            return "backend/constants/190.xls"
+    for url in urls:
+        print(f"\nAttempting to download zone file from: {url}")
+        try:
+            session = requests.Session()
+            retries = Retry(
+                total=3,
+                backoff_factor=1,
+                status_forcelist=[500, 502, 503, 504]
+            )
+            session.mount('https://', HTTPAdapter(max_retries=retries))
             
-    except Exception as e:
-        print(f"✗ Error downloading zone file: {str(e)}")
-        return "backend/constants/190.xls"
+            response = session.get(
+                url,
+                headers=headers,
+                timeout=30,
+                verify=False
+            )
+            
+            if response.status_code == 200 and len(response.content) > 0:
+                timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+                file_name = constants_dir / f"zone_{origin_prefix}_{timestamp}.xls"
+                
+                with open(file_name, 'wb') as f:
+                    f.write(response.content)
+                print(f"✓ Successfully downloaded zone file: {file_name}")
+                return str(file_name), True
+            else:
+                print(f"✗ Download failed with status: {response.status_code}")
+                
+        except Exception as e:
+            print(f"✗ Error: {str(e)}")
+            continue
 
-def download_rates_file() -> str:
-    rates_url = "https://www.ups.com/assets/resources/webcontent/en_US/daily_rates.xlsx"
+    for fallback_file in fallback_files:
+        if fallback_file.exists():
+            print(f"Using fallback file: {fallback_file}")
+            return str(fallback_file), False
+            
+    print("❌ No fallback files found!")
+    return str(fallback_files[0]), False
+
+def download_rates_file() -> tuple[str, bool]:
+    """Download rates file with proper path handling and fallback"""
+    constants_dir = ensure_constants_dir()
+    fallback_files = [
+        constants_dir / 'fallback_daily_rates.xlsx',
+        constants_dir / 'daily_rates.xlsx'
+    ]
     
-    print("\nDownloading rates file")
+    url = "https://www.ups.com/assets/resources/webcontent/en_US/daily_rates.xlsx"
+    
+    print("\nAttempting to download rates file")
+    print(f"URL: {url}")
+    
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
+        "Accept": "*/*",
+        "Accept-Encoding": "gzip, deflate, br",
+        "Connection": "keep-alive",
+        "Cookie": "",
+    }
     
     try:
-        response = requests.get(
-            rates_url, 
-            headers={
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
-                "Accept": "*/*",
-                "Accept-Encoding": "gzip, deflate, br",
-                "Connection": "keep-alive",
-                "Cookie": "",
-                },
-            timeout=30
+        session = requests.Session()
+        retries = Retry(
+            total=3,
+            backoff_factor=1,
+            status_forcelist=[500, 502, 503, 504]
+        )
+        session.mount('https://', HTTPAdapter(max_retries=retries))
+        
+        response = session.get(
+            url,
+            headers=headers,
+            timeout=30,
+            verify=False
         )
         
-        if response.status_code == 200:
-            file_name = "daily_rates.xlsx"
+        if response.status_code == 200 and len(response.content) > 0:
+            timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+            file_name = constants_dir / f"daily_rates_{timestamp}.xlsx"
+            
             with open(file_name, 'wb') as f:
                 f.write(response.content)
             print(f"✓ Successfully downloaded rates file: {file_name}")
-            print(f"✓ File size: {len(response.content)} bytes")
-            return file_name
+            return str(file_name), True
         else:
-            print(f"✗ Failed to download rates file. Status code: {response.status_code}")
-            return None
+            print(f"✗ Failed with status: {response.status_code}")
             
     except Exception as e:
-        print(f"✗ Error downloading rates file: {str(e)}")
-        return None
+        print(f"✗ Error: {str(e)}")
+    
+    for fallback_file in fallback_files:
+        if fallback_file.exists():
+            print(f"Using fallback file: {fallback_file}")
+            return str(fallback_file), False
+            
+    print("❌ No fallback files found!")
+    return str(fallback_files[0]), False
 
 def get_service_sheet_name(service: str) -> str:
-    """
-    Map zone file service names to rate file sheet names
-    """
+    """Map zone file service names to rate file sheet names"""
     mapping = {
         'Ground': 'UPS Ground',
         '3 Day Select': 'UPS 3DA Select',
@@ -104,25 +167,20 @@ def get_service_sheet_name(service: str) -> str:
     return mapping.get(service)
 
 def get_all_service_rates(zone_file: str, rates_file: str, dest_zip: str, weight: float) -> Dict[str, Optional[float]]:
-    """
-    Get rates for all available services based on destination ZIP and weight
-    """
+    """Get rates for all available services based on destination ZIP and weight"""
     print(f"\n[CALCULATING RATES FOR ALL SERVICES]")
     print(f"Destination ZIP: {dest_zip}")
     print(f"Package Weight: {weight} lbs")
     
     try:
-        # Read the zone file to get available services and their zones
         zone_df = pd.read_excel(zone_file, skiprows=8)
         dest_prefix = dest_zip[:3]
         
-        # Remove any unnamed columns
         zone_df = zone_df[[col for col in zone_df.columns if not col.startswith('Unnamed')]]
         
         print("\nZone file columns found:")
         print(zone_df.columns.tolist())
         
-        # Get the row for our destination ZIP
         zone_row = zone_df[zone_df['Dest. ZIP'] == dest_prefix]
         if zone_row.empty:
             print(f"✗ No zones found for destination ZIP prefix {dest_prefix}")
@@ -131,7 +189,6 @@ def get_all_service_rates(zone_file: str, rates_file: str, dest_zip: str, weight
         print("\nZones found for each service:")
         rates = []
         
-        # Get zones for each service from all columns except 'Dest. ZIP'
         available_services = [col for col in zone_df.columns if col != 'Dest. ZIP']
         
         for service in available_services:
@@ -156,15 +213,11 @@ def get_all_service_rates(zone_file: str, rates_file: str, dest_zip: str, weight
                 continue
                 
             try:
-                # Read rates file
                 rate_df = pd.read_excel(rates_file, sheet_name=sheet_name, header=None)
-                
-                # Find the row with "Zones" to identify the zone columns
                 zones_row = rate_df[rate_df[1] == "Zones"].iloc[0]
                 
-                # Get the column index for our zone
                 zone_col = None
-                zone_value = int(str(zone).split('.')[0])  # Handle decimal zones
+                zone_value = int(str(zone).split('.')[0])
                 for col in range(len(zones_row)):
                     if zones_row[col] == zone_value:
                         zone_col = col
@@ -178,11 +231,9 @@ def get_all_service_rates(zone_file: str, rates_file: str, dest_zip: str, weight
                     })
                     continue
                 
-                # Convert weights to numeric, handling the "Lbs." text
                 rate_df[1] = rate_df[1].astype(str).str.replace(' Lbs.', '').replace('', '0')
                 rate_df[1] = pd.to_numeric(rate_df[1], errors='coerce')
                 
-                # Filter rows with valid weights
                 rate_rows = rate_df[rate_df[1].notna() & (rate_df[1] <= weight)].sort_values(1, ascending=False)
                 
                 if rate_rows.empty:
@@ -212,13 +263,9 @@ def get_all_service_rates(zone_file: str, rates_file: str, dest_zip: str, weight
     except Exception as e:
         print(f"✗ Error calculating service rates: {str(e)}")
         return {}
-    
 
-    
 def calculate_shipping(origin: Address, destination: Address, parcel: Parcel) -> Dict[str, Optional[float]]:
-    """
-    Calculate shipping rates for all available services
-    """
+    """Calculate shipping rates for all available services"""
     print("\n[STARTING SHIPPING CALCULATION]")
     print("-" * 50)
     print("Origin Address:")
@@ -239,34 +286,39 @@ def calculate_shipping(origin: Address, destination: Address, parcel: Parcel) ->
     print("-" * 50)
     
     # Download required files
-    zone_file = download_zone_file(origin.zip)
-    rates_file = download_rates_file()
+    zone_file, zone_is_downloaded = download_zone_file(origin.zip)
+    rates_file, rates_is_downloaded = download_rates_file()
+    
+    downloaded_files = []
+    if zone_is_downloaded:
+        downloaded_files.append(zone_file)
+    if rates_is_downloaded:
+        downloaded_files.append(rates_file)
     
     try:
         if zone_file and rates_file:
             # Get rates for all services
             rates = get_all_service_rates(zone_file, rates_file, destination.zip, parcel.weight)
-            
-            # Clean up downloaded files
-            os.remove(zone_file)
-            os.remove(rates_file)
-            
             return rates
             
     except Exception as e:
         print(f"\n✗ Error in shipping calculation: {str(e)}")
+        return {}
         
     finally:
-        # Cleanup in case of any errors
-        if 'zone_file' in locals() and os.path.exists(zone_file):
-            os.remove(zone_file)
-        if 'rates_file' in locals() and rates_file and os.path.exists(rates_file):
-            os.remove(rates_file)
+        # Only cleanup downloaded files, not fallback files
+        for file in downloaded_files:
+            if os.path.exists(file):
+                try:
+                    os.remove(file)
+                    print(f"Cleaned up downloaded file: {file}")
+                except Exception as e:
+                    print(f"Error cleaning up file {file}: {str(e)}")
     
     return {}
 
+# Example usage:
 # if __name__ == "__main__":
-#     # Example usage
 #     origin = Address(
 #         street="465 DEVON PARK DR",
 #         city="WAYNE",
@@ -298,10 +350,10 @@ def calculate_shipping(origin: Address, destination: Address, parcel: Parcel) ->
 #     if rates:
 #         print("Available Services and Rates:")
 #         for rate in rates:
-#             if rate is not None:
-#                 print(f"{rate["serviceName"]}: ${rate["amount"]:.2f}")
+#             if rate["amount"] is not None:
+#                 print(f"{rate['serviceName']}: ${rate['amount']:.2f}")
 #             else:
-#                 print(f"{rate["serviceName"]}: Not available")
+#                 print(f"{rate['serviceName']}: Not available")
 #     else:
 #         print("✗ Error calculating shipping rates")
 #     print("-" * 50)

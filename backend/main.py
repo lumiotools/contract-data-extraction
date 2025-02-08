@@ -101,9 +101,10 @@ def parse_band(band):
 
 # Helper function to get portfolio tier incentive based on weekly price
 def get_portfolio_tier_incentive(table_data, weekly_price: float):
+    applicable_services = []
     for tier in table_data["tables"]:
         if tier["table_type"] == "portfolio_tier_incentives":
-            applicable_services = []
+            
             for entry in tier["data"]:
                 min_band, max_band = parse_band(entry["band"])
                 if min_band is not None and max_band is not None:
