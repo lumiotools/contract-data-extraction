@@ -42,8 +42,7 @@ def download_zone_file(origin_zip: str) -> tuple[str, bool]:
     
     origin_prefix = origin_zip[:3]
     urls = [
-        f"https://www.ups.com/media/us/currentrates/zone-csv/{origin_prefix}.xls",
-        f"https://ups.com/media/us/currentrates/zone-csv/{origin_prefix}.xls"
+        f"https://www.ups.com/media/us/currentrates/zone-csv/{origin_prefix}.xls"
     ]
     
     headers = {
