@@ -163,8 +163,8 @@ export default function ResultsPage() {
   return (
     <div className="min-h-screen bg-[#1C1C28] flex items-center justify-center w-full">
       {/* <div className="w-full max-w-6xl mx-auto px-4 py-8"> */}
-      <div className="relative w-full bg-[#23232F]/80 backdrop-blur-xl overflow-hidden ">
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-br from-purple-500/20 to-orange-500/20 blur-3xl rounded-full -translate-y-1/2 translate-x-1/2" />
+      <div className="relative w-full min-h-screen bg-[#23232F]/80 backdrop-blur-xl overflow-hidden flex flex-col justify-center items-center">
+        <div className="absolute top-0 right-0 w-[800px] min-h-screen bg-gradient-to-br from-purple-500/20 to-orange-500/20 blur-3xl rounded-full -translate-y-1/2 translate-x-1/2 " />
         <div className="relative z-10 p-8 lg:p-12">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-8">
