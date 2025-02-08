@@ -170,6 +170,8 @@ def get_maximum_possible_discount(table_data, service_name: str):
                 )
         if tier["table_type"] == "service_min_per_zone_base_rate_adjustment":
             for row in tier["data"]:
+                if not row["incentive"]:
+                    continue
                 print("min", row["service"])
                 if (service_name in row["service"] or find_best_match(service_name, [row["service"]])):
                     incentives.append(
