@@ -223,10 +223,8 @@ class ContractDataExtractionService:
         response = cls.rate_limited_call(chat.send_message, """
             Extract the Portfolio Tier Incentive Table from the attached contract in JSON format.
             
-            Extract all 38 services for the first 2 bands ("0.01 - 19,429.99" and "19,430.00 - 25,904.99")
-            – total 76 data entries.
+            Extract all available service(s) for the first 2 bands ("0.01 - 19,429.99" and "19,430.00 - 25,904.99").
             
-            **# Updated Prompt:**
             For each row, ensure the "incentive" value is returned as a numeric percentage string (e.g. "18.00%"). 
             If the discount is not numeric, output null.
             
@@ -258,10 +256,8 @@ class ContractDataExtractionService:
         response = cls.rate_limited_call(chat.send_message, """
             Extract the Portfolio Tier Incentive Table from the attached contract in JSON format.
             
-            Extract all 38 services for the next 2 bands ("25,905.00 - 37,779.99" and "37,780.00 - 43,174.99")
-            – total 76 data entries.
-            
-            **# Updated Prompt:**
+            Extract all available service(s) for the next 2 bands ("25,905.00 - 37,779.99" and "37,780.00 - 43,174.99").            
+
             For each row, return the "incentive" as a numeric percentage string (e.g. "18.00%"). 
             If not numeric, output null.
             
@@ -293,10 +289,8 @@ class ContractDataExtractionService:
         response = cls.rate_limited_call(chat.send_message, """
             Extract the Portfolio Tier Incentive Table from the attached contract in JSON format.
             
-            Extract all 38 services for the final 2 bands ("43,175.00 - 48,569.99" and "48,570.00 and up")
-            – total 76 data entries.
+            Extract all available service(s) for the final 2 bands ("43,175.00 - 48,569.99" and "48,570.00 and up").
             
-            **# Updated Prompt:**
             For each row, return the "incentive" strictly as a numeric percentage string (e.g. "18.00%"). 
             If the value is non-numeric, output null.
             
