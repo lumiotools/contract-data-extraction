@@ -62,7 +62,7 @@ def download_zone_file(origin_zip: str) -> tuple[str, bool]:
                 backoff_factor=1,
                 status_forcelist=[500, 502, 503, 504]
             )
-            session.mount('https://', HTTPAdapter(max_retries=retries))
+            session.mount('https://', HTTPAdapter(max_retries=0))
             
             response = session.get(
                 url,
