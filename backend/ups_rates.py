@@ -68,7 +68,7 @@ def download_zone_file(origin_zip: str) -> tuple[str, bool]:
             response = session.get(
                 url,
                 headers=headers,
-                timeout=30,
+                timeout=15,
                 verify=False
             )
             
@@ -128,7 +128,7 @@ def download_rates_file() -> tuple[str, bool]:
         response = session.get(
             url,
             headers=headers,
-            timeout=30,
+            timeout=15,
             verify=False
         )
         
