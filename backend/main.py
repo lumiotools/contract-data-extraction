@@ -204,7 +204,7 @@ def get_maximum_possible_discount(table_data, service_name: str):
                 incentives.append(incentive_float)
         if tier.get("table_type") == "service_min_per_zone_base_rate_adjustment":
             for row in tier.get("data", []):
-                incentive_value = row.get("incentive")
+                incentive_value = row.get("adjustment")
                 if not incentive_value:
                     continue
                 service_row = row.get("service", "")
@@ -215,7 +215,7 @@ def get_maximum_possible_discount(table_data, service_name: str):
                         continue
                     incentives.append(incentive_float)
     maximum_possible_discount = max(incentives) if incentives else 100
-    return maximum_possible_discount if maximum_possible_discount else 100
+    return 100 - maximum_possible_discount if maximum_possible_discount else 100
 
 
 @app.post("/calculate_discount")
