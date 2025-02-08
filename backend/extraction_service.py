@@ -322,92 +322,108 @@ class ContractDataExtractionService:
 
     @classmethod
     def extract_zone_incentives_tables(cls, chat: ChatSession):
-        response = cls.rate_limited_call(chat.send_message, """
-            Extract all tables in the attached contract in JSON format that correspond to Zone Adjustment Incentives.
-            These tables have the service name as the header, zones (e.g. "081", "082", "083", ...),
-            and incentive adjustment percentages.
-            
-            **# Updated Prompt:**
-            For each row, ensure that the "incentive" value is returned as a numeric percentage string (e.g. "-65.00%"). 
-            If not numeric, output null.
-            
-            Start with the first table.
-            Maximum table count is 10.
-            Also return the count of extracted and remaining tables.
-            
-            Use the following output schema:
-            {
-                "tables": [
-                  {
-                    "table_type": "zone_incentive_min_charge",
-                    "name": "string",
-                    "data": [
-                      {
-                        "zone": "string",
-                        "incentive": "percentage (numeric string, or null)"
-                      }
-                    ]
-                  }
-                ],
-                "extracted_tables_count": int,
-                "remaining_tables_count": int
-            }
-        """)
-        print(response.text.replace("```json\n", "").replace("\n```", ""))
-        try:
-            data_part1 = json.loads(response.text.replace("```json\n", "").replace("\n```", ""))
-        except:
-            return []
-        print("Data Part 7")
-        print("Extracted:", data_part1.get("extracted_tables_count"))
-        print("Remaining:", data_part1.get("remaining_tables_count"))
-        
-        response = cls.rate_limited_call(chat.send_message, (
-            """
-            Extract all tables in the attached contract in JSON format that correspond to Zone Adjustment Incentives.
-            These tables have the service name as the header, zones (e.g. "081", "082", "083", ...),
-            and incentive adjustment percentages.
-            
-            **# Updated Prompt:**
-            For each row, ensure that the "incentive" value is returned as a numeric percentage string (e.g. "-65.00%"). 
-            If not numeric, output null.
-            
-            Start with the first table.
-            Maximum table count is 10.
-            Also return the count of extracted and remaining tables.
-            
-            Use the following output schema:
-            {
-                "tables": [
-                  {
-                    "table_type": "zone_incentive_min_charge",
-                    "name": "string",
-                    "data": [
-                      {
-                        "zone": "string",
-                        "incentive": "percentage (numeric string, or null)"
-                      }
-                    ]
-                  }
-                ],
-                "extracted_tables_count": int,
-                "remaining_tables_count": int
-            }
-            """
-        ).replace("first", str(data_part1.get("extracted_tables_count", 0))))
-        print(response.text.replace("```json\n", "").replace("\n```", ""))
-        try:
-            data_part2 = json.loads(response.text.replace("```json\n", "").replace("\n```", ""))
-        except:
-            return data_part1.get("tables", [])
-        print("Data Part 8")
-        print("Extracted:", data_part2.get("extracted_tables_count"))
-        print("Remaining:", data_part2.get("remaining_tables_count"))
-        tables = []
-        tables.extend(data_part1.get("tables", []))
-        tables.extend(data_part2.get("tables", []))
-        return tables
+        def process_response(response_text, part_number):
+            print(response_text)
+            try:
+                data = json.loads(response_text.replace("```json\n", "").replace("\n```", ""))
+                print(f"Data Part {part_number}")
+                print(f"Extracted:", data.get("extracted_tables_count"))
+                print(f"Remaining:", data.get("remaining_tables_count"))
+                return data
+            except json.JSONDecodeError as e:
+                print(f"Error parsing JSON response: {str(e)}")
+                return None
 
+        def try_extract_batch(batch_start, max_retries=3):
+            for attempt in range(1, max_retries + 1):
+                prompt = f"""
+                You are processing zone adjustment incentive tables in batches.
+                Each batch should contain UP TO 10 COMPLETE TABLES. Try to fill each batch with 10 tables unless fewer remain.
+
+                Starting from table #{batch_start + 1}, extract the next batch of zone adjustment incentive tables from the contract.
+                These tables have:
+                - Service name as the header/name
+                - Zone codes (e.g. "081", "082", "083", etc.)
+                - Incentive adjustment percentages
+
+                Important batch processing rules:
+                1. Process exactly 10 tables if 10 or more tables remain
+                2. Process all remaining tables if fewer than 10 remain
+                3. Keep tables complete - don't split tables across batches
+                4. Count remaining tables AFTER this batch
+
+                Output requirements:
+                - Format incentive values as exact numeric percentage strings (e.g. "-65.00%")
+                - Use null for non-numeric incentive values
+                - Include exact zone codes as shown
+                - Provide accurate extracted_tables_count and remaining_tables_count
+                
+                Use this exact schema:
+                {{
+                    "tables": [
+                      {{
+                        "table_type": "zone_incentive_min_charge",
+                        "name": "string",
+                        "data": [
+                          {{
+                            "zone": "string",
+                            "incentive": "percentage (numeric string, or null)"
+                          }}
+                        ]
+                      }}
+                    ],
+                    "extracted_tables_count": int,  // Number of tables in THIS batch
+                    "remaining_tables_count": int   // Number of tables remaining AFTER this batch
+                }}
+                """
+                
+                print(f"Calling Gemini API, attempt {attempt}")
+                response = cls.rate_limited_call(chat.send_message, prompt)
+                
+                if not response.text.strip():
+                    print(f"Received empty or incomplete data on attempt {attempt}, retrying...")
+                    continue
+                    
+                try:
+                    data = process_response(response.text, batch_start)
+                    if data and data.get("tables"):
+                        return data
+                except Exception as e:
+                    print(f"Error processing response on attempt {attempt}: {str(e)}")
+                    
+            return None
+
+        # Start collecting all tables
+        all_tables = []
+        batch_start = 0
+        
+        while True:
+            batch_data = try_extract_batch(batch_start)
+            if not batch_data:
+                break
+                
+            current_tables = batch_data.get("tables", [])
+            remaining_count = batch_data.get("remaining_tables_count", 0)
+            extracted_count = batch_data.get("extracted_tables_count", 0)
+            
+            if not current_tables:
+                break
+                
+            all_tables.extend(current_tables)
+            print(f"\nBatch progress:")
+            print(f"- Tables in this batch: {len(current_tables)}")
+            print(f"- Total tables so far: {len(all_tables)}")
+            print(f"- Tables remaining: {remaining_count}")
+            
+            if remaining_count == 0:
+                break
+                
+            batch_start += len(current_tables)
+            
+        print(f"\nExtraction completed. Total tables extracted: {len(all_tables)}")
+        return all_tables
+    
+    
     @classmethod
     def extract_service_min_per_zone_base_rate_adjustment_table(cls, chat: ChatSession):
         response = cls.rate_limited_call(chat.send_message, """

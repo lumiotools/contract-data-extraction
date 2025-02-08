@@ -214,8 +214,8 @@ def get_maximum_possible_discount(table_data, service_name: str):
                     except ValueError:
                         continue
                     incentives.append(incentive_float)
-    maximum_possible_discount = max(incentives) if incentives else 100
-    return 100 - maximum_possible_discount if maximum_possible_discount else 100
+    maximum_possible_discount = max(incentives) if incentives else 0
+    return (100 - maximum_possible_discount) if maximum_possible_discount else 100
 
 
 @app.post("/calculate_discount")
