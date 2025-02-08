@@ -90,7 +90,7 @@ def parse_band(band):
             return float(band.split(" ")[0]), float("inf")
         except ValueError:
             pass
-    parts = band.split(" - ")
+    parts = band.split(" - ") if " - " in band else band.split("-")
     if len(parts) == 2:
         try:
             return float(parts[0]), float(parts[1])
