@@ -68,12 +68,16 @@ def find_best_match(service_name, service_list):
     for service in cleaned_service_list:
         if cleaned_service_name in service:
             matched_services.append(service_list[cleaned_service_list.index(service)])
+    # print("service name",service_name, "matched service",matched_services)
     if matched_services:
         return matched_services
+        
 
     best_match = difflib.get_close_matches(
-        cleaned_service_name, cleaned_service_list, n=1, cutoff=0.6)
-    return service_list[cleaned_service_list.index(best_match[0])] if best_match else None
+        cleaned_service_name, cleaned_service_list, n=1, cutoff=0.9)
+    abc= service_list[cleaned_service_list.index(best_match[0])] if best_match else None
+    # print("service name",service_name, "abc service",abc)
+    return abc
 
 
 def parse_band(band):
@@ -199,6 +203,7 @@ def get_maximum_possible_discount(table_data, service_name: str):
                     continue
                 try:
                     incentive_float = abs(float(incentive_value.replace("%", "").replace("- ", "")))
+                    # print("service name",tier["name"],"incentive float",incentive_float)
                 except ValueError:
                     continue
                 incentives.append(incentive_float)
@@ -211,6 +216,7 @@ def get_maximum_possible_discount(table_data, service_name: str):
                 if service_name in service_row or find_best_match(service_name, [service_row]):
                     try:
                         incentive_float = abs(float(incentive_value.replace("%", "").replace("- ", "")))
+                        print("service name",service_name,"incentive float 2",incentive_float)
                     except ValueError:
                         continue
                     incentives.append(incentive_float)
