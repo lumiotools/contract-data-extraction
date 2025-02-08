@@ -3,9 +3,12 @@ import { NextResponse } from "next/server";
 export async function GET(request, { params }) {
   const { zipCode } = await params;
   const origin_prefix = zipCode.slice(0, 3);
+  
   const response = await fetch(
     `https://www.ups.com/media/us/currentrates/zone-csv/${origin_prefix}.xls`
   );
+
+  console.log("Respons from UPS Zone CSV");
 
   if (!response.ok) {
     return NextResponse.json({ error: "File not found" }, { status: 404 });
