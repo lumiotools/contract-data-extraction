@@ -7,15 +7,42 @@ export async function GET(request, { params }) {
     `https://www.ups.com/media/us/currentrates/zone-csv/${origin_prefix}.xls`
   );
 
-  if (response.ok) {
-    const blob = await response.blob();
-    return new NextResponse(blob, {
-      headers: {
-        "Content-Type": "application/vnd.ms-excel",
-        "Content-Disposition": `attachment; filename=${origin_prefix}.xls`,
-      },
-    });
+  if (!response.ok) {
+    return NextResponse.json({ error: "File not found" }, { status: 404 });
   }
+  
+  const reader = response.body.getReader();
+  const stream = new ReadableStream({
+    start(controller) {
+      function push() {
+        reader.read().then(({ done, value }) => {
+          if (done) {
+            controller.close();
+            return;
+          }
+          controller.enqueue(value);
+          push();
+        });
+      }
+      push();
+    },
+  });
 
-  return NextResponse.json({ error: "File not found" }, { status: 404 });
+  return new NextResponse(stream, {
+    headers: {
+      "Content-Type": "application/vnd.ms-excel",
+      "Content-Disposition": `attachment; filename=${origin_prefix}.xls`,
+    },
+  });
+  //   if (response.ok) {
+  //     const blob = await response.blob();
+  //     return new NextResponse(blob, {
+  //       headers: {
+  //         "Content-Type": "application/vnd.ms-excel",
+  //         "Content-Disposition": `attachment; filename=${origin_prefix}.xls`,
+  //       },
+  //     });
+  //   }
+
+  //   return NextResponse.json({ error: "File not found" }, { status: 404 });
 }
