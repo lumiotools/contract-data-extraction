@@ -255,6 +255,8 @@ async def calculate_discount(input_data: DiscountInput):
     print("Rates API Response:", rates)
 
     portfolio_incentives = get_portfolio_tier_incentive(table_data, weekly_price)
+    if len(portfolio_incentives) == 0:
+        return JSONResponse(content={"success": False, "message": "Failed to find discounts"}, status_code=400)
     discounts = []
 
     for incentive in portfolio_incentives:
