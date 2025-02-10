@@ -1,179 +1,3 @@
-// "use client"
-
-// import { useState } from "react"
-// import { Button } from "@/components/ui/button"
-// import { Input } from "@/components/ui/input"
-// import { ArrowLeft, LoaderCircle, Calculator } from "lucide-react"
-// import DisplayTables from "@/components/display-tables"
-// import DiscountCalculator from "@/components/discount-calculator"
-// import { DUMMY_DATA } from "@/constants/dummyData"
-
-// const HomePage = () => {
-//   const [tables, setTables] = useState()
-//   const [loading, setLoading] = useState(false)
-//   const [file, setFile] = useState()
-//   const [showCalculator, setShowCalculator] = useState(false)
-
-//   const handlePdfUpload = async () => {
-//     setLoading(true)
-//     try {
-//       if (!file) throw new Error("Please select a file to upload")
-//       const formData = new FormData()
-//       formData.append("file", file)
-
-//       const response = await (
-//         await fetch(process.env.NEXT_PUBLIC_API_URL + "/api/extract", {
-//           method: "POST",
-//           body: formData,
-//         })
-//       ).json()
-
-//       if (!response.success) throw new Error(response.message)
-
-//       setTables(response.tables)
-//     } catch (error) {
-//       alert(error.message)
-//     }
-//     setLoading(false)
-//   }
-
-//   const handleBack = () => {
-//     if (showCalculator) {
-//       setShowCalculator(false)
-//     } else {
-//       setTables(undefined)
-//     }
-//   }
-
-//   return (
-//     <div className="container p-8">
-//       {!tables && !showCalculator ? (
-//         <div className="space-y-8">
-//           <div className="flex justify-center items-center gap-4">
-//             <Input
-//               type="file"
-//               accept="application/pdf"
-//               onChange={(e) => setFile(e.target.files[0])}
-//               disabled={loading}
-//             />
-//             <Button disabled={loading} onClick={handlePdfUpload}>
-//               {loading && <LoaderCircle className="mr-2 h-4 w-4 animate-spin" />}
-//               Upload PDF & Extract
-//             </Button>
-//           </div>
-//           <div className="flex justify-center gap-4">
-//             <Button onClick={() => setTables(DUMMY_DATA.tables)} disabled={loading}>
-//               View Sample Extracted Data
-//             </Button>
-//             <Button onClick={() => setShowCalculator(true)} disabled={loading}>
-//               <Calculator className="mr-2 h-4 w-4" />
-//               Open Discount Calculator
-//             </Button>
-//           </div>
-//         </div>
-//       ) : (
-//         <>
-//           <Button onClick={handleBack} className="mb-4">
-//             <ArrowLeft className="mr-2 h-4 w-4" />
-//             Back
-//           </Button>
-//           {showCalculator ? <DiscountCalculator /> : <DisplayTables tables={tables} />}
-//         </>
-//       )}
-//     </div>
-//   )
-// }
-
-// export default HomePage
-
-// "use client"
-
-// import { useState } from "react"
-// import { Button } from "@/components/ui/button"
-// import { Input } from "@/components/ui/input"
-// import { ArrowLeft, LoaderCircle, Calculator } from "lucide-react"
-// import DisplayTables from "@/components/display-tables"
-// import DiscountCalculator from "@/components/discount-calculator"
-// import { DUMMY_DATA } from "@/constants/dummyData"
-
-// const HomePage = () => {
-//   const [tables, setTables] = useState()
-//   const [loading, setLoading] = useState(false)
-//   const [file, setFile] = useState()
-//   const [showCalculator, setShowCalculator] = useState(false)
-
-//   const handlePdfUpload = async () => {
-//     setLoading(true)
-//     try {
-//       if (!file) throw new Error("Please select a file to upload")
-//       const formData = new FormData()
-//       formData.append("file", file)
-
-//       const response = await (
-//         await fetch(process.env.NEXT_PUBLIC_API_URL + "/api/extract", {
-//           method: "POST",
-//           body: formData,
-//         })
-//       ).json()
-
-//       if (!response.success) throw new Error(response.message)
-
-//       setTables(response.tables)
-//     } catch (error) {
-//       alert(error.message)
-//     }
-//     setLoading(false)
-//   }
-
-//   const handleBack = () => {
-//     if (showCalculator) {
-//       setShowCalculator(false)
-//     } else {
-//       setTables(undefined)
-//     }
-//   }
-
-//   return (
-//     <div className="container p-8">
-//       {!tables && !showCalculator ? (
-//         <div className="space-y-8">
-//           <div className="flex justify-center items-center gap-4">
-//             <Input
-//               type="file"
-//               accept="application/pdf"
-//               onChange={(e) => setFile(e.target.files[0])}
-//               disabled={loading}
-//             />
-//             <Button disabled={loading} onClick={handlePdfUpload}>
-//               {loading && <LoaderCircle className="mr-2 h-4 w-4 animate-spin" />}
-//               Upload PDF & Extract
-//             </Button>
-//           </div>
-//           <div className="flex justify-center gap-4">
-//             <Button onClick={() => setTables(DUMMY_DATA.tables)} disabled={loading}>
-//               View Sample Extracted Data
-//             </Button>
-//             <Button onClick={() => setShowCalculator(true)} disabled={loading}>
-//               <Calculator className="mr-2 h-4 w-4" />
-//               Open Discount Calculator
-//             </Button>
-//           </div>
-//         </div>
-//       ) : (
-//         <>
-//           <Button onClick={handleBack} className="mb-4">
-//             <ArrowLeft className="mr-2 h-4 w-4" />
-//             Back
-//           </Button>
-//           {showCalculator ? <DiscountCalculator /> : <DisplayTables tables={tables} />}
-//         </>
-//       )}
-//     </div>
-//   )
-// }
-
-// export default HomePage
-
 "use client";
 
 import { useState } from "react";
@@ -184,6 +8,7 @@ import { Label } from "@/components/ui/label";
 import { UploadIcon, Loader2, ArrowUpRight, Zap } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { useAnalysis } from "@/lib/Context";
+import { LoadingAnimation } from "@/components/loading-animation";
 
 export default function HomePage() {
   const router = useRouter();
@@ -257,7 +82,6 @@ export default function HomePage() {
       process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000";
 
     try {
-      // Create FormData object for file upload
       const formData = new FormData();
       formData.append("file", contractFile);
 
@@ -268,24 +92,27 @@ export default function HomePage() {
 
       if (response.ok) {
         const data = await response.json();
-        localStorage.setItem("extractedData", JSON.stringify(data.data)); // Save API response to localStorage
+        localStorage.setItem("extractedData", JSON.stringify(data.data));
         router.push("/results");
       } else {
-        const errorData = await response.json()
-        setError(errorData.message || "An error occurred")
-        console.error("Error: Extraction API failed", response.statusText)
+        const errorData = await response.json();
+        setError(errorData.message || "An error occurred");
+        setLoading(false);
       }
     } catch (error) {
-      setError(error.message)
-      console.error("Error:", error)
-    } finally {
+      setError(error.message);
       setLoading(false);
     }
   };
 
+  // if (loading) {
+  //   return <LoadingAnimation />;
+  // }
   return (
     <div className="min-h-screen bg-[#1C1C28] flex items-center justify-center w-full">
       {/* <div className="w-full max-w-6xl mx-auto px-4 py-8"> */}
+      {loading && <LoadingAnimation />}
+
       <div className="relative w-full bg-[#23232F]/80 backdrop-blur-xl overflow-hidden ">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-br from-purple-500/20 to-orange-500/20 blur-3xl rounded-full -translate-y-1/2 translate-x-1/2" />
 
@@ -311,10 +138,11 @@ export default function HomePage() {
                   <div className="relative">
                     <label
                       htmlFor="contractFile"
-                      className={`flex flex-col items-center justify-center w-full h-40 border-2 border-dashed rounded-xl cursor-pointer transition-colors ${isUploaded
-                        ? "border-green-500 bg-green-500/10"
-                        : "border-gray-600 hover:bg-[#2A2A36]"
-                        }`}
+                      className={`flex flex-col items-center justify-center w-full h-40 border-2 border-dashed rounded-xl cursor-pointer transition-colors ${
+                        isUploaded
+                          ? "border-green-500 bg-green-500/10"
+                          : "border-gray-600 hover:bg-[#2A2A36]"
+                      }`}
                     >
                       <div className="flex flex-col items-center justify-center py-4">
                         {isUploaded ? (
@@ -416,8 +244,9 @@ export default function HomePage() {
                       <div key={key} className="space-y-1">
                         <Input
                           name={key}
-                          placeholder={`${key.charAt(0).toUpperCase() + key.slice(1)
-                            } (${key === "weight" ? "lbs" : "inches"})`}
+                          placeholder={`${
+                            key.charAt(0).toUpperCase() + key.slice(1)
+                          } (${key === "weight" ? "lbs" : "inches"})`}
                           type="number"
                           value={value}
                           onChange={(e) => handleInputChange(e, "parcel")}
@@ -484,8 +313,6 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-
-
     </div>
     //{" "}
     // </div>

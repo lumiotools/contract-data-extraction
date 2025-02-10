@@ -181,7 +181,7 @@ export default function ResultsPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-4">
                     <div className="flex items-center gap-2 mb-4">
-                      <MapPin className="w-4 h-4 text-purple-500" />
+                      <MapPin className="w-5 h-5 text-purple-500" />
                       <h3 className="text-lg font-semibold text-white">
                         Destination Address
                       </h3>
