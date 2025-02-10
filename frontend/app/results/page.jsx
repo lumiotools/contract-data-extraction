@@ -407,18 +407,19 @@ export default function ResultsPage() {
 
                 <Card className="bg-[#2A2A36] border-gray-700 rounded-xl">
                   <div className="p-6">
-                    <div className="grid grid-cols-5 gap-6 mb-4 text-sm font-medium text-gray-400 px-4">
+                    <div className="grid grid-cols-6 gap-4 mb-4 text-sm font-medium text-gray-400 px-4">
                       <div className="col-span-2">Service Name</div>
                       <div className="text-center">Actual Rate</div>
-                      <div className="text-center">Discounted Rate</div>
+                      <div className="text-center">Rate after Discount</div>
                       <div className="text-center">Discount</div>
+                      <div className="text-center">Minimum ?</div>
                     </div>
 
                     <div className="space-y-2">
                       {discountData.map((service, index) => (
                         <div
                           key={index}
-                          className="grid grid-cols-5 gap-6 items-center bg-[#23232F] rounded-xl p-4"
+                          className="grid grid-cols-6 gap-4 items-center bg-[#23232F] rounded-xl p-4"
                         >
                           <div className="col-span-2 font-medium text-white">
                             {service.service_name}
@@ -455,6 +456,9 @@ export default function ResultsPage() {
                             >
                               {service.service_discount.toFixed(2)}%
                             </span>
+                          </div>
+                          <div className="text-gray-400 text-center">
+                            {service.is_over_discounted ? "TRUE" : "FALSE"}
                           </div>
                         </div>
                       ))}
