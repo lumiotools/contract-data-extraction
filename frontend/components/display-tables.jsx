@@ -12,7 +12,7 @@ import { DestinationZoneWeightIncentiveTable } from "./custom-tables/destination
 
 export default function DisplayTables({ tables }) {
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 text-white">
       {tables.map((table, index) => {
         switch (table.table_type) {
           case "weight_zone_incentive":

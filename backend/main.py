@@ -114,9 +114,11 @@ def get_portfolio_tier_incentive(table_data, weekly_price: float):
                 if not band:
                     continue
                 min_band, max_band = parse_band(band)
+                # print("min band",min_band,"max band",max_band)
                 if min_band is None or max_band is None:
                     continue
                 if min_band <= weekly_price <= max_band:
+                    print("min band",min_band, "max band",max_band)
                     incentive_value = entry.get("incentive")
                     if not incentive_value:
                         continue
@@ -131,21 +133,24 @@ def get_portfolio_tier_incentive(table_data, weekly_price: float):
     return applicable_services
 
 
-def get_incentive_off_executive(table_data, service_name: str, weekly_price: float):
+def get_incentive_off_executive(table_data, service_name: str, weekly_price: float,weight:float):
     incentives = []
     for tier in table_data.get("tables", []):
         if tier.get("table_type") == "weight_zone_incentive" and tier.get("name") and (
             service_name in tier["name"] or find_best_match(service_name, [tier["name"]])
         ):
             for row in tier.get("data", []):
+                min_wt, max_wt=parse_band(row.get("weight"))
                 incentive_value = row.get("incentive")
                 if not incentive_value:
                     continue
-                try:
-                    incentive_float = abs(float(incentive_value.replace("%", "").replace("- ", "")))
-                except ValueError:
-                    continue
-                incentives.append(incentive_float)
+                if min_wt is not None and max_wt is not None:
+                    if min_wt <= weight <= max_wt:
+                        try:
+                            incentive_float = abs(float(incentive_value.replace("%", "").replace("- ", "")))
+                        except ValueError:
+                            continue
+                        incentives.append(incentive_float)
 
         if tier.get("table_type") == "zone_bands_incentive" and tier.get("name") and (
             service_name in tier["name"] or find_best_match(service_name, [tier["name"]])
@@ -264,7 +269,7 @@ async def calculate_discount(input_data: DiscountInput):
         service_discount = incentive.get("incentive", 0)
         final_discount = service_discount
 
-        incentive_off_executive = get_incentive_off_executive(table_data, service_name, weekly_price)
+        incentive_off_executive = get_incentive_off_executive(table_data, service_name, weekly_price,parcel.weight)
         # Calculate the combined discount
         final_discount = 100 - (100 - service_discount) * (100 - incentive_off_executive) / 100
 
@@ -273,7 +278,7 @@ async def calculate_discount(input_data: DiscountInput):
             None
         )
         if service_amount is not None:
-            applied_discount_rate = round(service_amount * abs(final_discount) / 100, 2)
+            applied_discount_rate = round(service_amount * abs(100-final_discount) / 100, 2)
         else:
             applied_discount_rate = None
 
@@ -292,13 +297,13 @@ async def calculate_discount(input_data: DiscountInput):
             if final_discount == 0:
                 final_amount = service_amount
             else:
-                final_amount = applied_discount_rate if not is_over_discounted else round(service_amount * maximum_possible_discount / 100, 2)
+                final_amount = applied_discount_rate if not is_over_discounted else round(service_amount * (100-maximum_possible_discount) / 100, 2)
         else:
             final_amount = None
 
         discounts.append({
             "service_name": service_name,
-            "service_discount":100- (maximum_possible_discount if is_over_discounted else final_discount),
+            "service_discount": (maximum_possible_discount if is_over_discounted else final_discount),
             "is_over_discounted": is_over_discounted,
             "base_amount": service_amount,
             "final_amount": final_amount

@@ -223,9 +223,9 @@ class ContractDataExtractionService:
         response = cls.rate_limited_call(chat.send_message, """
             Extract the Portfolio Tier Incentive Table from the attached contract in JSON format.
             
-            Extract all available service(s) for the first 2 bands ("0.01 - 19,429.99" and "19,430.00 - 25,904.99").
+            Extract all available service(s) for the first 2 bands (eg: "0.01 - 19,429.99" and "19,430.00 - 25,904.99").
             
-            For each row, ensure the "incentive" value is returned as a numeric percentage string (e.g. "18.00%"). 
+            For each row, ensure the "incentive" value is returned as a numeric percentage string (e.g. "18.00%","0.00%"). 
             If the discount is not numeric, output null.
             
             Use the following output schema:

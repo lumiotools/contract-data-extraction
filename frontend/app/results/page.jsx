@@ -17,10 +17,10 @@ export default function ResultsPage() {
     updateParcelDetails,
     setWeeklyCharges,
   } = useAnalysis();
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [discountData, setDiscountData] = useState(null);
   const [error, setError] = useState(null);
-  const [activateCalculateButton, setActivateCalculateButton] = useState(false);
+  const [activateCalculateButton, setActivateCalculateButton] = useState(true);
 
   useEffect(() => {
     if (discountData) return;
@@ -78,7 +78,7 @@ export default function ResultsPage() {
       }
     };
 
-    fetchData();
+    // fetchData();
   }, [addressDetails, parcelDetails, weeklyCharges, discountData]);
 
   const handleAddressChange = (e) => {

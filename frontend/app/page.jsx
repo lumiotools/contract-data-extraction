@@ -9,6 +9,7 @@ import { UploadIcon, Loader2, ArrowUpRight, Zap } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { useAnalysis } from "@/lib/Context";
 import { LoadingAnimation } from "@/components/loading-animation";
+import DisplayTables from "@/components/display-tables";
 
 export default function HomePage() {
   const router = useRouter();
@@ -26,6 +27,7 @@ export default function HomePage() {
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({});
   const [error, setError] = useState("");
+  const [tables, setTables] = useState();
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
@@ -65,18 +67,18 @@ export default function HomePage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!validateForm()) return;
+    // if (!validateForm()) return;
 
     setError(null);
     setLoading(true);
 
     // Save form data to localStorage
-    const formData = {
-      weeklyCharges,
-      addressDetails,
-      parcelDetails,
-    };
-    localStorage.setItem("formData", JSON.stringify(formData));
+    // const formData = {
+    //   weeklyCharges,
+    //   addressDetails,
+    //   parcelDetails,
+    // };
+    // localStorage.setItem("formData", JSON.stringify(formData));
 
     const apiBaseUrl =
       process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000";
@@ -93,7 +95,9 @@ export default function HomePage() {
       if (response.ok) {
         const data = await response.json();
         localStorage.setItem("extractedData", JSON.stringify(data.data));
-        router.push("/results");
+        setTables(data.data.tables);
+        // router.push("/results");
+        setLoading(false);
       } else {
         const errorData = await response.json();
         setError(errorData.message || "An error occurred");
@@ -105,9 +109,6 @@ export default function HomePage() {
     }
   };
 
-  // if (loading) {
-  //   return <LoadingAnimation />;
-  // }
   return (
     <div className="min-h-screen bg-[#1C1C28] flex items-center justify-center w-full">
       {/* <div className="w-full max-w-6xl mx-auto px-4 py-8"> */}
@@ -115,7 +116,6 @@ export default function HomePage() {
 
       <div className="relative w-full bg-[#23232F]/80 backdrop-blur-xl overflow-hidden ">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-br from-purple-500/20 to-orange-500/20 blur-3xl rounded-full -translate-y-1/2 translate-x-1/2" />
-
         <div className="relative z-10 p-8 lg:p-12">
           <div className="max-w-3xl mx-auto">
             {/* <div className="text-center mb-8">
@@ -184,7 +184,7 @@ export default function HomePage() {
                 </div>
 
                 {/* Weekly charges input */}
-                <div className="space-y-1">
+                {/* <div className="space-y-1">
                   <Label
                     htmlFor="weeklyCharges"
                     className="text-base text-gray-300 block"
@@ -205,10 +205,10 @@ export default function HomePage() {
                       {errors.weeklyCharges}
                     </p>
                   )}
-                </div>
+                </div> */}
 
                 {/* Address details inputs */}
-                <div className="space-y-4">
+                {/* <div className="space-y-4">
                   <Label className="text-base text-gray-300 block">
                     Destination Address
                   </Label>
@@ -232,10 +232,10 @@ export default function HomePage() {
                       </div>
                     ))}
                   </div>
-                </div>
+                </div> */}
 
                 {/* Parcel details inputs */}
-                <div className="space-y-4">
+                {/* <div className="space-y-4">
                   <Label className="text-base text-gray-300 block">
                     Parcel Details
                   </Label>
@@ -260,7 +260,7 @@ export default function HomePage() {
                       </div>
                     ))}
                   </div>
-                </div>
+                </div> */}
 
                 <Button
                   type="submit"
@@ -270,7 +270,7 @@ export default function HomePage() {
                   {loading ? (
                     <Loader2 className="animate-spin mr-2" />
                   ) : (
-                    "Check Discount Rates"
+                    "Extract Data"
                   )}
                 </Button>
               </form>
@@ -312,6 +312,19 @@ export default function HomePage() {
             </div>
           </div>
         </div>
+        {tables && (
+          <div className="bg-[#23232F]/80 backdrop-blur-xl overflow-hidden rounded-xl p-8">
+            <DisplayTables tables={tables} />
+            <div className="mt-8">
+              <Button
+                onClick={() => router.push("/results")}
+                className="w-full bg-orange-500 hover:bg-orange-600 text-black text-xl font-medium h-14 rounded-xl"
+              >
+                Calculate Discounts
+              </Button>
+            </div>
+          </div>
+        )}{" "}
       </div>
     </div>
     //{" "}
