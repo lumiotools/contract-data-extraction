@@ -298,7 +298,7 @@ async def calculate_discount(input_data: DiscountInput):
 
         discounts.append({
             "service_name": service_name,
-            "service_discount": maximum_possible_discount if is_over_discounted else final_discount,
+            "service_discount":100- (maximum_possible_discount if is_over_discounted else final_discount),
             "is_over_discounted": is_over_discounted,
             "base_amount": service_amount,
             "final_amount": final_amount

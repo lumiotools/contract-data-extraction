@@ -341,7 +341,7 @@ export default function ResultsPage() {
 
             {discountData && (
               <>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
                   <Card className="bg-[#2A2A36] border-gray-700 rounded-xl">
                     <div className="p-6">
                       <div className="flex items-center gap-4">
