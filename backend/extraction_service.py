@@ -437,7 +437,7 @@ class ContractDataExtractionService:
             Target only tabular data.
             Skip any table that is missing a header.
             
-            There are 2 such tables; extract both.
+            There are 2 such tables; extract both and merge its data into one final table.
             
             **# Updated Prompt:**
             For the 'adjustment' field, ensure that it is returned as a numeric string (optionally with a leading minus sign) or null if not available.
