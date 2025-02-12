@@ -26,10 +26,17 @@ app.add_middleware(
 )
 
 
+class DestinationAddress(BaseModel):
+    # street: str
+    # city: str
+    # state: str
+    zip: str
+    # country: str
+
 class DiscountInput(BaseModel):
     weekly_price: float
     start_address: Address
-    destination_address: Address 
+    destination_address: DestinationAddress 
     parcel: Parcel
     tables_json: str
     contract_type: str
@@ -240,10 +247,11 @@ async def calculate_discount(input_data: DiscountInput):
     table_data = json.loads(tables_json)
 
     print(f"Processing discount calculation:")
+    print("dest address",destination_address)
     print(f"Weekly Price: ${weekly_price}")
     print(f"Start Address: {start_address.street}, {start_address.city}, {start_address.state} {start_address.zip}, {start_address.country}")
-    print(f"Destination Address: {destination_address.street}, {destination_address.city}, {destination_address.state} {destination_address.zip}, {destination_address.country}")
-    print(f"Parcel: {parcel.length}x{parcel.width}x{parcel.height} {parcel.weight} lbs")
+    # print(f"Destination Address: {destination_address.street}, {destination_address.city}, {destination_address.state} {destination_address.zip}, {destination_address.country}")
+    # print(f"Parcel: {parcel.length}x{parcel.width}x{parcel.height} {parcel.weight} lbs")
     print(f"Contract Type: {contract_type}")
     print(f"Number of tables in input: {len(table_data.get('tables', []))}")
     
@@ -271,8 +279,9 @@ async def calculate_discount(input_data: DiscountInput):
 
         incentive_off_executive = get_incentive_off_executive(table_data, service_name, weekly_price,parcel.weight)
         # Calculate the combined discount
-        final_discount = 100 - (100 - service_discount) * (100 - incentive_off_executive) / 100
-
+        # final_discount = 100 - (100 - service_discount) * (100 - incentive_off_executive) / 100
+        final_discount = service_discount + incentive_off_executive
+        
         service_amount = next(
             (float(rate.get("amount", 0)) for rate in rates if find_best_match(rate.get("serviceName", ""), [service_name])),
             None

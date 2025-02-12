@@ -5,7 +5,12 @@ from ups_rates import calculate_shipping
 
 from dotenv import load_dotenv
 load_dotenv()
-
+class DestinationAddress(BaseModel):
+    # street: str
+    # city: str
+    # state: str
+    zip: str
+    # country: str
 
 class Address(BaseModel):
     street: str
@@ -15,13 +20,13 @@ class Address(BaseModel):
     country: str
 
 class Parcel(BaseModel):
-    length: float
-    width: float
-    height: float
+    # length: float
+    # width: float
+    # height: float
     weight: float
 
 class APIRates:
-    def get_ups_rates(address_to: Address, address_from: Address, parcel: Parcel):
+    def get_ups_rates(address_to: DestinationAddress, address_from: Address, parcel: Parcel):
         rates = calculate_shipping(address_from, address_to, parcel)
         return  rates
         # headers = {
@@ -84,7 +89,7 @@ class APIRates:
 
         # return rates
     
-    def get_fedex_rates(address_to: Address, address_from: Address, parcel: Parcel):
+    def get_fedex_rates(address_to: DestinationAddress, address_from: Address, parcel: Parcel):
         auth_response = requests.post(
             "https://apis-sandbox.fedex.com/oauth/token",
             headers={
@@ -126,11 +131,11 @@ class APIRates:
             },
             "recipient": {
                 "address": {
-                "streetLines": [address_to.street],
-                "city": address_to.city,
-                "stateOrProvinceCode": address_to.state,
+                # "streetLines": [address_to.street],
+                # "city": address_to.city,
+                # "stateOrProvinceCode": address_to.state,
                 "postalCode": address_to.zip,
-                "countryCode": address_to.country
+                # "countryCode": address_to.country
                 }
             },
             "requestedPackageLineItems": [
@@ -139,12 +144,12 @@ class APIRates:
                     "units": "LB",
                     "value": parcel.weight
                 },
-                "dimensions": {
-                    "length": parcel.length,
-                    "width": parcel.width,
-                    "height": parcel.height,
-                    "units": "IN"
-                }
+                # "dimensions": {
+                #     "length": parcel.length,
+                #     "width": parcel.width,
+                #     "height": parcel.height,
+                #     "units": "IN"
+                # }
                 }
             ],
             "packagingType": "YOUR_PACKAGING",

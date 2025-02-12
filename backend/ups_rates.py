@@ -11,6 +11,15 @@ import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)  # Suppress SSL warnings
 
 @dataclass
+class DestinationAddress():
+    # street: str
+    # city: str
+    # state: str
+    zip: str
+    # country: str
+
+
+@dataclass
 class Address:
     street: str
     city: str
@@ -263,7 +272,7 @@ def get_all_service_rates(zone_file: str, rates_file: str, dest_zip: str, weight
         print(f"✗ Error calculating service rates: {str(e)}")
         return {}
 
-def calculate_shipping(origin: Address, destination: Address, parcel: Parcel) -> Dict[str, Optional[float]]:
+def calculate_shipping(origin: Address, destination: DestinationAddress, parcel: Parcel) -> Dict[str, Optional[float]]:
     """Calculate shipping rates for all available services"""
     print("\n[STARTING SHIPPING CALCULATION]")
     print("-" * 50)
@@ -274,13 +283,13 @@ def calculate_shipping(origin: Address, destination: Address, parcel: Parcel) ->
     print(f"  ZIP: {origin.zip}")
     
     print("\nDestination Address:")
-    print(f"  Street: {destination.street}")
-    print(f"  City: {destination.city}")
-    print(f"  State: {destination.state}")
+    # print(f"  Street: {destination.street}")
+    # print(f"  City: {destination.city}")
+    # print(f"  State: {destination.state}")
     print(f"  ZIP: {destination.zip}")
     
     print("\nParcel Details:")
-    print(f"  Dimensions: {parcel.length} x {parcel.width} x {parcel.height} inches")
+    # print(f"  Dimensions: {parcel.length} x {parcel.width} x {parcel.height} inches")
     print(f"  Weight: {parcel.weight} lbs")
     print("-" * 50)
     
