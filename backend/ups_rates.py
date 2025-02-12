@@ -313,15 +313,15 @@ def calculate_shipping(origin: Address, destination: DestinationAddress, parcel:
         print(f"\n✗ Error in shipping calculation: {str(e)}")
         return {}
         
-    finally:
-        # Only cleanup downloaded files, not fallback files
-        for file in downloaded_files:
-            if os.path.exists(file):
-                try:
-                    os.remove(file)
-                    print(f"Cleaned up downloaded file: {file}")
-                except Exception as e:
-                    print(f"Error cleaning up file {file}: {str(e)}")
+    # finally:
+    #     # Only cleanup downloaded files, not fallback files
+    #     for file in downloaded_files:
+    #         if os.path.exists(file):
+    #             try:
+    #                 os.remove(file)
+    #                 print(f"Cleaned up downloaded file: {file}")
+    #             except Exception as e:
+    #                 print(f"Error cleaning up file {file}: {str(e)}")
     
     return {}
 
