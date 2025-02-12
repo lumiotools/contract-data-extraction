@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import {
   Table,
   TableBody,
@@ -8,11 +9,36 @@ import {
 } from "@/components/ui/table";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-export function DestinationZoneIncentiveTable({ table }) {
-  const uniqueZones = Array.from(new Set(table.data.map((rate) => rate.zone)));
+export function DestinationZoneIncentiveTable({ table, onTableChange }) {
+  const [tableData, setTableData] = useState(table.data);
+
+  const uniqueZones = Array.from(new Set(tableData.map((rate) => rate.zone)));
   const uniqueDestinations = Array.from(
-    new Set(table.data.map((rate) => rate.destination))
+    new Set(tableData.map((rate) => rate.destination))
   );
+
+  const handleInputChange = (e, destination, zone, field) => {
+    const updatedTableData = tableData.map((rate) => {
+      if (rate.destination === destination && rate.zone === zone) {
+        return { ...rate, [field]: e.target.value };
+      }
+      return rate;
+    });
+    setTableData(updatedTableData);
+    onTableChange({ ...table, data: updatedTableData });
+  };
+
+  const handleDestinationChange = (e, oldDestination) => {
+    const newDestination = e.target.value;
+    const updatedTableData = tableData.map((rate) => {
+      if (rate.destination === oldDestination) {
+        return { ...rate, destination: newDestination };
+      }
+      return rate;
+    });
+    setTableData(updatedTableData);
+    onTableChange({ ...table, data: updatedTableData });
+  };
 
   return (
     <Card className="w-full mb-8">
@@ -29,7 +55,6 @@ export function DestinationZoneIncentiveTable({ table }) {
                   <span>/</span>
                   <span>Zones</span>
                 </TableHead>
-
                 {uniqueZones.map((value) => (
                   <TableHead key={value} className="text-center min-w-[80px]">
                     {value}
@@ -40,14 +65,26 @@ export function DestinationZoneIncentiveTable({ table }) {
             <TableBody>
               {uniqueDestinations.map((destination) => (
                 <TableRow key={destination}>
-                  <TableCell className="font-medium">{destination}</TableCell>
+                  <TableCell className="font-medium">
+                    <input
+                      type="text"
+                      value={destination}
+                      onChange={(e) => handleDestinationChange(e, destination)}
+                      className="bg-transparent border-none text-gray-300 w-full text-center"
+                    />
+                  </TableCell>
                   {uniqueZones.map((zone) => {
-                    const rate = table.data.find(
+                    const rate = tableData.find(
                       (r) => r.destination === destination && r.zone === zone
                     );
                     return (
                       <TableCell key={zone} className="text-center">
-                        {rate ? rate.incentive : "-"}
+                        <input
+                          type="text"
+                          value={rate ? rate.incentive : ""}
+                          onChange={(e) => handleInputChange(e, destination, zone, 'incentive')}
+                          className="bg-transparent border-none text-gray-300 w-full text-center"
+                        />
                       </TableCell>
                     );
                   })}

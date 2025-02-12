@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import {
   Table,
   TableBody,
@@ -8,7 +9,20 @@ import {
 } from "@/components/ui/table";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-export function DestinationZoneWeightIncentiveTable({ table }) {
+export function DestinationZoneWeightIncentiveTable({ table, onTableChange }) {
+  const [tableData, setTableData] = useState(table.data);
+
+  const handleInputChange = (e, index, field) => {
+    const updatedTableData = tableData.map((rate, i) => {
+      if (i === index) {
+        return { ...rate, [field]: e.target.value };
+      }
+      return rate;
+    });
+    setTableData(updatedTableData);
+    onTableChange({ ...table, data: updatedTableData });
+  };
+
   return (
     <Card className="w-full mb-8">
       <CardHeader>
@@ -26,14 +40,40 @@ export function DestinationZoneWeightIncentiveTable({ table }) {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {table.data.map((rate, index) => (
+              {tableData.map((rate, index) => (
                 <TableRow key={index}>
                   <TableCell className="text-center">
-                    {rate.destination}
+                    <input
+                      type="text"
+                      value={rate.destination}
+                      onChange={(e) => handleInputChange(e, index, 'destination')}
+                      className="bg-transparent border-none text-gray-300 w-full text-center"
+                    />
                   </TableCell>
-                  <TableCell className="text-center">{rate.zone}</TableCell>
-                  <TableCell className="text-center">{rate.weight}</TableCell>
-                  <TableCell className="text-center">{rate.incentive}</TableCell>
+                  <TableCell className="text-center">
+                    <input
+                      type="text"
+                      value={rate.zone}
+                      onChange={(e) => handleInputChange(e, index, 'zone')}
+                      className="bg-transparent border-none text-gray-300 w-full text-center"
+                    />
+                  </TableCell>
+                  <TableCell className="text-center">
+                    <input
+                      type="text"
+                      value={rate.weight}
+                      onChange={(e) => handleInputChange(e, index, 'weight')}
+                      className="bg-transparent border-none text-gray-300 w-full text-center"
+                    />
+                  </TableCell>
+                  <TableCell className="text-center">
+                    <input
+                      type="text"
+                      value={rate.incentive}
+                      onChange={(e) => handleInputChange(e, index, 'incentive')}
+                      className="bg-transparent border-none text-gray-300 w-full text-center"
+                    />
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>

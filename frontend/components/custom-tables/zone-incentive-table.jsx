@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import {
   Table,
   TableBody,
@@ -8,8 +9,21 @@ import {
 } from "@/components/ui/table";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-export function ZoneIncentiveTable({ table }) {
-  const uniqueZones = Array.from(new Set(table.data.map((rate) => rate.zone)));
+export function ZoneIncentiveTable({ table, onTableChange }) {
+  const [tableData, setTableData] = useState(table.data);
+
+  const uniqueZones = Array.from(new Set(tableData.map((rate) => rate.zone)));
+
+  const handleInputChange = (e, zone) => {
+    const updatedTableData = tableData.map((rate) => {
+      if (rate.zone === zone) {
+        return { ...rate, incentive: e.target.value };
+      }
+      return rate;
+    });
+    setTableData(updatedTableData);
+    onTableChange({ ...table, data: updatedTableData });
+  };
 
   return (
     <Card className="w-full mb-8">
@@ -24,7 +38,6 @@ export function ZoneIncentiveTable({ table }) {
                 <TableHead className="w-[250px] min-w-[150px] space-x-4">
                   Zones
                 </TableHead>
-
                 {uniqueZones.map((value) => (
                   <TableHead key={value} className="text-center min-w-[80px]">
                     {value}
@@ -36,10 +49,15 @@ export function ZoneIncentiveTable({ table }) {
               <TableRow>
                 <TableCell className="font-medium">Incentive</TableCell>
                 {uniqueZones.map((zone) => {
-                  const rate = table.data.find((r) => r.zone === zone);
+                  const rate = tableData.find((r) => r.zone === zone);
                   return (
                     <TableCell key={zone} className="text-center">
-                      {rate ? rate.incentive : "-"}
+                      <input
+                        type="text"
+                        value={rate ? rate.incentive : ""}
+                        onChange={(e) => handleInputChange(e, zone)}
+                        className="bg-transparent border-none text-gray-300 w-full text-center"
+                      />
                     </TableCell>
                   );
                 })}

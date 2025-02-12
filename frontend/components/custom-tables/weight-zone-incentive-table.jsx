@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import {
   Table,
   TableBody,
@@ -8,11 +9,36 @@ import {
 } from "@/components/ui/table";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-export function WeightZoneIncentiveTable({ table }) {
+export function WeightZoneIncentiveTable({ table, onTableChange }) {
+  const [tableData, setTableData] = useState(table.data);
+
   const uniqueWeights = Array.from(
-    new Set(table.data.map((rate) => rate.weight))
+    new Set(tableData.map((rate) => rate.weight))
   ).filter(Boolean);
-  const uniqueZones = Array.from(new Set(table.data.map((rate) => rate.zone)));
+  const uniqueZones = Array.from(new Set(tableData.map((rate) => rate.zone)));
+
+  const handleInputChange = (e, weight, zone, field) => {
+    const updatedTableData = tableData.map((rate) => {
+      if (rate.weight === weight && rate.zone === zone) {
+        return { ...rate, [field]: e.target.value };
+      }
+      return rate;
+    });
+    setTableData(updatedTableData);
+    onTableChange({ ...table, data: updatedTableData });
+  };
+
+  const handleWeightChange = (e, oldWeight) => {
+    const newWeight = e.target.value;
+    const updatedTableData = tableData.map((rate) => {
+      if (rate.weight === oldWeight) {
+        return { ...rate, weight: newWeight };
+      }
+      return rate;
+    });
+    setTableData(updatedTableData);
+    onTableChange({ ...table, data: updatedTableData });
+  };
 
   return (
     <Card className="w-full mb-8">
@@ -29,27 +55,36 @@ export function WeightZoneIncentiveTable({ table }) {
                   <span>/</span>
                   <span>Zones</span>
                 </TableHead>
-
-                {uniqueZones.map(
-                  (value) => (
-                    <TableHead key={value} className="text-center min-w-[80px]">
-                      {value}
-                    </TableHead>
-                  )
-                )}
+                {uniqueZones.map((value) => (
+                  <TableHead key={value} className="text-center min-w-[80px]">
+                    {value}
+                  </TableHead>
+                ))}
               </TableRow>
             </TableHeader>
             <TableBody>
               {uniqueWeights.map((weight) => (
                 <TableRow key={weight}>
-                  <TableCell className="font-medium">{weight}</TableCell>
+                  <TableCell className="font-medium">
+                    <input
+                      type="text"
+                      value={weight}
+                      onChange={(e) => handleWeightChange(e, weight)}
+                      className="bg-transparent border-none text-gray-300 w-full text-center"
+                    />
+                  </TableCell>
                   {uniqueZones.map((zone) => {
-                    const rate = table.data.find(
+                    const rate = tableData.find(
                       (r) => r.weight === weight && r.zone === zone
                     );
                     return (
                       <TableCell key={zone} className="text-center">
-                        {rate ? rate.incentive : "-"}
+                        <input
+                          type="text"
+                          value={rate ? rate.incentive : ""}
+                          onChange={(e) => handleInputChange(e, weight, zone, 'incentive')}
+                          className="bg-transparent border-none text-gray-300 w-full text-center"
+                        />
                       </TableCell>
                     );
                   })}
