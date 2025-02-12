@@ -196,8 +196,52 @@ def get_incentive_off_executive(table_data, service_name: str, weekly_price: flo
     return sum(incentives) / len(incentives) if incentives else 0
 
 
+# def get_base_rate(service_name: str, data: list):
+#     """
+#     Fetches the base rate for a given service from the provided data.
+
+#     Args:
+#         service_name (str): The name of the service to search for.
+#         data (list): The JSON data containing the service information.
+
+#     Returns:
+#         str: The base rate for the service, or None if not found.
+#     """
+#     for entry in data:
+#         # Check if the service name matches
+#         if service_name.lower() in entry.get("service", "").lower():
+#             return entry.get("base_rate", None)
+#     return None
+
+
+def extract_service_details(base_rate: str):
+    """
+    Extracts service name, zone, and weight from the base_rate string.
+
+    Args:
+        base_rate (str): The base rate string to be parsed.
+
+    Returns:
+        dict: A dictionary containing service_name, zone, and weight.
+    """
+    # Define the regex pattern to extract the parts
+    pattern = r"^(?P<service_name>.+?)\s+Zone\s(?P<zone>\d+)\s(?P<weight>\d+)\s?lb$"
+    match = re.match(pattern, base_rate.strip())
+
+    if match:
+        details = match.groupdict()
+        # Convert weight to an integer (just the numeric value)
+        details['weight'] = int(details['weight'])
+        return details
+    else:
+        return None
+
 def get_maximum_possible_discount(table_data, service_name: str):
     incentives = []
+    service_name_for_max_discount = None
+    zone = None
+    weight = None
+
     for tier in table_data.get("tables", []):
         if tier.get("table_type") == "zone_incentive_min_charge" and tier.get("name") and (
             service_name in tier["name"] or find_best_match(service_name, [tier["name"]])
@@ -208,10 +252,10 @@ def get_maximum_possible_discount(table_data, service_name: str):
                     continue
                 try:
                     incentive_float = abs(float(incentive_value.replace("%", "").replace("- ", "")))
-                    # print("service name",tier["name"],"incentive float",incentive_float)
                 except ValueError:
                     continue
                 incentives.append(incentive_float)
+        
         if tier.get("table_type") == "service_min_per_zone_base_rate_adjustment":
             for row in tier.get("data", []):
                 incentive_value = row.get("adjustment")
@@ -220,11 +264,22 @@ def get_maximum_possible_discount(table_data, service_name: str):
                 service_row = row.get("service", "")
                 if service_name in service_row or find_best_match(service_name, [service_row]):
                     try:
+                        base_rate = row.get("base_rate")
+                        # Extract service name, zone, and weight from the base_rate string
+                        service_details = extract_service_details(base_rate)
+                        if service_details:
+                            service_name_for_max_discount = service_details.get("service_name")
+                            zone = service_details.get("zone")
+                            weight = service_details.get("weight")
+                            
+                        print("Service name:", service_name_for_max_discount, "Zone:", zone, "Weight:", weight)
+                        
                         incentive_float = abs(float(incentive_value.replace("%", "").replace("- ", "")))
-                        print("service name",service_name,"incentive float 2",incentive_float)
+                        print("Service name:", service_name_for_max_discount, "Incentive float:", incentive_float)
                     except ValueError:
                         continue
                     incentives.append(incentive_float)
+
     maximum_possible_discount = max(incentives) if incentives else 0
     return (100 - maximum_possible_discount) if maximum_possible_discount else 100
 
