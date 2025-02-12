@@ -10,40 +10,99 @@ import { ZoneIncentiveTable } from "./custom-tables/zone-incentive-table";
 import { DestinationZoneIncentiveTable } from "./custom-tables/destination-zone-incentive-table";
 import { DestinationZoneWeightIncentiveTable } from "./custom-tables/destination-zone-weight-incentive-table";
 
-export default function DisplayTables({ tables }) {
+export default function DisplayTables({ tables, onTableChange }) {
   return (
     <div className="space-y-8 text-white">
       {tables.map((table, index) => {
         switch (table.table_type) {
           case "weight_zone_incentive":
-            return <WeightZoneIncentiveTable key={index} table={table} />;
+            return (
+              <WeightZoneIncentiveTable
+                key={index}
+                table={table}
+                onTableChange={(updatedTable) => onTableChange(updatedTable, index)}
+              />
+            );
           case "zone_bands_incentive":
-            return <ZoneBandsIncentiveTable key={index} table={table} />;
+            return (
+              <ZoneBandsIncentiveTable
+                key={index}
+                table={table}
+                onTableChange={(updatedTable) => onTableChange(updatedTable, index)}
+              />
+            );
           case "zone_incentive":
-            return <ZoneIncentiveTable key={index} table={table} />;
+            return (
+              <ZoneIncentiveTable
+                key={index}
+                table={table}
+                onTableChange={(updatedTable) => onTableChange(updatedTable, index)}
+              />
+            );
           case "destination_zone_incentive":
-            return <DestinationZoneIncentiveTable key={index} table={table} />;
+            return (
+              <DestinationZoneIncentiveTable
+                key={index}
+                table={table}
+                onTableChange={(updatedTable) => onTableChange(updatedTable, index)}
+              />
+            );
           case "destination_zone_weight_incentive":
             return (
-              <DestinationZoneWeightIncentiveTable key={index} table={table} />
+              <DestinationZoneWeightIncentiveTable
+                key={index}
+                table={table}
+                onTableChange={(updatedTable) => onTableChange(updatedTable, index)}
+              />
             );
           case "service_incentives":
-            return <ServiceIncentivesTable key={index} table={table} />;
+            return (
+              <ServiceIncentivesTable
+                key={index}
+                table={table}
+                onTableChange={(updatedTable) => onTableChange(updatedTable, index)}
+              />
+            );
           case "portfolio_tier_incentives":
-            return <PortfolioTierIncentivesTable key={index} table={table} />;
+            return (
+              <PortfolioTierIncentivesTable
+                key={index}
+                table={table}
+                onTableChange={(updatedTable) => onTableChange(updatedTable, index)}
+              />
+            );
           case "service_min_per_zone_base_rate_adjustment":
             return (
               <ServiceMinPerZoneBaseRateAdjustmentTable
                 key={index}
                 table={table}
+                onTableChange={(updatedTable) => onTableChange(updatedTable, index)}
               />
             );
           case "additional_handling_charge":
-            return <AdditionalHandlingChargeTable key={index} table={table} />;
+            return (
+              <AdditionalHandlingChargeTable
+                key={index}
+                table={table}
+                onTableChange={(updatedTable) => onTableChange(updatedTable, index)}
+              />
+            );
           case "electronic_pld_bonus":
-            return <ElectronicPLDBonusTable key={index} table={table} />;
+            return (
+              <ElectronicPLDBonusTable
+                key={index}
+                table={table}
+                onTableChange={(updatedTable) => onTableChange(updatedTable, index)}
+              />
+            );
           case "zone_adjustment":
-            return <ZoneAdjustmentTable key={index} table={table} />;
+            return (
+              <ZoneAdjustmentTable
+                key={index}
+                table={table}
+                onTableChange={(updatedTable) => onTableChange(updatedTable, index)}
+              />
+            );
           default:
             return null;
         }
