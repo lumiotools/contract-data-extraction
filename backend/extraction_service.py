@@ -222,7 +222,14 @@ class ContractDataExtractionService:
         return [data_part1.get("table", {})]
 
     @classmethod
-    def extract_portfolio_tier_incentives_table(cls, chat: ChatSession):
+    def extract_portfolio_tier_incentives_table(cls, uploadedFile: File):
+        chat = model.start_chat(history=[
+            {
+                'role': "user",
+                'parts': [uploadedFile, "Go through the attached contract and answer my questions."]
+            }
+        ])
+        
         response = cls.rate_limited_call(chat.send_message, """
             Find the Portfolio Tier Incentive Table from the attached contract file.
             Go through all the 3-4 pages of the Portfolio Tier Incentive Table in the contract file.
@@ -261,8 +268,10 @@ class ContractDataExtractionService:
                 
                 For each of the above Service(s), extract the "Land/Zone" and "WeeklyChargesBands" values.
                 
-                For each row, ensure the "incentive" value is returned as a numeric percentage string (e.g. "18.00%","0.00%"). 
+                For each row, ensure the "incentive" value is returned as a numeric percentage string (e.g. "0.00%", "18.00%", ...). 
                 If the discount is not numeric, output null.
+                
+                Extract the "incentive" value accurately as written in the contract file based on service and weekly charge band.
                 
                 Use the following output schema:
                 {
@@ -561,19 +570,21 @@ class ContractDataExtractionService:
             }
         ])
         
+        # extracted_portfolio_tier_incentives_tables = cls.extract_portfolio_tier_incentives_table(uploadedFile)
+        
         # Execute all extractions concurrently
         with ThreadPoolExecutor() as executor:
+            extracted_portfolio_tier_incentives_tables = executor.submit(cls.extract_portfolio_tier_incentives_table, uploadedFile)
             extracted_weight_zone_incentives_tables_future = executor.submit(cls.extract_weight_destination_zone_bands_incentives, chat)
             extracted_service_incentive_tables_future = executor.submit(cls.extract_service_incentive_tables, chat)
-            extracted_portfolio_tier_incentives_tables_future = executor.submit(cls.extract_portfolio_tier_incentives_table, chat)
             extracted_zone_incentives_tables_future = executor.submit(cls.extract_zone_incentives_tables, chat)
             extracted_service_min_per_zone_base_rate_adjustment_table_future = executor.submit(cls.extract_service_min_per_zone_base_rate_adjustment_table, chat)
             extracted_additional_handling_charge_table_future = executor.submit(cls.extract_additional_handling_charge_table, chat)
             extracted_electronic_pld_bonus_table_future = executor.submit(cls.extract_electronic_pld_bonus_table, chat)
             
+            extracted_portfolio_tier_incentives_tables = extracted_portfolio_tier_incentives_tables.result()
             extracted_weight_zone_incentives_tables = extracted_weight_zone_incentives_tables_future.result()
             extracted_service_incentive_tables = extracted_service_incentive_tables_future.result()
-            extracted_portfolio_tier_incentives_tables = extracted_portfolio_tier_incentives_tables_future.result()
             extracted_zone_incentives_tables = extracted_zone_incentives_tables_future.result()
             extracted_service_min_per_zone_base_rate_adjustment_table = extracted_service_min_per_zone_base_rate_adjustment_table_future.result()
             extracted_additional_handling_charge_table = extracted_additional_handling_charge_table_future.result()
