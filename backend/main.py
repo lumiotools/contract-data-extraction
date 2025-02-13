@@ -368,37 +368,52 @@ async def calculate_discount(input_data: DiscountInput):
             None
         )
         if service_amount is not None:
-            applied_discount_rate = round(service_amount * abs(100-final_discount) / 100, 2)
+            applied_discount_rate = round(service_amount * abs(100 - final_discount) / 100, 2)
         else:
             applied_discount_rate = None
-            
+
         min_rate_in_dollar = get_min_rate(service_name, min_base_rate)
-        
-        
-        
-        
-        print("min rate in dollar",min_rate_in_dollar)
-        print("applied discount rate",applied_discount_rate)
+
+        print("Min Rate in Dollar:", min_rate_in_dollar)
+        print("Applied Discount Rate:", applied_discount_rate)
         print("\nService Name:", service_name)
         print("Service Discount:", service_discount)
         print("Incentive Off Executive:", incentive_off_executive)
         print("Final Discount:", final_discount)
         print("Service Amount:", service_amount)
-        
-        # if discounted_amount > min_rate_in_dollar:
-            
-        maximum_possible_discount = get_maximum_possible_discount(table_data, service_name)
-        is_over_discounted = final_discount > maximum_possible_discount
-        print("Maximum Possible Discount:", maximum_possible_discount)
-        print("Is Over Discounted:", is_over_discounted)
 
-        if service_amount is not None:
-            if final_discount == 0:
-                final_amount = service_amount
+        # If min_rate_in_dollar is None, follow normal discount logic
+        if min_rate_in_dollar is None:
+            maximum_possible_discount = get_maximum_possible_discount(table_data, service_name)
+            is_over_discounted = final_discount > maximum_possible_discount
+
+            print("Maximum Possible Discount:", maximum_possible_discount)
+            print("Is Over Discounted:", is_over_discounted)
+
+            if service_amount is not None:
+                if final_discount == 0:
+                    final_amount = service_amount
+                else:
+                    final_amount = applied_discount_rate if not is_over_discounted else round(service_amount * (100 - maximum_possible_discount) / 100, 2)
             else:
-                final_amount = applied_discount_rate if not is_over_discounted else round(service_amount * (100-maximum_possible_discount) / 100, 2)
+                final_amount = None
+
+        # If min_rate_in_dollar is not None, ensure final_amount does not go below it
         else:
-            final_amount = None
+            maximum_possible_discount = get_maximum_possible_discount(table_data, service_name)
+            is_over_discounted = final_discount > maximum_possible_discount
+
+            print("Maximum Possible Discount:", maximum_possible_discount)
+            print("Is Over Discounted:", is_over_discounted)
+
+            if service_amount is not None:
+                if final_discount == 0:
+                    final_amount = max(service_amount, min_rate_in_dollar)
+                else:
+                    discounted_amount = applied_discount_rate if not is_over_discounted else round(service_amount * (100 - maximum_possible_discount) / 100, 2)
+                    final_amount = max(discounted_amount, min_rate_in_dollar)
+            else:
+                final_amount = None
 
         discounts.append({
             "service_name": service_name,
