@@ -22,12 +22,12 @@ export default function HomePage() {
     setWeeklyCharges,
   } = useAnalysis();
   const [contractFile, setContractFile] = useState(null);
-  // const [weeklyCharges, setWeeklyCharges] = useState("")
   const [isUploaded, setIsUploaded] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({});
   const [error, setError] = useState("");
-  const [tables, setTables] = useState();
+  const [tables, setTables] = useState([]);
+  const [editableTables, setEditableTables] = useState([]);
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
@@ -72,14 +72,6 @@ export default function HomePage() {
     setError(null);
     setLoading(true);
 
-    // Save form data to localStorage
-    // const formData = {
-    //   weeklyCharges,
-    //   addressDetails,
-    //   parcelDetails,
-    // };
-    // localStorage.setItem("formData", JSON.stringify(formData));
-
     const apiBaseUrl =
       process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000";
 
@@ -96,7 +88,7 @@ export default function HomePage() {
         const data = await response.json();
         localStorage.setItem("extractedData", JSON.stringify(data.data));
         setTables(data.data.tables);
-        // router.push("/results");
+        setEditableTables(data.data.tables);
         setLoading(false);
       } else {
         const errorData = await response.json();
@@ -109,25 +101,31 @@ export default function HomePage() {
     }
   };
 
+  const handleTableChange = (updatedTable, index) => {
+    const updatedTables = [...editableTables];
+    updatedTables[index] = updatedTable;
+    setEditableTables(updatedTables);
+
+    // Retrieve existing extractedData from local storage
+    const extractedData = JSON.parse(localStorage.getItem("extractedData")) || {};
+
+    // Update only the tables field
+    extractedData.tables = updatedTables;
+
+    // Save the updated extractedData back to local storage
+    localStorage.setItem("extractedData", JSON.stringify(extractedData));
+  };
+
   return (
     <div className="min-h-screen bg-[#1C1C28] flex items-center justify-center w-full">
-      {/* <div className="w-full max-w-6xl mx-auto px-4 py-8"> */}
       {loading && <LoadingAnimation />}
 
-      <div className="relative w-full bg-[#23232F]/80 backdrop-blur-xl overflow-hidden ">
+      <div className="relative w-full bg-[#23232F]/80 backdrop-blur-xl overflow-hidden min-h-screen flex flex-col justify-center">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-br from-purple-500/20 to-orange-500/20 blur-3xl rounded-full -translate-y-1/2 translate-x-1/2" />
         <div className="relative z-10 p-8 lg:p-12">
           <div className="max-w-3xl mx-auto">
-            {/* <div className="text-center mb-8">
-                <h1 className="text-4xl lg:text-5xl font-bold text-white mb-3">
-                  Smart Contract <span className="text-orange-500">Analysis</span>
-                </h1>
-                <p className="text-xl text-gray-400">Upload your contract and provide details for instant analysis</p>
-              </div> */}
-
             <Card className="bg-[#2A2A36] border-gray-700 rounded-xl">
               <form onSubmit={handleSubmit} className="p-6 space-y-6">
-                {/* File upload section */}
                 <div>
                   <Label
                     htmlFor="contractFile"
@@ -183,85 +181,6 @@ export default function HomePage() {
                   </div>
                 </div>
 
-                {/* Weekly charges input */}
-                {/* <div className="space-y-1">
-                  <Label
-                    htmlFor="weeklyCharges"
-                    className="text-base text-gray-300 block"
-                  >
-                    Weekly Charges ($)
-                  </Label>
-                  <Input
-                    id="weeklyCharges"
-                    name="weeklyCharges"
-                    type="number"
-                    placeholder="Enter weekly charges"
-                    value={weeklyCharges}
-                    onChange={handleInputChange}
-                    className="bg-[#23232F] border-gray-600 text-white placeholder:text-gray-500"
-                  />
-                  {errors.weeklyCharges && (
-                    <p className="text-red-500 text-xs">
-                      {errors.weeklyCharges}
-                    </p>
-                  )}
-                </div> */}
-
-                {/* Address details inputs */}
-                {/* <div className="space-y-4">
-                  <Label className="text-base text-gray-300 block">
-                    Destination Address
-                  </Label>
-                  <div className="grid grid-cols-2 gap-4">
-                    {Object.entries(addressDetails).map(([key, value]) => (
-                      <div key={key} className="space-y-1">
-                        <Input
-                          name={key}
-                          placeholder={
-                            key.charAt(0).toUpperCase() + key.slice(1)
-                          }
-                          value={value}
-                          onChange={(e) => handleInputChange(e, "address")}
-                          className="bg-[#23232F] border-gray-600 text-white placeholder:text-gray-500"
-                        />
-                        {errors[`address_${key}`] && (
-                          <p className="text-red-500 text-xs">
-                            {errors[`address_${key}`]}
-                          </p>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                </div> */}
-
-                {/* Parcel details inputs */}
-                {/* <div className="space-y-4">
-                  <Label className="text-base text-gray-300 block">
-                    Parcel Details
-                  </Label>
-                  <div className="grid grid-cols-2 gap-4">
-                    {Object.entries(parcelDetails).map(([key, value]) => (
-                      <div key={key} className="space-y-1">
-                        <Input
-                          name={key}
-                          placeholder={`${
-                            key.charAt(0).toUpperCase() + key.slice(1)
-                          } (${key === "weight" ? "lbs" : "inches"})`}
-                          type="number"
-                          value={value}
-                          onChange={(e) => handleInputChange(e, "parcel")}
-                          className="bg-[#23232F] border-gray-600 text-white placeholder:text-gray-500"
-                        />
-                        {errors[`parcel_${key}`] && (
-                          <p className="text-red-500 text-xs">
-                            {errors[`parcel_${key}`]}
-                          </p>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                </div> */}
-
                 <Button
                   type="submit"
                   disabled={loading}
@@ -281,7 +200,6 @@ export default function HomePage() {
               )}
             </Card>
 
-            {/* Feature highlights */}
             <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="flex items-center gap-4 bg-[#2A2A36] p-4 rounded-xl">
                 <div className="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center">
@@ -312,9 +230,9 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-        {tables && (
+        {tables.length > 0 && (
           <div className="bg-[#23232F]/80 backdrop-blur-xl overflow-hidden rounded-xl p-8">
-            <DisplayTables tables={tables} />
+            <DisplayTables tables={editableTables} onTableChange={handleTableChange} />
             <div className="mt-8">
               <Button
                 onClick={() => router.push("/results")}
@@ -324,10 +242,8 @@ export default function HomePage() {
               </Button>
             </div>
           </div>
-        )}{" "}
+        )}
       </div>
     </div>
-    //{" "}
-    // </div>
   );
 }
