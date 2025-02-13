@@ -26,9 +26,10 @@ class Parcel(BaseModel):
     weight: float
 
 class APIRates:
-    def get_ups_rates(address_to: DestinationAddress, address_from: Address, parcel: Parcel):
-        rates = calculate_shipping(address_from, address_to, parcel)
-        return  rates
+    def get_ups_rates(address_to: DestinationAddress, address_from: Address, parcel: Parcel, table_data):
+        rates_data = calculate_shipping(address_from, address_to, parcel, table_data)
+        return rates_data  # Now returns both 'min_base_rate' and 'rates'
+
         # headers = {
         #     "Authorization": "ShippoToken " + os.getenv("SHIPPO_API_KEY")
         # }

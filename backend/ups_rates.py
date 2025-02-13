@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 import pandas as pd
-from typing import Dict, Optional
+from typing import Dict, Any, Optional
 import requests
 import os
 from pathlib import Path
@@ -9,6 +9,17 @@ from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)  # Suppress SSL warnings
+import re
+
+def extract_service_details(base_rate: str):
+    """Extract service name, zone, and weight from base_rate string."""
+    match = re.search(r"^(.*?)\sZone\s(\d+)\s([\d.]+)\s?lb", base_rate, re.IGNORECASE)
+    if match:
+        service_name = match.group(1).strip()
+        zone = int(match.group(2))
+        weight = float(match.group(3))
+        return {"service_name": service_name, "zone": zone, "weight": weight}
+    return None
 
 @dataclass
 class DestinationAddress():
@@ -174,6 +185,8 @@ def get_service_sheet_name(service: str) -> str:
     }
     return mapping.get(service)
 
+
+
 def get_all_service_rates(zone_file: str, rates_file: str, dest_zip: str, weight: float) -> Dict[str, Optional[float]]:
     """Get rates for all available services based on destination ZIP and weight"""
     print(f"\n[CALCULATING RATES FOR ALL SERVICES]")
@@ -272,7 +285,129 @@ def get_all_service_rates(zone_file: str, rates_file: str, dest_zip: str, weight
         print(f"✗ Error calculating service rates: {str(e)}")
         return {}
 
-def calculate_shipping(origin: Address, destination: DestinationAddress, parcel: Parcel) -> Dict[str, Optional[float]]:
+
+def extract_rate(rates_file,sheet_name, zone, weight):
+    try:
+        
+        rate_df = pd.read_excel(rates_file, sheet_name=sheet_name, header=None)
+        
+        # Find the zone column
+        zones_row = rate_df[rate_df[1] == "Zones"].iloc[0]
+        zone_col = None
+        zone_value = int(str(zone).split('.')[0])  # Handle potential decimal zones
+        for col in range(len(zones_row)):
+            if zones_row[col] == zone_value:
+                zone_col = col
+                break
+        
+        if zone_col is None:
+            print(f"\u2717 Zone {zone} not found in rate table.")
+            return None
+
+        # Clean and convert weight column to numeric where applicable
+        rate_df[1] = rate_df[1].astype(str).str.strip()
+        
+        if weight == "Letter":
+            # Search for "Letter" in the weight column
+            rate_rows = rate_df[rate_df[1].str.contains("Letter", case=False, na=False)]
+        else:
+            # Handle numeric weight
+            rate_df[1] = rate_df[1].str.replace(" Lbs.", "", regex=True).replace("", "0")
+            rate_df[1] = pd.to_numeric(rate_df[1], errors='coerce')
+            try:
+                weight = float(weight.replace(" lb", "")) if isinstance(weight, str) and " lb" in weight else float(weight)
+            except ValueError:
+                print(f"\u2717 Invalid weight value: {weight}")
+                return None
+            
+            # Find the closest matching weight
+            rate_rows = rate_df[rate_df[1].notna() & (rate_df[1] <= weight)].sort_values(1, ascending=False)
+        
+        if rate_rows.empty:
+            print(f"\u2717 No valid rate found for weight {weight}.")
+            return None
+
+        # Extract rate
+        rate = rate_rows.iloc[0][zone_col]
+        print(f"\u2713 Rate: ${rate:.2f}")
+        return float(rate)
+    
+    except FileNotFoundError:
+        print(f"\u2717 Error: Rate file '{rates_file}' not found.")
+        return None
+    except Exception as e:
+        print(f"\u2717 Error getting rate: {str(e)}")
+        return None
+
+
+
+def extract_zone_weight(base_rate):
+    match = re.search(r'Zone (\d{3})\s?(\d* lb)?', base_rate)
+    if match:
+        zone = match.group(1)
+        weight = match.group(2) if match.group(2) else 'Letter'  # Default weight to 1 lb if missing
+        return zone, weight
+    return 'N/A', '1'
+
+
+
+def get_min_rates(data, rates_file):
+  
+
+    target_table_type = "service_min_per_zone_base_rate_adjustment"
+    service_min_rates = {}
+
+    service_mapping = {
+        'Ground': 'UPS Ground',
+        '3 Day Select': 'UPS 3DA Select',
+        '2nd Day Air': 'UPS 2DA',
+        '2nd Day Air A.M.': 'UPS 2DA A.M.',
+        'Next Day Air Saver': 'UPS NDA Saver',
+        'Next Day Air': 'UPS NDA'
+    }
+
+    # ✅ Corrected: Iterate over "tables" list inside data
+    for item in data.get("tables", []):  
+    
+
+        if not isinstance(item, dict):
+          
+            continue  
+
+        if item.get("table_type") == target_table_type and item.get("data"):
+            for entry in item["data"]:
+              
+
+                if not isinstance(entry, dict):
+              
+                    continue
+
+                base_rate = entry.get("base_rate")
+             
+
+                if base_rate:
+                    try:
+                        zone, weight = extract_zone_weight(base_rate)
+                     
+
+                        mapped_service = next((v for k, v in service_mapping.items() if k in entry.get("service", "")), entry.get("service", "Unknown"))
+                      
+
+                        min_rate = extract_rate(rates_file, mapped_service, zone, weight)
+                      
+
+                    except Exception as e:
+                      
+                        min_rate = None
+
+                    service_min_rates[entry.get("service", "Unknown")] = min_rate
+
+    print("\n[DEBUG] Final service_min_rates:", service_min_rates)
+    return service_min_rates
+
+
+
+def calculate_shipping(origin: Address, destination: DestinationAddress, parcel: Parcel, table_data) -> Dict[str, Any]:
     """Calculate shipping rates for all available services"""
     print("\n[STARTING SHIPPING CALCULATION]")
     print("-" * 50)
@@ -283,13 +418,9 @@ def calculate_shipping(origin: Address, destination: DestinationAddress, parcel:
     print(f"  ZIP: {origin.zip}")
     
     print("\nDestination Address:")
-    # print(f"  Street: {destination.street}")
-    # print(f"  City: {destination.city}")
-    # print(f"  State: {destination.state}")
     print(f"  ZIP: {destination.zip}")
     
     print("\nParcel Details:")
-    # print(f"  Dimensions: {parcel.length} x {parcel.width} x {parcel.height} inches")
     print(f"  Weight: {parcel.weight} lbs")
     print("-" * 50)
     
@@ -305,13 +436,70 @@ def calculate_shipping(origin: Address, destination: DestinationAddress, parcel:
     
     try:
         if zone_file and rates_file:
+            min_base_rate = get_min_rates(table_data, rates_file)
+            print("DEBUG: min_base_rate =", min_base_rate, type(min_base_rate))
+
             # Get rates for all services
             rates = get_all_service_rates(zone_file, rates_file, destination.zip, parcel.weight)
-            return rates
+
+            return {
+                "min_base_rate": min_base_rate,
+                "rates": rates
+            }
+   
             
     except Exception as e:
         print(f"\n✗ Error in shipping calculation: {str(e)}")
-        return {}
+        return {
+            "error": str(e),
+            "min_base_rate": None,
+            "rates": None
+        }
+
+
+# def calculate_shipping(origin: Address, destination: DestinationAddress, parcel: Parcel, table_data) -> Dict[str, Optional[float]]:
+#     """Calculate shipping rates for all available services"""
+#     print("\n[STARTING SHIPPING CALCULATION]")
+#     print("-" * 50)
+#     print("Origin Address:")
+#     print(f"  Street: {origin.street}")
+#     print(f"  City: {origin.city}")
+#     print(f"  State: {origin.state}")
+#     print(f"  ZIP: {origin.zip}")
+    
+#     print("\nDestination Address:")
+#     # print(f"  Street: {destination.street}")
+#     # print(f"  City: {destination.city}")
+#     # print(f"  State: {destination.state}")
+#     print(f"  ZIP: {destination.zip}")
+    
+#     print("\nParcel Details:")
+#     # print(f"  Dimensions: {parcel.length} x {parcel.width} x {parcel.height} inches")
+#     print(f"  Weight: {parcel.weight} lbs")
+#     print("-" * 50)
+    
+#     # Download required files
+#     zone_file, zone_is_downloaded = download_zone_file(origin.zip)
+#     rates_file, rates_is_downloaded = download_rates_file()
+    
+#     downloaded_files = []
+#     if zone_is_downloaded:
+#         downloaded_files.append(zone_file)
+#     if rates_is_downloaded:
+#         downloaded_files.append(rates_file)
+    
+#     try:
+#         if zone_file and rates_file:
+            
+#             min_base_rate = get_min_rates(table_data, rates_file)
+#             print("min_base rate ", min_base_rate)
+#             # Get rates for all services
+#             rates = get_all_service_rates(zone_file, rates_file, destination.zip, parcel.weight)
+#             return rates
+            
+#     except Exception as e:
+#         print(f"\n✗ Error in shipping calculation: {str(e)}")
+#         return {}
         
     # finally:
     #     # Only cleanup downloaded files, not fallback files
@@ -323,7 +511,7 @@ def calculate_shipping(origin: Address, destination: DestinationAddress, parcel:
     #             except Exception as e:
     #                 print(f"Error cleaning up file {file}: {str(e)}")
     
-    return {}
+    # return {}
 
 # Example usage:
 # if __name__ == "__main__":

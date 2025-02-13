@@ -243,6 +243,7 @@ def extract_service_details(base_rate: str):
     else:
         return None
 
+
 def get_maximum_possible_discount(table_data, service_name: str):
     incentives = []
     service_name_for_max_discount = None
@@ -290,6 +291,28 @@ def get_maximum_possible_discount(table_data, service_name: str):
     maximum_possible_discount = max(incentives) if incentives else 0
     return (100 - maximum_possible_discount) if maximum_possible_discount else 100
 
+def get_min_rate(service_name, min_base_rate):
+    """
+    Finds the best matching service name in min_base_rate and returns the corresponding min rate in dollars.
+    """
+    def normalize_text(text):
+        """Removes newlines and extra spaces from a string."""
+        return " ".join(text.split())
+
+    # Normalize input service name
+    normalized_service_name = normalize_text(service_name)
+
+    # Normalize dictionary keys for matching
+    normalized_keys = {normalize_text(k): k for k in min_base_rate.keys()}  
+
+    # Find the closest match using fuzzy matching
+    best_match_key = difflib.get_close_matches(normalized_service_name, normalized_keys.keys(), n=1, cutoff=0.6)
+
+    # Get the original key if a match is found
+    original_key = normalized_keys[best_match_key[0]] if best_match_key else None
+
+    # Return the corresponding min rate or "Not Found"
+    return min_base_rate.get(original_key, "Not Found")
 
 @app.post("/calculate_discount")
 async def calculate_discount(input_data: DiscountInput):
@@ -315,12 +338,15 @@ async def calculate_discount(input_data: DiscountInput):
 
     # Step 1: Get Service Rates (fetch from UPS or FedEx API)
     if contract_type.lower() == "ups":
-        rates = APIRates.get_ups_rates(destination_address, start_address, parcel)
+        rates_data = APIRates.get_ups_rates(destination_address, start_address, parcel, table_data)
+        min_base_rate = rates_data.get("min_base_rate")
+        # Print the API response for debugging
+        print("min base rate recieved:", min_base_rate)
+        rates = rates_data.get("rates")
     else:
         rates = APIRates.get_fedex_rates(destination_address, start_address, parcel)
 
-    # Print the API response for debugging
-    print("Rates API Response:", rates)
+   
 
     portfolio_incentives = get_portfolio_tier_incentive(table_data, weekly_price)
     if len(portfolio_incentives) == 0:
@@ -345,13 +371,22 @@ async def calculate_discount(input_data: DiscountInput):
             applied_discount_rate = round(service_amount * abs(100-final_discount) / 100, 2)
         else:
             applied_discount_rate = None
-
+            
+        min_rate_in_dollar = get_min_rate(service_name, min_base_rate)
+        
+        
+        
+        
+        print("min rate in dollar",min_rate_in_dollar)
+        print("applied discount rate",applied_discount_rate)
         print("\nService Name:", service_name)
         print("Service Discount:", service_discount)
         print("Incentive Off Executive:", incentive_off_executive)
         print("Final Discount:", final_discount)
         print("Service Amount:", service_amount)
-
+        
+        # if discounted_amount > min_rate_in_dollar:
+            
         maximum_possible_discount = get_maximum_possible_discount(table_data, service_name)
         is_over_discounted = final_discount > maximum_possible_discount
         print("Maximum Possible Discount:", maximum_possible_discount)
