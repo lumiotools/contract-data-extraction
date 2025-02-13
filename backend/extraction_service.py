@@ -271,7 +271,7 @@ class ContractDataExtractionService:
                 For each row, ensure the "incentive" value is returned as a numeric percentage string (e.g. "0.00%", "18.00%", ...). 
                 If the discount is not numeric, output null.
                 
-                Extract the "incentive" value accurately as written in the contract file based on service and weekly charge band.
+                **Note:** Extract the "incentive" values accurately as written in the contract file based on service and weekly charge band.
                 
                 Use the following output schema:
                 {
