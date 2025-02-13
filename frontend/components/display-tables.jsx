@@ -95,9 +95,9 @@ export default function DisplayTables({ tables, onTableChange }) {
                 onTableChange={(updatedTable) => onTableChange(updatedTable, index)}
               />
             );
-          case "zone_adjustment":
+          case "zone_incentive_min_charge":
             return (
-              <ZoneAdjustmentTable
+              <ZoneIncentiveTable
                 key={index}
                 table={table}
                 onTableChange={(updatedTable) => onTableChange(updatedTable, index)}

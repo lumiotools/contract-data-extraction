@@ -1,4 +1,5 @@
 import os
+import math
 import google.generativeai as genai
 from google.generativeai.types.file_types import File
 from dotenv import load_dotenv
@@ -64,6 +65,8 @@ class ContractDataExtractionService:
                     or ("table" in data and data["table"])
                     or ("addresses" in data and data["addresses"])
                     or ("contract_type" in data and data["contract_type"])
+                    or ("services" in data and data["services"])
+                    or ("table_rows" in data and data["table_rows"])
                 ):
                     return response  # Successful response
                 else:
@@ -219,105 +222,83 @@ class ContractDataExtractionService:
         return [data_part1.get("table", {})]
 
     @classmethod
-    def extract_portfolio_tier_incentives_table(cls, chat: ChatSession):
-        response = cls.rate_limited_call(chat.send_message, """
-            Extract the Portfolio Tier Incentive Table from the attached contract in JSON format.
-            
-            Extract all available service(s) for the first 2 bands (eg: "0.01 - 19,429.99" and "19,430.00 - 25,904.99").
-            
-            For each row, ensure the "incentive" value is returned as a numeric percentage string (e.g. "18.00%","0.00%"). 
-            If the discount is not numeric, output null.
-            
-            Use the following output schema:
+    def extract_portfolio_tier_incentives_table(cls, uploadedFile: File):
+        chat = model.start_chat(history=[
             {
-                "table": {
-                  "table_type": "portfolio_tier_incentives",
-                  "name": "string",
-                  "data": [
-                    {
-                      "service": "string",
-                      "land/zone": "string",
-                      "band": "string",
-                      "incentive": "percentage (numeric string, or null)"
-                    }
-                  ]
-                }
+                'role': "user",
+                'parts': [uploadedFile, "Go through the attached contract and answer my questions."]
             }
-        """)
-        print(response.text.replace("```json\n", "").replace("\n```", ""))
-        print("Data Part 4")
-        try:
-            data_part1 = json.loads(response.text.replace("```json\n", "").replace("\n```", ""))
-        except:
-            return []
-        table = data_part1.get("table", {})
-        print("First part row count:", len(table.get("data", [])))
+        ])
         
         response = cls.rate_limited_call(chat.send_message, """
-            Extract the Portfolio Tier Incentive Table from the attached contract in JSON format.
-            
-            Extract all available service(s) for the next 2 bands ("25,905.00 - 37,779.99" and "37,780.00 - 43,174.99").            
-
-            For each row, return the "incentive" as a numeric percentage string (e.g. "18.00%"). 
-            If not numeric, output null.
+            Find the Portfolio Tier Incentive Table from the attached contract file.
+            Go through all the 3-4 pages of the Portfolio Tier Incentive Table in the contract file.
+            Read all the rows on all the pages of Portfolio Tier Incentive Table.
+            Extract all the Service(s) names from the Portfolio Tier Incentive Table and return them in a list.
             
             Use the following output schema:
             {
-                "table": {
-                  "table_type": "portfolio_tier_incentives",
-                  "name": "string",
-                  "data": [
-                    {
-                      "service": "string",
-                      "land/zone": "string",
-                      "band": "string",
-                      "incentive": "percentage (numeric string, or null)"
-                    }
-                  ]
-                }
+                "services": [
+                    "string", ... // All Service names from the Portfolio Tier Incentive Table 
+                ]
             }
         """)
-        print(response.text.replace("```json\n", "").replace("\n```", ""))
-        print("Data Part 5")
-        try:
-            data_part2 = json.loads(response.text.replace("```json\n", "").replace("\n```", ""))
-        except:
-            return [table]
-        print("Second part row count:", len(data_part2.get("table", {}).get("data", [])))
-        table.setdefault("data", []).extend(data_part2.get("table", {}).get("data", []))
         
-        response = cls.rate_limited_call(chat.send_message, """
-            Extract the Portfolio Tier Incentive Table from the attached contract in JSON format.
-            
-            Extract all available service(s) for the final 2 bands ("43,175.00 - 48,569.99" and "48,570.00 and up").
-            
-            For each row, return the "incentive" strictly as a numeric percentage string (e.g. "18.00%"). 
-            If the value is non-numeric, output null.
-            
-            Use the following output schema:
-            {
-                "table": {
-                  "table_type": "portfolio_tier_incentives",
-                  "name": "string",
-                  "data": [
-                    {
-                      "service": "string",
-                      "land/zone": "string",
-                      "band": "string",
-                      "incentive": "percentage (numeric string, or null)"
-                    }
-                  ]
-                }
-            }
-        """)
-        print(response.text.replace("```json\n", "").replace("\n```", ""))
-        print("Data Part 6")
         try:
-            data_part3 = json.loads(response.text.replace("```json\n", "").replace("\n```", ""))
+            services = json.loads(response.text.replace("```json\n", "").replace("\n```", "")).get("services", [])
         except:
-            return [table]
-        print("Third part row count:", len(data_part3.get("table", {}).get("data", [])))
-        table.setdefault("data", []).extend(data_part3.get("table", {}).get("data", []))
+            print("Failed to extract Service names from Portfolio Tier Incentive Table")
+            services = []
+            
+        print("Extracted Portfolio Tier Incentive Table services: ",len(services))
+        
+        no_of_calls = math.ceil(len(services) / 10)
+        table = {
+            "table_type": "portfolio_tier_incentives",
+            "name": "Portfolio Tier Incentive",
+            "data": []
+        }
+        
+        for i in range(no_of_calls):
+            services_chunk = services[i*10:(i+1)*10]
+            
+            response = cls.rate_limited_call(chat.send_message, """
+                Find the Portfolio Tier Incentive Table from the attached contract.
+                Find the following Service(s) in the Portfolio Tier Incentive Table: {service_names}.
+                
+                For each of the above Service(s), extract the "Land/Zone" and "WeeklyChargesBands" values.
+                
+                For each row, ensure the "incentive" value is returned as a numeric percentage string (e.g. "0.00%", "18.00%", ...). 
+                If the discount is not numeric, output null.
+                
+                **Note:** Extract the "incentive" values accurately as written in the contract file based on service and weekly charge band.
+                
+                Use the following output schema:
+                {
+                    "table_rows": [
+                        {
+                        "service": "string",
+                        "land/zone": "string",
+                        "band": "string", (Only these are possible Formats: "min - max" or "min and up" - Preserve the white spaces as shown in example)
+                        "incentive": "percentage (numeric string, or null)"
+                        }
+                    ]
+                }
+            """.replace("{service_names}",", ".join(services_chunk)))
+            
+            try:
+                table_rows = json.loads(response.text.replace("```json\n", "").replace("\n```", "")).get("table_rows", [])
+                print("Extracted Portfolio Tier Incentive Table rows for part ",i,": ",len(table_rows))
+            except:
+                print("Failed to extract Portfolio Tier Incentive Table rows for part ",i)
+                table_rows = []
+            
+            for row in table_rows:
+                row["band"] = row["band"].replace("- ", "-").replace(" -","-").replace("-"," - ")
+                
+            table["data"].extend(table_rows)
+            
+        
         return [table]
 
     @classmethod
@@ -589,19 +570,21 @@ class ContractDataExtractionService:
             }
         ])
         
+        # extracted_portfolio_tier_incentives_tables = cls.extract_portfolio_tier_incentives_table(uploadedFile)
+        
         # Execute all extractions concurrently
         with ThreadPoolExecutor() as executor:
+            extracted_portfolio_tier_incentives_tables = executor.submit(cls.extract_portfolio_tier_incentives_table, uploadedFile)
             extracted_weight_zone_incentives_tables_future = executor.submit(cls.extract_weight_destination_zone_bands_incentives, chat)
             extracted_service_incentive_tables_future = executor.submit(cls.extract_service_incentive_tables, chat)
-            extracted_portfolio_tier_incentives_tables_future = executor.submit(cls.extract_portfolio_tier_incentives_table, chat)
             extracted_zone_incentives_tables_future = executor.submit(cls.extract_zone_incentives_tables, chat)
             extracted_service_min_per_zone_base_rate_adjustment_table_future = executor.submit(cls.extract_service_min_per_zone_base_rate_adjustment_table, chat)
             extracted_additional_handling_charge_table_future = executor.submit(cls.extract_additional_handling_charge_table, chat)
             extracted_electronic_pld_bonus_table_future = executor.submit(cls.extract_electronic_pld_bonus_table, chat)
             
+            extracted_portfolio_tier_incentives_tables = extracted_portfolio_tier_incentives_tables.result()
             extracted_weight_zone_incentives_tables = extracted_weight_zone_incentives_tables_future.result()
             extracted_service_incentive_tables = extracted_service_incentive_tables_future.result()
-            extracted_portfolio_tier_incentives_tables = extracted_portfolio_tier_incentives_tables_future.result()
             extracted_zone_incentives_tables = extracted_zone_incentives_tables_future.result()
             extracted_service_min_per_zone_base_rate_adjustment_table = extracted_service_min_per_zone_base_rate_adjustment_table_future.result()
             extracted_additional_handling_charge_table = extracted_additional_handling_charge_table_future.result()
