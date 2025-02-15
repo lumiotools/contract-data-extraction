@@ -1264,40 +1264,40 @@ class ContractDataExtractionService:
         
         # Execute all extractions concurrently
         with ThreadPoolExecutor() as executor:
-            # extracted_portfolio_tier_incentives_tables = executor.submit(cls.extract_portfolio_tier_incentives_table, uploadedFile)
+            extracted_portfolio_tier_incentives_tables = executor.submit(cls.extract_portfolio_tier_incentives_table, uploadedFile)
             extracted_weight_zone_incentives_tables_future = executor.submit(cls.incentive_off_executives_null_dest, chat)
             # extracted_service_incentive_tables_future = executor.submit(cls.extract_service_incentive_tables, chat)
-            # extracted_zone_incentives_tables_future = executor.submit(cls.extract_zone_incentives_tables, chat)
-            # extracted_service_min_per_zone_base_rate_adjustment_table_future = executor.submit(cls.extract_service_min_per_zone_base_rate_adjustment_table, chat)
-            # extracted_additional_handling_charge_table_future = executor.submit(cls.extract_additional_handling_charge_table, chat)
-            # extracted_electronic_pld_bonus_table_future = executor.submit(cls.extract_electronic_pld_bonus_table, chat)
+            extracted_zone_incentives_tables_future = executor.submit(cls.extract_zone_incentives_tables, chat)
+            extracted_service_min_per_zone_base_rate_adjustment_table_future = executor.submit(cls.extract_service_min_per_zone_base_rate_adjustment_table, chat)
+            extracted_additional_handling_charge_table_future = executor.submit(cls.extract_additional_handling_charge_table, chat)
+            extracted_electronic_pld_bonus_table_future = executor.submit(cls.extract_electronic_pld_bonus_table, chat)
             
-            # extracted_portfolio_tier_incentives_tables = extracted_portfolio_tier_incentives_tables.result()
+            extracted_portfolio_tier_incentives_tables = extracted_portfolio_tier_incentives_tables.result()
             extracted_weight_zone_incentives_tables = extracted_weight_zone_incentives_tables_future.result()
             # extracted_service_incentive_tables = extracted_service_incentive_tables_future.result()
-            # extracted_zone_incentives_tables = extracted_zone_incentives_tables_future.result()
-            # extracted_service_min_per_zone_base_rate_adjustment_table = extracted_service_min_per_zone_base_rate_adjustment_table_future.result()
-            # extracted_additional_handling_charge_table = extracted_additional_handling_charge_table_future.result()
-            # extracted_electronic_pld_bonus_table = extracted_electronic_pld_bonus_table_future.result()
+            extracted_zone_incentives_tables = extracted_zone_incentives_tables_future.result()
+            extracted_service_min_per_zone_base_rate_adjustment_table = extracted_service_min_per_zone_base_rate_adjustment_table_future.result()
+            extracted_additional_handling_charge_table = extracted_additional_handling_charge_table_future.result()
+            extracted_electronic_pld_bonus_table = extracted_electronic_pld_bonus_table_future.result()
         
-        # with ThreadPoolExecutor() as executor:
-            # extracted_address_future = executor.submit(cls.extract_address, chat)
-            # extracted_contract_details_future = executor.submit(cls.extract_contract_details, chat)
+        with ThreadPoolExecutor() as executor:
+            extracted_address_future = executor.submit(cls.extract_address, chat)
+            extracted_contract_details_future = executor.submit(cls.extract_contract_details, chat)
             
-            # extracted_address = extracted_address_future.result()
-            # extracted_contract_details = extracted_contract_details_future.result()
+            extracted_address = extracted_address_future.result()
+            extracted_contract_details = extracted_contract_details_future.result()
         
         
-        # print("Extracted Contract Type:", extracted_contract_details)
+        print("Extracted Contract Type:", extracted_contract_details)
         tables = []
-        # tables.append(extracted_contract_details)
+        tables.append(extracted_contract_details)
         tables.extend(extracted_weight_zone_incentives_tables)
         # tables.extend(extracted_service_incentive_tables)
-        # tables.extend(extracted_portfolio_tier_incentives_tables)
-        # tables.extend(extracted_zone_incentives_tables)
-        # tables.extend(extracted_service_min_per_zone_base_rate_adjustment_table)
-        # tables.extend(extracted_additional_handling_charge_table)
-        # tables.extend(extracted_electronic_pld_bonus_table)
+        tables.extend(extracted_portfolio_tier_incentives_tables)
+        tables.extend(extracted_zone_incentives_tables)
+        tables.extend(extracted_service_min_per_zone_base_rate_adjustment_table)
+        tables.extend(extracted_additional_handling_charge_table)
+        tables.extend(extracted_electronic_pld_bonus_table)
         
         # print("Extracted Address:", extracted_address)
         return {
