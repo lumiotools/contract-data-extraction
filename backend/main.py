@@ -44,8 +44,8 @@ async def read_root():
 async def extract(file: UploadFile = File(...)):
     extracted_data = ContractDataExtractionService.extract(file)
     tables = extracted_data["tables"]
-    source_address = extracted_data["address"]
-    contract_type = extracted_data["contract_type"]
+    # source_address = extracted_data["address"]
+    # contract_type = extracted_data["contract_type"]
     return JSONResponse(content={"success": True, "message": "Extracted data", "data": {
         "tables": tables,
         # "source_address": source_address,
