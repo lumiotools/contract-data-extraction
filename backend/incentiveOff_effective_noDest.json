@@ -1,0 +1,902 @@
+[
+  {
+    "service": "UPS\u00ae Ground - Commercial Package",
+    "billing": "PrepaidFC TP UP RS RTP",
+    "zone": "2",
+    "weight": "1-20",
+    "weightUnit": "lbs",
+    "discount": "30.00%",
+    "tag": "Commercial Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Commercial Package",
+    "billing": "PrepaidFC TP UP RS RTP",
+    "zone": "3",
+    "weight": "1-20",
+    "weightUnit": "lbs",
+    "discount": "30.00%",
+    "tag": "Commercial Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Commercial Package",
+    "billing": "PrepaidFC TP UP RS RTP",
+    "zone": "4",
+    "weight": "1-20",
+    "weightUnit": "lbs",
+    "discount": "30.00%",
+    "tag": "Commercial Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Commercial Package",
+    "billing": "PrepaidFC TP UP RS RTP",
+    "zone": "5",
+    "weight": "1-20",
+    "weightUnit": "lbs",
+    "discount": "30.00%",
+    "tag": "Commercial Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Commercial Package",
+    "billing": "PrepaidFC TP UP RS RTP",
+    "zone": "6",
+    "weight": "1-20",
+    "weightUnit": "lbs",
+    "discount": "30.00%",
+    "tag": "Commercial Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Commercial Package",
+    "billing": "PrepaidFC TP UP RS RTP",
+    "zone": "7",
+    "weight": "1-20",
+    "weightUnit": "lbs",
+    "discount": "30.00%",
+    "tag": "Commercial Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Commercial Package",
+    "billing": "PrepaidFC TP UP RS RTP",
+    "zone": "8",
+    "weight": "1-20",
+    "weightUnit": "lbs",
+    "discount": "30.00%",
+    "tag": "Commercial Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Commercial Package",
+    "billing": "PrepaidFC TP UP RS RTP",
+    "zone": "44",
+    "weight": "1-20",
+    "weightUnit": "lbs",
+    "discount": "30.00%",
+    "tag": "Commercial Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Commercial Package",
+    "billing": "PrepaidFC TP UP RS RTP",
+    "zone": "45",
+    "weight": "1-20",
+    "weightUnit": "lbs",
+    "discount": "30.00%",
+    "tag": "Commercial Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Commercial Package",
+    "billing": "PrepaidFC TP UP RS RTP",
+    "zone": "46",
+    "weight": "1-20",
+    "weightUnit": "lbs",
+    "discount": "30.00%",
+    "tag": "Commercial Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Commercial Package",
+    "billing": "PrepaidFC TP UP RS RTP",
+    "zone": "2",
+    "weight": "21-150",
+    "weightUnit": "lbs",
+    "discount": "34.00%",
+    "tag": "Commercial Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Commercial Package",
+    "billing": "PrepaidFC TP UP RS RTP",
+    "zone": "3",
+    "weight": "21-150",
+    "weightUnit": "lbs",
+    "discount": "34.00%",
+    "tag": "Commercial Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Commercial Package",
+    "billing": "PrepaidFC TP UP RS RTP",
+    "zone": "4",
+    "weight": "21-150",
+    "weightUnit": "lbs",
+    "discount": "34.00%",
+    "tag": "Commercial Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Commercial Package",
+    "billing": "PrepaidFC TP UP RS RTP",
+    "zone": "5",
+    "weight": "21-150",
+    "weightUnit": "lbs",
+    "discount": "34.00%",
+    "tag": "Commercial Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Commercial Package",
+    "billing": "PrepaidFC TP UP RS RTP",
+    "zone": "6",
+    "weight": "21-150",
+    "weightUnit": "lbs",
+    "discount": "34.00%",
+    "tag": "Commercial Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Commercial Package",
+    "billing": "PrepaidFC TP UP RS RTP",
+    "zone": "7",
+    "weight": "21-150",
+    "weightUnit": "lbs",
+    "discount": "34.00%",
+    "tag": "Commercial Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Commercial Package",
+    "billing": "PrepaidFC TP UP RS RTP",
+    "zone": "8",
+    "weight": "21-150",
+    "weightUnit": "lbs",
+    "discount": "34.00%",
+    "tag": "Commercial Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Commercial Package",
+    "billing": "PrepaidFC TP UP RS RTP",
+    "zone": "44",
+    "weight": "21-150",
+    "weightUnit": "lbs",
+    "discount": "34.00%",
+    "tag": "Commercial Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Commercial Package",
+    "billing": "PrepaidFC TP UP RS RTP",
+    "zone": "45",
+    "weight": "21-150",
+    "weightUnit": "lbs",
+    "discount": "34.00%",
+    "tag": "Commercial Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Commercial Package",
+    "billing": "PrepaidFC TP UP RS RTP",
+    "zone": "46",
+    "weight": "21-150",
+    "weightUnit": "lbs",
+    "discount": "34.00%",
+    "tag": "Commercial Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Commercial Package",
+    "billing": "PrepaidFC TP UP RS RTP",
+    "zone": "2",
+    "weight": "151 and up",
+    "weightUnit": "lbs",
+    "discount": "34.00%",
+    "tag": "Commercial Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Commercial Package",
+    "billing": "PrepaidFC TP UP RS RTP",
+    "zone": "3",
+    "weight": "151 and up",
+    "weightUnit": "lbs",
+    "discount": "34.00%",
+    "tag": "Commercial Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Commercial Package",
+    "billing": "PrepaidFC TP UP RS RTP",
+    "zone": "4",
+    "weight": "151 and up",
+    "weightUnit": "lbs",
+    "discount": "34.00%",
+    "tag": "Commercial Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Commercial Package",
+    "billing": "PrepaidFC TP UP RS RTP",
+    "zone": "5",
+    "weight": "151 and up",
+    "weightUnit": "lbs",
+    "discount": "34.00%",
+    "tag": "Commercial Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Commercial Package",
+    "billing": "PrepaidFC TP UP RS RTP",
+    "zone": "6",
+    "weight": "151 and up",
+    "weightUnit": "lbs",
+    "discount": "34.00%",
+    "tag": "Commercial Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Commercial Package",
+    "billing": "PrepaidFC TP UP RS RTP",
+    "zone": "7",
+    "weight": "151 and up",
+    "weightUnit": "lbs",
+    "discount": "34.00%",
+    "tag": "Commercial Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Commercial Package",
+    "billing": "PrepaidFC TP UP RS RTP",
+    "zone": "8",
+    "weight": "151 and up",
+    "weightUnit": "lbs",
+    "discount": "34.00%",
+    "tag": "Commercial Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Commercial Package",
+    "billing": "PrepaidFC TP UP RS RTP",
+    "zone": "44",
+    "weight": "151 and up",
+    "weightUnit": "lbs",
+    "discount": "34.00%",
+    "tag": "Commercial Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Commercial Package",
+    "billing": "PrepaidFC TP UP RS RTP",
+    "zone": "45",
+    "weight": "151 and up",
+    "weightUnit": "lbs",
+    "discount": "34.00%",
+    "tag": "Commercial Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Commercial Package",
+    "billing": "PrepaidFC TP UP RS RTP",
+    "zone": "46",
+    "weight": "151 and up",
+    "weightUnit": "lbs",
+    "discount": "34.00%",
+    "tag": "Commercial Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "2",
+    "weight": "1-5",
+    "weightUnit": "lbs",
+    "discount": "20.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "3",
+    "weight": "1-5",
+    "weightUnit": "lbs",
+    "discount": "20.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "4",
+    "weight": "1-5",
+    "weightUnit": "lbs",
+    "discount": "20.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "5",
+    "weight": "1-5",
+    "weightUnit": "lbs",
+    "discount": "20.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "6",
+    "weight": "1-5",
+    "weightUnit": "lbs",
+    "discount": "20.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "7",
+    "weight": "1-5",
+    "weightUnit": "lbs",
+    "discount": "20.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "8",
+    "weight": "1-5",
+    "weightUnit": "lbs",
+    "discount": "20.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "44",
+    "weight": "1-5",
+    "weightUnit": "lbs",
+    "discount": "20.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "45",
+    "weight": "1-5",
+    "weightUnit": "lbs",
+    "discount": "20.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "46",
+    "weight": "1-5",
+    "weightUnit": "lbs",
+    "discount": "20.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "2",
+    "weight": "6-10",
+    "weightUnit": "lbs",
+    "discount": "22.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "3",
+    "weight": "6-10",
+    "weightUnit": "lbs",
+    "discount": "22.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "4",
+    "weight": "6-10",
+    "weightUnit": "lbs",
+    "discount": "22.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "5",
+    "weight": "6-10",
+    "weightUnit": "lbs",
+    "discount": "22.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "6",
+    "weight": "6-10",
+    "weightUnit": "lbs",
+    "discount": "22.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "7",
+    "weight": "6-10",
+    "weightUnit": "lbs",
+    "discount": "22.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "8",
+    "weight": "6-10",
+    "weightUnit": "lbs",
+    "discount": "22.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "44",
+    "weight": "6-10",
+    "weightUnit": "lbs",
+    "discount": "22.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "45",
+    "weight": "6-10",
+    "weightUnit": "lbs",
+    "discount": "22.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "46",
+    "weight": "6-10",
+    "weightUnit": "lbs",
+    "discount": "22.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "2",
+    "weight": "11-20",
+    "weightUnit": "lbs",
+    "discount": "25.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "3",
+    "weight": "11-20",
+    "weightUnit": "lbs",
+    "discount": "25.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "4",
+    "weight": "11-20",
+    "weightUnit": "lbs",
+    "discount": "25.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "5",
+    "weight": "11-20",
+    "weightUnit": "lbs",
+    "discount": "25.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "6",
+    "weight": "11-20",
+    "weightUnit": "lbs",
+    "discount": "25.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "7",
+    "weight": "11-20",
+    "weightUnit": "lbs",
+    "discount": "25.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "8",
+    "weight": "11-20",
+    "weightUnit": "lbs",
+    "discount": "25.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "44",
+    "weight": "11-20",
+    "weightUnit": "lbs",
+    "discount": "25.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "45",
+    "weight": "11-20",
+    "weightUnit": "lbs",
+    "discount": "25.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "46",
+    "weight": "11-20",
+    "weightUnit": "lbs",
+    "discount": "25.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "2",
+    "weight": "21-30",
+    "weightUnit": "lbs",
+    "discount": "27.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "3",
+    "weight": "21-30",
+    "weightUnit": "lbs",
+    "discount": "27.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "4",
+    "weight": "21-30",
+    "weightUnit": "lbs",
+    "discount": "27.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "5",
+    "weight": "21-30",
+    "weightUnit": "lbs",
+    "discount": "27.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "6",
+    "weight": "21-30",
+    "weightUnit": "lbs",
+    "discount": "27.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "7",
+    "weight": "21-30",
+    "weightUnit": "lbs",
+    "discount": "27.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "8",
+    "weight": "21-30",
+    "weightUnit": "lbs",
+    "discount": "27.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "44",
+    "weight": "21-30",
+    "weightUnit": "lbs",
+    "discount": "27.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "45",
+    "weight": "21-30",
+    "weightUnit": "lbs",
+    "discount": "27.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "46",
+    "weight": "21-30",
+    "weightUnit": "lbs",
+    "discount": "27.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "2",
+    "weight": "31-150",
+    "weightUnit": "lbs",
+    "discount": "30.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "3",
+    "weight": "31-150",
+    "weightUnit": "lbs",
+    "discount": "30.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "4",
+    "weight": "31-150",
+    "weightUnit": "lbs",
+    "discount": "30.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "5",
+    "weight": "31-150",
+    "weightUnit": "lbs",
+    "discount": "30.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "6",
+    "weight": "31-150",
+    "weightUnit": "lbs",
+    "discount": "30.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "7",
+    "weight": "31-150",
+    "weightUnit": "lbs",
+    "discount": "30.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "8",
+    "weight": "31-150",
+    "weightUnit": "lbs",
+    "discount": "30.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "44",
+    "weight": "31-150",
+    "weightUnit": "lbs",
+    "discount": "30.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "45",
+    "weight": "31-150",
+    "weightUnit": "lbs",
+    "discount": "30.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "46",
+    "weight": "31-150",
+    "weightUnit": "lbs",
+    "discount": "30.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "2",
+    "weight": "151 and up",
+    "weightUnit": "lbs",
+    "discount": "30.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "3",
+    "weight": "151 and up",
+    "weightUnit": "lbs",
+    "discount": "30.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "4",
+    "weight": "151 and up",
+    "weightUnit": "lbs",
+    "discount": "30.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "5",
+    "weight": "151 and up",
+    "weightUnit": "lbs",
+    "discount": "30.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "6",
+    "weight": "151 and up",
+    "weightUnit": "lbs",
+    "discount": "30.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "7",
+    "weight": "151 and up",
+    "weightUnit": "lbs",
+    "discount": "30.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "8",
+    "weight": "151 and up",
+    "weightUnit": "lbs",
+    "discount": "30.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "44",
+    "weight": "151 and up",
+    "weightUnit": "lbs",
+    "discount": "30.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "45",
+    "weight": "151 and up",
+    "weightUnit": "lbs",
+    "discount": "30.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  },
+  {
+    "service": "UPS\u00ae Ground - Residential Package",
+    "billing": "Prepaid FrtFC TP RS RTP",
+    "zone": "46",
+    "weight": "151 and up",
+    "weightUnit": "lbs",
+    "discount": "30.00%",
+    "tag": "Residential Package, Ground",
+    "destination": "null"
+  }
+]

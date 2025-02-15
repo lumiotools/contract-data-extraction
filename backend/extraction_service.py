@@ -67,8 +67,8 @@ class ContractDataExtractionService:
                     or ("contract_type" in data and data["contract_type"])
                     or ("services" in data and data["services"])
                     or ("table_rows" in data and data["table_rows"])
-                    or ("effective1" in data and data["effective1"])
-                    or ("effective2" in data and data["effective2"])
+                   
+                   
                     
                 ):
                     return response  # Successful response
@@ -106,22 +106,25 @@ class ContractDataExtractionService:
         # Step 1: Extract Data Part 1
         response = cls.rate_limited_call(chat.send_message, """
             Extract all the tables in the attached contract in JSON format which match the following conditions:
-            1. Table heading has 'Incentives Off Effective Rates'.
+            1. Table heading has '- Incentives Off Effective Rates'.
             2. Table has 'Weight (lbs)', 'Zones', and 'Discount' columns.
-
-            Format output as this json structure with key "effective1":
+            3. Populate the zone number in zone, weight range in weight, and discount percentage in discount.
+            
+            give max 80 rows in the response
+            Format output as the following json structure:
+            
             {
-                "effective1": [
-                      {
-                    "service": "UPS Worldwide Express",  // service name 
-                    "billing": "PrepaidAll",  // billing type can be taken name after Package- Prepaid or Residential Package- Prepaid
-                    "zone": "All",  // zone number which is present in each column
-                    "weight": "All",   // weight range
-                    "weightUnit": "lbs",        // weight unit
-                    "discount": "53.00%",            // discount percentage       
-                    "tag": "Letter,Export, PrepaidAll",   // extract from service name 
-                    "destination": "null"  // destination is null
-                },
+                "table_rows": [
+                    {
+                        "service": "UPS Worldwide Express",  // service name  from table heading
+                        "billing": "PrepaidAll",  // billing type can be taken name after Package- Prepaid or Residential Package- Prepaid
+                        "zone": "All",  // zone number which is present in each column
+                        "weight": "All",   // weight range
+                        "weightUnit": "lbs",        // weight unit
+                        "discount": "53.00%",            // discount percentage       
+                        "tag": "Letter,Export, PrepaidAll",   // extract from service name 
+                        "destination": "null"  // destination is null
+                    },
                 ]
             }
             
@@ -135,7 +138,7 @@ class ContractDataExtractionService:
         data_part1 = parse_json_response(response.text, "Data Part 1")
 
         # Extract rows from "effective1"
-        tables = data_part1.get("effective1", [])
+        tables = data_part1.get("table_rows", [])
 
         print(f"\n🔹 Data Part 1 Extracted ({len(tables)} rows):\n{json.dumps(tables, indent=2)}")
 
@@ -151,29 +154,36 @@ class ContractDataExtractionService:
 
         # Step 3: Extract Data Part 2 (Continuing from Last Extracted Row)
         if last_row:
-            query_part2 = f"""
-                Extract 'Incentives Off Effective Rates' tables **continuing from**:
-                - Last extracted zone: {last_row['zone']}
-                - Last extracted weight: {last_row['weight']}
-                
-                Format output as an example JSON structure:
-                {
-                    "effective2": [
-                        {
-                            "service": "UPS Ground - Residential Package",
-                            "billing": "Prepaid",
-                            "zone": "2",
-                            "weight": "1-5",
-                            "weightUnit": "lbs",
-                            "discount": "30.00%",                
-                            "tag": "Residential Package, Prepaid",
-                            "destination": "null"
-                        }
-                    ]
-                }
+            query_part2 = """
+            
+                Extract 'Incentives Off Effective Rates' tables :
+                    1. Table heading has '- Incentives Off Effective Rates'.
+                    2. Table has 'Weight (lbs)', 'Zones', and 'Discount' columns.
+                    3. Populate the zone number in zone, weight range in weight, and discount percentage in discount.
+                    
+                **continuing from**
+                - Last row: last_row1
+                 
+                extract max 80 rows in the response
+            Format output as the following json structure:
+            {
+                "table_rows": [
+                    {
+                        "service": "UPS Worldwide Express",  // service name  from table heading
+                        "billing": "PrepaidAll",  // billing type can be taken name after Package- Prepaid or Residential Package- Prepaid
+                        "zone": "5",  // zone number which is present in each column
+                        "weight": "All",   // weight range
+                        "weightUnit": "lbs",        // weight unit
+                        "discount": "53.00%",            // discount percentage       
+                        "tag": "Letter,Export, PrepaidAll",   // extract from service name 
+                        "destination": "null"  // destination is null
+                    },
+                ]
+            }
                 
                 Only return rows **AFTER** this row, avoiding duplicates.
-            """
+            """.replace("last_row1", str(last_row))
+            print(query_part2)
         else:
             query_part2 = "Extract Incentive Off effective tables where you left extracting"
 
@@ -181,7 +191,7 @@ class ContractDataExtractionService:
         data_part2 = parse_json_response(response.text, "Data Part 2")
 
         # Extract rows from "effective2"
-        additional_rows = data_part2.get("effective2", [])
+        additional_rows = data_part2.get("table_rows", [])
 
         print(f"\n🔹 Data Part 2 Extracted ({len(additional_rows)} rows):\n{json.dumps(additional_rows, indent=2)}")
 
@@ -208,62 +218,26 @@ class ContractDataExtractionService:
              Extract details from these type of statements and convert in json format  as follows:
              ex: UPS Worldwide Express® - Export - Letter - PrepaidAll - Incentives Off Effective Rates - 53.00%
              
-                 details should be extracted as follows:
+            Format output as the following json structure:
             
-             {
-                    "service": "UPS Worldwide Express",  // service name 
-                    "billing": "PrepaidAll",  // billing type can be taken name after Package- Prepaid or Residential Package- Prepaid
-                    "zone": "All",  // zone number which is present in each column
-                    "weight": "All",   // weight range
-                    "weightUnit": "lbs",        // weight unit
-                    "discount": "53.00%",            // discount percentage       
-                    "tag": "Letter,Export, PrepaidAll"  // extract from service name 
-                },
-             
+            {
+                "table_rows": [
+                    {
+                        "service": "UPS Worldwide Express",  // service name  from statement
+                        "billing": "PrepaidAll",  // billing type can be taken name after Package- Prepaid or Residential Package- Prepaid
+                        "zone": "All",  
+                        "weight": "All",   
+                        "weightUnit": "lbs",        
+                        "discount": "53.00%",            // discount percentage       
+                        "tag": "Letter,Export, PrepaidAll",   // extract from service name 
+                        "destination": "null"  // destination is null
+                    },
+                ]
+            }
                 
             All the statements details are extracted and merged in this single "tableData" object.
             And notes below table should be added as an array of strings in notes key.
-            
-            
-            Use the following output schema:
-            
-                
-                   {
-                            "title": "Incentives off effective rate",
-                            "tableData": {
-                            "headers": [
-                                "service",
-                                "billing",
-                                "zone",
-                                "weight",
-                                "weightUnit",
-                                "discount",
-                                "tag",
-                                "destination"    
-                            ],
-                            "rows": [
-                                {
-                                "service": "string",
-                                "billing": "string",
-                                "zone": "string",
-                                "weight": "string",
-                                "weightUnit": "string",
-                                "discount": "percentage (numeric string, or null)",
-                                "tag": "string",
-                                "destination": "string" (string, or null)
-                                }
-                            ],
-                            "notes": [
-                                "Discount exclude accessorials and surcharges"
-                            ],
-                            "validityPeriod": {
-                                "startDate": "MM/DD/YYYY",
-                                "endDate": "MM/DD/YYYY"    
-                            }      
-                            }
-                        }
-                
-            
+                   
             Exclude tables for:
               - Portfolio Tier Incentives
               - Zone Adjustment
@@ -277,20 +251,10 @@ class ContractDataExtractionService:
             return []
         print("Data Part 1", len(data_part1.get("tables", [])))
         
-        response = cls.rate_limited_call(chat.send_message, """
-            Extract statements Incentive Off effective statements
-      
-        """)
-        print(response.text.replace("```json\n", "").replace("\n```", ""))
-        try:
-            data_part2 = json.loads(response.text.replace("```json\n", "").replace("\n```", ""))
-        except:
-            return data_part1.get("tables", [])
-        print("Data Part 2", len(data_part2.get("tables", [])))
-        
+    
         tables = []
         tables.extend(data_part1.get("tables", []))
-        tables.extend(data_part2.get("tables", []))
+     
         return tables
 
 
