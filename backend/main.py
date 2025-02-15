@@ -48,9 +48,11 @@ async def extract(file: UploadFile = File(...)):
     contract_type = extracted_data["contract_type"]
     return JSONResponse(content={"success": True, "message": "Extracted data", "data": {
         "tables": tables,
-        "source_address": source_address,
-        "contract_type": contract_type
+        # "source_address": source_address,
+        # "contract_type": contract_type
     }})
+
+
 
 
 def find_best_match(service_name, service_list):
