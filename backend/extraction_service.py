@@ -400,6 +400,7 @@ class ContractDataExtractionService:
                 table_rows = []
             
             for row in table_rows:
+                print(row["band"])
                 if row["band"] and "up" in row["band"]:
                     min = row["band"].replace(" and up", "").replace("and Up", "")
                     max = "infinity"
