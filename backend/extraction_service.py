@@ -368,11 +368,18 @@ class ContractDataExtractionService:
                 table_rows = []
             
             for row in table_rows:
-                row["band"] = row["band"].replace("- ", "-").replace(" -","-").replace("-"," - ")
-                
-            table["data"].extend(table_rows)
+                print(row["band"])
+                if row["band"] and "up" in row["band"]:
+                    min = row["band"].replace(" and up", "").replace("and Up", "")
+                    max = "infinity"
+                else:
+                    min, max = row["band"].replace("- ", "-").replace(" -","-").split("-")
+                row["weeklySpendMin"] = min
+                row["weeklySpendMax"] = max
+                del row["band"]    
             
-        
+            table["tableData"]["rows"].extend(table_rows)
+            
         return [table]
 
     @classmethod
