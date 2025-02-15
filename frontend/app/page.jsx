@@ -9,7 +9,8 @@ import { UploadIcon, Loader2, ArrowUpRight, Zap } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { useAnalysis } from "@/lib/Context";
 import { LoadingAnimation } from "@/components/loading-animation";
-import DisplayTables from "@/components/display-tables";
+import DisplayExtractedContract from "@/components/display-extracted-contract";
+import { DUMMY_DATA } from "@/constants/dummyData";
 
 export default function HomePage() {
   const router = useRouter();
@@ -26,7 +27,7 @@ export default function HomePage() {
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({});
   const [error, setError] = useState("");
-  const [tables, setTables] = useState([]);
+  const [extractedContract, setExtractedContract] = useState();
   const [editableTables, setEditableTables] = useState([]);
 
   const handleFileChange = (e) => {
@@ -87,8 +88,8 @@ export default function HomePage() {
       if (response.ok) {
         const data = await response.json();
         localStorage.setItem("extractedData", JSON.stringify(data.data));
-        setTables(data.data.tables);
-        setEditableTables(data.data.tables);
+        setExtractedContract(data.data);
+        // setEditableTables(data.data.tables);
         setLoading(false);
       } else {
         const errorData = await response.json();
@@ -107,7 +108,8 @@ export default function HomePage() {
     setEditableTables(updatedTables);
 
     // Retrieve existing extractedData from local storage
-    const extractedData = JSON.parse(localStorage.getItem("extractedData")) || {};
+    const extractedData =
+      JSON.parse(localStorage.getItem("extractedData")) || {};
 
     // Update only the tables field
     extractedData.tables = updatedTables;
@@ -230,9 +232,10 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-        {tables.length > 0 && (
+        {extractedContract && (
           <div className="bg-[#23232F]/80 backdrop-blur-xl overflow-hidden rounded-xl p-8">
-            <DisplayTables tables={editableTables} onTableChange={handleTableChange} />
+            <DisplayExtractedContract {...extractedContract} />
+            {/* <DisplayTables tables={editableTables} onTableChange={handleTableChange} /> */}
             <div className="mt-8">
               <Button
                 onClick={() => router.push("/results")}

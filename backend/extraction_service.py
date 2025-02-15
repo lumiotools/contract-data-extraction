@@ -70,6 +70,7 @@ class ContractDataExtractionService:
                     or ("rows" in data and data["rows"])
                     or ("eligible_accounts" in data and data["eligible_accounts"])
                     or ("tableData" in data and data["tableData"])
+                    or ("metadata" in data and data["metadata"])
                 ):
                     return response  # Successful response
                 else:
@@ -93,7 +94,7 @@ class ContractDataExtractionService:
                 "rows": []
             }
         }
-        service_discounts_extraction_prompt = """
+        incentive_off_effective_rates_extraction_prompt = """
                 Find the Incentives Off Effective Rates tables or data from the attached contract.
                 It will be in the tabular form or single line format.
                 Each one will have a Service Name.
@@ -151,11 +152,11 @@ class ContractDataExtractionService:
             if len(table["tableData"]["rows"]) > 0:
                 last_5_rows = table["tableData"]["rows"][-5:]
                 
-                service_discounts_extraction_prompt += f"""
+                incentive_off_effective_rates_extraction_prompt += f"""
                     Continuing from the last extracted rows:
                     {str(last_5_rows)}
                 """
-            response = cls.rate_limited_call(chat.send_message, service_discounts_extraction_prompt)
+            response = cls.rate_limited_call(chat.send_message, incentive_off_effective_rates_extraction_prompt)
             data = json.loads(response.text.replace("```json\n", "").replace("\n```", ""))
         
             try:
@@ -169,6 +170,43 @@ class ContractDataExtractionService:
                 print("Failed to extract service discounts")
                 
             print("Total Extracted Service Discounts: ", len(table["tableData"]["rows"]))
+            
+        incentive_off_effective_rates_metadata_prompt = """
+            Extract the notes relevant to the given services.
+            Extract the validity period for the given services as mentioned in the contract.
+            
+            Notes are usually located above or below the Incentives Off Effective Rates table of the given services.
+            validity period of the given services is usually mentioned in the text below the Incentives Off Effective Rates table of that service.
+            
+            Extract the Details accurately as mentioned in the contract file.
+            
+            These are the services for which you need to extract metadata:
+            {services}
+            
+            Use the following output schema:
+            
+            {
+                "metadata": [
+                    "service": "string",
+                    "notes": ["string", ...], // Relevant notes for this particular service
+                    "validityPeriod": {         // Validity period for this particular service
+                        "startDate": "string",
+                        "endDate": "string"   
+                    }
+                ]
+            }
+        """.replace("{services}", ", ".join(set([row["service"] for row in table["tableData"]["rows"]])))
+        
+        response = cls.rate_limited_call(chat.send_message, incentive_off_effective_rates_metadata_prompt)
+        
+        try:
+            metadata = json.loads(response.text.replace("```json\n", "").replace("\n```", ""))
+            print("Extracted Metadata for inceintive off effective rates: ", metadata)
+        except:
+            print("Failed to extract metadata for inceintive off effective rates")
+            metadata = []
+        
+        table["metadata"] = metadata        
             
         return table
     
@@ -219,7 +257,7 @@ class ContractDataExtractionService:
             "tableData": {
                 "headers": [
                     "service",
-                    "lane_zone",
+                    "land_zone",
                     "weeklySpendMin",
                     "weeklySpendMax",
                     "currency",
@@ -630,7 +668,6 @@ class ContractDataExtractionService:
             extracted_portfolio_tier_incentives_tables = executor.submit(cls.extract_portfolio_tier_incentive_table, uploadedFile)
             extracted_zone_incentives_tables_future = executor.submit(cls.extract_minimum_net_charge_tables, chat)
             extracted_service_min_per_zone_base_rate_adjustment_table_future = executor.submit(cls.extract_service_adjustment_table, chat)
-            # extracted_additional_handling_charge_table_future = executor.submit(cls.extract_additional_handling_charge_table, chat)
             extracted_electronic_pld_bonus_table_future = executor.submit(cls.extract_electronic_pld_bonus_table, chat)
             extracted_contract_details_future = executor.submit(cls.extract_contract_details, chat)
             
@@ -638,7 +675,6 @@ class ContractDataExtractionService:
             extracted_portfolio_tier_incentives_table = extracted_portfolio_tier_incentives_tables.result()
             extracted_zone_incentives_tables = extracted_zone_incentives_tables_future.result()
             extracted_service_min_per_zone_base_rate_adjustment_table = extracted_service_min_per_zone_base_rate_adjustment_table_future.result()
-            # extracted_additional_handling_charge_table = extracted_additional_handling_charge_table_future.result()
             extracted_electronic_pld_bonus_table = extracted_electronic_pld_bonus_table_future.result()
             extracted_contract_details = extracted_contract_details_future.result()
         
@@ -648,10 +684,9 @@ class ContractDataExtractionService:
         tables.append(extracted_portfolio_tier_incentives_table)
         tables.append(extracted_zone_incentives_tables)
         tables.append(extracted_service_min_per_zone_base_rate_adjustment_table)
-        # tables.append(extracted_additional_handling_charge_table)
         tables.append(extracted_electronic_pld_bonus_table)
         
-        # print("Extracted Address:", extracted_address)
+        
         return {
             "details": extracted_contract_details,
             "tables": tables,
