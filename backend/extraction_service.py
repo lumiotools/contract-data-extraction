@@ -164,7 +164,7 @@ class ContractDataExtractionService:
                 **continuing from**
                 - Last row: last_row1
                  
-                extract max 80 rows in the response
+            extract max 80 rows in the response
             Format output as the following json structure:
             {
                 "table_rows": [
@@ -215,8 +215,12 @@ class ContractDataExtractionService:
             Extract all the details in the attached contract in JSON format which match the following conditions:
             
                 
-             Extract details from these type of statements and convert in json format  as follows:
+             Extract details from these type of statements only and convert in json format  as follows:
              ex: UPS Worldwide Express® - Export - Letter - PrepaidAll - Incentives Off Effective Rates - 53.00%
+             
+             **if statement is not ending with percentage then ignore that statement**
+             UPS Worldwide Express® - Export - Letter - PrepaidAll - Incentives Off Effective Rates
+             - table then ignore that statement
              
             Format output as the following json structure:
             
@@ -235,9 +239,7 @@ class ContractDataExtractionService:
                 ]
             }
                 
-            All the statements details are extracted and merged in this single "tableData" object.
-            And notes below table should be added as an array of strings in notes key.
-                   
+                        
             Exclude tables for:
               - Portfolio Tier Incentives
               - Zone Adjustment
@@ -254,7 +256,11 @@ class ContractDataExtractionService:
     
         tables = []
         tables.extend(data_part1.get("tables", []))
-     
+        
+        file_path2 = "incentiveOff_effective_statements.json"
+        with open(file_path2, "w", encoding="utf-8") as json_file:
+            json.dump(tables, json_file, indent=2)
+            
         return tables
 
 
@@ -743,36 +749,36 @@ class ContractDataExtractionService:
         # Execute all extractions concurrently
         with ThreadPoolExecutor() as executor:
             # extracted_portfolio_tier_incentives_tables = executor.submit(cls.extract_portfolio_tier_incentives_table, uploadedFile)
-            extracted_weight_zone_incentives_tables_future = executor.submit(cls.incentive_off_executives_null_dest, chat)
-            # extracted_service_incentive_tables_future = executor.submit(cls.incentive_off_executives_statements, chat)
+            # extracted_weight_zone_incentives_tables_future = executor.submit(cls.incentive_off_executives_null_dest, chat)
+            extracted_incentive_off_executives_statements = executor.submit(cls.incentive_off_executives_statements, chat)
             # extracted_zone_incentives_tables_future = executor.submit(cls.extract_zone_incentives_tables, chat)
             # extracted_service_min_per_zone_base_rate_adjustment_table_future = executor.submit(cls.extract_service_min_per_zone_base_rate_adjustment_table, chat)
             # extracted_additional_handling_charge_table_future = executor.submit(cls.extract_additional_handling_charge_table, chat)
             # extracted_electronic_pld_bonus_table_future = executor.submit(cls.extract_electronic_pld_bonus_table, chat)
             
             # extracted_portfolio_tier_incentives_tables = extracted_portfolio_tier_incentives_tables.result()
-            extracted_weight_zone_incentives_tables = extracted_weight_zone_incentives_tables_future.result()
-            extracted_service_incentive_tables = extracted_service_incentive_tables_future.result()
+            # extracted_weight_zone_incentives_tables = extracted_weight_zone_incentives_tables_future.result()
+            extracted_service_incentive_tables = extracted_incentive_off_executives_statements.result()
             # extracted_zone_incentives_tables = extracted_zone_incentives_tables_future.result()
             # extracted_service_min_per_zone_base_rate_adjustment_table = extracted_service_min_per_zone_base_rate_adjustment_table_future.result()
             # extracted_additional_handling_charge_table = extracted_additional_handling_charge_table_future.result()
             # extracted_electronic_pld_bonus_table = extracted_electronic_pld_bonus_table_future.result()
         
-        with ThreadPoolExecutor() as executor:
+        # with ThreadPoolExecutor() as executor:
             # extracted_address_future = executor.submit(cls.extract_address, chat)
             # extracted_contract_type_future = executor.submit(cls.extract_contract_type, chat)
             
-            extracted_address = extracted_address_future.result()
-            extracted_contract_type = extracted_contract_type_future.result()
+            # extracted_address = extracted_address_future.result()
+            # extracted_contract_type = extracted_contract_type_future.result()
         
         tables = []
-        tables.extend(extracted_weight_zone_incentives_tables)
+        # tables.extend(extracted_weight_zone_incentives_tables)
         tables.extend(extracted_service_incentive_tables)
-        tables.extend(extracted_portfolio_tier_incentives_tables)
-        tables.extend(extracted_zone_incentives_tables)
-        tables.extend(extracted_service_min_per_zone_base_rate_adjustment_table)
-        tables.extend(extracted_additional_handling_charge_table)
-        tables.extend(extracted_electronic_pld_bonus_table)
+        # tables.extend(extracted_portfolio_tier_incentives_tables)
+        # tables.extend(extracted_zone_incentives_tables)
+        # tables.extend(extracted_service_min_per_zone_base_rate_adjustment_table)
+        # tables.extend(extracted_additional_handling_charge_table)
+        # tables.extend(extracted_electronic_pld_bonus_table)
         
         # print("Extracted Address:", tables)
         return {
