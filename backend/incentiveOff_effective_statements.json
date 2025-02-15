@@ -1,0 +1,202 @@
+[
+  {
+    "service": "UPS Worldwide Express",
+    "billing": "PrepaidAll",
+    "zone": "All",
+    "weight": "All",
+    "weightUnit": "lbs",
+    "discount": "53.00%",
+    "tag": "Letter,Export, PrepaidAll",
+    "destination": "null"
+  },
+  {
+    "service": "UPS Worldwide Express",
+    "billing": "PrepaidAll",
+    "zone": "All",
+    "weight": "All",
+    "weightUnit": "lbs",
+    "discount": "53.00%",
+    "tag": "Document,Export, PrepaidAll",
+    "destination": "null"
+  },
+  {
+    "service": "UPS Worldwide Express",
+    "billing": "PrepaidAll",
+    "zone": "All",
+    "weight": "All",
+    "weightUnit": "lbs",
+    "discount": "53.00%",
+    "tag": "Package,Export, PrepaidAll",
+    "destination": "null"
+  },
+  {
+    "service": "UPS Worldwide Express",
+    "billing": "PrepaidAll",
+    "zone": "All",
+    "weight": "All",
+    "weightUnit": "lbs",
+    "discount": "53.00%",
+    "tag": "Pak,Export, PrepaidAll",
+    "destination": "null"
+  },
+  {
+    "service": "UPS Worldwide Saver",
+    "billing": "PrepaidAll",
+    "zone": "All",
+    "weight": "All",
+    "weightUnit": "lbs",
+    "discount": "53.00%",
+    "tag": "Letter,Export, PrepaidAll",
+    "destination": "null"
+  },
+  {
+    "service": "UPS Worldwide Saver",
+    "billing": "PrepaidAll",
+    "zone": "All",
+    "weight": "All",
+    "weightUnit": "lbs",
+    "discount": "53.00%",
+    "tag": "Document,Export, PrepaidAll",
+    "destination": "null"
+  },
+  {
+    "service": "UPS Worldwide Saver",
+    "billing": "PrepaidAll",
+    "zone": "All",
+    "weight": "All",
+    "weightUnit": "lbs",
+    "discount": "53.00%",
+    "tag": "Package,Export, PrepaidAll",
+    "destination": "null"
+  },
+  {
+    "service": "UPS Worldwide Saver",
+    "billing": "PrepaidAll",
+    "zone": "All",
+    "weight": "All",
+    "weightUnit": "lbs",
+    "discount": "53.00%",
+    "tag": "Pak,Export, PrepaidAll",
+    "destination": "null"
+  },
+  {
+    "service": "UPS Worldwide Export Express Freight\u2122\u2122 Pallet",
+    "billing": "AllAll CL",
+    "zone": "All",
+    "weight": "All",
+    "weightUnit": "lbs",
+    "discount": "53.00%",
+    "tag": "Export, Express, Pallet,Freight AllAll",
+    "destination": "null"
+  },
+  {
+    "service": "UPS Worldwide Expedited",
+    "billing": "Prepaidall",
+    "zone": "All",
+    "weight": "All",
+    "weightUnit": "lbs",
+    "discount": "53.00%",
+    "tag": "Document,Export, Prepaidall",
+    "destination": "null"
+  },
+  {
+    "service": "UPS Worldwide Expedited",
+    "billing": "PrepaidAlf",
+    "zone": "All",
+    "weight": "All",
+    "weightUnit": "lbs",
+    "discount": "53.00%",
+    "tag": "Package,Export, PrepaidAlf",
+    "destination": "null"
+  },
+  {
+    "service": "UPS Worldwide Express",
+    "billing": "Freight CollectAll",
+    "zone": "All",
+    "weight": "All",
+    "weightUnit": "lbs",
+    "discount": "33.00%",
+    "tag": "Letter,Import, Freight CollectAll",
+    "destination": "null"
+  },
+  {
+    "service": "UPS Worldwide Express",
+    "billing": "Freight CollectAll",
+    "zone": "All",
+    "weight": "All",
+    "weightUnit": "lbs",
+    "discount": "33.00%",
+    "tag": "Document,Import, Freight CollectAll",
+    "destination": "null"
+  },
+  {
+    "service": "UPS Worldwide Express",
+    "billing": "Freight CollectAll",
+    "zone": "All",
+    "weight": "All",
+    "weightUnit": "lbs",
+    "discount": "33.00%",
+    "tag": "Package,Import, Freight CollectAll",
+    "destination": "null"
+  },
+  {
+    "service": "UPS Worldwide Saver",
+    "billing": "Freight CollectAll",
+    "zone": "All",
+    "weight": "All",
+    "weightUnit": "lbs",
+    "discount": "33.00%",
+    "tag": "Letter,Import, Freight CollectAll",
+    "destination": "null"
+  },
+  {
+    "service": "UPS Worldwide Saver",
+    "billing": "Freight CollectAll",
+    "zone": "All",
+    "weight": "All",
+    "weightUnit": "lbs",
+    "discount": "33.00%",
+    "tag": "Document,Import, Freight CollectAll",
+    "destination": "null"
+  },
+  {
+    "service": "UPS Worldwide Saver",
+    "billing": "Freight CollectAll",
+    "zone": "All",
+    "weight": "All",
+    "weightUnit": "lbs",
+    "discount": "33.00%",
+    "tag": "Package,Import, Freight CollectAll",
+    "destination": "null"
+  },
+  {
+    "service": "UPS Worldwide Import Express Freight\u2122\u2122 Pallet",
+    "billing": "AllAll CL",
+    "zone": "All",
+    "weight": "All",
+    "weightUnit": "lbs",
+    "discount": "33.00%",
+    "tag": "Import, Express, Pallet,Freight AllAll",
+    "destination": "null"
+  },
+  {
+    "service": "UPS Worldwide Expedited",
+    "billing": "Freight CollectAll",
+    "zone": "All",
+    "weight": "All",
+    "weightUnit": "lbs",
+    "discount": "33.00%",
+    "tag": "Document,Import, Freight CollectAll",
+    "destination": "null"
+  },
+  {
+    "service": "UPS Worldwide Expedited",
+    "billing": "Freight CollectAll",
+    "zone": "All",
+    "weight": "All",
+    "weightUnit": "lbs",
+    "discount": "33.00%",
+    "tag": "Package,Import, Freight CollectAll",
+    "destination": "null"
+  }
+]

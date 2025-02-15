@@ -214,15 +214,19 @@ class ContractDataExtractionService:
     @classmethod
     def incentive_off_executives_statements(cls, chat: ChatSession):
         response = cls.rate_limited_call(chat.send_message, """
+                                         
             Extract all the details in the attached contract in JSON format which match the following conditions:
             
-                
-             Extract details from these type of statements only and convert in json format  as follows:
-             ex: UPS Worldwide Express® - Export - Letter - PrepaidAll - Incentives Off Effective Rates - 53.00%
+               
+            ex: UPS Worldwide Express® - Export - Letter - PrepaidAll - Incentives Off Effective Rates - 53.00%
+                        
+            Important: if statement is not ending with percentage then dont extract that statement
              
-             **if statement is not ending with percentage then ignore that statement**
-             UPS Worldwide Express® - Export - Letter - PrepaidAll - Incentives Off Effective Rates
-             - table then ignore that statement
+             ignore this kind of statement where "- 53.00%" is not present at the end of the statement:
+             
+             ex: UPS Worldwide Express® - Export - Letter - PrepaidAll - Incentives Off Effective Rates
+             
+            
              
             Format output as the following json structure:
             
@@ -257,7 +261,7 @@ class ContractDataExtractionService:
         
     
         tables = []
-        tables.extend(data_part1.get("tables", []))
+        tables.extend(data_part1.get("table_rows", []))
         
         file_path2 = "incentiveOff_effective_statements.json"
         with open(file_path2, "w", encoding="utf-8") as json_file:
@@ -266,148 +270,143 @@ class ContractDataExtractionService:
         return tables
 
 
-    # @classmethod
-    # def extract_weight_destination_zone_bands_incentives(cls, chat: ChatSession):
-    #     response = cls.rate_limited_call(chat.send_message, """
-    #         Extract all the tables in the attached contract in JSON format which match the following conditions:
-    #           1. Table has 'Weight (lbs)', 'Zones', and 'Discount' columns. (Table Type: `weight_zone_incentive`)
-    #           2. Table has 'Zones', 'Bands ($)', and 'Discount' columns. (Table Type: `zone_bands_incentive`)
-    #           3. Table has 'Zones' and 'Discount' columns. (Table Type: `zone_incentive`)
-    #           4. Table has 'Destination', 'Zone', and 'Discount' columns. (Table Type: `destination_zone_incentive`)
-    #           5. Table has 'Destination', 'Zone', 'Weight', and 'Discount' columns. (Table Type: `destination_zone_weight_incentive`)
+    @classmethod
+    def extract_weight_destination_zone_bands_incentives(cls, chat: ChatSession):
+        response = cls.rate_limited_call(chat.send_message, """
+            Extract all the tables in the attached contract in JSON format which match the following conditions:
+              1. Table has 'Weight (lbs)','Destination', 'Zones', and 'Incentives' columns. 
+              2. Table has 'Destination', 'Zone', and 'Incentives' columns. 
+              3. Table has 'Zones'  columns.
+             
+            **# Updated Prompt:**
+            For every table row, ensure that the "incentive" value is provided strictly as a numeric percentage string (for example, "18.00%"). 
+            If a numeric discount is not available, return null for that field.
             
-    #         **# Updated Prompt:**
-    #         For every table row, ensure that the "incentive" value is provided strictly as a numeric percentage string (for example, "18.00%"). 
-    #         If a numeric discount is not available, return null for that field.
+            Data not shown in a clear tabular format should be ignored.
+           
             
-    #         Data not shown in a clear tabular format should be ignored.
-    #         Do not merge separate tables or split a table.
-    #         Process tables in the order they appear.
+            Use the following output schema:
             
-    #         Start with the first 4 tables.
-    #         Extract exactly 4 tables.
+            {
+                "tables": [
+                    {
+                        "service": "UPS Worldwide Express",  // service name  from statement
+                        "billing": "PrepaidAll",  // billing type can be taken name after Package- Prepaid or Residential Package- Prepaid
+                        "zone": "620",  if zone is not available then "All"  
+                        "weight": "1-150",    // null if not available
+                        "weightUnit": "lbs",        
+                        "discount": "53.00%",            // discount percentage       
+                        "tag": "Letter,Export, PrepaidAll",   // extract from service name 
+                        "destination": "Mexico" 
+                    },
+                ]
+            }
             
-    #         Use the following output schema:
-    #         {
-    #             "tables": [
-    #               {
-    #                 "table_type": "string", 
-    #                 "name": "string",           
-    #                 "data": [
-    #                   { 
-    #                     "destination": "string or null",
-    #                     "weight": "string",
-    #                     "zone": "string",
-    #                     "band": "string",
-    #                     "incentive": "percentage (numeric string, or null)"
-    #                   }
-    #                 ]
-    #               }
-    #             ]
-    #         }
-            
-    #         Exclude tables for:
-    #           - Portfolio Tier Incentives
-    #           - Zone Adjustment
-    #           - Additional Handling Charge
-    #           - Electronic PLD Bonus
-    #     """)
-    #     print(response.text.replace("```json\n", "").replace("\n```", ""))
-    #     try:
-    #         data_part1 = json.loads(response.text.replace("```json\n", "").replace("\n```", ""))
-    #     except:
-    #         return []
-    #     print("Data Part 1", len(data_part1.get("tables", [])))
+            Exclude tables for:
+              - Portfolio Tier Incentives
+              - Zone Adjustment
+              - Additional Handling Charge
+              - Electronic PLD Bonus
+        """)
+        print(response.text.replace("```json\n", "").replace("\n```", ""))
+        try:
+            data_part1 = json.loads(response.text.replace("```json\n", "").replace("\n```", ""))
+        except:
+            return []
+        print("Data Part 1", len(data_part1.get("tables", [])))
         
-    #     response = cls.rate_limited_call(chat.send_message, """
-    #         Extract all the tables in the attached contract in JSON format which match the following conditions:
-    #           1. Table has 'Weight (lbs)', 'Zones', and 'Discount' columns. (Table Type: `weight_zone_incentive`)
-    #           2. Table has 'Zones', 'Bands ($)', and 'Discount' columns. (Table Type: `zone_bands_incentive`)
-    #           3. Table has 'Zones' and 'Discount' columns. (Table Type: `zone_incentive`)
-    #           4. Table has 'Destination', 'Zone', and 'Discount' columns. (Table Type: `destination_zone_incentive`)
-    #           5. Table has 'Destination', 'Zone', 'Weight', and 'Discount' columns. (Table Type: `destination_zone_weight_incentive`)
+        # response = cls.rate_limited_call(chat.send_message, """
+        #     Extract all the tables in the attached contract in JSON format which match the following conditions:
+        #       1. Table has 'Weight (lbs)', 'Zones', and 'Discount' columns. (Table Type: `weight_zone_incentive`)
+        #       2. Table has 'Zones', 'Bands ($)', and 'Discount' columns. (Table Type: `zone_bands_incentive`)
+        #       3. Table has 'Zones' and 'Discount' columns. (Table Type: `zone_incentive`)
+        #       4. Table has 'Destination', 'Zone', and 'Discount' columns. (Table Type: `destination_zone_incentive`)
+        #       5. Table has 'Destination', 'Zone', 'Weight', and 'Discount' columns. (Table Type: `destination_zone_weight_incentive`)
             
-    #         **# Updated Prompt:**
-    #         For each row, ensure the "incentive" field is strictly a numeric percentage (e.g. "18.00%"). 
-    #         If the incentive is not a valid numeric percentage, output null.
+        #     **# Updated Prompt:**
+        #     For each row, ensure the "incentive" field is strictly a numeric percentage (e.g. "18.00%"). 
+        #     If the incentive is not a valid numeric percentage, output null.
             
-    #         Do not merge or split tables.
-    #         Process tables in contract order.
+        #     Do not merge or split tables.
+        #     Process tables in contract order.
             
-    #         Start with the 6th table (UPS World wide Express® - Export - Pak - Prepaid All - Incentives Off Effective Rates)
-    #         and end with the table titled "UPS World wide Expedited® - Export - Package - Prepaid All".
+        #     Start with the 6th table (UPS World wide Express® - Export - Pak - Prepaid All - Incentives Off Effective Rates)
+        #     and end with the table titled "UPS World wide Expedited® - Export - Package - Prepaid All".
             
-    #         Use the following output schema:
-    #         {
-    #             "tables": [
-    #               {
-    #                 "table_type": "string",
-    #                 "name": "string",
-    #                 "data": [
-    #                   { 
-    #                     "destination": "string or null",
-    #                     "weight": "string",
-    #                     "zone": "string",
-    #                     "band": "string",
-    #                     "incentive": "percentage (numeric string, or null)"
-    #                   }
-    #                 ]
-    #               }
-    #             ]
-    #         }
+        #     Use the following output schema:
+        #     {
+        #         "tables": [
+        #             {
+        #                 "service": "UPS Worldwide Express",  // service name  from statement
+        #                 "billing": "PrepaidAll",  // billing type can be taken name after Package- Prepaid or Residential Package- Prepaid
+        #                 "zone": "All",  
+        #                 "weight": "All",   
+        #                 "weightUnit": "lbs",        
+        #                 "discount": "53.00%",            // discount percentage       
+        #                 "tag": "Letter,Export, PrepaidAll",   // extract from service name 
+        #                 "destination": "null"  // destination is null
+        #             },
+        #         ]
+        #     }
             
-    #         Exclude:
-    #           - Tables with only a title (no tabular data)
-    #           - Portfolio Tier Incentives
-    #           - Zone Adjustment
-    #           - Additional Handling Charge
-    #           - Electronic PLD Bonus
-    #     """)
-    #     print(response.text.replace("```json\n", "").replace("\n```", ""))
-    #     try:
-    #         data_part2 = json.loads(response.text.replace("```json\n", "").replace("\n```", ""))
-    #     except:
-    #         return data_part1.get("tables", [])
-    #     print("Data Part 2", len(data_part2.get("tables", [])))
+        #     Exclude:
+        #       - Tables with only a title (no tabular data)
+        #       - Portfolio Tier Incentives
+        #       - Zone Adjustment
+        #       - Additional Handling Charge
+        #       - Electronic PLD Bonus
+        # """)
+        # print(response.text.replace("```json\n", "").replace("\n```", ""))
+        # try:
+        #     data_part2 = json.loads(response.text.replace("```json\n", "").replace("\n```", ""))
+        # except:
+        #     return data_part1.get("tables", [])
+        # print("Data Part 2", len(data_part2.get("tables", [])))
         
-    #     tables = []
-    #     tables.extend(data_part1.get("tables", []))
-    #     tables.extend(data_part2.get("tables", []))
-    #     return tables
+        tables = []
+        tables.extend(data_part1.get("tables", []))
+        # tables.extend(data_part2.get("tables", []))
+        return tables
 
-    # @classmethod
-    # def extract_service_incentive_tables(cls, chat: ChatSession):
-    #     response = cls.rate_limited_call(chat.send_message, """
-    #         Extract all the incentives mentioned in textual form (non-tabular) from the attached contract in JSON format.
+
+    @classmethod
+    def extract_service_incentive_tables(cls, chat: ChatSession):
+        response = cls.rate_limited_call(chat.send_message, """
+            Extract all the incentives mentioned in textual form (non-tabular) from the attached contract in JSON format.
+            ex: UPS Worldwide Express® - Export - Letter - PrepaidAll - Incentives Off Effective Rates - 18.00%
+            **# Updated Prompt:**
+            For the discount values, output only a numeric percentage string (e.g. "18.00%"). 
+            If a discount is not provided as a numeric percentage, output null.
             
-    #         **# Updated Prompt:**
-    #         For the discount values, output only a numeric percentage string (e.g. "18.00%"). 
-    #         If a discount is not provided as a numeric percentage, output null.
+            Use the following output schema:
+            {
+                    "table": [
+                        {
+                            "service": "UPS Worldwide Express",  // service name  from statement
+                            "billing": "PrepaidAll",  // billing type can be taken name after Package- Prepaid or Residential Package- Prepaid
+                            "zone": "All",  
+                            "weight": "All",   
+                            "weightUnit": "lbs",        
+                            "discount": "18.00%",            // discount percentage       
+                            "tag": "Letter,Export, PrepaidAll",   // extract from service name 
+                            "destination": "null"  // destination is null
+                        },
+                    ]
+                }
+                
+            Do not include any rows that lack a discount value.
+        """)
+        print(response.text.replace("```json\n", "").replace("\n```", ""))
+        try:
+            data_part1 = json.loads(response.text.replace("```json\n", "").replace("\n```", ""))
+        except:
+            return []
+        file_path2 = "incentiveOff_effective_statements.json"
+        
+        with open(file_path2, "w", encoding="utf-8") as json_file:
+            json.dump(data_part1, json_file, indent=2)
             
-    #         Use the following output schema:
-    #         {
-    #           "table": 
-    #             {
-    #               "table_type": "service_incentives",
-    #               "name": "Service Incentives",
-    #               "data": [
-    #                 { 
-    #                     "service": "string",
-    #                     "incentive": "percentage (numeric string, or null)"
-    #                 }
-    #               ]
-    #             }
-    #         }
-            
-    #         Do not include any rows that lack a discount value.
-    #     """)
-    #     print(response.text.replace("```json\n", "").replace("\n```", ""))
-    #     try:
-    #         data_part1 = json.loads(response.text.replace("```json\n", "").replace("\n```", ""))
-    #     except:
-    #         return []
-    #     print("Data Part 3")
-    #     return [data_part1.get("table", {})]
+        return [data_part1.get("table", {})]
 
 
     
@@ -1123,40 +1122,42 @@ class ContractDataExtractionService:
         
         # Execute all extractions concurrently
         with ThreadPoolExecutor() as executor:
-            extracted_portfolio_tier_incentives_tables = executor.submit(cls.extract_portfolio_tier_incentives_table, uploadedFile)
-            extracted_weight_zone_incentives_tables_future = executor.submit(cls.incentive_off_executives_null_dest, chat)
+            # extracted_portfolio_tier_incentives_tables = executor.submit(cls.extract_portfolio_tier_incentives_table, uploadedFile)
+            # extracted_weight_zone_incentives_tables_future = executor.submit(cls.incentive_off_executives_null_dest, chat)
+            extracted_weight_zone_incentives_tables_future = executor.submit(cls.extract_weight_destination_zone_bands_incentives, chat)
+            # extracted_service_incentive_tables_future = executor.submit(cls.incentive_off_executives_statements, chat)
             # extracted_service_incentive_tables_future = executor.submit(cls.extract_service_incentive_tables, chat)
-            extracted_zone_incentives_tables_future = executor.submit(cls.extract_zone_incentives_tables, chat)
-            extracted_service_min_per_zone_base_rate_adjustment_table_future = executor.submit(cls.extract_service_min_per_zone_base_rate_adjustment_table, chat)
+            # extracted_zone_incentives_tables_future = executor.submit(cls.extract_zone_incentives_tables, chat)
+            # extracted_service_min_per_zone_base_rate_adjustment_table_future = executor.submit(cls.extract_service_min_per_zone_base_rate_adjustment_table, chat)
             # extracted_additional_handling_charge_table_future = executor.submit(cls.extract_additional_handling_charge_table, chat)
-            extracted_electronic_pld_bonus_table_future = executor.submit(cls.extract_electronic_pld_bonus_table, chat)
+            # extracted_electronic_pld_bonus_table_future = executor.submit(cls.extract_electronic_pld_bonus_table, chat)
             
-            extracted_portfolio_tier_incentives_tables = extracted_portfolio_tier_incentives_tables.result()
-            # extracted_weight_zone_incentives_tables = extracted_weight_zone_incentives_tables_future.result()
+            # extracted_portfolio_tier_incentives_tables = extracted_portfolio_tier_incentives_tables.result()
+            extracted_weight_zone_incentives_tables = extracted_weight_zone_incentives_tables_future.result()
             # extracted_service_incentive_tables = extracted_service_incentive_tables_future.result()
-            extracted_zone_incentives_tables = extracted_zone_incentives_tables_future.result()
-            extracted_service_min_per_zone_base_rate_adjustment_table = extracted_service_min_per_zone_base_rate_adjustment_table_future.result()
+            # extracted_zone_incentives_tables = extracted_zone_incentives_tables_future.result()
+            # extracted_service_min_per_zone_base_rate_adjustment_table = extracted_service_min_per_zone_base_rate_adjustment_table_future.result()
             # extracted_additional_handling_charge_table = extracted_additional_handling_charge_table_future.result()
-            extracted_electronic_pld_bonus_table = extracted_electronic_pld_bonus_table_future.result()
+            # extracted_electronic_pld_bonus_table = extracted_electronic_pld_bonus_table_future.result()
         
-        with ThreadPoolExecutor() as executor:
-            # extracted_address_future = executor.submit(cls.extract_address, chat)
-            extracted_contract_details_future = executor.submit(cls.extract_contract_details, chat)
+        # with ThreadPoolExecutor() as executor:
+        #     extracted_address_future = executor.submit(cls.extract_address, chat)
+        #     extracted_contract_details_future = executor.submit(cls.extract_contract_details, chat)
             
-            # extracted_address = extracted_address_future.result()
-            extracted_contract_details = extracted_contract_details_future.result()
+        #     extracted_address = extracted_address_future.result()
+        #     extracted_contract_details = extracted_contract_details_future.result()
         
         
-        print("Extracted Contract Type:", extracted_contract_details)
+        # print("Extracted Contract Type:", extracted_contract_details)
         tables = []
-        tables.append(extracted_contract_details)
-        # tables.extend(extracted_weight_zone_incentives_tables)
+        # tables.append(extracted_contract_details)
+        tables.extend(extracted_weight_zone_incentives_tables)
         # tables.extend(extracted_service_incentive_tables)
-        tables.extend(extracted_portfolio_tier_incentives_tables)
-        tables.extend(extracted_zone_incentives_tables)
-        tables.extend(extracted_service_min_per_zone_base_rate_adjustment_table)
+        # tables.extend(extracted_portfolio_tier_incentives_tables)
+        # tables.extend(extracted_zone_incentives_tables)
+        # tables.extend(extracted_service_min_per_zone_base_rate_adjustment_table)
         # tables.extend(extracted_additional_handling_charge_table)
-        tables.extend(extracted_electronic_pld_bonus_table)
+        # tables.extend(extracted_electronic_pld_bonus_table)
         
         # print("Extracted Address:", extracted_address)
         return {
