@@ -200,7 +200,7 @@ class ContractDataExtractionService:
         response = cls.rate_limited_call(chat.send_message, incentive_off_effective_rates_metadata_prompt)
         
         try:
-            metadata = json.loads(response.text.replace("```json\n", "").replace("\n```", ""))
+            metadata = json.loads(response.text.replace("```json\n", "").replace("\n```", "")).get("metadata", [])
             print("Extracted Metadata for inceintive off effective rates: ", metadata)
         except:
             print("Failed to extract metadata for inceintive off effective rates")
