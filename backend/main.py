@@ -43,10 +43,12 @@ async def read_root():
 @app.post("/api/extract")
 async def extract(file: UploadFile = File(...)):
     extracted_data = ContractDataExtractionService.extract(file)
+    details = extracted_data["details"]
     tables = extracted_data["tables"]
     # source_address = extracted_data["address"]
     # contract_type = extracted_data["contract_type"]
     return JSONResponse(content={"success": True, "message": "Extracted data", "data": {
+        "details": details,
         "tables": tables,
         # "source_address": source_address,
         # "contract_type": contract_type
