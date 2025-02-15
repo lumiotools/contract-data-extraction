@@ -64,7 +64,10 @@ export const DUMMY_DATA = {
               "weight": "1-20",
               "weightUnit": "lbs",
               "discount": "30.00%",
-              "tags": ["Commercial", "Package"],
+              "tags": [
+                "Commercial",
+                "Ground"
+              ],
               "destination": null
             },
             {
@@ -74,7 +77,10 @@ export const DUMMY_DATA = {
               "weight": "1-20",
               "weightUnit": "lbs",
               "discount": "30.00%",
-              "tags": ["Commercial", "Package"],
+              "tags": [
+                "Commercial",
+                "Ground"
+              ],
               "destination": null
             },
             {
@@ -84,7 +90,10 @@ export const DUMMY_DATA = {
               "weight": "1-20",
               "weightUnit": "lbs",
               "discount": "30.00%",
-              "tags": ["Commercial", "Package"],
+              "tags": [
+                "Commercial",
+                "Ground"
+              ],
               "destination": null
             },
             {
@@ -94,7 +103,10 @@ export const DUMMY_DATA = {
               "weight": "1-20",
               "weightUnit": "lbs",
               "discount": "30.00%",
-              "tags": ["Commercial", "Package"],
+              "tags": [
+                "Commercial",
+                "Ground"
+              ],
               "destination": null
             },
             {
@@ -104,7 +116,10 @@ export const DUMMY_DATA = {
               "weight": "1-20",
               "weightUnit": "lbs",
               "discount": "30.00%",
-              "tags": ["Commercial", "Package"],
+              "tags": [
+                "Commercial",
+                "Ground"
+              ],
               "destination": null
             },
             {
@@ -114,7 +129,10 @@ export const DUMMY_DATA = {
               "weight": "1-20",
               "weightUnit": "lbs",
               "discount": "30.00%",
-              "tags": ["Commercial", "Package"],
+              "tags": [
+                "Commercial",
+                "Ground"
+              ],
               "destination": null
             },
             {
@@ -124,7 +142,10 @@ export const DUMMY_DATA = {
               "weight": "1-20",
               "weightUnit": "lbs",
               "discount": "30.00%",
-              "tags": ["Commercial", "Package"],
+              "tags": [
+                "Commercial",
+                "Ground"
+              ],
               "destination": null
             },
             {
@@ -134,7 +155,10 @@ export const DUMMY_DATA = {
               "weight": "1-20",
               "weightUnit": "lbs",
               "discount": "30.00%",
-              "tags": ["Commercial", "Package"],
+              "tags": [
+                "Commercial",
+                "Ground"
+              ],
               "destination": null
             },
             {
@@ -144,7 +168,10 @@ export const DUMMY_DATA = {
               "weight": "1-20",
               "weightUnit": "lbs",
               "discount": "30.00%",
-              "tags": ["Commercial", "Package"],
+              "tags": [
+                "Commercial",
+                "Ground"
+              ],
               "destination": null
             },
             {
@@ -154,7 +181,10 @@ export const DUMMY_DATA = {
               "weight": "1-20",
               "weightUnit": "lbs",
               "discount": "30.00%",
-              "tags": ["Commercial", "Package"],
+              "tags": [
+                "Commercial",
+                "Ground"
+              ],
               "destination": null
             },
             {
@@ -164,7 +194,10 @@ export const DUMMY_DATA = {
               "weight": "21-150",
               "weightUnit": "lbs",
               "discount": "34.00%",
-              "tags": ["Commercial", "Package"],
+              "tags": [
+                "Commercial",
+                "Ground"
+              ],
               "destination": null
             },
             {
@@ -174,7 +207,10 @@ export const DUMMY_DATA = {
               "weight": "21-150",
               "weightUnit": "lbs",
               "discount": "34.00%",
-              "tags": ["Commercial", "Package"],
+              "tags": [
+                "Commercial",
+                "Ground"
+              ],
               "destination": null
             },
             {
@@ -184,7 +220,10 @@ export const DUMMY_DATA = {
               "weight": "21-150",
               "weightUnit": "lbs",
               "discount": "34.00%",
-              "tags": ["Commercial", "Package"],
+              "tags": [
+                "Commercial",
+                "Ground"
+              ],
               "destination": null
             },
             {
@@ -194,7 +233,10 @@ export const DUMMY_DATA = {
               "weight": "21-150",
               "weightUnit": "lbs",
               "discount": "34.00%",
-              "tags": ["Commercial", "Package"],
+              "tags": [
+                "Commercial",
+                "Ground"
+              ],
               "destination": null
             },
             {
@@ -204,7 +246,10 @@ export const DUMMY_DATA = {
               "weight": "21-150",
               "weightUnit": "lbs",
               "discount": "34.00%",
-              "tags": ["Commercial", "Package"],
+              "tags": [
+                "Commercial",
+                "Ground"
+              ],
               "destination": null
             },
             {
@@ -214,7 +259,10 @@ export const DUMMY_DATA = {
               "weight": "21-150",
               "weightUnit": "lbs",
               "discount": "34.00%",
-              "tags": ["Commercial", "Package"],
+              "tags": [
+                "Commercial",
+                "Ground"
+              ],
               "destination": null
             },
             {
@@ -224,7 +272,10 @@ export const DUMMY_DATA = {
               "weight": "21-150",
               "weightUnit": "lbs",
               "discount": "34.00%",
-              "tags": ["Commercial", "Package"],
+              "tags": [
+                "Commercial",
+                "Ground"
+              ],
               "destination": null
             },
             {
@@ -234,7 +285,10 @@ export const DUMMY_DATA = {
               "weight": "21-150",
               "weightUnit": "lbs",
               "discount": "34.00%",
-              "tags": ["Commercial", "Package"],
+              "tags": [
+                "Commercial",
+                "Ground"
+              ],
               "destination": null
             },
             {
@@ -244,7 +298,10 @@ export const DUMMY_DATA = {
               "weight": "21-150",
               "weightUnit": "lbs",
               "discount": "34.00%",
-              "tags": ["Commercial", "Package"],
+              "tags": [
+                "Commercial",
+                "Ground"
+              ],
               "destination": null
             },
             {
@@ -254,7 +311,10 @@ export const DUMMY_DATA = {
               "weight": "21-150",
               "weightUnit": "lbs",
               "discount": "34.00%",
-              "tags": ["Commercial", "Package"],
+              "tags": [
+                "Commercial",
+                "Ground"
+              ],
               "destination": null
             },
             {
@@ -264,7 +324,10 @@ export const DUMMY_DATA = {
               "weight": "151 and up",
               "weightUnit": "lbs",
               "discount": "34.00%",
-              "tags": ["Commercial", "Package"],
+              "tags": [
+                "Commercial",
+                "Ground"
+              ],
               "destination": null
             },
             {
@@ -274,7 +337,10 @@ export const DUMMY_DATA = {
               "weight": "151 and up",
               "weightUnit": "lbs",
               "discount": "34.00%",
-              "tags": ["Commercial", "Package"],
+              "tags": [
+                "Commercial",
+                "Ground"
+              ],
               "destination": null
             },
             {
@@ -284,7 +350,10 @@ export const DUMMY_DATA = {
               "weight": "151 and up",
               "weightUnit": "lbs",
               "discount": "34.00%",
-              "tags": ["Commercial", "Package"],
+              "tags": [
+                "Commercial",
+                "Ground"
+              ],
               "destination": null
             },
             {
@@ -294,7 +363,10 @@ export const DUMMY_DATA = {
               "weight": "151 and up",
               "weightUnit": "lbs",
               "discount": "34.00%",
-              "tags": ["Commercial", "Package"],
+              "tags": [
+                "Commercial",
+                "Ground"
+              ],
               "destination": null
             },
             {
@@ -304,7 +376,10 @@ export const DUMMY_DATA = {
               "weight": "151 and up",
               "weightUnit": "lbs",
               "discount": "34.00%",
-              "tags": ["Commercial", "Package"],
+              "tags": [
+                "Commercial",
+                "Ground"
+              ],
               "destination": null
             },
             {
@@ -314,7 +389,10 @@ export const DUMMY_DATA = {
               "weight": "151 and up",
               "weightUnit": "lbs",
               "discount": "34.00%",
-              "tags": ["Commercial", "Package"],
+              "tags": [
+                "Commercial",
+                "Ground"
+              ],
               "destination": null
             },
             {
@@ -324,7 +402,10 @@ export const DUMMY_DATA = {
               "weight": "151 and up",
               "weightUnit": "lbs",
               "discount": "34.00%",
-              "tags": ["Commercial", "Package"],
+              "tags": [
+                "Commercial",
+                "Ground"
+              ],
               "destination": null
             },
             {
@@ -334,7 +415,10 @@ export const DUMMY_DATA = {
               "weight": "151 and up",
               "weightUnit": "lbs",
               "discount": "34.00%",
-              "tags": ["Commercial", "Package"],
+              "tags": [
+                "Commercial",
+                "Ground"
+              ],
               "destination": null
             },
             {
@@ -344,7 +428,10 @@ export const DUMMY_DATA = {
               "weight": "151 and up",
               "weightUnit": "lbs",
               "discount": "34.00%",
-              "tags": ["Commercial", "Package"],
+              "tags": [
+                "Commercial",
+                "Ground"
+              ],
               "destination": null
             },
             {
@@ -354,607 +441,790 @@ export const DUMMY_DATA = {
               "weight": "151 and up",
               "weightUnit": "lbs",
               "discount": "34.00%",
-              "tags": ["Commercial", "Package"],
+              "tags": [
+                "Commercial",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "2",
               "weight": "1-5",
               "weightUnit": "lbs",
               "discount": "20.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "3",
               "weight": "1-5",
               "weightUnit": "lbs",
               "discount": "20.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "4",
               "weight": "1-5",
               "weightUnit": "lbs",
               "discount": "20.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "5",
               "weight": "1-5",
               "weightUnit": "lbs",
               "discount": "20.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "6",
               "weight": "1-5",
               "weightUnit": "lbs",
               "discount": "20.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "7",
               "weight": "1-5",
               "weightUnit": "lbs",
               "discount": "20.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "8",
               "weight": "1-5",
               "weightUnit": "lbs",
               "discount": "20.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "44",
               "weight": "1-5",
               "weightUnit": "lbs",
               "discount": "20.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "45",
               "weight": "1-5",
               "weightUnit": "lbs",
               "discount": "20.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "46",
               "weight": "1-5",
               "weightUnit": "lbs",
               "discount": "20.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "2",
               "weight": "6-10",
               "weightUnit": "lbs",
               "discount": "22.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "3",
               "weight": "6-10",
               "weightUnit": "lbs",
               "discount": "22.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "4",
               "weight": "6-10",
               "weightUnit": "lbs",
               "discount": "22.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "5",
               "weight": "6-10",
               "weightUnit": "lbs",
               "discount": "22.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "6",
               "weight": "6-10",
               "weightUnit": "lbs",
               "discount": "22.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "7",
               "weight": "6-10",
               "weightUnit": "lbs",
               "discount": "22.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "8",
               "weight": "6-10",
               "weightUnit": "lbs",
               "discount": "22.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "44",
               "weight": "6-10",
               "weightUnit": "lbs",
               "discount": "22.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "45",
               "weight": "6-10",
               "weightUnit": "lbs",
               "discount": "22.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "46",
               "weight": "6-10",
               "weightUnit": "lbs",
               "discount": "22.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "2",
               "weight": "11-20",
               "weightUnit": "lbs",
               "discount": "25.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "3",
               "weight": "11-20",
               "weightUnit": "lbs",
               "discount": "25.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "4",
               "weight": "11-20",
               "weightUnit": "lbs",
               "discount": "25.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "5",
               "weight": "11-20",
               "weightUnit": "lbs",
               "discount": "25.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "6",
               "weight": "11-20",
               "weightUnit": "lbs",
               "discount": "25.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "7",
               "weight": "11-20",
               "weightUnit": "lbs",
               "discount": "25.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "8",
               "weight": "11-20",
               "weightUnit": "lbs",
               "discount": "25.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "44",
               "weight": "11-20",
               "weightUnit": "lbs",
               "discount": "25.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "45",
               "weight": "11-20",
               "weightUnit": "lbs",
               "discount": "25.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "46",
               "weight": "11-20",
               "weightUnit": "lbs",
               "discount": "25.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "2",
               "weight": "21-30",
               "weightUnit": "lbs",
               "discount": "27.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "3",
               "weight": "21-30",
               "weightUnit": "lbs",
               "discount": "27.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "4",
               "weight": "21-30",
               "weightUnit": "lbs",
               "discount": "27.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "5",
               "weight": "21-30",
               "weightUnit": "lbs",
               "discount": "27.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "6",
               "weight": "21-30",
               "weightUnit": "lbs",
               "discount": "27.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "7",
               "weight": "21-30",
               "weightUnit": "lbs",
               "discount": "27.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "8",
               "weight": "21-30",
               "weightUnit": "lbs",
               "discount": "27.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "44",
               "weight": "21-30",
               "weightUnit": "lbs",
               "discount": "27.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "45",
               "weight": "21-30",
               "weightUnit": "lbs",
               "discount": "27.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "46",
               "weight": "21-30",
               "weightUnit": "lbs",
               "discount": "27.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "2",
               "weight": "31-150",
               "weightUnit": "lbs",
               "discount": "30.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "3",
               "weight": "31-150",
               "weightUnit": "lbs",
               "discount": "30.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "4",
               "weight": "31-150",
               "weightUnit": "lbs",
               "discount": "30.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "5",
               "weight": "31-150",
               "weightUnit": "lbs",
               "discount": "30.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "6",
               "weight": "31-150",
               "weightUnit": "lbs",
               "discount": "30.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "7",
               "weight": "31-150",
               "weightUnit": "lbs",
               "discount": "30.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "8",
               "weight": "31-150",
               "weightUnit": "lbs",
               "discount": "30.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "44",
               "weight": "31-150",
               "weightUnit": "lbs",
               "discount": "30.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "45",
               "weight": "31-150",
               "weightUnit": "lbs",
               "discount": "30.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "46",
               "weight": "31-150",
               "weightUnit": "lbs",
               "discount": "30.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "2",
               "weight": "151 and up",
               "weightUnit": "lbs",
               "discount": "30.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "3",
               "weight": "151 and up",
               "weightUnit": "lbs",
               "discount": "30.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "4",
               "weight": "151 and up",
               "weightUnit": "lbs",
               "discount": "30.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "5",
               "weight": "151 and up",
               "weightUnit": "lbs",
               "discount": "30.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "6",
               "weight": "151 and up",
               "weightUnit": "lbs",
               "discount": "30.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "7",
               "weight": "151 and up",
               "weightUnit": "lbs",
               "discount": "30.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "8",
               "weight": "151 and up",
               "weightUnit": "lbs",
               "discount": "30.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "44",
               "weight": "151 and up",
               "weightUnit": "lbs",
               "discount": "30.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "45",
               "weight": "151 and up",
               "weightUnit": "lbs",
               "discount": "30.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
               "service": "UPS® Ground - Residential Package",
-              "billing": "Prepaid Frt",
+              "billing": "Prepaid",
               "zone": "46",
               "weight": "151 and up",
               "weightUnit": "lbs",
               "discount": "30.00%",
-              "tags": ["Residential", "Package"],
+              "tags": [
+                "Residential",
+                "Ground"
+              ],
               "destination": null
             },
             {
@@ -964,7 +1234,10 @@ export const DUMMY_DATA = {
               "weight": "1-9",
               "weightUnit": "lbs",
               "discount": "42.00%",
-              "tags": ["SurePost", "Residential", "Package"],
+              "tags": [
+                "SurePost",
+                "Residential"
+              ],
               "destination": null
             },
             {
@@ -974,7 +1247,10 @@ export const DUMMY_DATA = {
               "weight": "1-9",
               "weightUnit": "lbs",
               "discount": "42.00%",
-              "tags": ["SurePost", "Residential", "Package"],
+              "tags": [
+                "SurePost",
+                "Residential"
+              ],
               "destination": null
             },
             {
@@ -984,7 +1260,10 @@ export const DUMMY_DATA = {
               "weight": "1-9",
               "weightUnit": "lbs",
               "discount": "42.00%",
-              "tags": ["SurePost", "Residential", "Package"],
+              "tags": [
+                "SurePost",
+                "Residential"
+              ],
               "destination": null
             },
             {
@@ -994,7 +1273,10 @@ export const DUMMY_DATA = {
               "weight": "1-9",
               "weightUnit": "lbs",
               "discount": "42.00%",
-              "tags": ["SurePost", "Residential", "Package"],
+              "tags": [
+                "SurePost",
+                "Residential"
+              ],
               "destination": null
             },
             {
@@ -1004,7 +1286,10 @@ export const DUMMY_DATA = {
               "weight": "1-9",
               "weightUnit": "lbs",
               "discount": "42.00%",
-              "tags": ["SurePost", "Residential", "Package"],
+              "tags": [
+                "SurePost",
+                "Residential"
+              ],
               "destination": null
             },
             {
@@ -1014,7 +1299,10 @@ export const DUMMY_DATA = {
               "weight": "1-9",
               "weightUnit": "lbs",
               "discount": "42.00%",
-              "tags": ["SurePost", "Residential", "Package"],
+              "tags": [
+                "SurePost",
+                "Residential"
+              ],
               "destination": null
             },
             {
@@ -1024,7 +1312,10 @@ export const DUMMY_DATA = {
               "weight": "1-9",
               "weightUnit": "lbs",
               "discount": "42.00%",
-              "tags": ["SurePost", "Residential", "Package"],
+              "tags": [
+                "SurePost",
+                "Residential"
+              ],
               "destination": null
             },
             {
@@ -1034,7 +1325,10 @@ export const DUMMY_DATA = {
               "weight": "1-9",
               "weightUnit": "lbs",
               "discount": "42.00%",
-              "tags": ["SurePost", "Residential", "Package"],
+              "tags": [
+                "SurePost",
+                "Residential"
+              ],
               "destination": null
             },
             {
@@ -1044,7 +1338,10 @@ export const DUMMY_DATA = {
               "weight": "1-9",
               "weightUnit": "lbs",
               "discount": "42.00%",
-              "tags": ["SurePost", "Residential", "Package"],
+              "tags": [
+                "SurePost",
+                "Residential"
+              ],
               "destination": null
             },
             {
@@ -1054,7 +1351,10 @@ export const DUMMY_DATA = {
               "weight": "1-9",
               "weightUnit": "lbs",
               "discount": "42.00%",
-              "tags": ["SurePost", "Residential", "Package"],
+              "tags": [
+                "SurePost",
+                "Residential"
+              ],
               "destination": null
             },
             {
@@ -1064,7 +1364,10 @@ export const DUMMY_DATA = {
               "weight": "1-9",
               "weightUnit": "lbs",
               "discount": "42.00%",
-              "tags": ["SurePost", "Residential", "Package"],
+              "tags": [
+                "SurePost",
+                "Residential"
+              ],
               "destination": null
             },
             {
@@ -1074,7 +1377,10 @@ export const DUMMY_DATA = {
               "weight": "1-9",
               "weightUnit": "lbs",
               "discount": "42.00%",
-              "tags": ["SurePost", "Residential", "Package"],
+              "tags": [
+                "SurePost",
+                "Residential"
+              ],
               "destination": null
             },
             {
@@ -1084,7 +1390,10 @@ export const DUMMY_DATA = {
               "weight": "10-70",
               "weightUnit": "lbs",
               "discount": "0.00%",
-              "tags": ["SurePost", "Residential", "Package"],
+              "tags": [
+                "SurePost",
+                "Residential"
+              ],
               "destination": null
             },
             {
@@ -1094,7 +1403,10 @@ export const DUMMY_DATA = {
               "weight": "10-70",
               "weightUnit": "lbs",
               "discount": "0.00%",
-              "tags": ["SurePost", "Residential", "Package"],
+              "tags": [
+                "SurePost",
+                "Residential"
+              ],
               "destination": null
             },
             {
@@ -1104,7 +1416,10 @@ export const DUMMY_DATA = {
               "weight": "10-70",
               "weightUnit": "lbs",
               "discount": "0.00%",
-              "tags": ["SurePost", "Residential", "Package"],
+              "tags": [
+                "SurePost",
+                "Residential"
+              ],
               "destination": null
             },
             {
@@ -1114,7 +1429,10 @@ export const DUMMY_DATA = {
               "weight": "10-70",
               "weightUnit": "lbs",
               "discount": "0.00%",
-              "tags": ["SurePost", "Residential", "Package"],
+              "tags": [
+                "SurePost",
+                "Residential"
+              ],
               "destination": null
             },
             {
@@ -1124,7 +1442,10 @@ export const DUMMY_DATA = {
               "weight": "10-70",
               "weightUnit": "lbs",
               "discount": "0.00%",
-              "tags": ["SurePost", "Residential", "Package"],
+              "tags": [
+                "SurePost",
+                "Residential"
+              ],
               "destination": null
             },
             {
@@ -1134,7 +1455,10 @@ export const DUMMY_DATA = {
               "weight": "10-70",
               "weightUnit": "lbs",
               "discount": "0.00%",
-              "tags": ["SurePost", "Residential", "Package"],
+              "tags": [
+                "SurePost",
+                "Residential"
+              ],
               "destination": null
             },
             {
@@ -1144,7 +1468,10 @@ export const DUMMY_DATA = {
               "weight": "10-70",
               "weightUnit": "lbs",
               "discount": "0.00%",
-              "tags": ["SurePost", "Residential", "Package"],
+              "tags": [
+                "SurePost",
+                "Residential"
+              ],
               "destination": null
             },
             {
@@ -1154,7 +1481,10 @@ export const DUMMY_DATA = {
               "weight": "10-70",
               "weightUnit": "lbs",
               "discount": "0.00%",
-              "tags": ["SurePost", "Residential", "Package"],
+              "tags": [
+                "SurePost",
+                "Residential"
+              ],
               "destination": null
             },
             {
@@ -1164,7 +1494,10 @@ export const DUMMY_DATA = {
               "weight": "10-70",
               "weightUnit": "lbs",
               "discount": "0.00%",
-              "tags": ["SurePost", "Residential", "Package"],
+              "tags": [
+                "SurePost",
+                "Residential"
+              ],
               "destination": null
             },
             {
@@ -1174,7 +1507,10 @@ export const DUMMY_DATA = {
               "weight": "10-70",
               "weightUnit": "lbs",
               "discount": "0.00%",
-              "tags": ["SurePost", "Residential", "Package"],
+              "tags": [
+                "SurePost",
+                "Residential"
+              ],
               "destination": null
             },
             {
@@ -1184,7 +1520,10 @@ export const DUMMY_DATA = {
               "weight": "10-70",
               "weightUnit": "lbs",
               "discount": "0.00%",
-              "tags": ["SurePost", "Residential", "Package"],
+              "tags": [
+                "SurePost",
+                "Residential"
+              ],
               "destination": null
             },
             {
@@ -1194,7 +1533,10 @@ export const DUMMY_DATA = {
               "weight": "10-70",
               "weightUnit": "lbs",
               "discount": "0.00%",
-              "tags": ["SurePost", "Residential", "Package"],
+              "tags": [
+                "SurePost",
+                "Residential"
+              ],
               "destination": null
             },
             {
@@ -1204,7 +1546,10 @@ export const DUMMY_DATA = {
               "weight": "71 and up",
               "weightUnit": "lbs",
               "discount": "0.00%",
-              "tags": ["SurePost", "Residential", "Package"],
+              "tags": [
+                "SurePost",
+                "Residential"
+              ],
               "destination": null
             },
             {
@@ -1214,7 +1559,10 @@ export const DUMMY_DATA = {
               "weight": "71 and up",
               "weightUnit": "lbs",
               "discount": "0.00%",
-              "tags": ["SurePost", "Residential", "Package"],
+              "tags": [
+                "SurePost",
+                "Residential"
+              ],
               "destination": null
             },
             {
@@ -1224,7 +1572,10 @@ export const DUMMY_DATA = {
               "weight": "71 and up",
               "weightUnit": "lbs",
               "discount": "0.00%",
-              "tags": ["SurePost", "Residential", "Package"],
+              "tags": [
+                "SurePost",
+                "Residential"
+              ],
               "destination": null
             },
             {
@@ -1234,7 +1585,10 @@ export const DUMMY_DATA = {
               "weight": "71 and up",
               "weightUnit": "lbs",
               "discount": "0.00%",
-              "tags": ["SurePost", "Residential", "Package"],
+              "tags": [
+                "SurePost",
+                "Residential"
+              ],
               "destination": null
             },
             {
@@ -1244,7 +1598,10 @@ export const DUMMY_DATA = {
               "weight": "71 and up",
               "weightUnit": "lbs",
               "discount": "0.00%",
-              "tags": ["SurePost", "Residential", "Package"],
+              "tags": [
+                "SurePost",
+                "Residential"
+              ],
               "destination": null
             },
             {
@@ -1254,7 +1611,10 @@ export const DUMMY_DATA = {
               "weight": "71 and up",
               "weightUnit": "lbs",
               "discount": "0.00%",
-              "tags": ["SurePost", "Residential", "Package"],
+              "tags": [
+                "SurePost",
+                "Residential"
+              ],
               "destination": null
             },
             {
@@ -1264,7 +1624,10 @@ export const DUMMY_DATA = {
               "weight": "71 and up",
               "weightUnit": "lbs",
               "discount": "0.00%",
-              "tags": ["SurePost", "Residential", "Package"],
+              "tags": [
+                "SurePost",
+                "Residential"
+              ],
               "destination": null
             },
             {
@@ -1274,7 +1637,10 @@ export const DUMMY_DATA = {
               "weight": "71 and up",
               "weightUnit": "lbs",
               "discount": "0.00%",
-              "tags": ["SurePost", "Residential", "Package"],
+              "tags": [
+                "SurePost",
+                "Residential"
+              ],
               "destination": null
             },
             {
@@ -1284,7 +1650,10 @@ export const DUMMY_DATA = {
               "weight": "71 and up",
               "weightUnit": "lbs",
               "discount": "0.00%",
-              "tags": ["SurePost", "Residential", "Package"],
+              "tags": [
+                "SurePost",
+                "Residential"
+              ],
               "destination": null
             },
             {
@@ -1294,7 +1663,10 @@ export const DUMMY_DATA = {
               "weight": "71 and up",
               "weightUnit": "lbs",
               "discount": "0.00%",
-              "tags": ["SurePost", "Residential", "Package"],
+              "tags": [
+                "SurePost",
+                "Residential"
+              ],
               "destination": null
             },
             {
@@ -1304,7 +1676,10 @@ export const DUMMY_DATA = {
               "weight": "71 and up",
               "weightUnit": "lbs",
               "discount": "0.00%",
-              "tags": ["SurePost", "Residential", "Package"],
+              "tags": [
+                "SurePost",
+                "Residential"
+              ],
               "destination": null
             },
             {
@@ -1314,478 +1689,1209 @@ export const DUMMY_DATA = {
               "weight": "71 and up",
               "weightUnit": "lbs",
               "discount": "0.00%",
-              "tags": ["SurePost", "Residential", "Package"],
+              "tags": [
+                "SurePost",
+                "Residential"
+              ],
               "destination": null
             },
             {
               "service": "UPS Worldwide Express® - Export - Letter",
-              "billing": "PrepaidAll",
-              "zone": "920",
-              "weight": null,
-              "weightUnit": null,
-              "discount": "55.00%",
-              "tags": ["Worldwide Express", "Export", "Letter"],
-              "destination": null
-            },
-            {
-              "service": "UPS Worldwide Express® - Export - Letter",
-              "billing": "PrepaidAll",
-              "zone": "921",
-              "weight": null,
-              "weightUnit": null,
-              "discount": "53.00%",
-              "tags": ["Worldwide Express", "Export", "Letter"],
-              "destination": null
-            },
-            {
-              "service": "UPS Worldwide Express® - Export - Package",
-              "billing": "PrepaidAll",
-              "zone": "920",
-              "weight": null,
-              "weightUnit": null,
-              "discount": "60.00%",
-              "tags": ["Worldwide Express", "Export", "Package"],
-              "destination": null
-            },
-            {
-              "service": "UPS Worldwide Express® - Export - Package",
-              "billing": "PrepaidAll",
-              "zone": "921",
-              "weight": null,
-              "weightUnit": null,
-              "discount": "53.00%",
-              "tags": ["Worldwide Express", "Export", "Package"],
-              "destination": null
-            },
-            {
-              "service": "UPS Worldwide Saver® - Export - Document",
-              "billing": "PrepaidAll",
-              "zone": "420",
-              "weight": null,
-              "weightUnit": null,
-              "discount": "55.00%",
-              "tags": ["Worldwide Saver", "Export", "Document"],
-              "destination": null
-            },
-            {
-              "service": "UPS Worldwide Saver® - Export - Document",
-              "billing": "PrepaidAll",
-              "zone": "421",
-              "weight": null,
-              "weightUnit": null,
-              "discount": "53.00%",
-              "tags": ["Worldwide Saver", "Export", "Document"],
-              "destination": null
-            },
-            {
-              "service": "UPS Worldwide Saver® - Export - Package",
-              "billing": "PrepaidAll",
-              "zone": "401",
-              "weight": null,
-              "weightUnit": null,
-              "discount": "60.00%",
-              "tags": ["Worldwide Saver", "Export", "Package"],
-              "destination": null
-            },
-            {
-              "service": "UPS Worldwide Saver® - Export - Package",
-              "billing": "PrepaidAll",
-              "zone": "420",
-              "weight": null,
-              "weightUnit": null,
-              "discount": "64.80%",
-              "tags": ["Worldwide Saver", "Export", "Package"],
-              "destination": null
-            },
-            {
-              "service": "UPS Worldwide Saver® - Export - Package",
-              "billing": "PrepaidAll",
-              "zone": "421",
-              "weight": null,
-              "weightUnit": null,
-              "discount": "53.00%",
-              "tags": ["Worldwide Saver", "Export", "Package"],
-              "destination": null
-            },
-            {
-              "service": "UPS Worldwide Expedited® - Export - Document",
-              "billing": "Prepaid^",
-              "zone": "620",
-              "weight": null,
-              "weightUnit": null,
-              "discount": "55.00%",
-              "tags": ["Worldwide Expedited", "Export", "Document"],
-              "destination": null
-            },
-            {
-              "service": "UPS Worldwide Expedited® - Export - Document",
-              "billing": "Prepaid^",
-              "zone": "621",
-              "weight": null,
-              "weightUnit": null,
-              "discount": "53.00%",
-              "tags": ["Worldwide Expedited", "Export", "Document"],
-              "destination": null
-            },
-            {
-              "service": "UPS Worldwide Expedited® - Export - Package",
-              "billing": "PrepaidAll",
-              "zone": "601",
-              "weight": null,
-              "weightUnit": null,
-              "discount": "60.00%",
-              "tags": ["Worldwide Expedited", "Export", "Package"],
-              "destination": null
-            },
-            {
-              "service": "UPS Worldwide Expedited® - Export - Package",
-              "billing": "PrepaidAll",
-              "zone": "620",
-              "weight": null,
-              "weightUnit": null,
-              "discount": "63.20%",
-              "tags": ["Worldwide Expedited", "Export", "Package"],
-              "destination": null
-            },
-            {
-              "service": "UPS Worldwide Expedited® - Export - Package",
-              "billing": "PrepaidAll",
-              "zone": "621",
-              "weight": null,
-              "weightUnit": null,
-              "discount": "53.00%",
-              "tags": ["Worldwide Expedited", "Export", "Package"],
-              "destination": null
-            },
-            {
-              "service": "Saudi Arabia",
-              "billing": "PrepaidAll",
+              "billing": "Prepaid",
               "zone": "ALL",
               "weight": null,
               "weightUnit": null,
-              "discount": "62.80%",
-              "tags": [],
-              "destination": "Destination"
-            },
-            {
-              "service": "UPS Worldwide Express - Import - Letter - Freight Collect",
-              "billing": "Freight CollectAll",
-              "zone": "91",
-              "weight": null,
-              "weightUnit": null,
-              "discount": "-50.00%",
-              "tags": ["Worldwide Express", "Import", "Letter"],
+              "discount": "53.00%",
+              "tags": [
+                "Worldwide Express",
+                "Export",
+                "Letter"
+              ],
               "destination": null
             },
             {
-              "service": "UPS Worldwide Express - Import - Letter - Freight Collect",
-              "billing": "Freight CollectAll",
-              "zone": "94",
+              "service": "UPS Worldwide Express® - Export - Document",
+              "billing": "Prepaid",
+              "zone": "ALL",
               "weight": null,
               "weightUnit": null,
-              "discount": "-50.00%",
-              "tags": ["Worldwide Express", "Import", "Letter"],
+              "discount": "53.00%",
+              "tags": [
+                "Worldwide Express",
+                "Export",
+                "Document"
+              ],
               "destination": null
             },
             {
-              "service": "UPS Worldwide Express - Import - Letter - Freight Collect",
-              "billing": "Freight CollectAll",
-              "zone": "951",
+              "service": "UPS Worldwide Express® - Export - Pak",
+              "billing": "Prepaid",
+              "zone": "ALL",
               "weight": null,
               "weightUnit": null,
-              "discount": "-50.00%",
-              "tags": ["Worldwide Express", "Import", "Letter"],
+              "discount": "53.00%",
+              "tags": [
+                "Worldwide Express",
+                "Export",
+                "Pak"
+              ],
               "destination": null
             },
             {
-              "service": "UPS Worldwide Express - Import - Letter - Freight Collect",
-              "billing": "Freight CollectAll",
-              "zone": "952",
+              "service": "UPS Worldwide Express® - Export - Package",
+              "billing": "Prepaid",
+              "zone": "ALL",
               "weight": null,
               "weightUnit": null,
-              "discount": "-50.00%",
-              "tags": ["Worldwide Express", "Import", "Letter"],
+              "discount": "53.00%",
+              "tags": [
+                "Worldwide Express",
+                "Export",
+                "Package"
+              ],
               "destination": null
             },
             {
-              "service": "UPS Worldwide Express - Import - Letter - Freight Collect",
-              "billing": "Freight CollectAll",
-              "zone": "953",
+              "service": "UPS Worldwide Saver® - Export - Letter",
+              "billing": "Prepaid",
+              "zone": "ALL",
               "weight": null,
               "weightUnit": null,
-              "discount": "-50.00%",
-              "tags": ["Worldwide Express", "Import", "Letter"],
+              "discount": "53.00%",
+              "tags": [
+                "Worldwide Saver",
+                "Export",
+                "Letter"
+              ],
               "destination": null
             },
             {
-              "service": "UPS Worldwide Express - Import - Letter - Freight Collect",
-              "billing": "Freight CollectAll",
-              "zone": "954",
+              "service": "UPS Worldwide Saver® - Export - Document",
+              "billing": "Prepaid",
+              "zone": "ALL",
               "weight": null,
               "weightUnit": null,
-              "discount": "-50.00%",
-              "tags": ["Worldwide Express", "Import", "Letter"],
+              "discount": "53.00%",
+              "tags": [
+                "Worldwide Saver",
+                "Export",
+                "Document"
+              ],
               "destination": null
             },
             {
-              "service": "UPS Worldwide Express - Import - Letter - Freight Collect",
-              "billing": "Freight CollectAll",
-              "zone": "955",
+              "service": "UPS Worldwide Saver® - Export - Pak",
+              "billing": "Prepaid",
+              "zone": "ALL",
               "weight": null,
               "weightUnit": null,
-              "discount": "-50.00%",
-              "tags": ["Worldwide Express", "Import", "Letter"],
+              "discount": "53.00%",
+              "tags": [
+                "Worldwide Saver",
+                "Export",
+                "Pak"
+              ],
               "destination": null
             },
             {
-              "service": "UPS Worldwide Express - Import - Letter - Freight Collect",
-              "billing": "Freight CollectAll",
-              "zone": "956",
+              "service": "UPS Worldwide Saver® - Export - Package",
+              "billing": "Prepaid",
+              "zone": "ALL",
               "weight": null,
               "weightUnit": null,
-              "discount": "-50.00%",
-              "tags": ["Worldwide Express", "Import", "Letter"],
+              "discount": "53.00%",
+              "tags": [
+                "Worldwide Saver",
+                "Export",
+                "Package"
+              ],
               "destination": null
             },
             {
-              "service": "UPS Worldwide Express - Import - Letter - Freight Collect",
-              "billing": "Freight CollectAll",
-              "zone": "957",
+              "service": "UPS Worldwide Expedited® - Export - Document",
+              "billing": "Prepaid",
+              "zone": "ALL",
               "weight": null,
               "weightUnit": null,
-              "discount": "-50.00%",
-              "tags": ["Worldwide Express", "Import", "Letter"],
+              "discount": "53.00%",
+              "tags": [
+                "Worldwide Expedited",
+                "Export",
+                "Document"
+              ],
               "destination": null
             },
             {
-              "service": "UPS Worldwide Express - Import - Letter - Freight Collect",
-              "billing": "Freight CollectAll",
-              "zone": "958",
+              "service": "UPS Worldwide Expedited® - Export - Package",
+              "billing": "Prepaid",
+              "zone": "ALL",
               "weight": null,
               "weightUnit": null,
-              "discount": "-50.00%",
-              "tags": ["Worldwide Express", "Import", "Letter"],
+              "discount": "53.00%",
+              "tags": [
+                "Worldwide Expedited",
+                "Export",
+                "Package"
+              ],
               "destination": null
             },
             {
-              "service": "UPS Worldwide Express - Import - Letter - Freight Collect",
-              "billing": "Freight CollectAll",
-              "zone": "959",
+              "service": "UPS® Standard to Mexico - Export - Document",
+              "billing": "Prepaid",
+              "zone": "ALL",
               "weight": null,
               "weightUnit": null,
-              "discount": "-50.00%",
-              "tags": ["Worldwide Express", "Import", "Letter"],
+              "discount": "25.00%",
+              "tags": [
+                "Standard",
+                "Mexico",
+                "Export",
+                "Document"
+              ],
               "destination": null
             },
             {
-              "service": "UPS Worldwide Express - Import - Letter - Freight Collect",
-              "billing": "Freight CollectAll",
-              "zone": "961",
+              "service": "UPS® Standard to Mexico - Export - Package",
+              "billing": "Prepaid",
+              "zone": "ALL",
               "weight": null,
               "weightUnit": null,
-              "discount": "-50.00%",
-              "tags": ["Worldwide Express", "Import", "Letter"],
+              "discount": "25.00%",
+              "tags": [
+                "Standard",
+                "Mexico",
+                "Export",
+                "Package"
+              ],
               "destination": null
             },
             {
-              "service": "UPS Worldwide Express - Import - Letter - Freight Collect",
-              "billing": "Freight CollectAll",
-              "zone": "962",
+              "service": "UPS Worldwide Express® - Import - Letter",
+              "billing": "Freight Collect",
+              "zone": "ALL",
               "weight": null,
               "weightUnit": null,
-              "discount": "-50.00%",
-              "tags": ["Worldwide Express", "Import", "Letter"],
+              "discount": "33.00%",
+              "tags": [
+                "Worldwide Express",
+                "Import",
+                "Letter"
+              ],
               "destination": null
             },
             {
-              "service": "UPS Worldwide Express - Import - Letter - Freight Collect",
-              "billing": "Freight CollectAll",
-              "zone": "963",
+              "service": "UPS Worldwide Express® - Import - Document",
+              "billing": "Freight Collect",
+              "zone": "ALL",
               "weight": null,
               "weightUnit": null,
-              "discount": "-50.00%",
-              "tags": ["Worldwide Express", "Import", "Letter"],
+              "discount": "33.00%",
+              "tags": [
+                "Worldwide Express",
+                "Import",
+                "Document"
+              ],
               "destination": null
             },
             {
-              "service": "UPS Worldwide Express - Import - Letter - Freight Collect",
-              "billing": "Freight CollectAll",
-              "zone": "970",
+              "service": "UPS Worldwide Express® - Import - Package",
+              "billing": "Freight Collect",
+              "zone": "ALL",
               "weight": null,
               "weightUnit": null,
-              "discount": "-50.00%",
-              "tags": ["Worldwide Express", "Import", "Letter"],
+              "discount": "33.00%",
+              "tags": [
+                "Worldwide Express",
+                "Import",
+                "Package"
+              ],
               "destination": null
             },
             {
-              "service": "UPS Worldwide Express - Import - Letter - Freight Collect",
-              "billing": "Freight CollectAll",
-              "zone": "971",
+              "service": "UPS Worldwide Saver® - Import - Letter",
+              "billing": "Freight Collect",
+              "zone": "ALL",
               "weight": null,
               "weightUnit": null,
-              "discount": "-50.00%",
-              "tags": ["Worldwide Express", "Import", "Letter"],
+              "discount": "33.00%",
+              "tags": [
+                "Worldwide Saver",
+                "Import",
+                "Letter"
+              ],
               "destination": null
             },
             {
-              "service": "UPS Worldwide Express - Import - Package - Freight Collect",
-              "billing": "Freight CollectAll",
-              "zone": "91",
+              "service": "UPS Worldwide Saver® - Import - Document",
+              "billing": "Freight Collect",
+              "zone": "ALL",
               "weight": null,
               "weightUnit": null,
-              "discount": "-50.00%",
-              "tags": ["Worldwide Express", "Import", "Package"],
+              "discount": "33.00%",
+              "tags": [
+                "Worldwide Saver",
+                "Import",
+                "Document"
+              ],
               "destination": null
             },
             {
-              "service": "UPS Worldwide Express - Import - Package - Freight Collect",
-              "billing": "Freight CollectAll",
-              "zone": "94",
+              "service": "UPS Worldwide Saver® - Import - Package",
+              "billing": "Freight Collect",
+              "zone": "ALL",
               "weight": null,
               "weightUnit": null,
-              "discount": "-50.00%",
-              "tags": ["Worldwide Express", "Import", "Package"],
+              "discount": "33.00%",
+              "tags": [
+                "Worldwide Saver",
+                "Import",
+                "Package"
+              ],
               "destination": null
             },
             {
-              "service": "UPS Worldwide Express - Import - Package - Freight Collect",
-              "billing": "Freight CollectAll",
-              "zone": "951",
+              "service": "UPS Worldwide Expedited® - Import - Document",
+              "billing": "Freight Collect",
+              "zone": "ALL",
               "weight": null,
               "weightUnit": null,
-              "discount": "-50.00%",
-              "tags": ["Worldwide Express", "Import", "Package"],
+              "discount": "33.00%",
+              "tags": [
+                "Worldwide Expedited",
+                "Import",
+                "Document"
+              ],
               "destination": null
             },
             {
-              "service": "UPS Worldwide Express - Import - Package - Freight Collect",
-              "billing": "Freight CollectAll",
-              "zone": "952",
+              "service": "UPS Worldwide Expedited® - Import - Package",
+              "billing": "Freight Collect",
+              "zone": "ALL",
               "weight": null,
               "weightUnit": null,
-              "discount": "-50.00%",
-              "tags": ["Worldwide Express", "Import", "Package"],
+              "discount": "33.00%",
+              "tags": [
+                "Worldwide Expedited",
+                "Import",
+                "Package"
+              ],
               "destination": null
             },
             {
-              "service": "UPS Worldwide Express - Import - Package - Freight Collect",
-              "billing": "Freight CollectAll",
-              "zone": "953",
+              "service": "UPS® Standard from Mexico - Import - Document",
+              "billing": "Freight Collect",
+              "zone": "ALL",
               "weight": null,
               "weightUnit": null,
-              "discount": "-50.00%",
-              "tags": ["Worldwide Express", "Import", "Package"],
+              "discount": "25.00%",
+              "tags": [
+                "Standard",
+                "Mexico",
+                "Import",
+                "Document"
+              ],
               "destination": null
             },
             {
-              "service": "UPS Worldwide Express - Import - Package - Freight Collect",
-              "billing": "Freight CollectAll",
-              "zone": "954",
+              "service": "UPS® Standard from Mexico - Import - Package",
+              "billing": "Freight Collect",
+              "zone": "ALL",
               "weight": null,
               "weightUnit": null,
-              "discount": "-50.00%",
-              "tags": ["Worldwide Express", "Import", "Package"],
+              "discount": "25.00%",
+              "tags": [
+                "Standard",
+                "Mexico",
+                "Import",
+                "Package"
+              ],
               "destination": null
             },
             {
-              "service": "UPS Worldwide Express - Import - Package - Freight Collect",
-              "billing": "Freight CollectAll",
-              "zone": "955",
+              "service": "UPS Worldwide Express Freight™ Pallet All",
+              "billing": null,
+              "zone": "ALL",
               "weight": null,
               "weightUnit": null,
-              "discount": "-50.00%",
-              "tags": ["Worldwide Express", "Import", "Package"],
+              "discount": "53.00%",
+              "tags": [
+                "Worldwide Express Freight",
+                "Pallet"
+              ],
               "destination": null
             },
             {
-              "service": "UPS Worldwide Express - Import - Package - Freight Collect",
-              "billing": "Freight CollectAll",
-              "zone": "956",
+              "service": "UPS Worldwide Expedited® - Import - Document",
+              "billing": "Freight Collect",
+              "zone": "ALL",
               "weight": null,
               "weightUnit": null,
-              "discount": "-50.00%",
-              "tags": ["Worldwide Express", "Import", "Package"],
+              "discount": "33.00%",
+              "tags": [
+                "Worldwide Expedited",
+                "Import",
+                "Document"
+              ],
               "destination": null
             },
             {
-              "service": "UPS Worldwide Express - Import - Package - Freight Collect",
-              "billing": "Freight CollectAll",
-              "zone": "957",
+              "service": "UPS Worldwide Expedited® - Import - Package",
+              "billing": "Freight Collect",
+              "zone": "ALL",
               "weight": null,
               "weightUnit": null,
-              "discount": "-50.00%",
-              "tags": ["Worldwide Express", "Import", "Package"],
+              "discount": "33.00%",
+              "tags": [
+                "Worldwide Expedited",
+                "Import",
+                "Package"
+              ],
               "destination": null
             },
             {
-              "service": "UPS Worldwide Express - Import - Package - Freight Collect",
-              "billing": "Freight CollectAll",
-              "zone": "958",
+              "service": "UPS® Standard from Mexico - Import - Document",
+              "billing": "Freight Collect",
+              "zone": "ALL",
               "weight": null,
               "weightUnit": null,
-              "discount": "-50.00%",
-              "tags": ["Worldwide Express", "Import", "Package"],
+              "discount": "25.00%",
+              "tags": [
+                "Standard",
+                "Mexico",
+                "Import",
+                "Document"
+              ],
               "destination": null
             },
             {
-              "service": "UPS Worldwide Express - Import - Package - Freight Collect",
-              "billing": "Freight CollectAll",
-              "zone": "959",
+              "service": "UPS® Standard from Mexico - Import - Package",
+              "billing": "Freight Collect",
+              "zone": "ALL",
               "weight": null,
               "weightUnit": null,
-              "discount": "-50.00%",
-              "tags": ["Worldwide Express", "Import", "Package"],
+              "discount": "25.00%",
+              "tags": [
+                "Standard",
+                "Mexico",
+                "Import",
+                "Package"
+              ],
               "destination": null
             },
             {
-              "service": "UPS Worldwide Express - Import - Package - Freight Collect",
-              "billing": "Freight CollectAll",
-              "zone": "961",
+              "service": "UPS Worldwide Export Express Freight™ Pallet All",
+              "billing": null,
+              "zone": "ALL",
               "weight": null,
               "weightUnit": null,
-              "discount": "-50.00%",
-              "tags": ["Worldwide Express", "Import", "Package"],
+              "discount": "53.00%",
+              "tags": [
+                "Worldwide Export Express Freight",
+                "Pallet"
+              ],
               "destination": null
             },
             {
-              "service": "UPS Worldwide Express - Import - Package - Freight Collect",
-              "billing": "Freight CollectAll",
-              "zone": "962",
+              "service": "UPS® Standard to Canada - Export - Package",
+              "billing": "Prepaid",
+              "zone": "ALL",
               "weight": null,
               "weightUnit": null,
-              "discount": "-50.00%",
-              "tags": ["Worldwide Express", "Import", "Package"],
+              "discount": "12.60%",
+              "tags": [
+                "Standard",
+                "Canada",
+                "Export",
+                "Package"
+              ],
               "destination": null
             },
             {
-              "service": "UPS Worldwide Express - Import - Package - Freight Collect",
-              "billing": "Freight CollectAll",
-              "zone": "963",
+              "service": "UPS Worldwide Express® - Export - Letter",
+              "billing": "Prepaid",
+              "zone": "920",
               "weight": null,
               "weightUnit": null,
-              "discount": "-50.00%",
-              "tags": ["Worldwide Express", "Import", "Package"],
+              "discount": "53.00%",
+              "tags": [
+                "Worldwide Express",
+                "Export",
+                "Letter"
+              ],
               "destination": null
             },
             {
-              "service": "UPS Worldwide Express - Import - Package - Freight Collect",
-              "billing": "Freight CollectAll",
-              "zone": "970",
+              "service": "UPS Worldwide Express® - Export - Letter",
+              "billing": "Prepaid",
+              "zone": "921",
               "weight": null,
               "weightUnit": null,
-              "discount": "-50.00%",
-              "tags": ["Worldwide Express", "Import", "Package"],
+              "discount": "53.00%",
+              "tags": [
+                "Worldwide Express",
+                "Export",
+                "Letter"
+              ],
               "destination": null
             },
             {
-              "service": "UPS Worldwide Express - Import - Package - Freight Collect",
-              "billing": "Freight CollectAll",
-              "zone": "971",
+              "service": "UPS Worldwide Express® - Export - Package",
+              "billing": "Prepaid",
+              "zone": "920",
               "weight": null,
               "weightUnit": null,
-              "discount": "-50.00%",
-              "tags": ["Worldwide Express", "Import", "Package"],
+              "discount": "53.00%",
+              "tags": [
+                "Worldwide Express",
+                "Export",
+                "Package"
+              ],
               "destination": null
+            },
+            {
+              "service": "UPS Worldwide Express® - Export - Package",
+              "billing": "Prepaid",
+              "zone": "921",
+              "weight": null,
+              "weightUnit": null,
+              "discount": "53.00%",
+              "tags": [
+                "Worldwide Express",
+                "Export",
+                "Package"
+              ],
+              "destination": null
+            },
+            {
+              "service": "UPS Worldwide Saver® - Export - Package",
+              "billing": "Prepaid",
+              "zone": "401",
+              "weight": null,
+              "weightUnit": null,
+              "discount": "64.80%",
+              "tags": [
+                "Worldwide Saver",
+                "Export",
+                "Package"
+              ],
+              "destination": null
+            },
+            {
+              "service": "UPS Worldwide Saver® - Export - Package",
+              "billing": "Prepaid",
+              "zone": "420",
+              "weight": null,
+              "weightUnit": null,
+              "discount": "53.00%",
+              "tags": [
+                "Worldwide Saver",
+                "Export",
+                "Package"
+              ],
+              "destination": null
+            },
+            {
+              "service": "UPS Worldwide Saver® - Export - Package",
+              "billing": "Prepaid",
+              "zone": "421",
+              "weight": null,
+              "weightUnit": null,
+              "discount": "53.00%",
+              "tags": [
+                "Worldwide Saver",
+                "Export",
+                "Package"
+              ],
+              "destination": null
+            },
+            {
+              "service": "UPS Worldwide Expedited® - Export - Document",
+              "billing": "Prepaid",
+              "zone": "620",
+              "weight": null,
+              "weightUnit": null,
+              "discount": "53.00%",
+              "tags": [
+                "Worldwide Expedited",
+                "Export",
+                "Document"
+              ],
+              "destination": null
+            },
+            {
+              "service": "UPS Worldwide Expedited® - Export - Document",
+              "billing": "Prepaid",
+              "zone": "621",
+              "weight": null,
+              "weightUnit": null,
+              "discount": "53.00%",
+              "tags": [
+                "Worldwide Expedited",
+                "Export",
+                "Document"
+              ],
+              "destination": null
+            },
+            {
+              "service": "UPS Worldwide Expedited® - Export - Package",
+              "billing": "Prepaid",
+              "zone": "601",
+              "weight": null,
+              "weightUnit": null,
+              "discount": "63.20%",
+              "tags": [
+                "Worldwide Expedited",
+                "Export",
+                "Package"
+              ],
+              "destination": null
+            },
+            {
+              "service": "UPS Worldwide Expedited® - Export - Package",
+              "billing": "Prepaid",
+              "zone": "620",
+              "weight": null,
+              "weightUnit": null,
+              "discount": "53.00%",
+              "tags": [
+                "Worldwide Expedited",
+                "Export",
+                "Package"
+              ],
+              "destination": null
+            },
+            {
+              "service": "UPS Worldwide Expedited® - Export - Package",
+              "billing": "Prepaid",
+              "zone": "621",
+              "weight": null,
+              "weightUnit": null,
+              "discount": "53.00%",
+              "tags": [
+                "Worldwide Expedited",
+                "Export",
+                "Package"
+              ],
+              "destination": null
+            },
+            {
+              "service": "UPS® Standard to Mexico - Export - Document",
+              "billing": "Prepaid",
+              "zone": "ALL",
+              "weight": null,
+              "weightUnit": null,
+              "discount": "10.50%",
+              "tags": [
+                "Standard",
+                "Mexico",
+                "Export",
+                "Document"
+              ],
+              "destination": null
+            },
+            {
+              "service": "UPS Worldwide Express® - Export - Package",
+              "billing": "Prepaid",
+              "zone": "920",
+              "weight": null,
+              "weightUnit": null,
+              "discount": "53.00%",
+              "tags": [
+                "Worldwide Express",
+                "Export",
+                "Package"
+              ],
+              "destination": null
+            },
+            {
+              "service": "UPS® Standard to Mexico - Export - Document",
+              "billing": "Prepaid",
+              "zone": "ALL",
+              "weight": null,
+              "weightUnit": null,
+              "discount": "10.50%",
+              "tags": [
+                "Standard",
+                "Mexico",
+                "Export",
+                "Document"
+              ],
+              "destination": null
+            },
+            {
+              "service": "UPS® Standard to Mexico - Export - Package",
+              "billing": "Prepaid",
+              "zone": "ALL",
+              "weight": null,
+              "weightUnit": null,
+              "discount": "10.50%",
+              "tags": [
+                "Standard",
+                "Mexico",
+                "Export",
+                "Package"
+              ],
+              "destination": null
+            },
+            {
+              "service": "UPS Worldwide Express® - Import - Letter",
+              "billing": "Freight Collect",
+              "zone": "ALL",
+              "weight": null,
+              "weightUnit": null,
+              "discount": "10.50%",
+              "tags": [
+                "Worldwide Express",
+                "Import",
+                "Letter"
+              ],
+              "destination": null
+            },
+            {
+              "service": "UPS Worldwide Express® - Import - Document",
+              "billing": "Freight Collect",
+              "zone": "ALL",
+              "weight": null,
+              "weightUnit": null,
+              "discount": "10.50%",
+              "tags": [
+                "Worldwide Express",
+                "Import",
+                "Document"
+              ],
+              "destination": null
+            },
+            {
+              "service": "UPS Worldwide Express® - Import - Package",
+              "billing": "Freight Collect",
+              "zone": "ALL",
+              "weight": null,
+              "weightUnit": null,
+              "discount": "10.50%",
+              "tags": [
+                "Worldwide Express",
+                "Import",
+                "Package"
+              ],
+              "destination": null
+            },
+            {
+              "service": "UPS Worldwide Saver® - Import - Letter",
+              "billing": "Freight Collect",
+              "zone": "ALL",
+              "weight": null,
+              "weightUnit": null,
+              "discount": "10.50%",
+              "tags": [
+                "Worldwide Saver",
+                "Import",
+                "Letter"
+              ],
+              "destination": null
+            },
+            {
+              "service": "UPS Worldwide Saver® - Import - Document",
+              "billing": "Freight Collect",
+              "zone": "ALL",
+              "weight": null,
+              "weightUnit": null,
+              "discount": "10.50%",
+              "tags": [
+                "Worldwide Saver",
+                "Import",
+                "Document"
+              ],
+              "destination": null
+            },
+            {
+              "service": "UPS Worldwide Saver® - Import - Package",
+              "billing": "Freight Collect",
+              "zone": "ALL",
+              "weight": null,
+              "weightUnit": null,
+              "discount": "10.50%",
+              "tags": [
+                "Worldwide Saver",
+                "Import",
+                "Package"
+              ],
+              "destination": null
+            },
+            {
+              "service": "UPS Worldwide Saver® - Export - Document",
+              "billing": "Prepaid",
+              "zone": "ALL",
+              "weight": null,
+              "weightUnit": null,
+              "discount": "10.50%",
+              "tags": [
+                "Worldwide Saver",
+                "Export",
+                "Document"
+              ],
+              "destination": null
+            },
+            {
+              "service": "UPS Worldwide Saver® - Export - Pak",
+              "billing": "Prepaid",
+              "zone": "ALL",
+              "weight": null,
+              "weightUnit": null,
+              "discount": "10.50%",
+              "tags": [
+                "Worldwide Saver",
+                "Export",
+                "Pak"
+              ],
+              "destination": null
+            },
+            {
+              "service": "UPS Worldwide Export Express",
+              "billing": null,
+              "zone": "ALL",
+              "weight": null,
+              "weightUnit": null,
+              "discount": "10.50%",
+              "tags": [
+                "Worldwide Export Express",
+                "Pallet"
+              ],
+              "destination": null
+            },
+            {
+              "service": "UPS Worldwide Expedited® - Export - Document",
+              "billing": "Prepaid",
+              "zone": "ALL",
+              "weight": null,
+              "weightUnit": null,
+              "discount": "10.50%",
+              "tags": [
+                "Worldwide Expedited",
+                "Export",
+                "Document"
+              ],
+              "destination": null
+            },
+            {
+              "service": "UPS Worldwide Expedited® - Export - Package",
+              "billing": "Prepaid",
+              "zone": "ALL",
+              "weight": null,
+              "weightUnit": null,
+              "discount": "10.50%",
+              "tags": [
+                "Worldwide Expedited",
+                "Export",
+                "Package"
+              ],
+              "destination": null
+            },
+            {
+              "service": "UPS® Standard to Mexico - Export - Document",
+              "billing": "Prepaid",
+              "zone": "ALL",
+              "weight": null,
+              "weightUnit": null,
+              "discount": "10.50%",
+              "tags": [
+                "Standard",
+                "Mexico",
+                "Export",
+                "Document"
+              ],
+              "destination": null
+            },
+            {
+              "service": "UPS® Standard to Mexico - Export - Package",
+              "billing": "Prepaid",
+              "zone": "ALL",
+              "weight": null,
+              "weightUnit": null,
+              "discount": "10.50%",
+              "tags": [
+                "Standard",
+                "Mexico",
+                "Export",
+                "Package"
+              ],
+              "destination": null
+            },
+            {
+              "service": "UPS® Standard to Mexico - Import - Package",
+              "billing": "Freight Collect",
+              "zone": "ALL",
+              "weight": null,
+              "weightUnit": null,
+              "discount": "10.50%",
+              "tags": [
+                "Standard",
+                "Mexico",
+                "Import",
+                "Package"
+              ],
+              "destination": null
+            }
+          ]
+        },
+        "metadata": {
+          "metadata": [
+            {
+              "service": "UPS Worldwide Express® - Export - Document",
+              "notes": [
+                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+              ],
+              "validityPeriod": {
+                "startDate": null,
+                "endDate": null
+              }
+            },
+            {
+              "service": "UPS Worldwide Saver® - Import - Document",
+              "notes": [
+                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+              ],
+              "validityPeriod": {
+                "startDate": null,
+                "endDate": null
+              }
+            },
+            {
+              "service": "UPS® Standard to Mexico - Export - Package",
+              "notes": [
+                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+              ],
+              "validityPeriod": {
+                "startDate": null,
+                "endDate": null
+              }
+            },
+            {
+              "service": "UPS® Standard from Mexico - Import - Package",
+              "notes": [
+                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+              ],
+              "validityPeriod": {
+                "startDate": null,
+                "endDate": null
+              }
+            },
+            {
+              "service": "UPS SurePost - 1lb or greater - Residential Package",
+              "notes": [
+                "Incentives effective from March 9, 2019 to September 8, 2046.",
+                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+                "Rates applicable to UPS SurePost Service are set forth at www.ups.com/content/us/en/preferred/lws_index.html and are not applicable to shipments originating from account numbers that are not included in this agreement.",
+                "Transportation charges for UPS SurePost packages will be included in any applicable Small Package Freight commitments."
+              ],
+              "validityPeriod": {
+                "startDate": "March 9, 2019",
+                "endDate": "September 8, 2046"
+              }
+            },
+            {
+              "service": "UPS Worldwide Express® - Import - Package",
+              "notes": [
+                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+              ],
+              "validityPeriod": {
+                "startDate": null,
+                "endDate": null
+              }
+            },
+            {
+              "service": "UPS Worldwide Express® - Export - Pak",
+              "notes": [
+                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+              ],
+              "validityPeriod": {
+                "startDate": null,
+                "endDate": null
+              }
+            },
+            {
+              "service": "UPS® Ground - Commercial Package",
+              "notes": [
+                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement."
+              ],
+              "validityPeriod": {
+                "startDate": null,
+                "endDate": null
+              }
+            },
+            {
+              "service": "UPS Worldwide Express® - Export - Letter",
+              "notes": [
+                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+              ],
+              "validityPeriod": {
+                "startDate": null,
+                "endDate": null
+              }
+            },
+            {
+              "service": "UPS Worldwide Express® - Import - Document",
+              "notes": [
+                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+              ],
+              "validityPeriod": {
+                "startDate": null,
+                "endDate": null
+              }
+            },
+            {
+              "service": "UPS Worldwide Expedited® - Export - Document",
+              "notes": [
+                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+              ],
+              "validityPeriod": {
+                "startDate": null,
+                "endDate": null
+              }
+            },
+            {
+              "service": "UPS® Ground - Residential Package",
+              "notes": [
+                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement."
+              ],
+              "validityPeriod": {
+                "startDate": null,
+                "endDate": null
+              }
+            },
+            {
+              "service": "UPS Worldwide Express Freight™ Pallet All",
+              "notes": [
+                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+              ],
+              "validityPeriod": {
+                "startDate": null,
+                "endDate": null
+              }
+            },
+            {
+              "service": "UPS® Standard to Canada - Export - Package",
+              "notes": [
+                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+              ],
+              "validityPeriod": {
+                "startDate": null,
+                "endDate": null
+              }
+            },
+            {
+              "service": "UPS Worldwide Saver® - Import - Letter",
+              "notes": [
+                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+              ],
+              "validityPeriod": {
+                "startDate": null,
+                "endDate": null
+              }
+            },
+            {
+              "service": "UPS Worldwide Express® - Export - Package",
+              "notes": [
+                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+              ],
+              "validityPeriod": {
+                "startDate": null,
+                "endDate": null
+              }
+            },
+            {
+              "service": "UPS Worldwide Saver® - Export - Letter",
+              "notes": [
+                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+              ],
+              "validityPeriod": {
+                "startDate": null,
+                "endDate": null
+              }
+            },
+            {
+              "service": "UPS® Standard from Mexico - Import - Document",
+              "notes": [
+                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+              ],
+              "validityPeriod": {
+                "startDate": null,
+                "endDate": null
+              }
+            },
+            {
+              "service": "UPS Worldwide Expedited® - Export - Package",
+              "notes": [
+                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+              ],
+              "validityPeriod": {
+                "startDate": null,
+                "endDate": null
+              }
+            },
+            {
+              "service": "UPS Worldwide Express® - Import - Letter",
+              "notes": [
+                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+              ],
+              "validityPeriod": {
+                "startDate": null,
+                "endDate": null
+              }
+            },
+            {
+              "service": "UPS Worldwide Export Express",
+              "notes": [
+                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+              ],
+              "validityPeriod": {
+                "startDate": null,
+                "endDate": null
+              }
+            },
+            {
+              "service": "UPS® Standard to Mexico - Export - Document",
+              "notes": [
+                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+              ],
+              "validityPeriod": {
+                "startDate": null,
+                "endDate": null
+              }
+            },
+            {
+              "service": "UPS® Standard to Mexico - Import - Package",
+              "notes": [
+                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+              ],
+              "validityPeriod": {
+                "startDate": null,
+                "endDate": null
+              }
+            },
+            {
+              "service": "UPS Worldwide Expedited® - Import - Package",
+              "notes": [
+                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+              ],
+              "validityPeriod": {
+                "startDate": null,
+                "endDate": null
+              }
+            },
+            {
+              "service": "UPS Worldwide Saver® - Export - Pak",
+              "notes": [
+                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+              ],
+              "validityPeriod": {
+                "startDate": null,
+                "endDate": null
+              }
+            },
+            {
+              "service": "UPS Worldwide Saver® - Export - Document",
+              "notes": [
+                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+              ],
+              "validityPeriod": {
+                "startDate": null,
+                "endDate": null
+              }
+            },
+            {
+              "service": "UPS Worldwide Export Express Freight™ Pallet All",
+              "notes": [
+                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+              ],
+              "validityPeriod": {
+                "startDate": null,
+                "endDate": null
+              }
+            },
+            {
+              "service": "UPS Worldwide Saver® - Import - Package",
+              "notes": [
+                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+              ],
+              "validityPeriod": {
+                "startDate": null,
+                "endDate": null
+              }
+            },
+            {
+              "service": "UPS Worldwide Expedited® - Import - Document",
+              "notes": [
+                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+              ],
+              "validityPeriod": {
+                "startDate": null,
+                "endDate": null
+              }
+            },
+            {
+              "service": "UPS Worldwide Saver® - Export - Package",
+              "notes": [
+                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+              ],
+              "validityPeriod": {
+                "startDate": null,
+                "endDate": null
+              }
             }
           ]
         }

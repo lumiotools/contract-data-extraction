@@ -1,20 +1,8 @@
-"use client";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+"use client"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Badge } from "@/components/ui/badge"
 
 const DisplayExtractedContract = ({ details, tables }) => {
   return (
@@ -63,26 +51,18 @@ const DisplayExtractedContract = ({ details, tables }) => {
       <Tabs defaultValue={tables[0].title.toLowerCase().replace(/\s+/g, "-")}>
         <TabsList className="w-full grid grid-cols-5">
           {tables.map((table, index) => (
-            <TabsTrigger
-              key={index}
-              value={table.title.toLowerCase().replace(/\s+/g, "-")}
-            >
+            <TabsTrigger key={index} value={table.title.toLowerCase().replace(/\s+/g, "-")}>
               {table.title}
             </TabsTrigger>
           ))}
         </TabsList>
 
         {tables.map((table, index) => (
-          <TabsContent
-            key={index}
-            value={table.title.toLowerCase().replace(/\s+/g, "-")}
-          >
+          <TabsContent key={index} value={table.title.toLowerCase().replace(/\s+/g, "-")}>
             <Card>
               <CardHeader>
                 <CardTitle>{table.title}</CardTitle>
-                <CardDescription>
-                  {table.tableData.notes?.join(" ")}
-                </CardDescription>
+                <CardDescription>{table.tableData.notes?.join(" ")}</CardDescription>
               </CardHeader>
               <CardContent>
                 <Table>
@@ -98,7 +78,17 @@ const DisplayExtractedContract = ({ details, tables }) => {
                       <TableRow key={rowIndex}>
                         {table.tableData.headers.map((header, cellIndex) => (
                           <TableCell key={cellIndex}>
-                            {row[header] || "N/A"}
+                            {header === "tags" ? (
+                              <div className="flex flex-wrap gap-1">
+                                {row[header]?.map((tag, tagIndex) => (
+                                  <Badge key={tagIndex} variant="outline">
+                                    {tag}
+                                  </Badge>
+                                ))}
+                              </div>
+                            ) : (
+                              row[header] || "N/A"
+                            )}
                           </TableCell>
                         ))}
                       </TableRow>
@@ -107,11 +97,40 @@ const DisplayExtractedContract = ({ details, tables }) => {
                 </Table>
               </CardContent>
             </Card>
+
+            {table.metadata && (
+              <Card className="mt-4">
+                <CardHeader>
+                  <CardTitle>Metadata</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  {table.metadata.metadata.map((meta, metaIndex) => (
+                    <div key={metaIndex} className="mb-4">
+                      <h4 className="font-semibold">{meta.service}</h4>
+                      <ul className="list-disc pl-5">
+                        {meta.notes.map((note, noteIndex) => (
+                          <li key={noteIndex}>{note}</li>
+                        ))}
+                      </ul>
+                      {meta.validityPeriod && (
+                        <p className="mt-2">
+                          <strong>Validity Period:</strong>{" "}
+                          {meta.validityPeriod.startDate
+                            ? `${meta.validityPeriod.startDate} to ${meta.validityPeriod.endDate}`
+                            : "Not specified"}
+                        </p>
+                      )}
+                    </div>
+                  ))}
+                </CardContent>
+              </Card>
+            )}
           </TabsContent>
         ))}
       </Tabs>
     </div>
-  );
-};
+  )
+}
 
-export default DisplayExtractedContract;
+export default DisplayExtractedContract
+
