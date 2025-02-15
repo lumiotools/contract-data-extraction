@@ -104,7 +104,7 @@ const DisplayExtractedContract = ({ details, tables }) => {
                   <CardTitle>Metadata</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  {table.metadata.metadata.map((meta, metaIndex) => (
+                  {table.metadata.map((meta, metaIndex) => (
                     <div key={metaIndex} className="mb-4">
                       <h4 className="font-semibold">{meta.service}</h4>
                       <ul className="list-disc pl-5">

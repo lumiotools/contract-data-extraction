@@ -2533,368 +2533,366 @@ export const DUMMY_DATA = {
             }
           ]
         },
-        "metadata": {
-          "metadata": [
-            {
-              "service": "UPS Worldwide Express® - Export - Document",
-              "notes": [
-                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
-                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
-                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
-              ],
-              "validityPeriod": {
-                "startDate": null,
-                "endDate": null
-              }
-            },
-            {
-              "service": "UPS Worldwide Saver® - Import - Document",
-              "notes": [
-                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
-                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
-                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
-              ],
-              "validityPeriod": {
-                "startDate": null,
-                "endDate": null
-              }
-            },
-            {
-              "service": "UPS® Standard to Mexico - Export - Package",
-              "notes": [
-                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
-                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
-                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
-              ],
-              "validityPeriod": {
-                "startDate": null,
-                "endDate": null
-              }
-            },
-            {
-              "service": "UPS® Standard from Mexico - Import - Package",
-              "notes": [
-                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
-                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
-                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
-              ],
-              "validityPeriod": {
-                "startDate": null,
-                "endDate": null
-              }
-            },
-            {
-              "service": "UPS SurePost - 1lb or greater - Residential Package",
-              "notes": [
-                "Incentives effective from March 9, 2019 to September 8, 2046.",
-                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
-                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
-                "Rates applicable to UPS SurePost Service are set forth at www.ups.com/content/us/en/preferred/lws_index.html and are not applicable to shipments originating from account numbers that are not included in this agreement.",
-                "Transportation charges for UPS SurePost packages will be included in any applicable Small Package Freight commitments."
-              ],
-              "validityPeriod": {
-                "startDate": "March 9, 2019",
-                "endDate": "September 8, 2046"
-              }
-            },
-            {
-              "service": "UPS Worldwide Express® - Import - Package",
-              "notes": [
-                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
-                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
-                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
-              ],
-              "validityPeriod": {
-                "startDate": null,
-                "endDate": null
-              }
-            },
-            {
-              "service": "UPS Worldwide Express® - Export - Pak",
-              "notes": [
-                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
-                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
-                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
-              ],
-              "validityPeriod": {
-                "startDate": null,
-                "endDate": null
-              }
-            },
-            {
-              "service": "UPS® Ground - Commercial Package",
-              "notes": [
-                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement."
-              ],
-              "validityPeriod": {
-                "startDate": null,
-                "endDate": null
-              }
-            },
-            {
-              "service": "UPS Worldwide Express® - Export - Letter",
-              "notes": [
-                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
-                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
-                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
-              ],
-              "validityPeriod": {
-                "startDate": null,
-                "endDate": null
-              }
-            },
-            {
-              "service": "UPS Worldwide Express® - Import - Document",
-              "notes": [
-                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
-                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
-                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
-              ],
-              "validityPeriod": {
-                "startDate": null,
-                "endDate": null
-              }
-            },
-            {
-              "service": "UPS Worldwide Expedited® - Export - Document",
-              "notes": [
-                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
-                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
-                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
-              ],
-              "validityPeriod": {
-                "startDate": null,
-                "endDate": null
-              }
-            },
-            {
-              "service": "UPS® Ground - Residential Package",
-              "notes": [
-                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement."
-              ],
-              "validityPeriod": {
-                "startDate": null,
-                "endDate": null
-              }
-            },
-            {
-              "service": "UPS Worldwide Express Freight™ Pallet All",
-              "notes": [
-                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
-                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
-                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
-              ],
-              "validityPeriod": {
-                "startDate": null,
-                "endDate": null
-              }
-            },
-            {
-              "service": "UPS® Standard to Canada - Export - Package",
-              "notes": [
-                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
-                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
-                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
-              ],
-              "validityPeriod": {
-                "startDate": null,
-                "endDate": null
-              }
-            },
-            {
-              "service": "UPS Worldwide Saver® - Import - Letter",
-              "notes": [
-                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
-                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
-                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
-              ],
-              "validityPeriod": {
-                "startDate": null,
-                "endDate": null
-              }
-            },
-            {
-              "service": "UPS Worldwide Express® - Export - Package",
-              "notes": [
-                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
-                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
-                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
-              ],
-              "validityPeriod": {
-                "startDate": null,
-                "endDate": null
-              }
-            },
-            {
-              "service": "UPS Worldwide Saver® - Export - Letter",
-              "notes": [
-                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
-                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
-                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
-              ],
-              "validityPeriod": {
-                "startDate": null,
-                "endDate": null
-              }
-            },
-            {
-              "service": "UPS® Standard from Mexico - Import - Document",
-              "notes": [
-                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
-                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
-                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
-              ],
-              "validityPeriod": {
-                "startDate": null,
-                "endDate": null
-              }
-            },
-            {
-              "service": "UPS Worldwide Expedited® - Export - Package",
-              "notes": [
-                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
-                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
-                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
-              ],
-              "validityPeriod": {
-                "startDate": null,
-                "endDate": null
-              }
-            },
-            {
-              "service": "UPS Worldwide Express® - Import - Letter",
-              "notes": [
-                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
-                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
-                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
-              ],
-              "validityPeriod": {
-                "startDate": null,
-                "endDate": null
-              }
-            },
-            {
-              "service": "UPS Worldwide Export Express",
-              "notes": [
-                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
-                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
-                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
-              ],
-              "validityPeriod": {
-                "startDate": null,
-                "endDate": null
-              }
-            },
-            {
-              "service": "UPS® Standard to Mexico - Export - Document",
-              "notes": [
-                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
-                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
-                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
-              ],
-              "validityPeriod": {
-                "startDate": null,
-                "endDate": null
-              }
-            },
-            {
-              "service": "UPS® Standard to Mexico - Import - Package",
-              "notes": [
-                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
-                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
-                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
-              ],
-              "validityPeriod": {
-                "startDate": null,
-                "endDate": null
-              }
-            },
-            {
-              "service": "UPS Worldwide Expedited® - Import - Package",
-              "notes": [
-                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
-                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
-                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
-              ],
-              "validityPeriod": {
-                "startDate": null,
-                "endDate": null
-              }
-            },
-            {
-              "service": "UPS Worldwide Saver® - Export - Pak",
-              "notes": [
-                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
-                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
-                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
-              ],
-              "validityPeriod": {
-                "startDate": null,
-                "endDate": null
-              }
-            },
-            {
-              "service": "UPS Worldwide Saver® - Export - Document",
-              "notes": [
-                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
-                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
-                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
-              ],
-              "validityPeriod": {
-                "startDate": null,
-                "endDate": null
-              }
-            },
-            {
-              "service": "UPS Worldwide Export Express Freight™ Pallet All",
-              "notes": [
-                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
-                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
-                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
-              ],
-              "validityPeriod": {
-                "startDate": null,
-                "endDate": null
-              }
-            },
-            {
-              "service": "UPS Worldwide Saver® - Import - Package",
-              "notes": [
-                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
-                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
-                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
-              ],
-              "validityPeriod": {
-                "startDate": null,
-                "endDate": null
-              }
-            },
-            {
-              "service": "UPS Worldwide Expedited® - Import - Document",
-              "notes": [
-                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
-                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
-                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
-              ],
-              "validityPeriod": {
-                "startDate": null,
-                "endDate": null
-              }
-            },
-            {
-              "service": "UPS Worldwide Saver® - Export - Package",
-              "notes": [
-                "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
-                "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
-                "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
-              ],
-              "validityPeriod": {
-                "startDate": null,
-                "endDate": null
-              }
+        "metadata": [
+          {
+            "service": "UPS Worldwide Express® - Export - Document",
+            "notes": [
+              "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+              "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+              "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+            ],
+            "validityPeriod": {
+              "startDate": null,
+              "endDate": null
             }
-          ]
-        }
+          },
+          {
+            "service": "UPS Worldwide Saver® - Import - Document",
+            "notes": [
+              "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+              "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+              "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+            ],
+            "validityPeriod": {
+              "startDate": null,
+              "endDate": null
+            }
+          },
+          {
+            "service": "UPS® Standard to Mexico - Export - Package",
+            "notes": [
+              "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+              "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+              "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+            ],
+            "validityPeriod": {
+              "startDate": null,
+              "endDate": null
+            }
+          },
+          {
+            "service": "UPS® Standard from Mexico - Import - Package",
+            "notes": [
+              "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+              "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+              "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+            ],
+            "validityPeriod": {
+              "startDate": null,
+              "endDate": null
+            }
+          },
+          {
+            "service": "UPS SurePost - 1lb or greater - Residential Package",
+            "notes": [
+              "Incentives effective from March 9, 2019 to September 8, 2046.",
+              "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+              "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+              "Rates applicable to UPS SurePost Service are set forth at www.ups.com/content/us/en/preferred/lws_index.html and are not applicable to shipments originating from account numbers that are not included in this agreement.",
+              "Transportation charges for UPS SurePost packages will be included in any applicable Small Package Freight commitments."
+            ],
+            "validityPeriod": {
+              "startDate": "March 9, 2019",
+              "endDate": "September 8, 2046"
+            }
+          },
+          {
+            "service": "UPS Worldwide Express® - Import - Package",
+            "notes": [
+              "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+              "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+              "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+            ],
+            "validityPeriod": {
+              "startDate": null,
+              "endDate": null
+            }
+          },
+          {
+            "service": "UPS Worldwide Express® - Export - Pak",
+            "notes": [
+              "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+              "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+              "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+            ],
+            "validityPeriod": {
+              "startDate": null,
+              "endDate": null
+            }
+          },
+          {
+            "service": "UPS® Ground - Commercial Package",
+            "notes": [
+              "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement."
+            ],
+            "validityPeriod": {
+              "startDate": null,
+              "endDate": null
+            }
+          },
+          {
+            "service": "UPS Worldwide Express® - Export - Letter",
+            "notes": [
+              "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+              "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+              "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+            ],
+            "validityPeriod": {
+              "startDate": null,
+              "endDate": null
+            }
+          },
+          {
+            "service": "UPS Worldwide Express® - Import - Document",
+            "notes": [
+              "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+              "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+              "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+            ],
+            "validityPeriod": {
+              "startDate": null,
+              "endDate": null
+            }
+          },
+          {
+            "service": "UPS Worldwide Expedited® - Export - Document",
+            "notes": [
+              "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+              "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+              "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+            ],
+            "validityPeriod": {
+              "startDate": null,
+              "endDate": null
+            }
+          },
+          {
+            "service": "UPS® Ground - Residential Package",
+            "notes": [
+              "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement."
+            ],
+            "validityPeriod": {
+              "startDate": null,
+              "endDate": null
+            }
+          },
+          {
+            "service": "UPS Worldwide Express Freight™ Pallet All",
+            "notes": [
+              "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+              "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+              "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+            ],
+            "validityPeriod": {
+              "startDate": null,
+              "endDate": null
+            }
+          },
+          {
+            "service": "UPS® Standard to Canada - Export - Package",
+            "notes": [
+              "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+              "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+              "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+            ],
+            "validityPeriod": {
+              "startDate": null,
+              "endDate": null
+            }
+          },
+          {
+            "service": "UPS Worldwide Saver® - Import - Letter",
+            "notes": [
+              "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+              "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+              "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+            ],
+            "validityPeriod": {
+              "startDate": null,
+              "endDate": null
+            }
+          },
+          {
+            "service": "UPS Worldwide Express® - Export - Package",
+            "notes": [
+              "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+              "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+              "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+            ],
+            "validityPeriod": {
+              "startDate": null,
+              "endDate": null
+            }
+          },
+          {
+            "service": "UPS Worldwide Saver® - Export - Letter",
+            "notes": [
+              "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+              "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+              "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+            ],
+            "validityPeriod": {
+              "startDate": null,
+              "endDate": null
+            }
+          },
+          {
+            "service": "UPS® Standard from Mexico - Import - Document",
+            "notes": [
+              "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+              "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+              "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+            ],
+            "validityPeriod": {
+              "startDate": null,
+              "endDate": null
+            }
+          },
+          {
+            "service": "UPS Worldwide Expedited® - Export - Package",
+            "notes": [
+              "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+              "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+              "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+            ],
+            "validityPeriod": {
+              "startDate": null,
+              "endDate": null
+            }
+          },
+          {
+            "service": "UPS Worldwide Express® - Import - Letter",
+            "notes": [
+              "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+              "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+              "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+            ],
+            "validityPeriod": {
+              "startDate": null,
+              "endDate": null
+            }
+          },
+          {
+            "service": "UPS Worldwide Export Express",
+            "notes": [
+              "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+              "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+              "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+            ],
+            "validityPeriod": {
+              "startDate": null,
+              "endDate": null
+            }
+          },
+          {
+            "service": "UPS® Standard to Mexico - Export - Document",
+            "notes": [
+              "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+              "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+              "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+            ],
+            "validityPeriod": {
+              "startDate": null,
+              "endDate": null
+            }
+          },
+          {
+            "service": "UPS® Standard to Mexico - Import - Package",
+            "notes": [
+              "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+              "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+              "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+            ],
+            "validityPeriod": {
+              "startDate": null,
+              "endDate": null
+            }
+          },
+          {
+            "service": "UPS Worldwide Expedited® - Import - Package",
+            "notes": [
+              "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+              "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+              "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+            ],
+            "validityPeriod": {
+              "startDate": null,
+              "endDate": null
+            }
+          },
+          {
+            "service": "UPS Worldwide Saver® - Export - Pak",
+            "notes": [
+              "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+              "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+              "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+            ],
+            "validityPeriod": {
+              "startDate": null,
+              "endDate": null
+            }
+          },
+          {
+            "service": "UPS Worldwide Saver® - Export - Document",
+            "notes": [
+              "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+              "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+              "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+            ],
+            "validityPeriod": {
+              "startDate": null,
+              "endDate": null
+            }
+          },
+          {
+            "service": "UPS Worldwide Export Express Freight™ Pallet All",
+            "notes": [
+              "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+              "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+              "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+            ],
+            "validityPeriod": {
+              "startDate": null,
+              "endDate": null
+            }
+          },
+          {
+            "service": "UPS Worldwide Saver® - Import - Package",
+            "notes": [
+              "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+              "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+              "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+            ],
+            "validityPeriod": {
+              "startDate": null,
+              "endDate": null
+            }
+          },
+          {
+            "service": "UPS Worldwide Expedited® - Import - Document",
+            "notes": [
+              "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+              "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+              "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+            ],
+            "validityPeriod": {
+              "startDate": null,
+              "endDate": null
+            }
+          },
+          {
+            "service": "UPS Worldwide Saver® - Export - Package",
+            "notes": [
+              "Incentives are based on and derived from the most recently published Daily Rates and adjusted periodically pursuant to the terms and conditions of the Carrier Agreement.",
+              "Updated rate charts will be made available to Customer by contacting your UPS account executive.",
+              "All Includes all available billing options and return services with the exception of WorldEase, Consolidated Clearance and ARS services. Please refer to the UPS Tariff/Terms and Conditions for additional information on available billing options."
+            ],
+            "validityPeriod": {
+              "startDate": null,
+              "endDate": null
+            }
+          }
+        ]
       },
       {
         "title": "Portfolio Tier Incentive",
