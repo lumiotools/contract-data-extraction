@@ -131,14 +131,14 @@ class ContractDataExtractionService:
                 {
                     "table_rows": [
                         {
-                            "service": "string",
+                            "service": "string", (The UPS Service name as written in the contract file),
                             "billing": "string",
                             "zone": "string",
                             "weight": "string",
                             "weightUnit": "lbs",
                             "discount": "string" (needs to be fully accurate as written in the contract file),
                             "tags": ["string", ...],
-                            "destination": "string or null"
+                            "destination": "string or null" // The Destination name if available else null (eg. Saudi Arabia, Egypt, United Arab Emirates, etc.)
                         }
                     ]
                 }
