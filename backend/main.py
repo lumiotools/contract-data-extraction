@@ -4,6 +4,7 @@ from fastapi import FastAPI, File, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
+from fedx_extraction_service import FedXContractDataExtractionService
 from extraction_service import ContractDataExtractionService
 from api_rates import APIRates  # Import APIRates class from api_rates.py
 import difflib
@@ -54,6 +55,19 @@ async def extract(file: UploadFile = File(...)):
         # "contract_type": contract_type
     }})
 
+@app.post("/api/extractfedx")
+async def extract(file: UploadFile = File(...)):
+    extracted_data = FedXContractDataExtractionService.fedx_extract(file)
+    details = extracted_data["details"]
+    tables = extracted_data["tables"]
+    # source_address = extracted_data["address"]
+    # contract_type = extracted_data["contract_type"]
+    return JSONResponse(content={"success": True, "message": "Extracted data", "data": {
+        "details": details,
+        "tables": tables,
+        # "source_address": source_address,
+        # "contract_type": contract_type
+    }})
 
 def find_best_match(service_name, service_list):
     """
