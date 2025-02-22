@@ -46,45 +46,61 @@ class FedXContractDataExtractionService:
 
                 print(f"Calling Gemini API, attempt {attempt+1}")
                 response = func(*args, **kwargs)
+                
+                if not response or not response.text:
+                    print(f"Empty response received on attempt {attempt+1}")
+                    time.sleep(initial_delay * (backoff_factor ** attempt))
+                    continue
+
+                # Clean response text from markdown formatting
+                cleaned_text = response.text.strip()
+                if "```json" in cleaned_text:
+                    cleaned_text = cleaned_text.split("```json")[1].split("```")[0].strip()
+                elif "```" in cleaned_text:
+                    cleaned_text = cleaned_text.split("```")[1].split("```")[0].strip()
+
+                try:
+                    data = json.loads(cleaned_text)
+                    # Enhanced validation with type checking
+                    if data and isinstance(data, dict) and any([
+                        isinstance(data.get("tables"), list),
+                        isinstance(data.get("table"), dict),
+                        isinstance(data.get("addresses"), (list, dict)),
+                        isinstance(data.get("tableData"), dict),
+                        isinstance(data.get("contract_type"), str),
+                        isinstance(data.get("services"), (list, dict)),
+                        isinstance(data.get("rows"), list),
+                        isinstance(data.get("table_rows"), list),
+                        isinstance(data.get("eligible_accounts"), (list, dict)),
+                        isinstance(data.get("metadata"), (list, dict))
+                    ]):
+                        return response  # Valid response
+                    else:
+                        print(f"Data validation failed on attempt {attempt+1}")
+                        print("Received data:", cleaned_text[:200] + "..." if len(cleaned_text) > 200 else cleaned_text)
+                except json.JSONDecodeError as e:
+                    print(f"JSON parsing error on attempt {attempt+1}: {e}")
+                    print("Failed text:", cleaned_text[:200] + "..." if len(cleaned_text) > 200 else cleaned_text)
+                except Exception as e:
+                    print(f"Unexpected error while processing response on attempt {attempt+1}: {e}")
 
             except google.api_core.exceptions.ResourceExhausted as exc:
                 print(f"Resource exhausted error encountered (attempt {attempt+1}): {exc}")
-                time.sleep(initial_delay * (backoff_factor ** attempt))
-                continue
             except Exception as exc:
-                print(f"Unexpected error on attempt {attempt+1}: {exc}")
-                time.sleep(initial_delay * (backoff_factor ** attempt))
-                continue
-
-            # Clean response text from markdown formatting
-            cleaned_text = response.text.replace("```json\n", "").replace("\n```", "")
-            try:
-                data = json.loads(cleaned_text)
-                # Check for valid data structure
-                if data and (
-                    ("tables" in data and len(data["tables"]) > 0)
-                    or ("table" in data and data["table"])
-                    or ("addresses" in data and data["addresses"])
-                    or ("tableData" in data and data["tableData"])
-                    or ("contract_type" in data and data["contract_type"])
-                    or ("services" in data and data["services"])
-                    or ("rows" in data and data["rows"])
-                    or ("table_rows" in data)
-                    or ("eligible_accounts" in data and data["eligible_accounts"])
-                    or ("metadata" in data and data["metadata"])
-                ):
-                    return response  # Successful response
-                else:
-                    print(cleaned_text)
-                    print(f"Received empty or incomplete data on attempt {attempt+1}, retrying...")
-            except Exception as e:
-                print(cleaned_text)
-                print(f"Error parsing JSON response on attempt {attempt+1}: {e}")
-
+                print(f"Unexpected error during API call (attempt {attempt+1}): {exc}")
+            
             time.sleep(initial_delay * (backoff_factor ** attempt))
             last_response = response
-        return last_response  # Return last response even if incomplete
 
+        # If we get here, all attempts failed
+        if last_response and last_response.text:
+            print("Returning last response after all attempts failed")
+            return last_response
+        else:
+            print("No valid response received after all attempts")
+            return None
+        
+        
     @classmethod
     def extract_incentive_off_effective_rates(cls, chat: ChatSession):
         """

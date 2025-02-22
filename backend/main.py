@@ -1,6 +1,8 @@
+import os
 import json
+from datetime import datetime
 import re
-from fastapi import FastAPI, File, UploadFile
+from fastapi import FastAPI, File, Query, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
@@ -56,18 +58,61 @@ async def extract(file: UploadFile = File(...)):
     }})
 
 @app.post("/api/extractfedx")
-async def extract(file: UploadFile = File(...)):
-    extracted_data = FedXContractDataExtractionService.fedx_extract(file)
-    details = extracted_data["details"]
-    tables = extracted_data["tables"]
-    # source_address = extracted_data["address"]
-    # contract_type = extracted_data["contract_type"]
-    return JSONResponse(content={"success": True, "message": "Extracted data", "data": {
-        "details": details,
-        "tables": tables,
-        # "source_address": source_address,
-        # "contract_type": contract_type
-    }})
+async def extract(
+    file: UploadFile = File(...),
+    save_json: bool = Query(False, description="Save extracted data as JSON file")
+):
+    try:
+        # Extract data using FedX service
+        extracted_data = FedXContractDataExtractionService.fedx_extract(file)
+        details = extracted_data.get("details", {})
+        tables = extracted_data.get("tables", [])
+
+        response_data = {
+            "details": details,
+            "tables": tables,
+        }
+
+        # Save to JSON if requested
+        if save_json:
+            try:
+                # Create a filename based on the original file's name
+                original_filename = file.filename.rsplit('.', 1)[0] or "extracted_data"
+                timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+                json_filename = f"{original_filename}_extracted_{timestamp}.json"
+
+                # Save to a 'processed' directory
+                os.makedirs('processed', exist_ok=True)
+                json_path = os.path.join('processed', json_filename)
+
+                # Write the JSON file
+                with open(json_path, 'w', encoding='utf-8') as f:
+                    json.dump(response_data, f, indent=4)
+
+                # Add the save location to the response
+                response_data["json_saved_to"] = os.path.abspath(json_path)
+                print(f"JSON successfully saved to: {os.path.abspath(json_path)}")
+
+            except Exception as e:
+                # If saving fails, add error info but don't fail the whole request
+                response_data["json_save_error"] = str(e)
+                print(f"Error saving JSON: {e}")
+
+        return JSONResponse(content={
+            "success": True,
+            "message": "Extracted data" + (" and saved to JSON" if save_json else ""),
+            "data": response_data
+        })
+
+    except Exception as e:
+        # Handle unexpected errors
+        print(f"Error during extraction: {e}")
+        return JSONResponse(content={
+            "success": False,
+            "message": f"Error extracting data: {str(e)}"
+        }, status_code=500)
+
+
 
 def find_best_match(service_name, service_list):
     """

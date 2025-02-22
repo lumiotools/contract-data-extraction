@@ -1,0 +1,1918 @@
+{
+    "details": {
+        "carrier": "FedEx",
+        "eligible_accounts": [
+            {
+                "account_number": "595214768-101",
+                "name": "Textiles From Europe, Inc.",
+                "address": "Textiles From Europe, Inc., US",
+                "zip": null,
+                "commodity_tier": null
+            },
+            {
+                "account_number": "595214769",
+                "name": "Textiles From Europe, Inc.",
+                "address": "Textiles From Europe, Inc., US",
+                "zip": null,
+                "commodity_tier": null
+            }
+        ]
+    },
+    "tables": [
+        {
+            "title": "Incentives off effective rate",
+            "tableData": {
+                "headers": [
+                    "service",
+                    "billing",
+                    "zone",
+                    "weight",
+                    "weightUnit",
+                    "discount",
+                    "tags",
+                    "destination"
+                ],
+                "rows": [
+                    {
+                        "service": "FedEx Priority Overnight Envelope",
+                        "billing": null,
+                        "zone": "All Zones",
+                        "weight": null,
+                        "weightUnit": null,
+                        "discount": "0%",
+                        "tags": [
+                            "Envelope"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx Priority Overnight Pak",
+                        "billing": null,
+                        "zone": "All Zones",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "0%",
+                        "tags": [
+                            "Pak"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx Priority Overnight",
+                        "billing": null,
+                        "zone": "All Zones",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "0%",
+                        "tags": [],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx Standard Overnight Envelope",
+                        "billing": null,
+                        "zone": "All Zones",
+                        "weight": null,
+                        "weightUnit": null,
+                        "discount": "0%",
+                        "tags": [
+                            "Envelope"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx Standard Overnight Pak",
+                        "billing": null,
+                        "zone": "All Zones",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "0%",
+                        "tags": [
+                            "Pak"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx Standard Overnight",
+                        "billing": null,
+                        "zone": "All Zones",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "0%",
+                        "tags": [],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx 2Day A.M. Envelope",
+                        "billing": null,
+                        "zone": "All Zones",
+                        "weight": null,
+                        "weightUnit": null,
+                        "discount": "50%",
+                        "tags": [
+                            "Envelope"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx 2Day A.M. Pak",
+                        "billing": null,
+                        "zone": "All Zones",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "50%",
+                        "tags": [
+                            "Pak"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx 2Day A.M.",
+                        "billing": null,
+                        "zone": "All Zones",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "50%",
+                        "tags": [],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx 2Day Envelope",
+                        "billing": null,
+                        "zone": "All Zones",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "0%",
+                        "tags": [
+                            "Envelope"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx Express Saver Envelope",
+                        "billing": null,
+                        "zone": "All Zones",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "0%",
+                        "tags": [
+                            "Envelope",
+                            "Express",
+                            "Saver"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx 2Day Pak",
+                        "billing": null,
+                        "zone": "All Zones",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "0%",
+                        "tags": [
+                            "Pak"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx Express Saver Pak",
+                        "billing": null,
+                        "zone": "All Zones",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "0%",
+                        "tags": [
+                            "Pak",
+                            "Express",
+                            "Saver"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx 2Day",
+                        "billing": null,
+                        "zone": "All Zones",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "0%",
+                        "tags": [],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx Express Saver",
+                        "billing": null,
+                        "zone": "All Zones",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "0%",
+                        "tags": [
+                            "Express",
+                            "Saver"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx 1Day Freight",
+                        "billing": null,
+                        "zone": "All Zones",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "0%",
+                        "tags": [
+                            "1Day",
+                            "Freight"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx 2Day Freight",
+                        "billing": null,
+                        "zone": "All Zones",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "0%",
+                        "tags": [
+                            "2Day",
+                            "Freight"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx 3Day Freight",
+                        "billing": null,
+                        "zone": "All Zones",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "0%",
+                        "tags": [
+                            "3Day",
+                            "Freight"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "Ground Domestic Single Piece (OB, IB, RB,3P)",
+                        "billing": null,
+                        "zone": "2-8",
+                        "weight": "1.0 10.0",
+                        "weightUnit": "lbs",
+                        "discount": "16%",
+                        "tags": [
+                            "Ground",
+                            "Single Piece",
+                            "Domestic",
+                            "OB",
+                            "IB",
+                            "RB",
+                            "3P"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "Ground Domestic Single Piece (OB, IB, RB,3P)",
+                        "billing": null,
+                        "zone": "2-8",
+                        "weight": "11.0 20.0",
+                        "weightUnit": "lbs",
+                        "discount": "20%",
+                        "tags": [
+                            "Ground",
+                            "Single Piece",
+                            "Domestic",
+                            "OB",
+                            "IB",
+                            "RB",
+                            "3P"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "Ground Domestic Single Piece (OB, IB, RB,3P)",
+                        "billing": null,
+                        "zone": "2-8",
+                        "weight": "21.0 - 30.0",
+                        "weightUnit": "lbs",
+                        "discount": "23%",
+                        "tags": [
+                            "Ground",
+                            "Single Piece",
+                            "Domestic",
+                            "OB",
+                            "IB",
+                            "RB",
+                            "3P"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "Ground Domestic Single Piece (OB, IB, RB,3P)",
+                        "billing": null,
+                        "zone": "2-8",
+                        "weight": "31.0 +",
+                        "weightUnit": "lbs",
+                        "discount": "25%",
+                        "tags": [
+                            "Ground",
+                            "Single Piece",
+                            "Domestic",
+                            "OB",
+                            "IB",
+                            "RB",
+                            "3P"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "Home Delivery Domestic Single Piece (OB,3P)",
+                        "billing": null,
+                        "zone": "2-8",
+                        "weight": "1.0 10.0",
+                        "weightUnit": "lbs",
+                        "discount": "16%",
+                        "tags": [
+                            "Home Delivery",
+                            "Domestic",
+                            "Single Piece",
+                            "OB",
+                            "3P"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "Home Delivery Domestic Single Piece (OB,3P)",
+                        "billing": null,
+                        "zone": "2-8",
+                        "weight": "11.0 20.0",
+                        "weightUnit": "lbs",
+                        "discount": "20%",
+                        "tags": [
+                            "Home Delivery",
+                            "Domestic",
+                            "Single Piece",
+                            "OB",
+                            "3P"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "Home Delivery Domestic Single Piece (OB,3P)",
+                        "billing": null,
+                        "zone": "2-8",
+                        "weight": "21.0 - 30.0",
+                        "weightUnit": "lbs",
+                        "discount": "23%",
+                        "tags": [
+                            "Home Delivery",
+                            "Domestic",
+                            "Single Piece",
+                            "OB",
+                            "3P"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "Home Delivery Domestic Single Piece (OB,3P)",
+                        "billing": null,
+                        "zone": "2-8",
+                        "weight": "31.0 +",
+                        "weightUnit": "lbs",
+                        "discount": "25%",
+                        "tags": [
+                            "Home Delivery",
+                            "Domestic",
+                            "Single Piece",
+                            "OB",
+                            "3P"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "Ground Domestic Single Piece RM (OB,3P)",
+                        "billing": null,
+                        "zone": "2-8",
+                        "weight": "1.0 10.0",
+                        "weightUnit": "lbs",
+                        "discount": "37%",
+                        "tags": [
+                            "Ground",
+                            "Single Piece",
+                            "RM",
+                            "OB",
+                            "3P"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "Ground Domestic Single Piece RM (OB,3P)",
+                        "billing": null,
+                        "zone": "2-8",
+                        "weight": "11.0 20.0",
+                        "weightUnit": "lbs",
+                        "discount": "41%",
+                        "tags": [
+                            "Ground",
+                            "Single Piece",
+                            "RM",
+                            "OB",
+                            "3P"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "Ground Domestic Single Piece RM (OB,3P)",
+                        "billing": null,
+                        "zone": "2-8",
+                        "weight": "21.0 - 30.0",
+                        "weightUnit": "lbs",
+                        "discount": "44%",
+                        "tags": [
+                            "Ground",
+                            "Single Piece",
+                            "RM",
+                            "OB",
+                            "3P"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "Ground Domestic Single Piece RM (OB,3P)",
+                        "billing": null,
+                        "zone": "2-8",
+                        "weight": "31.0 +",
+                        "weightUnit": "lbs",
+                        "discount": "46%",
+                        "tags": [
+                            "Ground",
+                            "Single Piece",
+                            "RM",
+                            "OB",
+                            "3P"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "Ground Domestic MWT (OB, IB, RB, 3P)",
+                        "billing": null,
+                        "zone": "2-8",
+                        "weight": "200.0-499.0",
+                        "weightUnit": "lbs",
+                        "discount": "0%",
+                        "tags": [
+                            "Ground",
+                            "Domestic",
+                            "MWT",
+                            "OB",
+                            "IB",
+                            "RB",
+                            "3P"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "Ground Domestic MWT (OB, IB, RB, 3P)",
+                        "billing": null,
+                        "zone": "2-8",
+                        "weight": "500.0 +",
+                        "weightUnit": "lbs",
+                        "discount": "0%",
+                        "tags": [
+                            "Ground",
+                            "Domestic",
+                            "MWT",
+                            "OB",
+                            "IB",
+                            "RB",
+                            "3P"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "SmartPost (by Ounce) (OB)",
+                        "billing": null,
+                        "zone": "2-8",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "30%",
+                        "tags": [
+                            "SmartPost",
+                            "Ounce",
+                            "OB"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "SmartPost (by Pound) (OB)",
+                        "billing": null,
+                        "zone": "2-8",
+                        "weight": "1.0 - 9.0",
+                        "weightUnit": "lbs",
+                        "discount": "30%",
+                        "tags": [
+                            "SmartPost",
+                            "Pound",
+                            "OB"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "SmartPost (by Pound) (OB)",
+                        "billing": null,
+                        "zone": "2-8",
+                        "weight": "10.0 - 29.0",
+                        "weightUnit": "lbs",
+                        "discount": "25%",
+                        "tags": [
+                            "SmartPost",
+                            "Pound",
+                            "OB"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "SmartPost (by Pound) (OB)",
+                        "billing": null,
+                        "zone": "2-8",
+                        "weight": "30.0 - 70.0",
+                        "weightUnit": "lbs",
+                        "discount": "0%",
+                        "tags": [
+                            "SmartPost",
+                            "Pound",
+                            "OB"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "SmartPost (by Pound) (OB)",
+                        "billing": null,
+                        "zone": "2-8",
+                        "weight": "71 +",
+                        "weightUnit": "lbs",
+                        "discount": "0%",
+                        "tags": [
+                            "SmartPost",
+                            "Pound",
+                            "OB"
+                        ],
+                        "destination": null
+                    }
+                ]
+            },
+            "metadata": [
+                {
+                    "service": "FedEx 3Day Freight",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "FedEx 2Day A.M. Pak",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "SmartPost (by Pound) (OB)",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "FedEx 2Day Freight",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "FedEx Standard Overnight Envelope",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "FedEx Standard Overnight",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "FedEx Express Saver Pak",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "FedEx Priority Overnight Envelope",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "FedEx Priority Overnight",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "Home Delivery Domestic Single Piece (OB,3P)",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "FedEx Express Saver",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "Ground Domestic MWT (OB, IB, RB, 3P)",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "FedEx 1Day Freight",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "FedEx 2Day Pak",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "FedEx Standard Overnight Pak",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "FedEx 2Day A.M.",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "FedEx Priority Overnight Pak",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "SmartPost (by Ounce) (OB)",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "Ground Domestic Single Piece RM (OB,3P)",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "FedEx Express Saver Envelope",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "FedEx 2Day Envelope",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "FedEx 2Day A.M. Envelope",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "Ground Domestic Single Piece (OB, IB, RB,3P)",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "FedEx 2Day",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                }
+            ]
+        },
+        {
+            "title": "Portfolio Tier Incentive",
+            "tableData": {
+                "headers": [
+                    "service",
+                    "land_zone",
+                    "weeklySpendMin",
+                    "weeklySpendMax",
+                    "currency",
+                    "discount",
+                    "tags"
+                ],
+                "rows": [
+                    {
+                        "service": "FedEx Priority Overnight Envelope",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "0%",
+                        "tags": [],
+                        "weeklySpendMin": "0.00",
+                        "weeklySpendMax": "49,999.99"
+                    },
+                    {
+                        "service": "FedEx Priority Overnight Envelope",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "45%",
+                        "tags": [],
+                        "weeklySpendMin": "50,000.00",
+                        "weeklySpendMax": "99,999.99"
+                    },
+                    {
+                        "service": "FedEx Priority Overnight Envelope",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "58%",
+                        "tags": [],
+                        "weeklySpendMin": "100,000.00",
+                        "weeklySpendMax": "499,999.99"
+                    },
+                    {
+                        "service": "FedEx Priority Overnight Envelope",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "63%",
+                        "tags": [],
+                        "weeklySpendMin": "500,000.00",
+                        "weeklySpendMax": "1,499,999.99"
+                    },
+                    {
+                        "service": "FedEx Priority Overnight Envelope",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "68%",
+                        "tags": [],
+                        "weeklySpendMin": "1,500,000.00",
+                        "weeklySpendMax": "2,999,999.99"
+                    },
+                    {
+                        "service": "FedEx Priority Overnight Envelope",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "70%",
+                        "tags": [],
+                        "weeklySpendMin": "3,000,000.00",
+                        "weeklySpendMax": "infinity"
+                    },
+                    {
+                        "service": "FedEx Standard Overnight Envelope",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "0%",
+                        "tags": [],
+                        "weeklySpendMin": "0.00",
+                        "weeklySpendMax": "49,999.99"
+                    },
+                    {
+                        "service": "FedEx Standard Overnight Envelope",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "45%",
+                        "tags": [],
+                        "weeklySpendMin": "50,000.00",
+                        "weeklySpendMax": "99,999.99"
+                    },
+                    {
+                        "service": "FedEx Standard Overnight Envelope",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "58%",
+                        "tags": [],
+                        "weeklySpendMin": "100,000.00",
+                        "weeklySpendMax": "499,999.99"
+                    },
+                    {
+                        "service": "FedEx Standard Overnight Envelope",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "63%",
+                        "tags": [],
+                        "weeklySpendMin": "500,000.00",
+                        "weeklySpendMax": "1,499,999.99"
+                    },
+                    {
+                        "service": "FedEx Standard Overnight Envelope",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "68%",
+                        "tags": [],
+                        "weeklySpendMin": "1,500,000.00",
+                        "weeklySpendMax": "2,999,999.99"
+                    },
+                    {
+                        "service": "FedEx Standard Overnight Envelope",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "70%",
+                        "tags": [],
+                        "weeklySpendMin": "3,000,000.00",
+                        "weeklySpendMax": "infinity"
+                    },
+                    {
+                        "service": "FedEx Priority Overnight Pak",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "0%",
+                        "tags": [],
+                        "weeklySpendMin": "0.00",
+                        "weeklySpendMax": "49,999.99"
+                    },
+                    {
+                        "service": "FedEx Priority Overnight Pak",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "45%",
+                        "tags": [],
+                        "weeklySpendMin": "50,000.00",
+                        "weeklySpendMax": "99,999.99"
+                    },
+                    {
+                        "service": "FedEx Priority Overnight Pak",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "55%",
+                        "tags": [],
+                        "weeklySpendMin": "100,000.00",
+                        "weeklySpendMax": "499,999.99"
+                    },
+                    {
+                        "service": "FedEx Priority Overnight Pak",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "63%",
+                        "tags": [],
+                        "weeklySpendMin": "500,000.00",
+                        "weeklySpendMax": "1,499,999.99"
+                    },
+                    {
+                        "service": "FedEx Priority Overnight Pak",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "65%",
+                        "tags": [],
+                        "weeklySpendMin": "1,500,000.00",
+                        "weeklySpendMax": "2,999,999.99"
+                    },
+                    {
+                        "service": "FedEx Priority Overnight Pak",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "68%",
+                        "tags": [],
+                        "weeklySpendMin": "3,000,000.00",
+                        "weeklySpendMax": "infinity"
+                    },
+                    {
+                        "service": "FedEx Priority Overnight",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "0%",
+                        "tags": [],
+                        "weeklySpendMin": "0.00",
+                        "weeklySpendMax": "49,999.99"
+                    },
+                    {
+                        "service": "FedEx Priority Overnight",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "45%",
+                        "tags": [],
+                        "weeklySpendMin": "50,000.00",
+                        "weeklySpendMax": "99,999.99"
+                    },
+                    {
+                        "service": "FedEx Priority Overnight",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "55%",
+                        "tags": [],
+                        "weeklySpendMin": "100,000.00",
+                        "weeklySpendMax": "499,999.99"
+                    },
+                    {
+                        "service": "FedEx Priority Overnight",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "63%",
+                        "tags": [],
+                        "weeklySpendMin": "500,000.00",
+                        "weeklySpendMax": "1,499,999.99"
+                    },
+                    {
+                        "service": "FedEx Priority Overnight",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "65%",
+                        "tags": [],
+                        "weeklySpendMin": "1,500,000.00",
+                        "weeklySpendMax": "2,999,999.99"
+                    },
+                    {
+                        "service": "FedEx Priority Overnight",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "68%",
+                        "tags": [],
+                        "weeklySpendMin": "3,000,000.00",
+                        "weeklySpendMax": "infinity"
+                    },
+                    {
+                        "service": "FedEx Standard Overnight Pak",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "0%",
+                        "tags": [],
+                        "weeklySpendMin": "0.00",
+                        "weeklySpendMax": "49,999.99"
+                    },
+                    {
+                        "service": "FedEx Standard Overnight Pak",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "45%",
+                        "tags": [],
+                        "weeklySpendMin": "50,000.00",
+                        "weeklySpendMax": "99,999.99"
+                    },
+                    {
+                        "service": "FedEx Standard Overnight Pak",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "55%",
+                        "tags": [],
+                        "weeklySpendMin": "100,000.00",
+                        "weeklySpendMax": "499,999.99"
+                    },
+                    {
+                        "service": "FedEx Standard Overnight Pak",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "63%",
+                        "tags": [],
+                        "weeklySpendMin": "500,000.00",
+                        "weeklySpendMax": "1,499,999.99"
+                    },
+                    {
+                        "service": "FedEx Standard Overnight Pak",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "65%",
+                        "tags": [],
+                        "weeklySpendMin": "1,500,000.00",
+                        "weeklySpendMax": "2,999,999.99"
+                    },
+                    {
+                        "service": "FedEx Standard Overnight Pak",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "68%",
+                        "tags": [],
+                        "weeklySpendMin": "3,000,000.00",
+                        "weeklySpendMax": "infinity"
+                    },
+                    {
+                        "service": "FedEx Standard Overnight",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "0%",
+                        "tags": [],
+                        "weeklySpendMin": "0.00",
+                        "weeklySpendMax": "49,999.99"
+                    },
+                    {
+                        "service": "FedEx Standard Overnight",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "45%",
+                        "tags": [],
+                        "weeklySpendMin": "50,000.00",
+                        "weeklySpendMax": "99,999.99"
+                    },
+                    {
+                        "service": "FedEx Standard Overnight",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "55%",
+                        "tags": [],
+                        "weeklySpendMin": "100,000.00",
+                        "weeklySpendMax": "499,999.99"
+                    },
+                    {
+                        "service": "FedEx Standard Overnight",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "63%",
+                        "tags": [],
+                        "weeklySpendMin": "500,000.00",
+                        "weeklySpendMax": "1,499,999.99"
+                    },
+                    {
+                        "service": "FedEx Standard Overnight",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "65%",
+                        "tags": [],
+                        "weeklySpendMin": "1,500,000.00",
+                        "weeklySpendMax": "2,999,999.99"
+                    },
+                    {
+                        "service": "FedEx Standard Overnight",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "68%",
+                        "tags": [],
+                        "weeklySpendMin": "3,000,000.00",
+                        "weeklySpendMax": "infinity"
+                    },
+                    {
+                        "service": "FedEx 2Day Pak",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "0%",
+                        "tags": [],
+                        "weeklySpendMin": "0.00",
+                        "weeklySpendMax": "49,999.99"
+                    },
+                    {
+                        "service": "FedEx 2Day Pak",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "30%",
+                        "tags": [],
+                        "weeklySpendMin": "50,000.00",
+                        "weeklySpendMax": "99,999.99"
+                    },
+                    {
+                        "service": "FedEx 2Day Pak",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "50%",
+                        "tags": [],
+                        "weeklySpendMin": "100,000.00",
+                        "weeklySpendMax": "499,999.99"
+                    },
+                    {
+                        "service": "FedEx 2Day Pak",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "55%",
+                        "tags": [],
+                        "weeklySpendMin": "500,000.00",
+                        "weeklySpendMax": "1,499,999.99"
+                    },
+                    {
+                        "service": "FedEx 2Day Pak",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "60%",
+                        "tags": [],
+                        "weeklySpendMin": "1,500,000.00",
+                        "weeklySpendMax": "2,999,999.99"
+                    },
+                    {
+                        "service": "FedEx 2Day Pak",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "63%",
+                        "tags": [],
+                        "weeklySpendMin": "3,000,000.00",
+                        "weeklySpendMax": "infinity"
+                    },
+                    {
+                        "service": "FedEx 2Day",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "0%",
+                        "tags": [],
+                        "weeklySpendMin": "0.00",
+                        "weeklySpendMax": "49,999.99"
+                    },
+                    {
+                        "service": "FedEx 2Day",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "30%",
+                        "tags": [],
+                        "weeklySpendMin": "50,000.00",
+                        "weeklySpendMax": "99,999.99"
+                    },
+                    {
+                        "service": "FedEx 2Day",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "50%",
+                        "tags": [],
+                        "weeklySpendMin": "100,000.00",
+                        "weeklySpendMax": "499,999.99"
+                    },
+                    {
+                        "service": "FedEx 2Day",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "55%",
+                        "tags": [],
+                        "weeklySpendMin": "500,000.00",
+                        "weeklySpendMax": "1,499,999.99"
+                    },
+                    {
+                        "service": "FedEx 2Day",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "60%",
+                        "tags": [],
+                        "weeklySpendMin": "1,500,000.00",
+                        "weeklySpendMax": "2,999,999.99"
+                    },
+                    {
+                        "service": "FedEx 2Day",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "63%",
+                        "tags": [],
+                        "weeklySpendMin": "3,000,000.00",
+                        "weeklySpendMax": "infinity"
+                    },
+                    {
+                        "service": "FedEx Express Saver Envelope",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "0%",
+                        "tags": [],
+                        "weeklySpendMin": "0.00",
+                        "weeklySpendMax": "49,999.99"
+                    },
+                    {
+                        "service": "FedEx Express Saver Envelope",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "30%",
+                        "tags": [],
+                        "weeklySpendMin": "50,000.00",
+                        "weeklySpendMax": "99,999.99"
+                    },
+                    {
+                        "service": "FedEx Express Saver Envelope",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "50%",
+                        "tags": [],
+                        "weeklySpendMin": "100,000.00",
+                        "weeklySpendMax": "499,999.99"
+                    },
+                    {
+                        "service": "FedEx Express Saver Envelope",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "55%",
+                        "tags": [],
+                        "weeklySpendMin": "500,000.00",
+                        "weeklySpendMax": "1,499,999.99"
+                    },
+                    {
+                        "service": "FedEx Express Saver Envelope",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "60%",
+                        "tags": [],
+                        "weeklySpendMin": "1,500,000.00",
+                        "weeklySpendMax": "2,999,999.99"
+                    },
+                    {
+                        "service": "FedEx Express Saver Envelope",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "63%",
+                        "tags": [],
+                        "weeklySpendMin": "3,000,000.00",
+                        "weeklySpendMax": "infinity"
+                    },
+                    {
+                        "service": "FedEx Express Saver Pak",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "0%",
+                        "tags": [],
+                        "weeklySpendMin": "0.00",
+                        "weeklySpendMax": "49,999.99"
+                    },
+                    {
+                        "service": "FedEx Express Saver Pak",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "30%",
+                        "tags": [],
+                        "weeklySpendMin": "50,000.00",
+                        "weeklySpendMax": "99,999.99"
+                    },
+                    {
+                        "service": "FedEx Express Saver Pak",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "50%",
+                        "tags": [],
+                        "weeklySpendMin": "100,000.00",
+                        "weeklySpendMax": "499,999.99"
+                    },
+                    {
+                        "service": "FedEx Express Saver Pak",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "55%",
+                        "tags": [],
+                        "weeklySpendMin": "500,000.00",
+                        "weeklySpendMax": "1,499,999.99"
+                    },
+                    {
+                        "service": "FedEx Express Saver Pak",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "60%",
+                        "tags": [],
+                        "weeklySpendMin": "1,500,000.00",
+                        "weeklySpendMax": "2,999,999.99"
+                    },
+                    {
+                        "service": "FedEx Express Saver Pak",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "63%",
+                        "tags": [],
+                        "weeklySpendMin": "3,000,000.00",
+                        "weeklySpendMax": "infinity"
+                    },
+                    {
+                        "service": "FedEx Express Saver",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "0%",
+                        "tags": [],
+                        "weeklySpendMin": "0.00",
+                        "weeklySpendMax": "49,999.99"
+                    },
+                    {
+                        "service": "FedEx Express Saver",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "30%",
+                        "tags": [],
+                        "weeklySpendMin": "50,000.00",
+                        "weeklySpendMax": "99,999.99"
+                    },
+                    {
+                        "service": "FedEx Express Saver",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "50%",
+                        "tags": [],
+                        "weeklySpendMin": "100,000.00",
+                        "weeklySpendMax": "499,999.99"
+                    },
+                    {
+                        "service": "FedEx Express Saver",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "55%",
+                        "tags": [],
+                        "weeklySpendMin": "500,000.00",
+                        "weeklySpendMax": "1,499,999.99"
+                    },
+                    {
+                        "service": "FedEx Express Saver",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "60%",
+                        "tags": [],
+                        "weeklySpendMin": "1,500,000.00",
+                        "weeklySpendMax": "2,999,999.99"
+                    },
+                    {
+                        "service": "FedEx Express Saver",
+                        "land_zone": "All Zones",
+                        "currency": "USD",
+                        "discount": "63%",
+                        "tags": [],
+                        "weeklySpendMin": "3,000,000.00",
+                        "weeklySpendMax": "infinity"
+                    },
+                    {
+                        "service": "Ground Domestic Single Piece(OB,IB,RB,3P)",
+                        "land_zone": "N/A",
+                        "currency": "USD",
+                        "discount": "0%",
+                        "tags": [],
+                        "weeklySpendMin": "0.00",
+                        "weeklySpendMax": "49,999.99"
+                    },
+                    {
+                        "service": "Ground Domestic Single Piece(OB,IB,RB,3P)",
+                        "land_zone": "N/A",
+                        "currency": "USD",
+                        "discount": "15%",
+                        "tags": [],
+                        "weeklySpendMin": "50,000.00",
+                        "weeklySpendMax": "99,999.99"
+                    },
+                    {
+                        "service": "Ground Domestic Single Piece(OB,IB,RB,3P)",
+                        "land_zone": "N/A",
+                        "currency": "USD",
+                        "discount": "25%",
+                        "tags": [],
+                        "weeklySpendMin": "100,000.00",
+                        "weeklySpendMax": "499,999.99"
+                    },
+                    {
+                        "service": "Ground Domestic Single Piece(OB,IB,RB,3P)",
+                        "land_zone": "N/A",
+                        "currency": "USD",
+                        "discount": "26%",
+                        "tags": [],
+                        "weeklySpendMin": "500,000.00",
+                        "weeklySpendMax": "1,499,999.99"
+                    },
+                    {
+                        "service": "Ground Domestic Single Piece(OB,IB,RB,3P)",
+                        "land_zone": "N/A",
+                        "currency": "USD",
+                        "discount": "27%",
+                        "tags": [],
+                        "weeklySpendMin": "1,500,000.00",
+                        "weeklySpendMax": "2,999,999.99"
+                    },
+                    {
+                        "service": "Ground Domestic Single Piece(OB,IB,RB,3P)",
+                        "land_zone": "N/A",
+                        "currency": "USD",
+                        "discount": "30%",
+                        "tags": [],
+                        "weeklySpendMin": "3,000,000.00",
+                        "weeklySpendMax": "infinity"
+                    },
+                    {
+                        "service": "Home Delivery Domestic Single Piece(OB,3P)",
+                        "land_zone": "N/A",
+                        "currency": "USD",
+                        "discount": "0%",
+                        "tags": [],
+                        "weeklySpendMin": "0.00",
+                        "weeklySpendMax": "49,999.99"
+                    },
+                    {
+                        "service": "Home Delivery Domestic Single Piece(OB,3P)",
+                        "land_zone": "N/A",
+                        "currency": "USD",
+                        "discount": "15%",
+                        "tags": [],
+                        "weeklySpendMin": "50,000.00",
+                        "weeklySpendMax": "99,999.99"
+                    },
+                    {
+                        "service": "Home Delivery Domestic Single Piece(OB,3P)",
+                        "land_zone": "N/A",
+                        "currency": "USD",
+                        "discount": "25%",
+                        "tags": [],
+                        "weeklySpendMin": "100,000.00",
+                        "weeklySpendMax": "499,999.99"
+                    },
+                    {
+                        "service": "Home Delivery Domestic Single Piece(OB,3P)",
+                        "land_zone": "N/A",
+                        "currency": "USD",
+                        "discount": "26%",
+                        "tags": [],
+                        "weeklySpendMin": "500,000.00",
+                        "weeklySpendMax": "1,499,999.99"
+                    },
+                    {
+                        "service": "Home Delivery Domestic Single Piece(OB,3P)",
+                        "land_zone": "N/A",
+                        "currency": "USD",
+                        "discount": "27%",
+                        "tags": [],
+                        "weeklySpendMin": "1,500,000.00",
+                        "weeklySpendMax": "2,999,999.99"
+                    },
+                    {
+                        "service": "Home Delivery Domestic Single Piece(OB,3P)",
+                        "land_zone": "N/A",
+                        "currency": "USD",
+                        "discount": "30%",
+                        "tags": [],
+                        "weeklySpendMin": "3,000,000.00",
+                        "weeklySpendMax": "infinity"
+                    },
+                    {
+                        "service": "Ground Domestic MWT(OB,IB,RB,3P)",
+                        "land_zone": "N/A",
+                        "currency": "USD",
+                        "discount": "0%",
+                        "tags": [],
+                        "weeklySpendMin": "0.00",
+                        "weeklySpendMax": "49,999.99"
+                    },
+                    {
+                        "service": "Ground Domestic MWT(OB,IB,RB,3P)",
+                        "land_zone": "N/A",
+                        "currency": "USD",
+                        "discount": "5%",
+                        "tags": [],
+                        "weeklySpendMin": "50,000.00",
+                        "weeklySpendMax": "99,999.99"
+                    },
+                    {
+                        "service": "Ground Domestic MWT(OB,IB,RB,3P)",
+                        "land_zone": "N/A",
+                        "currency": "USD",
+                        "discount": "10%",
+                        "tags": [],
+                        "weeklySpendMin": "100,000.00",
+                        "weeklySpendMax": "499,999.99"
+                    },
+                    {
+                        "service": "Ground Domestic MWT(OB,IB,RB,3P)",
+                        "land_zone": "N/A",
+                        "currency": "USD",
+                        "discount": "11%",
+                        "tags": [],
+                        "weeklySpendMin": "500,000.00",
+                        "weeklySpendMax": "1,499,999.99"
+                    },
+                    {
+                        "service": "Ground Domestic MWT(OB,IB,RB,3P)",
+                        "land_zone": "N/A",
+                        "currency": "USD",
+                        "discount": "12%",
+                        "tags": [],
+                        "weeklySpendMin": "1,500,000.00",
+                        "weeklySpendMax": "2,999,999.99"
+                    },
+                    {
+                        "service": "Ground Domestic MWT(OB,IB,RB,3P)",
+                        "land_zone": "N/A",
+                        "currency": "USD",
+                        "discount": "13%",
+                        "tags": [],
+                        "weeklySpendMin": "3,000,000.00",
+                        "weeklySpendMax": "infinity"
+                    },
+                    {
+                        "service": "SmartPost (by Pound)(OB)",
+                        "land_zone": "N/A",
+                        "currency": "USD",
+                        "discount": "0%",
+                        "tags": [],
+                        "weeklySpendMin": "0.00",
+                        "weeklySpendMax": "49,999.99"
+                    },
+                    {
+                        "service": "SmartPost (by Pound)(OB)",
+                        "land_zone": "N/A",
+                        "currency": "USD",
+                        "discount": "5%",
+                        "tags": [],
+                        "weeklySpendMin": "50,000.00",
+                        "weeklySpendMax": "99,999.99"
+                    },
+                    {
+                        "service": "SmartPost (by Pound)(OB)",
+                        "land_zone": "N/A",
+                        "currency": "USD",
+                        "discount": "10%",
+                        "tags": [],
+                        "weeklySpendMin": "100,000.00",
+                        "weeklySpendMax": "499,999.99"
+                    },
+                    {
+                        "service": "SmartPost (by Pound)(OB)",
+                        "land_zone": "N/A",
+                        "currency": "USD",
+                        "discount": "11%",
+                        "tags": [],
+                        "weeklySpendMin": "500,000.00",
+                        "weeklySpendMax": "1,499,999.99"
+                    },
+                    {
+                        "service": "SmartPost (by Pound)(OB)",
+                        "land_zone": "N/A",
+                        "currency": "USD",
+                        "discount": "12%",
+                        "tags": [],
+                        "weeklySpendMin": "1,500,000.00",
+                        "weeklySpendMax": "2,999,999.99"
+                    },
+                    {
+                        "service": "SmartPost (by Pound)(OB)",
+                        "land_zone": "N/A",
+                        "currency": "USD",
+                        "discount": "13%",
+                        "tags": [],
+                        "weeklySpendMin": "3,000,000.00",
+                        "weeklySpendMax": "infinity"
+                    },
+                    {
+                        "service": "SmartPost (by Ounce)(OB)",
+                        "land_zone": "N/A",
+                        "currency": "USD",
+                        "discount": "0%",
+                        "tags": [],
+                        "weeklySpendMin": "0.00",
+                        "weeklySpendMax": "49,999.99"
+                    },
+                    {
+                        "service": "SmartPost (by Ounce)(OB)",
+                        "land_zone": "N/A",
+                        "currency": "USD",
+                        "discount": "5%",
+                        "tags": [],
+                        "weeklySpendMin": "50,000.00",
+                        "weeklySpendMax": "99,999.99"
+                    },
+                    {
+                        "service": "SmartPost (by Ounce)(OB)",
+                        "land_zone": "N/A",
+                        "currency": "USD",
+                        "discount": "10%",
+                        "tags": [],
+                        "weeklySpendMin": "100,000.00",
+                        "weeklySpendMax": "499,999.99"
+                    },
+                    {
+                        "service": "SmartPost (by Ounce)(OB)",
+                        "land_zone": "N/A",
+                        "currency": "USD",
+                        "discount": "11%",
+                        "tags": [],
+                        "weeklySpendMin": "500,000.00",
+                        "weeklySpendMax": "1,499,999.99"
+                    },
+                    {
+                        "service": "SmartPost (by Ounce)(OB)",
+                        "land_zone": "N/A",
+                        "currency": "USD",
+                        "discount": "12%",
+                        "tags": [],
+                        "weeklySpendMin": "1,500,000.00",
+                        "weeklySpendMax": "2,999,999.99"
+                    },
+                    {
+                        "service": "SmartPost (by Ounce)(OB)",
+                        "land_zone": "N/A",
+                        "currency": "USD",
+                        "discount": "13%",
+                        "tags": [],
+                        "weeklySpendMin": "3,000,000.00",
+                        "weeklySpendMax": "infinity"
+                    }
+                ],
+                "notes": [
+                    "The following incentives are in addition to any pricing mentioned above if any. Please refer to the Earned Discount Program Details attachment below for the Annualized Transportation Charges calculation information.",
+                    "Except for SmartPost, Earned Discounts do not apply to the following Ground zones: 9, 14, 17, 22, 23, 25, 92, 96."
+                ],
+                "validityPeriod": {
+                    "startDate": "Effective Date",
+                    "endDate": "Does Not Expire"
+                }
+            }
+        },
+        {
+            "title": "Minimum Net Charge",
+            "tableData": {
+                "headers": [
+                    "service",
+                    "billing",
+                    "zone",
+                    "adjustmentDiscount",
+                    "tags"
+                ],
+                "rows": [
+                    {
+                        "service": "FedEx 2Day A.M.",
+                        "billing": "Unknown",
+                        "zone": "Zone 2, 1.0 lb",
+                        "adjustmentDiscount": "6.30",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx 2Day A.M.",
+                        "billing": "Unknown",
+                        "zone": "2-8",
+                        "adjustmentDiscount": "6.30",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx 2Day A.M.",
+                        "billing": "Unknown",
+                        "zone": "9",
+                        "adjustmentDiscount": "6.30",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx 2Day A.M.",
+                        "billing": "Unknown",
+                        "zone": "10-12",
+                        "adjustmentDiscount": "null",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx 2Day A.M.",
+                        "billing": "Unknown",
+                        "zone": "13-16",
+                        "adjustmentDiscount": "6.30",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx 2Day Envelope",
+                        "billing": "Unknown",
+                        "zone": "Zone 2, Envelope",
+                        "adjustmentDiscount": "9.38",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx 2Day Envelope",
+                        "billing": "Unknown",
+                        "zone": "2-8",
+                        "adjustmentDiscount": "9.38",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx 2Day Envelope",
+                        "billing": "Unknown",
+                        "zone": "9",
+                        "adjustmentDiscount": "9.38",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx 2Day Envelope",
+                        "billing": "Unknown",
+                        "zone": "10-12",
+                        "adjustmentDiscount": "9.38",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx 2Day Envelope",
+                        "billing": "Unknown",
+                        "zone": "13-16",
+                        "adjustmentDiscount": "9.38",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx 2Day",
+                        "billing": "Unknown",
+                        "zone": "Zone 2, 1.0 lb",
+                        "adjustmentDiscount": "9.38",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx 2Day",
+                        "billing": "Unknown",
+                        "zone": "2-8",
+                        "adjustmentDiscount": "9.38",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx 2Day",
+                        "billing": "Unknown",
+                        "zone": "9",
+                        "adjustmentDiscount": "9.38",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx 2Day",
+                        "billing": "Unknown",
+                        "zone": "10-12",
+                        "adjustmentDiscount": "9.38",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx 2Day",
+                        "billing": "Unknown",
+                        "zone": "13-16",
+                        "adjustmentDiscount": "9.38",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx Express Saver",
+                        "billing": "Unknown",
+                        "zone": "Zone 2, 1.0 lb",
+                        "adjustmentDiscount": "7.48",
+                        "tags": [
+                            "Pak"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Express Saver",
+                        "billing": "Unknown",
+                        "zone": "2-8",
+                        "adjustmentDiscount": "7.48",
+                        "tags": [
+                            "Pak"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Express Saver",
+                        "billing": "Unknown",
+                        "zone": "9",
+                        "adjustmentDiscount": "null",
+                        "tags": [
+                            "Pak"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Express Saver",
+                        "billing": "Unknown",
+                        "zone": "10-12",
+                        "adjustmentDiscount": "null",
+                        "tags": [
+                            "Pak"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Express Saver",
+                        "billing": "Unknown",
+                        "zone": "13-16",
+                        "adjustmentDiscount": "null",
+                        "tags": [
+                            "Pak"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Express Saver",
+                        "billing": "Unknown",
+                        "zone": "Zone 2, 1.0 lb",
+                        "adjustmentDiscount": "7.48",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx Express Saver",
+                        "billing": "Unknown",
+                        "zone": "2-8",
+                        "adjustmentDiscount": "7.48",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx Express Saver",
+                        "billing": "Unknown",
+                        "zone": "9",
+                        "adjustmentDiscount": "null",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx Express Saver",
+                        "billing": "Unknown",
+                        "zone": "10-12",
+                        "adjustmentDiscount": "null",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx Express Saver",
+                        "billing": "Unknown",
+                        "zone": "13-16",
+                        "adjustmentDiscount": "null",
+                        "tags": []
+                    },
+                    {
+                        "service": "Ground Domestic Single",
+                        "billing": "Unknown",
+                        "zone": "2-8",
+                        "adjustmentDiscount": "Zone 2, 1.0 LB",
+                        "tags": [
+                            "Piece"
+                        ]
+                    },
+                    {
+                        "service": "Ground Domestic Single",
+                        "billing": "Unknown",
+                        "zone": "2-8",
+                        "adjustmentDiscount": "Zone 2, 1.0 LB",
+                        "tags": [
+                            "Piece",
+                            "RM"
+                        ]
+                    },
+                    {
+                        "service": "Home Delivery Domestic",
+                        "billing": "Unknown",
+                        "zone": "2-8",
+                        "adjustmentDiscount": "Zone 2, 1.0 LB",
+                        "tags": [
+                            "Single",
+                            "Piece"
+                        ]
+                    },
+                    {
+                        "service": "SmartPost (by Ounce)",
+                        "billing": "Unknown",
+                        "zone": "2-8",
+                        "adjustmentDiscount": "$3.00",
+                        "tags": []
+                    },
+                    {
+                        "service": "SmartPost (by Pound)",
+                        "billing": "Unknown",
+                        "zone": "2-8",
+                        "adjustmentDiscount": "$2.00",
+                        "tags": []
+                    }
+                ],
+                "notes": [
+                    "Extracted the next 10 minimum net charge tables from the document. There are no remaining tables."
+                ],
+                "validityPeriod": {
+                    "startDate": "Effective Date",
+                    "endDate": "Does Not Expire"
+                }
+            }
+        },
+        {
+            "title": "Service Adjustment",
+            "tableData": {
+                "headers": [
+                    "service",
+                    "minimumPer",
+                    "zone",
+                    "baseRate",
+                    "adjustment",
+                    "currency",
+                    "tags"
+                ],
+                "rows": [],
+                "notes": [],
+                "validityPeriod": {
+                    "startDate": "Effective Date",
+                    "endDate": "Does Not Expire"
+                }
+            }
+        },
+        {
+            "title": "Electronic PLD Bonus",
+            "found": false,
+            "message": "No Electronic PLD Bonus information found in the document"
+        }
+    ]
+}

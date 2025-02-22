@@ -1,0 +1,1403 @@
+{
+    "details": {
+        "carrier": "FedEx",
+        "eligible_accounts": [
+            {
+                "account_number": "488511256",
+                "name": "Chemical Light, Inc.",
+                "address": "Chemical Light, Inc., US",
+                "zip": null,
+                "commodity_tier": null
+            }
+        ]
+    },
+    "tables": [
+        {
+            "title": "Incentives off effective rate",
+            "tableData": {
+                "headers": [
+                    "service",
+                    "billing",
+                    "zone",
+                    "weight",
+                    "weightUnit",
+                    "discount",
+                    "tags",
+                    "destination"
+                ],
+                "rows": [
+                    {
+                        "service": "FedEx International Economy Import",
+                        "billing": null,
+                        "zone": "O",
+                        "weight": "1.0 154.0",
+                        "weightUnit": "lbs",
+                        "discount": "45%",
+                        "tags": [
+                            "Economy",
+                            "Import"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx International Economy Import",
+                        "billing": null,
+                        "zone": "P",
+                        "weight": "1.0 154.0",
+                        "weightUnit": "lbs",
+                        "discount": "70%",
+                        "tags": [
+                            "Economy",
+                            "Import"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx International Economy Import",
+                        "billing": null,
+                        "zone": "A-E",
+                        "weight": "155.0 +",
+                        "weightUnit": "lbs",
+                        "discount": "45%",
+                        "tags": [
+                            "Economy",
+                            "Import"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx International Economy Import",
+                        "billing": null,
+                        "zone": "F",
+                        "weight": "155.0 +",
+                        "weightUnit": "lbs",
+                        "discount": "74%",
+                        "tags": [
+                            "Economy",
+                            "Import"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx International Economy Import",
+                        "billing": null,
+                        "zone": "G-M",
+                        "weight": "155.0 +",
+                        "weightUnit": "lbs",
+                        "discount": "45%",
+                        "tags": [
+                            "Economy",
+                            "Import"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx International Economy Import",
+                        "billing": null,
+                        "zone": "N",
+                        "weight": "155.0 +",
+                        "weightUnit": "lbs",
+                        "discount": "78%",
+                        "tags": [
+                            "Economy",
+                            "Import"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx International Economy Import",
+                        "billing": null,
+                        "zone": "O",
+                        "weight": "155.0 +",
+                        "weightUnit": "lbs",
+                        "discount": "45%",
+                        "tags": [
+                            "Economy",
+                            "Import"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx International Economy Import",
+                        "billing": null,
+                        "zone": "P",
+                        "weight": "155.0 +",
+                        "weightUnit": "lbs",
+                        "discount": "78%",
+                        "tags": [
+                            "Economy",
+                            "Import"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx International Priority Freight (ATA) Import",
+                        "billing": null,
+                        "zone": "A-E",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "45%",
+                        "tags": [
+                            "Freight (ATA)",
+                            "Import"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx International Priority Freight Import",
+                        "billing": null,
+                        "zone": "A-E",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "45%",
+                        "tags": [
+                            "Freight",
+                            "Import"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx International Priority Freight (ATA) Import",
+                        "billing": null,
+                        "zone": "F",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "74%",
+                        "tags": [
+                            "Freight (ATA)",
+                            "Import"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx International Priority Freight Import",
+                        "billing": null,
+                        "zone": "F",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "74%",
+                        "tags": [
+                            "Freight",
+                            "Import"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx International Priority Freight (ATA) Import",
+                        "billing": null,
+                        "zone": "G-M",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "45%",
+                        "tags": [
+                            "Freight (ATA)",
+                            "Import"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx International Priority Freight Import",
+                        "billing": null,
+                        "zone": "G-M",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "45%",
+                        "tags": [
+                            "Freight",
+                            "Import"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx International Priority Freight (ATA) Import",
+                        "billing": null,
+                        "zone": "N",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "76%",
+                        "tags": [
+                            "Freight (ATA)",
+                            "Import"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx International Priority Freight Import",
+                        "billing": null,
+                        "zone": "N",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "76%",
+                        "tags": [
+                            "Freight",
+                            "Import"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx International Priority Freight (ATA) Import",
+                        "billing": null,
+                        "zone": "O",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "45%",
+                        "tags": [
+                            "Freight (ATA)",
+                            "Import"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx International Priority Freight Import",
+                        "billing": null,
+                        "zone": "O",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "45%",
+                        "tags": [
+                            "Freight",
+                            "Import"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx International Priority Freight (ATA) Import",
+                        "billing": null,
+                        "zone": "P",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "76%",
+                        "tags": [
+                            "Freight (ATA)",
+                            "Import"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx International Priority Freight Import",
+                        "billing": null,
+                        "zone": "P",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "76%",
+                        "tags": [
+                            "Freight",
+                            "Import"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx International Economy Freight (ATA) Import",
+                        "billing": null,
+                        "zone": "A-E",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "45%",
+                        "tags": [
+                            "Economy Freight (ATA)",
+                            "Import"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx International Economy Freight Import",
+                        "billing": null,
+                        "zone": "A-E",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "45%",
+                        "tags": [
+                            "Economy Freight",
+                            "Import"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx International Economy Freight (ATA) Import",
+                        "billing": null,
+                        "zone": "F",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "74%",
+                        "tags": [
+                            "Economy Freight (ATA)",
+                            "Import"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx International Economy Freight Import",
+                        "billing": null,
+                        "zone": "F",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "74%",
+                        "tags": [
+                            "Economy Freight",
+                            "Import"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx International Economy Freight (ATA) Import",
+                        "billing": null,
+                        "zone": "G-M",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "45%",
+                        "tags": [
+                            "Economy Freight (ATA)",
+                            "Import"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx International Economy Freight Import",
+                        "billing": null,
+                        "zone": "G-M",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "45%",
+                        "tags": [
+                            "Economy Freight",
+                            "Import"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx International Economy Freight (ATA) Import",
+                        "billing": null,
+                        "zone": "N",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "76%",
+                        "tags": [
+                            "Economy Freight (ATA)",
+                            "Import"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx International Economy Freight Import",
+                        "billing": null,
+                        "zone": "N",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "76%",
+                        "tags": [
+                            "Economy Freight",
+                            "Import"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx International Economy Freight (ATA) Import",
+                        "billing": null,
+                        "zone": "O",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "45%",
+                        "tags": [
+                            "Economy Freight (ATA)",
+                            "Import"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx International Economy Freight Import",
+                        "billing": null,
+                        "zone": "O",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "45%",
+                        "tags": [
+                            "Economy Freight",
+                            "Import"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx International Economy Freight (ATA) Import",
+                        "billing": null,
+                        "zone": "P",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "76%",
+                        "tags": [
+                            "Economy Freight (ATA)",
+                            "Import"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx International Economy Freight Import",
+                        "billing": null,
+                        "zone": "P",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "76%",
+                        "tags": [
+                            "Economy Freight",
+                            "Import"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "International Priority Envelope Third Party",
+                        "billing": null,
+                        "zone": "All Zones",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "15%",
+                        "tags": [
+                            "Envelope",
+                            "Third Party"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "International Priority Pak Third Party",
+                        "billing": null,
+                        "zone": "All Zones",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "15%",
+                        "tags": [
+                            "Pak",
+                            "Third Party"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "International Priority Third Party",
+                        "billing": null,
+                        "zone": "All Zones",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "15%",
+                        "tags": [
+                            "Third Party"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "International Economy Third Party",
+                        "billing": null,
+                        "zone": "All Zones",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "15%",
+                        "tags": [
+                            "Economy",
+                            "Third Party"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "International Priority Freight (ATA) Third Party",
+                        "billing": null,
+                        "zone": "All Zones",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "15%",
+                        "tags": [
+                            "Freight (ATA)",
+                            "Third Party"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "International Priority Freight Third Party",
+                        "billing": null,
+                        "zone": "All Zones",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "15%",
+                        "tags": [
+                            "Freight",
+                            "Third Party"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "International Economy Freight (ATA) Third Party",
+                        "billing": null,
+                        "zone": "All Zones",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "15%",
+                        "tags": [
+                            "Economy Freight (ATA)",
+                            "Third Party"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "International Economy Freight Third Party",
+                        "billing": null,
+                        "zone": "All Zones",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "15%",
+                        "tags": [
+                            "Economy Freight",
+                            "Third Party"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "Ground Domestic Single Piece(OB,IB, RB,3P)",
+                        "billing": null,
+                        "zone": "2-8",
+                        "weight": "1.0 - 5.0",
+                        "weightUnit": "lbs",
+                        "discount": "22%",
+                        "tags": [],
+                        "destination": null
+                    },
+                    {
+                        "service": "Ground Domestic Single Piece(OB,IB, RB,3P)",
+                        "billing": null,
+                        "zone": "2-8",
+                        "weight": "6.0 - 10.0",
+                        "weightUnit": "lbs",
+                        "discount": "23%",
+                        "tags": [],
+                        "destination": null
+                    },
+                    {
+                        "service": "Ground Domestic Single Piece(OB,IB, RB,3P)",
+                        "billing": null,
+                        "zone": "2-8",
+                        "weight": "11.0 - 20.0",
+                        "weightUnit": "lbs",
+                        "discount": "25%",
+                        "tags": [],
+                        "destination": null
+                    },
+                    {
+                        "service": "Ground Domestic Single Piece(OB,IB, RB,3P)",
+                        "billing": null,
+                        "zone": "2-8",
+                        "weight": "21.0 +",
+                        "weightUnit": "lbs",
+                        "discount": "26%",
+                        "tags": [],
+                        "destination": null
+                    },
+                    {
+                        "service": "Home Delivery Domestic Single Piece(OB,3P)",
+                        "billing": null,
+                        "zone": "2-8",
+                        "weight": "1.0 - 5.0",
+                        "weightUnit": "lbs",
+                        "discount": "22%",
+                        "tags": [
+                            "Home Delivery"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "Home Delivery Domestic Single Piece(OB,3P)",
+                        "billing": null,
+                        "zone": "2-8",
+                        "weight": "6.0 - 10.0",
+                        "weightUnit": "lbs",
+                        "discount": "23%",
+                        "tags": [
+                            "Home Delivery"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "Home Delivery Domestic Single Piece(OB,3P)",
+                        "billing": null,
+                        "zone": "2-8",
+                        "weight": "11.0 - 20.0",
+                        "weightUnit": "lbs",
+                        "discount": "25%",
+                        "tags": [
+                            "Home Delivery"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "Home Delivery Domestic Single Piece(OB,3P)",
+                        "billing": null,
+                        "zone": "2-8",
+                        "weight": "21.0 +",
+                        "weightUnit": "lbs",
+                        "discount": "26%",
+                        "tags": [
+                            "Home Delivery"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "Ground Domestic Single Piece (OB, RB,3P)",
+                        "billing": null,
+                        "zone": "9",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "10%",
+                        "tags": [],
+                        "destination": null
+                    },
+                    {
+                        "service": "Ground Domestic Single Piece (OB, RB,3P)",
+                        "billing": null,
+                        "zone": "17",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "10%",
+                        "tags": [],
+                        "destination": null
+                    },
+                    {
+                        "service": "Ground Export Single Piece (\u041e\u0412)",
+                        "billing": null,
+                        "zone": "51",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "10%",
+                        "tags": [
+                            "Export"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "Ground Export Single Piece (\u041e\u0412)",
+                        "billing": null,
+                        "zone": "54",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "10%",
+                        "tags": [
+                            "Export"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "Ground International Single Piece (3P)",
+                        "billing": null,
+                        "zone": "51",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "10%",
+                        "tags": [
+                            "International",
+                            "Single Piece"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "Ground International Single Piece (3P)",
+                        "billing": null,
+                        "zone": "54",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "10%",
+                        "tags": [
+                            "International",
+                            "Single Piece"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "SmartPost (by Pound) (OB)",
+                        "billing": null,
+                        "zone": "2-8",
+                        "weight": "1.0 - 9.0",
+                        "weightUnit": "lbs",
+                        "discount": "5%",
+                        "tags": [],
+                        "destination": null
+                    },
+                    {
+                        "service": "SmartPost (by Pound) (OB)",
+                        "billing": null,
+                        "zone": "9-10",
+                        "weight": "1.0 - 9.0",
+                        "weightUnit": "lbs",
+                        "discount": "5%",
+                        "tags": [],
+                        "destination": null
+                    },
+                    {
+                        "service": "SmartPost (by Pound) (OB)",
+                        "billing": null,
+                        "zone": "17",
+                        "weight": "1.0 - 9.0",
+                        "weightUnit": "lbs",
+                        "discount": "5%",
+                        "tags": [],
+                        "destination": null
+                    },
+                    {
+                        "service": "SmartPost (by Pound) (OB)",
+                        "billing": null,
+                        "zone": "26",
+                        "weight": "1.0 - 9.0",
+                        "weightUnit": "lbs",
+                        "discount": "5%",
+                        "tags": [],
+                        "destination": null
+                    },
+                    {
+                        "service": "SmartPost (by Pound) (OB)",
+                        "billing": null,
+                        "zone": "99",
+                        "weight": "1.0 - 9.0",
+                        "weightUnit": "lbs",
+                        "discount": "5%",
+                        "tags": [],
+                        "destination": null
+                    },
+                    {
+                        "service": "SmartPost (by Pound) (OB)",
+                        "billing": null,
+                        "zone": "2-8",
+                        "weight": "10.0 - 70.0",
+                        "weightUnit": "lbs",
+                        "discount": "0%",
+                        "tags": [],
+                        "destination": null
+                    },
+                    {
+                        "service": "SmartPost (by Pound) (OB)",
+                        "billing": null,
+                        "zone": "9-10",
+                        "weight": "10.0 - 70.0",
+                        "weightUnit": "lbs",
+                        "discount": "0%",
+                        "tags": [],
+                        "destination": null
+                    },
+                    {
+                        "service": "SmartPost (by Pound) (OB)",
+                        "billing": null,
+                        "zone": "17",
+                        "weight": "10.0 - 70.0",
+                        "weightUnit": "lbs",
+                        "discount": "0%",
+                        "tags": [],
+                        "destination": null
+                    },
+                    {
+                        "service": "SmartPost (by Pound) (OB)",
+                        "billing": null,
+                        "zone": "26",
+                        "weight": "10.0 - 70.0",
+                        "weightUnit": "lbs",
+                        "discount": "0%",
+                        "tags": [],
+                        "destination": null
+                    },
+                    {
+                        "service": "SmartPost (by Pound) (OB)",
+                        "billing": null,
+                        "zone": "99",
+                        "weight": "10.0 - 70.0",
+                        "weightUnit": "lbs",
+                        "discount": "0%",
+                        "tags": [],
+                        "destination": null
+                    },
+                    {
+                        "service": "SmartPost (by Pound) (OB)",
+                        "billing": null,
+                        "zone": "2-8",
+                        "weight": "71 +",
+                        "weightUnit": "lbs",
+                        "discount": "0%",
+                        "tags": [],
+                        "destination": null
+                    },
+                    {
+                        "service": "SmartPost (by Pound) (OB)",
+                        "billing": null,
+                        "zone": "9-10",
+                        "weight": "71 +",
+                        "weightUnit": "lbs",
+                        "discount": "0%",
+                        "tags": [],
+                        "destination": null
+                    },
+                    {
+                        "service": "SmartPost (by Pound) (OB)",
+                        "billing": null,
+                        "zone": "17",
+                        "weight": "71 +",
+                        "weightUnit": "lbs",
+                        "discount": "0%",
+                        "tags": [],
+                        "destination": null
+                    },
+                    {
+                        "service": "SmartPost (by Pound) (OB)",
+                        "billing": null,
+                        "zone": "26",
+                        "weight": "71 +",
+                        "weightUnit": "lbs",
+                        "discount": "0%",
+                        "tags": [],
+                        "destination": null
+                    },
+                    {
+                        "service": "SmartPost (by Pound) (OB)",
+                        "billing": null,
+                        "zone": "99",
+                        "weight": "71 +",
+                        "weightUnit": "lbs",
+                        "discount": "0%",
+                        "tags": [],
+                        "destination": null
+                    },
+                    {
+                        "service": "LTL US to CA Export Priority(OP,3P)",
+                        "billing": null,
+                        "zone": "All Points in Canada",
+                        "weight": null,
+                        "weightUnit": null,
+                        "discount": "85.5%",
+                        "tags": [
+                            "Priority"
+                        ],
+                        "destination": "CA"
+                    },
+                    {
+                        "service": "LTL US to CA Export Economy(OP,3P)",
+                        "billing": null,
+                        "zone": "All Points in Canada",
+                        "weight": null,
+                        "weightUnit": null,
+                        "discount": "85%",
+                        "tags": [
+                            "Economy"
+                        ],
+                        "destination": "CA"
+                    },
+                    {
+                        "service": "LTL US to MX Export Priority(OP, OC, 3P)",
+                        "billing": null,
+                        "zone": "All Points in Mexico",
+                        "weight": null,
+                        "weightUnit": null,
+                        "discount": "10%",
+                        "tags": [
+                            "Priority"
+                        ],
+                        "destination": "MX"
+                    }
+                ]
+            },
+            "metadata": [
+                {
+                    "service": "International Priority Envelope Third Party",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": null,
+                        "endDate": null
+                    }
+                },
+                {
+                    "service": "International Priority Pak Third Party",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": null,
+                        "endDate": null
+                    }
+                },
+                {
+                    "service": "International Priority Third Party",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": null,
+                        "endDate": null
+                    }
+                },
+                {
+                    "service": "International Economy Third Party",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": null,
+                        "endDate": null
+                    }
+                },
+                {
+                    "service": "International Priority Freight (ATA) Third Party",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": null,
+                        "endDate": null
+                    }
+                },
+                {
+                    "service": "International Priority Freight Third Party",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": null,
+                        "endDate": null
+                    }
+                },
+                {
+                    "service": "International Economy Freight (ATA) Third Party",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": null,
+                        "endDate": null
+                    }
+                },
+                {
+                    "service": "International Economy Freight Third Party",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": null,
+                        "endDate": null
+                    }
+                },
+                {
+                    "service": "Ground Domestic Single Piece(OB,IB, RB,3P)",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": null,
+                        "endDate": null
+                    }
+                },
+                {
+                    "service": "Home Delivery Domestic Single Piece(OB,3P)",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": null,
+                        "endDate": null
+                    }
+                },
+                {
+                    "service": "Ground Domestic Single Piece (OB, RB,3P)",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": null,
+                        "endDate": null
+                    }
+                },
+                {
+                    "service": "Ground Export Single Piece (\u041e\u0412)",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": null,
+                        "endDate": null
+                    }
+                },
+                {
+                    "service": "Ground International Single Piece (3P)",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": null,
+                        "endDate": null
+                    }
+                },
+                {
+                    "service": "SmartPost (by Pound) (OB)",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": null,
+                        "endDate": null
+                    }
+                },
+                {
+                    "service": "LTL US to CA Export Priority(OP,3P)",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": null,
+                        "endDate": null
+                    }
+                },
+                {
+                    "service": "LTL US to CA Export Economy(OP,3P)",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": null,
+                        "endDate": null
+                    }
+                },
+                {
+                    "service": "LTL US to MX Export Priority(OP, OC, 3P)",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": null,
+                        "endDate": null
+                    }
+                },
+                {
+                    "service": "FedEx International Economy Import",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": null,
+                        "endDate": null
+                    }
+                },
+                {
+                    "service": "FedEx International Priority Freight Import",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": null,
+                        "endDate": null
+                    }
+                },
+                {
+                    "service": "FedEx International Economy Freight Import",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": null,
+                        "endDate": null
+                    }
+                },
+                {
+                    "service": "FedEx International Priority Freight (ATA) Import",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": null,
+                        "endDate": null
+                    }
+                },
+                {
+                    "service": "FedEx International Economy Freight (ATA) Import",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": null,
+                        "endDate": null
+                    }
+                }
+            ]
+        },
+        {
+            "title": "Portfolio Tier Incentive",
+            "tableData": {
+                "headers": [
+                    "service",
+                    "land_zone",
+                    "weeklySpendMin",
+                    "weeklySpendMax",
+                    "currency",
+                    "discount",
+                    "tags"
+                ],
+                "rows": [],
+                "notes": [],
+                "validityPeriod": {
+                    "startDate": "",
+                    "endDate": ""
+                }
+            }
+        },
+        {
+            "title": "Minimum Net Charge",
+            "tableData": {
+                "headers": [
+                    "service",
+                    "billing",
+                    "zone",
+                    "adjustmentDiscount",
+                    "tags"
+                ],
+                "rows": [
+                    {
+                        "service": "FedEx Priority Overnight",
+                        "billing": "Unknown",
+                        "zone": "Zone 2, Envelope",
+                        "adjustmentDiscount": "-$10.50",
+                        "tags": [
+                            "Envelope"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Priority Overnight",
+                        "billing": "Unknown",
+                        "zone": "Zone 2, 1.0 lb",
+                        "adjustmentDiscount": "-$13.75",
+                        "tags": [
+                            "Pak"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Priority Overnight",
+                        "billing": "Unknown",
+                        "zone": "Zone 2, 1.0 lb",
+                        "adjustmentDiscount": "-$13.75",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx Standard Overnight",
+                        "billing": "Unknown",
+                        "zone": "Zone 2, Envelope",
+                        "adjustmentDiscount": "-$8.35",
+                        "tags": [
+                            "Envelope"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Standard Overnight",
+                        "billing": "Unknown",
+                        "zone": "Zone 2, 1.0 lb",
+                        "adjustmentDiscount": "-$10.40",
+                        "tags": [
+                            "Pak"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Standard Overnight",
+                        "billing": "Unknown",
+                        "zone": "Zone 2, 1.0 lb",
+                        "adjustmentDiscount": "-$10.40",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx 2Day A.M.",
+                        "billing": "Unknown",
+                        "zone": "Zone 2, Envelope",
+                        "adjustmentDiscount": "-$5.79",
+                        "tags": [
+                            "Envelope"
+                        ]
+                    },
+                    {
+                        "service": "FedEx 2Day A.M.",
+                        "billing": "Unknown",
+                        "zone": "Zone 2, 1.0 lb",
+                        "adjustmentDiscount": "-$6.30",
+                        "tags": [
+                            "Pak"
+                        ]
+                    },
+                    {
+                        "service": "FedEx 2Day A.M.",
+                        "billing": "Unknown",
+                        "zone": "Zone 2, 1.0 lb",
+                        "adjustmentDiscount": "-$6.30",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx 2Day Envelope",
+                        "billing": "Unknown",
+                        "zone": "Zone 2, Envelope",
+                        "adjustmentDiscount": "-$5.50",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx Priority Overnight",
+                        "billing": "Unknown",
+                        "zone": "Zone 2, Envelope",
+                        "adjustmentDiscount": "-$10.50",
+                        "tags": [
+                            "Envelope"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Priority Overnight",
+                        "billing": "Unknown",
+                        "zone": "Zone 2, 1.0 lb",
+                        "adjustmentDiscount": "-$13.75",
+                        "tags": [
+                            "Pak"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Priority Overnight",
+                        "billing": "Unknown",
+                        "zone": "Zone 2, 1.0 lb",
+                        "adjustmentDiscount": "-$13.75",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx Standard Overnight",
+                        "billing": "Unknown",
+                        "zone": "Zone 2, Envelope",
+                        "adjustmentDiscount": "-$8.35",
+                        "tags": [
+                            "Envelope"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Standard Overnight",
+                        "billing": "Unknown",
+                        "zone": "Zone 2, 1.0 lb",
+                        "adjustmentDiscount": "-$10.40",
+                        "tags": [
+                            "Pak"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Standard Overnight",
+                        "billing": "Unknown",
+                        "zone": "Zone 2, 1.0 lb",
+                        "adjustmentDiscount": "-$10.40",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx 2Day A.M.",
+                        "billing": "Unknown",
+                        "zone": "Zone 2, Envelope",
+                        "adjustmentDiscount": "-$5.79",
+                        "tags": [
+                            "Envelope"
+                        ]
+                    },
+                    {
+                        "service": "FedEx 2Day A.M.",
+                        "billing": "Unknown",
+                        "zone": "Zone 2, 1.0 lb",
+                        "adjustmentDiscount": "-$6.30",
+                        "tags": [
+                            "Pak"
+                        ]
+                    },
+                    {
+                        "service": "FedEx 2Day A.M.",
+                        "billing": "Unknown",
+                        "zone": "Zone 2, 1.0 lb",
+                        "adjustmentDiscount": "-$6.30",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx 2Day Envelope",
+                        "billing": "Unknown",
+                        "zone": "Zone 2, Envelope",
+                        "adjustmentDiscount": "-$5.50",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx 2Day Pak",
+                        "billing": "Unknown",
+                        "zone": "Zone 2, 1.0 lb",
+                        "adjustmentDiscount": "-$5.45",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx 2Day",
+                        "billing": "Unknown",
+                        "zone": "Zone 2, 1.0 lb",
+                        "adjustmentDiscount": "-$5.45",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx Express Saver",
+                        "billing": "Unknown",
+                        "zone": "Zone 2, Envelope",
+                        "adjustmentDiscount": "-$4.80",
+                        "tags": [
+                            "Envelope"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Express Saver",
+                        "billing": "Unknown",
+                        "zone": "Zone 2, 1.0 lb",
+                        "adjustmentDiscount": "-$4.80",
+                        "tags": [
+                            "Pak"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Express Saver",
+                        "billing": "Unknown",
+                        "zone": "Zone 2, 1.0 lb",
+                        "adjustmentDiscount": "-$4.80",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx 1Day Freight",
+                        "billing": "Unknown",
+                        "zone": "Per Service Guide",
+                        "adjustmentDiscount": null,
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx 2Day Freight",
+                        "billing": "Unknown",
+                        "zone": "Per Service Guide",
+                        "adjustmentDiscount": null,
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx 3Day Freight",
+                        "billing": "Unknown",
+                        "zone": "Per Service Guide",
+                        "adjustmentDiscount": null,
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx International Priority",
+                        "billing": "Unknown",
+                        "zone": "A",
+                        "adjustmentDiscount": "-$23.75",
+                        "tags": [
+                            "Envelope",
+                            "Export"
+                        ]
+                    },
+                    {
+                        "service": "FedEx International Priority",
+                        "billing": "Unknown",
+                        "zone": "B",
+                        "adjustmentDiscount": "-$24.58",
+                        "tags": [
+                            "Envelope",
+                            "Export"
+                        ]
+                    }
+                ],
+                "notes": [
+                    "Extracted 10 minimum charge tables from pages 10 and 11.  The tables continue in the next batch. All incentives are reduction amounts.",
+                    "Extracted tables are minimum charge reductions for United States Domestic Express services.",
+                    "Extracted tables are minimum charge reductions for United States Domestic Express and United States FedEx International Export services."
+                ],
+                "validityPeriod": {
+                    "startDate": null,
+                    "endDate": null
+                }
+            }
+        },
+        [
+            {
+                "title": "LTL MX Export Service Adjustment",
+                "tableData": {
+                    "headers": [
+                        "service",
+                        "minimumPer",
+                        "zone",
+                        "baseRate",
+                        "adjustment",
+                        "currency",
+                        "tags"
+                    ],
+                    "rows": [
+                        {
+                            "service": "LTL US to MX Export Priority(OP, OC, 3P)",
+                            "minimumPer": null,
+                            "zone": "All Points in Mexico",
+                            "baseRate": "FXF D2D, Effective at the time of shipment",
+                            "adjustment": "10%",
+                            "currency": "USD",
+                            "tags": [
+                                "LTL",
+                                "Export",
+                                "MX",
+                                "Priority"
+                            ]
+                        }
+                    ],
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                }
+            }
+        ],
+        {
+            "title": "Electronic PLD Bonus",
+            "found": false,
+            "message": "No Electronic PLD Bonus information found in the document"
+        }
+    ]
+}

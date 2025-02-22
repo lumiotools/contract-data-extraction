@@ -1,0 +1,960 @@
+{
+  "success": true,
+  "message": "Extracted data and saved to JSON",
+  "data": {
+    "details": {
+      "carrier": "FedEx",
+      "eligible_accounts": [
+        {
+          "account_number": "25677",
+          "name": "ALTERNATIVE APPAREL",
+          "address": "Not applicable",
+          "zip": "Not applicable",
+          "commodity_tier": "Not applicable"
+        },
+        {
+          "account_number": "329540510",
+          "name": "Not applicable",
+          "address": "Not applicable",
+          "zip": "Not applicable",
+          "commodity_tier": "Not applicable"
+        },
+        {
+          "account_number": "364444907",
+          "name": "Not applicable",
+          "address": "Not applicable",
+          "zip": "Not applicable",
+          "commodity_tier": "Not applicable"
+        }
+      ]
+    },
+    "tables": [
+      {
+        "title": "Incentives off effective rate",
+        "tableData": {
+          "headers": [
+            "service",
+            "billing",
+            "zone",
+            "weight",
+            "weightUnit",
+            "discount",
+            "tags",
+            "destination"
+          ],
+          "rows": [
+            {
+              "service": "Service to Alaska",
+              "billing": null,
+              "zone": "17",
+              "weight": null,
+              "weightUnit": null,
+              "discount": "10.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Service to Alaska",
+              "billing": null,
+              "zone": "17",
+              "weight": null,
+              "weightUnit": null,
+              "discount": "10.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Service to Alaska",
+              "billing": null,
+              "zone": "17",
+              "weight": null,
+              "weightUnit": null,
+              "discount": "10.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "US to Canada",
+              "billing": null,
+              "zone": "51",
+              "weight": null,
+              "weightUnit": null,
+              "discount": "37.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "US to Canada",
+              "billing": null,
+              "zone": "54",
+              "weight": null,
+              "weightUnit": null,
+              "discount": "37.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "US to Canada",
+              "billing": null,
+              "zone": "51",
+              "weight": null,
+              "weightUnit": null,
+              "discount": "37.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "US to Canada",
+              "billing": null,
+              "zone": "54",
+              "weight": null,
+              "weightUnit": null,
+              "discount": "37.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Service to Hawaii",
+              "billing": null,
+              "zone": "9",
+              "weight": null,
+              "weightUnit": null,
+              "discount": "10.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Service to Hawaii",
+              "billing": null,
+              "zone": "9",
+              "weight": null,
+              "weightUnit": null,
+              "discount": "10.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Service to Hawaii",
+              "billing": null,
+              "zone": "9",
+              "weight": null,
+              "weightUnit": null,
+              "discount": "10.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "2",
+              "weight": "1 to 5",
+              "weightUnit": "lbs",
+              "discount": "18.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "3",
+              "weight": "1 to 5",
+              "weightUnit": "lbs",
+              "discount": "18.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "4",
+              "weight": "1 to 5",
+              "weightUnit": "lbs",
+              "discount": "18.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "5",
+              "weight": "1 to 5",
+              "weightUnit": "lbs",
+              "discount": "18.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "6",
+              "weight": "1 to 5",
+              "weightUnit": "lbs",
+              "discount": "18.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "7",
+              "weight": "1 to 5",
+              "weightUnit": "lbs",
+              "discount": "18.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "8",
+              "weight": "1 to 5",
+              "weightUnit": "lbs",
+              "discount": "18.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "2",
+              "weight": "6 to 17",
+              "weightUnit": "lbs",
+              "discount": "28.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "3",
+              "weight": "6 to 17",
+              "weightUnit": "lbs",
+              "discount": "28.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "4",
+              "weight": "6 to 17",
+              "weightUnit": "lbs",
+              "discount": "28.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "5",
+              "weight": "6 to 17",
+              "weightUnit": "lbs",
+              "discount": "28.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "6",
+              "weight": "6 to 17",
+              "weightUnit": "lbs",
+              "discount": "28.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "7",
+              "weight": "6 to 17",
+              "weightUnit": "lbs",
+              "discount": "28.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "8",
+              "weight": "6 to 17",
+              "weightUnit": "lbs",
+              "discount": "28.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "2",
+              "weight": "18 to 30",
+              "weightUnit": "lbs",
+              "discount": "30.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "3",
+              "weight": "18 to 30",
+              "weightUnit": "lbs",
+              "discount": "30.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "4",
+              "weight": "18 to 30",
+              "weightUnit": "lbs",
+              "discount": "30.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "5",
+              "weight": "18 to 30",
+              "weightUnit": "lbs",
+              "discount": "30.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "6",
+              "weight": "18 to 30",
+              "weightUnit": "lbs",
+              "discount": "30.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "7",
+              "weight": "18 to 30",
+              "weightUnit": "lbs",
+              "discount": "30.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "8",
+              "weight": "18 to 30",
+              "weightUnit": "lbs",
+              "discount": "30.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "2",
+              "weight": "31 to 150",
+              "weightUnit": "lbs",
+              "discount": "33.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "3",
+              "weight": "31 to 150",
+              "weightUnit": "lbs",
+              "discount": "33.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "4",
+              "weight": "31 to 150",
+              "weightUnit": "lbs",
+              "discount": "33.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "5",
+              "weight": "31 to 150",
+              "weightUnit": "lbs",
+              "discount": "33.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "6",
+              "weight": "31 to 150",
+              "weightUnit": "lbs",
+              "discount": "33.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "7",
+              "weight": "31 to 150",
+              "weightUnit": "lbs",
+              "discount": "33.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "8",
+              "weight": "31 to 150",
+              "weightUnit": "lbs",
+              "discount": "33.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "2",
+              "weight": "1 to 10",
+              "weightUnit": "lbs",
+              "discount": "10.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "3",
+              "weight": "1 to 10",
+              "weightUnit": "lbs",
+              "discount": "10.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "4",
+              "weight": "1 to 10",
+              "weightUnit": "lbs",
+              "discount": "10.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "5",
+              "weight": "1 to 10",
+              "weightUnit": "lbs",
+              "discount": "10.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "6",
+              "weight": "1 to 10",
+              "weightUnit": "lbs",
+              "discount": "10.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "7",
+              "weight": "1 to 10",
+              "weightUnit": "lbs",
+              "discount": "10.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "8",
+              "weight": "1 to 10",
+              "weightUnit": "lbs",
+              "discount": "10.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "2",
+              "weight": "11 to 17",
+              "weightUnit": "lbs",
+              "discount": "25.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "3",
+              "weight": "11 to 17",
+              "weightUnit": "lbs",
+              "discount": "25.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "4",
+              "weight": "11 to 17",
+              "weightUnit": "lbs",
+              "discount": "25.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "5",
+              "weight": "11 to 17",
+              "weightUnit": "lbs",
+              "discount": "25.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "6",
+              "weight": "11 to 17",
+              "weightUnit": "lbs",
+              "discount": "25.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "7",
+              "weight": "11 to 17",
+              "weightUnit": "lbs",
+              "discount": "25.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "8",
+              "weight": "11 to 17",
+              "weightUnit": "lbs",
+              "discount": "25.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "2",
+              "weight": "18 to 150",
+              "weightUnit": "lbs",
+              "discount": "27.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "3",
+              "weight": "18 to 150",
+              "weightUnit": "lbs",
+              "discount": "27.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "4",
+              "weight": "18 to 150",
+              "weightUnit": "lbs",
+              "discount": "27.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "5",
+              "weight": "18 to 150",
+              "weightUnit": "lbs",
+              "discount": "27.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "6",
+              "weight": "18 to 150",
+              "weightUnit": "lbs",
+              "discount": "27.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "7",
+              "weight": "18 to 150",
+              "weightUnit": "lbs",
+              "discount": "27.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": null,
+              "zone": "8",
+              "weight": "18 to 150",
+              "weightUnit": "lbs",
+              "discount": "27.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground- Outbound Prepaid",
+              "billing": "Outbound Prepaid",
+              "zone": null,
+              "weight": null,
+              "weightUnit": null,
+              "discount": "0.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground - 3rd Party Billing",
+              "billing": "3rd Party Billing",
+              "zone": null,
+              "weight": null,
+              "weightUnit": null,
+              "discount": "23.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground - Inbound Collect",
+              "billing": "Inbound Collect",
+              "zone": null,
+              "weight": null,
+              "weightUnit": null,
+              "discount": "23.50%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "Continental US Ground - Recipient Billing",
+              "billing": "Recipient Billing",
+              "zone": null,
+              "weight": null,
+              "weightUnit": null,
+              "discount": "24.00%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "U.S. to Canada - OB",
+              "billing": null,
+              "zone": null,
+              "weight": null,
+              "weightUnit": null,
+              "discount": "24.50%",
+              "tags": [],
+              "destination": null
+            },
+            {
+              "service": "U.S. to Canada - 3P",
+              "billing": null,
+              "zone": null,
+              "weight": null,
+              "weightUnit": null,
+              "discount": "25.00%",
+              "tags": [],
+              "destination": null
+            }
+          ]
+        },
+        "metadata": [
+          {
+            "service": "Continental US Ground - 3rd Party Billing",
+            "notes": [],
+            "validityPeriod": {
+              "startDate": null,
+              "endDate": null
+            }
+          },
+          {
+            "service": "U.S. to Canada - OB",
+            "notes": [],
+            "validityPeriod": {
+              "startDate": null,
+              "endDate": null
+            }
+          },
+          {
+            "service": "U.S. to Canada - 3P",
+            "notes": [],
+            "validityPeriod": {
+              "startDate": null,
+              "endDate": null
+            }
+          },
+          {
+            "service": "Continental US Ground - Recipient Billing",
+            "notes": [],
+            "validityPeriod": {
+              "startDate": null,
+              "endDate": null
+            }
+          },
+          {
+            "service": "Continental US Ground- Outbound Prepaid",
+            "notes": [],
+            "validityPeriod": {
+              "startDate": null,
+              "endDate": null
+            }
+          },
+          {
+            "service": "Service to Hawaii",
+            "notes": [],
+            "validityPeriod": {
+              "startDate": "06/11/2018",
+              "endDate": "08/02/2020"
+            }
+          },
+          {
+            "service": "Continental US Ground - Inbound Collect",
+            "notes": [],
+            "validityPeriod": {
+              "startDate": null,
+              "endDate": null
+            }
+          },
+          {
+            "service": "Service to Alaska",
+            "notes": [],
+            "validityPeriod": {
+              "startDate": "06/11/2018",
+              "endDate": "08/02/2020"
+            }
+          },
+          {
+            "service": "US to Canada",
+            "notes": [],
+            "validityPeriod": {
+              "startDate": "06/11/2018",
+              "endDate": "08/02/2020"
+            }
+          },
+          {
+            "service": "Continental US Ground",
+            "notes": [],
+            "validityPeriod": {
+              "startDate": "06/11/2018",
+              "endDate": "08/02/2020"
+            }
+          }
+        ]
+      },
+      {
+        "title": "Portfolio Tier Incentive",
+        "tableData": {
+          "headers": [
+            "service",
+            "land_zone",
+            "weeklySpendMin",
+            "weeklySpendMax",
+            "currency",
+            "discount",
+            "tags"
+          ],
+          "rows": [],
+          "notes": [],
+          "validityPeriod": {
+            "startDate": "",
+            "endDate": ""
+          }
+        }
+      },
+      {
+        "title": "Minimum Net Charge",
+        "tableData": {
+          "headers": [
+            "service",
+            "billing",
+            "zone",
+            "adjustmentDiscount",
+            "tags"
+          ],
+          "rows": [
+            {
+              "service": "Service Alaska",
+              "billing": "Unknown",
+              "zone": "Zone *, 1 Pound",
+              "adjustmentDiscount": "null",
+              "tags": []
+            },
+            {
+              "service": "US Canada",
+              "billing": "Unknown",
+              "zone": "Zone *, 1 Pound",
+              "adjustmentDiscount": "null",
+              "tags": []
+            },
+            {
+              "service": "Service Hawaii",
+              "billing": "Unknown",
+              "zone": "Zone *, 1 Pound",
+              "adjustmentDiscount": "null",
+              "tags": []
+            },
+            {
+              "service": "Continental US Ground",
+              "billing": "Unknown",
+              "zone": "Zone 2, 1 Pound",
+              "adjustmentDiscount": "$0.49",
+              "tags": []
+            }
+          ],
+          "notes": ["All minimum net charge tables extracted."],
+          "validityPeriod": {
+            "startDate": null,
+            "endDate": null
+          }
+        }
+      },
+      {
+        "title": "Service Adjustment",
+        "tableData": {
+          "headers": [
+            "service",
+            "minimumPer",
+            "zone",
+            "baseRate",
+            "adjustment",
+            "currency",
+            "tags"
+          ],
+          "rows": [
+            {
+              "service": "Service to Alaska",
+              "minimumPer": "Zone *, 1 Pound",
+              "zone": "Zone *",
+              "baseRate": "N/A",
+              "adjustment": null,
+              "currency": null,
+              "tags": []
+            },
+            {
+              "service": "US to Canada",
+              "minimumPer": "Zone *, 1 Pound",
+              "zone": "Zone *",
+              "baseRate": "N/A",
+              "adjustment": null,
+              "currency": null,
+              "tags": []
+            },
+            {
+              "service": "Service to Hawaii",
+              "minimumPer": "Zone *, 1 Pound",
+              "zone": "Zone *",
+              "baseRate": "N/A",
+              "adjustment": null,
+              "currency": null,
+              "tags": []
+            },
+            {
+              "service": "Continental US Ground",
+              "minimumPer": "Zone 2, 1 Pound",
+              "zone": "Zone 2",
+              "baseRate": "$0.49",
+              "adjustment": "0.49",
+              "currency": "$",
+              "tags": []
+            },
+            {
+              "service": "Continental US Ground",
+              "minimumPer": "Zone 2, 1 Pound",
+              "zone": "Zone 2",
+              "baseRate": "$0.49",
+              "adjustment": "0.49",
+              "currency": "$",
+              "tags": []
+            },
+            {
+              "service": "Continental US Ground",
+              "minimumPer": "Zone 2, 1 Pound",
+              "zone": "Zone 2",
+              "baseRate": "$0.49",
+              "adjustment": "0.49",
+              "currency": "$",
+              "tags": []
+            },
+            {
+              "service": "Continental US Ground",
+              "minimumPer": "Zone 2, 1 Pound",
+              "zone": "Zone 2",
+              "baseRate": "$0.49",
+              "adjustment": "0.49",
+              "currency": "$",
+              "tags": []
+            },
+            {
+              "service": "Continental US Ground",
+              "minimumPer": "Zone 2, 1 Pound",
+              "zone": "Zone 2",
+              "baseRate": "N/A",
+              "adjustment": null,
+              "currency": null,
+              "tags": []
+            },
+            {
+              "service": "Continental US Ground",
+              "minimumPer": "Zone 2, 1 Pound",
+              "zone": "Zone 2",
+              "baseRate": "N/A",
+              "adjustment": null,
+              "currency": null,
+              "tags": []
+            }
+          ],
+          "notes": [
+            "The minimum net package charge will be based upon the applicable zone for each package and the weight shown above."
+          ],
+          "validityPeriod": {
+            "startDate": "06/11/2018",
+            "endDate": "08/02/2020"
+          }
+        }
+      },
+      {
+        "title": "Electronic PLD Bonus",
+        "found": false,
+        "message": "No Electronic PLD Bonus information found in the document"
+      }
+    ],
+    "json_save_error": "module 'datetime' has no attribute 'now'"
+  }
+}

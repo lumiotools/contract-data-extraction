@@ -1,0 +1,1823 @@
+{
+    "details": {
+        "carrier": "FedEx",
+        "eligible_accounts": [
+            {
+                "account_number": "489308897",
+                "name": "Camira Group Inc.",
+                "address": "2476 Waldorf CT NW, Grand Rapids, MI",
+                "zip": "495441415",
+                "commodity_tier": null
+            }
+        ]
+    },
+    "tables": [
+        {
+            "title": "Incentives off effective rate",
+            "tableData": {
+                "headers": [
+                    "service",
+                    "billing",
+                    "zone",
+                    "weight",
+                    "weightUnit",
+                    "discount",
+                    "tags",
+                    "destination"
+                ],
+                "rows": [
+                    {
+                        "service": "Home Delivery Domestic Single Piece (OB,3P)",
+                        "billing": "N/A",
+                        "zone": "2-8",
+                        "weight": "21.0 - 30.0",
+                        "weightUnit": "lb",
+                        "discount": "18%",
+                        "tags": [
+                            "Home Delivery",
+                            "Domestic",
+                            "Single Piece"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "Home Delivery Domestic Single Piece (OB,3P)",
+                        "billing": "N/A",
+                        "zone": "2-8",
+                        "weight": "31.0 +",
+                        "weightUnit": "lb",
+                        "discount": "20%",
+                        "tags": [
+                            "Home Delivery",
+                            "Domestic",
+                            "Single Piece"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "Ground Domestic Single Piece (OB, IB, RB,3P)",
+                        "billing": "N/A",
+                        "zone": "9",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "10%",
+                        "tags": [
+                            "Ground Domestic",
+                            "Single Piece"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "Ground Domestic Single Piece (OB, IB, RB,3P)",
+                        "billing": "N/A",
+                        "zone": "17",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "10%",
+                        "tags": [
+                            "Ground Domestic",
+                            "Single Piece"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "Ground Domestic MWT (OB, IB, RB, 3P)",
+                        "billing": "N/A",
+                        "zone": "2-8",
+                        "weight": "200.0 - 499.0",
+                        "weightUnit": "lb",
+                        "discount": "15%",
+                        "tags": [
+                            "Ground Domestic",
+                            "MWT"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "Ground Domestic MWT (OB, IB, RB, 3P)",
+                        "billing": "N/A",
+                        "zone": "2-8",
+                        "weight": "500.0 +",
+                        "weightUnit": "lb",
+                        "discount": "15%",
+                        "tags": [
+                            "Ground Domestic",
+                            "MWT"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "LTL US Domestic Priority",
+                        "billing": "OP,OC,IC, 3P",
+                        "zone": "All Points in the Contiguous US",
+                        "weight": "N/A",
+                        "weightUnit": null,
+                        "discount": "88%",
+                        "tags": [
+                            "LTL",
+                            "US",
+                            "Domestic",
+                            "Priority"
+                        ],
+                        "destination": "All Points in the Contiguous US"
+                    },
+                    {
+                        "service": "LTL US Domestic Economy",
+                        "billing": "OP,OC,IC, 3P",
+                        "zone": "All Points in the Contiguous US",
+                        "weight": "N/A",
+                        "weightUnit": null,
+                        "discount": "88%",
+                        "tags": [
+                            "LTL",
+                            "US",
+                            "Domestic",
+                            "Economy"
+                        ],
+                        "destination": "All Points in the Contiguous US"
+                    },
+                    {
+                        "service": "LTL US to CA Export Priority",
+                        "billing": "OP,OC, 3P",
+                        "zone": "All Points in Canada",
+                        "weight": "N/A",
+                        "weightUnit": null,
+                        "discount": "86%",
+                        "tags": [
+                            "LTL",
+                            "US",
+                            "Export",
+                            "Priority"
+                        ],
+                        "destination": "All Points in the Contiguous US"
+                    },
+                    {
+                        "service": "LTL US to CA Export Economy",
+                        "billing": "OP,OC, 3P",
+                        "zone": "All Points in Canada",
+                        "weight": "N/A",
+                        "weightUnit": null,
+                        "discount": "86%",
+                        "tags": [
+                            "LTL",
+                            "US",
+                            "Export",
+                            "Economy"
+                        ],
+                        "destination": "All Points in the Contiguous US"
+                    },
+                    {
+                        "service": "LTL US to MX Export Priority",
+                        "billing": "OP,OC, 3P",
+                        "zone": "All Points in Mexico",
+                        "weight": "N/A",
+                        "weightUnit": null,
+                        "discount": "10%",
+                        "tags": [
+                            "LTL",
+                            "US",
+                            "Export",
+                            "Priority"
+                        ],
+                        "destination": "All Points in the Contiguous US"
+                    },
+                    {
+                        "service": "LTL US from CA Import Priority",
+                        "billing": "IC, 3P",
+                        "zone": "All Points in Canada",
+                        "weight": "N/A",
+                        "weightUnit": null,
+                        "discount": "86%",
+                        "tags": [
+                            "LTL",
+                            "US",
+                            "Import",
+                            "Priority"
+                        ],
+                        "destination": "All Points in the Contiguous US"
+                    },
+                    {
+                        "service": "LTL US from CA Import Economy",
+                        "billing": "IC, 3P",
+                        "zone": "All Points in Canada",
+                        "weight": "N/A",
+                        "weightUnit": null,
+                        "discount": "86%",
+                        "tags": [
+                            "LTL",
+                            "US",
+                            "Import",
+                            "Economy"
+                        ],
+                        "destination": "All Points in the Contiguous US"
+                    },
+                    {
+                        "service": "LTL US from MX Import Priority",
+                        "billing": "IC, 3P",
+                        "zone": "All Points in Mexico",
+                        "weight": "N/A",
+                        "weightUnit": null,
+                        "discount": "10%",
+                        "tags": [
+                            "LTL",
+                            "US",
+                            "Import",
+                            "Priority"
+                        ],
+                        "destination": "All Points in the Contiguous US"
+                    }
+                ]
+            },
+            "metadata": [
+                {
+                    "service": "Home Delivery Domestic Single Piece (OB,3P)",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "Ground Domestic Single Piece (OB, IB, RB,3P)",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "Ground Domestic MWT (OB, IB, RB, 3P)",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "LTL US Domestic Priority",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "LTL US Domestic Economy",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "LTL US to CA Export Priority",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "LTL US to CA Export Economy",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "LTL US to MX Export Priority",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "LTL US from CA Import Priority",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "LTL US from CA Import Economy",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "LTL US from MX Import Priority",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                }
+            ]
+        },
+        {
+            "title": "Portfolio Tier Incentive",
+            "tableData": {
+                "headers": [
+                    "service",
+                    "land_zone",
+                    "weeklySpendMin",
+                    "weeklySpendMax",
+                    "currency",
+                    "discount",
+                    "tags"
+                ],
+                "rows": [],
+                "notes": [],
+                "validityPeriod": {
+                    "startDate": "",
+                    "endDate": ""
+                }
+            }
+        },
+        {
+            "title": "Minimum Net Charge",
+            "tableData": {
+                "headers": [
+                    "service",
+                    "billing",
+                    "zone",
+                    "adjustmentDiscount",
+                    "tags"
+                ],
+                "rows": [
+                    {
+                        "service": "FedEx Priority Overnight",
+                        "billing": "Unknown",
+                        "zone": "2-8",
+                        "adjustmentDiscount": "-$10.50",
+                        "tags": [
+                            "Envelope"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Priority Overnight",
+                        "billing": "Unknown",
+                        "zone": "9",
+                        "adjustmentDiscount": "-$10.50",
+                        "tags": [
+                            "Envelope"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Priority Overnight",
+                        "billing": "Unknown",
+                        "zone": "10-12",
+                        "adjustmentDiscount": "-$10.50",
+                        "tags": [
+                            "Envelope"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Priority Overnight",
+                        "billing": "Unknown",
+                        "zone": "13-16",
+                        "adjustmentDiscount": "-$10.50",
+                        "tags": [
+                            "Envelope"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Priority Overnight",
+                        "billing": "Unknown",
+                        "zone": "2, 1.0 lb",
+                        "adjustmentDiscount": "-$13.75",
+                        "tags": [
+                            "Pak"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Priority Overnight",
+                        "billing": "Unknown",
+                        "zone": "9",
+                        "adjustmentDiscount": "-$13.75",
+                        "tags": [
+                            "Pak"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Priority Overnight",
+                        "billing": "Unknown",
+                        "zone": "10-12",
+                        "adjustmentDiscount": "-$13.75",
+                        "tags": [
+                            "Pak"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Priority Overnight",
+                        "billing": "Unknown",
+                        "zone": "13-16",
+                        "adjustmentDiscount": "-$13.75",
+                        "tags": [
+                            "Pak"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Priority Overnight",
+                        "billing": "Unknown",
+                        "zone": "2, 1.0 lb",
+                        "adjustmentDiscount": "-$13.75",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx Priority Overnight",
+                        "billing": "Unknown",
+                        "zone": "9",
+                        "adjustmentDiscount": "-$13.75",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx Priority Overnight",
+                        "billing": "Unknown",
+                        "zone": "10-12",
+                        "adjustmentDiscount": "-$13.75",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx Priority Overnight",
+                        "billing": "Unknown",
+                        "zone": "13-16",
+                        "adjustmentDiscount": "-$13.75",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx Standard Overnight",
+                        "billing": "Unknown",
+                        "zone": "2, Envelope",
+                        "adjustmentDiscount": "-$10.25",
+                        "tags": [
+                            "Envelope"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Standard Overnight",
+                        "billing": "Unknown",
+                        "zone": "9",
+                        "adjustmentDiscount": "-$10.25",
+                        "tags": [
+                            "Envelope"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Standard Overnight",
+                        "billing": "Unknown",
+                        "zone": "10-12",
+                        "adjustmentDiscount": null,
+                        "tags": [
+                            "Envelope"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Standard Overnight",
+                        "billing": "Unknown",
+                        "zone": "13-16",
+                        "adjustmentDiscount": "-$10.25",
+                        "tags": [
+                            "Envelope"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Standard Overnight",
+                        "billing": "Unknown",
+                        "zone": "2, 1.0 lb",
+                        "adjustmentDiscount": "-$11.90",
+                        "tags": [
+                            "Pak"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Standard Overnight",
+                        "billing": "Unknown",
+                        "zone": "9",
+                        "adjustmentDiscount": "-$11.90",
+                        "tags": [
+                            "Pak"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Standard Overnight",
+                        "billing": "Unknown",
+                        "zone": "10-12",
+                        "adjustmentDiscount": null,
+                        "tags": [
+                            "Pak"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Standard Overnight",
+                        "billing": "Unknown",
+                        "zone": "13-16",
+                        "adjustmentDiscount": "-$11.90",
+                        "tags": [
+                            "Pak"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Standard Overnight",
+                        "billing": "Unknown",
+                        "zone": "2, 1.0 lb",
+                        "adjustmentDiscount": "-$11.90",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx Standard Overnight",
+                        "billing": "Unknown",
+                        "zone": "9",
+                        "adjustmentDiscount": "-$11.90",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx Standard Overnight",
+                        "billing": "Unknown",
+                        "zone": "10-12",
+                        "adjustmentDiscount": null,
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx Standard Overnight",
+                        "billing": "Unknown",
+                        "zone": "13-16",
+                        "adjustmentDiscount": "-$11.90",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx 2Day A.M.",
+                        "billing": "Unknown",
+                        "zone": "2, Envelope",
+                        "adjustmentDiscount": "-$5.80",
+                        "tags": [
+                            "Envelope"
+                        ]
+                    },
+                    {
+                        "service": "FedEx 2Day A.M.",
+                        "billing": "Unknown",
+                        "zone": "9",
+                        "adjustmentDiscount": "-$5.80",
+                        "tags": [
+                            "Envelope"
+                        ]
+                    },
+                    {
+                        "service": "FedEx 2Day A.M.",
+                        "billing": "Unknown",
+                        "zone": "10-12",
+                        "adjustmentDiscount": null,
+                        "tags": [
+                            "Envelope"
+                        ]
+                    },
+                    {
+                        "service": "FedEx 2Day A.M.",
+                        "billing": "Unknown",
+                        "zone": "13-16",
+                        "adjustmentDiscount": "-$5.80",
+                        "tags": [
+                            "Envelope"
+                        ]
+                    },
+                    {
+                        "service": "FedEx 2Day A.M.",
+                        "billing": "Unknown",
+                        "zone": "2, 1.0 lb",
+                        "adjustmentDiscount": "-$6.30",
+                        "tags": [
+                            "Pak"
+                        ]
+                    },
+                    {
+                        "service": "FedEx 2Day A.M.",
+                        "billing": "Unknown",
+                        "zone": "9",
+                        "adjustmentDiscount": "-$6.30",
+                        "tags": [
+                            "Pak"
+                        ]
+                    },
+                    {
+                        "service": "FedEx 2Day A.M.",
+                        "billing": "Unknown",
+                        "zone": "10-12",
+                        "adjustmentDiscount": null,
+                        "tags": [
+                            "Pak"
+                        ]
+                    },
+                    {
+                        "service": "FedEx 2Day A.M.",
+                        "billing": "Unknown",
+                        "zone": "13-16",
+                        "adjustmentDiscount": "-$6.30",
+                        "tags": [
+                            "Pak"
+                        ]
+                    },
+                    {
+                        "service": "FedEx 2Day A.M.",
+                        "billing": "Unknown",
+                        "zone": "2, 1.0 lb",
+                        "adjustmentDiscount": "-$6.30",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx 2Day A.M.",
+                        "billing": "Unknown",
+                        "zone": "9",
+                        "adjustmentDiscount": "-$6.30",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx 2Day A.M.",
+                        "billing": "Unknown",
+                        "zone": "10-12",
+                        "adjustmentDiscount": null,
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx 2Day A.M.",
+                        "billing": "Unknown",
+                        "zone": "13-16",
+                        "adjustmentDiscount": "-$6.30",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx 2Day Envelope",
+                        "billing": "Unknown",
+                        "zone": "2, Envelope",
+                        "adjustmentDiscount": "-$5.50",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx 2Day Envelope",
+                        "billing": "Unknown",
+                        "zone": "9",
+                        "adjustmentDiscount": "-$5.50",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx 2Day Envelope",
+                        "billing": "Unknown",
+                        "zone": "10-12",
+                        "adjustmentDiscount": "-$5.50",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx 2Day Envelope",
+                        "billing": "Unknown",
+                        "zone": "13-16",
+                        "adjustmentDiscount": "-$5.50",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx International Priority",
+                        "billing": "Unknown",
+                        "zone": "A",
+                        "adjustmentDiscount": "23.16",
+                        "tags": [
+                            "Envelope",
+                            "Export"
+                        ]
+                    },
+                    {
+                        "service": "FedEx International Priority",
+                        "billing": "Unknown",
+                        "zone": "B",
+                        "adjustmentDiscount": "24.00",
+                        "tags": [
+                            "Envelope",
+                            "Export"
+                        ]
+                    },
+                    {
+                        "service": "FedEx International Priority",
+                        "billing": "Unknown",
+                        "zone": "C",
+                        "adjustmentDiscount": "23.55",
+                        "tags": [
+                            "Envelope",
+                            "Export"
+                        ]
+                    },
+                    {
+                        "service": "FedEx International Priority",
+                        "billing": "Unknown",
+                        "zone": "D",
+                        "adjustmentDiscount": "25.62",
+                        "tags": [
+                            "Envelope",
+                            "Export"
+                        ]
+                    },
+                    {
+                        "service": "FedEx International Priority",
+                        "billing": "Unknown",
+                        "zone": "E",
+                        "adjustmentDiscount": "60.05",
+                        "tags": [
+                            "Envelope",
+                            "Export"
+                        ]
+                    },
+                    {
+                        "service": "FedEx International Priority",
+                        "billing": "Unknown",
+                        "zone": "F",
+                        "adjustmentDiscount": "26.47",
+                        "tags": [
+                            "Envelope",
+                            "Export"
+                        ]
+                    },
+                    {
+                        "service": "FedEx International Priority",
+                        "billing": "Unknown",
+                        "zone": "G",
+                        "adjustmentDiscount": "26.60",
+                        "tags": [
+                            "Envelope",
+                            "Export"
+                        ]
+                    },
+                    {
+                        "service": "FedEx International Priority",
+                        "billing": "Unknown",
+                        "zone": "H",
+                        "adjustmentDiscount": "29.38",
+                        "tags": [
+                            "Envelope",
+                            "Export"
+                        ]
+                    },
+                    {
+                        "service": "FedEx International Priority",
+                        "billing": "Unknown",
+                        "zone": "A",
+                        "adjustmentDiscount": "23.17",
+                        "tags": [
+                            "Pak",
+                            "Export"
+                        ]
+                    },
+                    {
+                        "service": "FedEx International Priority",
+                        "billing": "Unknown",
+                        "zone": "B",
+                        "adjustmentDiscount": "23.56",
+                        "tags": [
+                            "Pak",
+                            "Export"
+                        ]
+                    },
+                    {
+                        "service": "FedEx International Priority",
+                        "billing": "Unknown",
+                        "zone": "C",
+                        "adjustmentDiscount": "26.16",
+                        "tags": [
+                            "Pak",
+                            "Export"
+                        ]
+                    },
+                    {
+                        "service": "FedEx International Priority",
+                        "billing": "Unknown",
+                        "zone": "D",
+                        "adjustmentDiscount": "31.80",
+                        "tags": [
+                            "Pak",
+                            "Export"
+                        ]
+                    },
+                    {
+                        "service": "FedEx International Priority",
+                        "billing": "Unknown",
+                        "zone": "E",
+                        "adjustmentDiscount": "70.18",
+                        "tags": [
+                            "Pak",
+                            "Export"
+                        ]
+                    },
+                    {
+                        "service": "FedEx International Priority",
+                        "billing": "Unknown",
+                        "zone": "F",
+                        "adjustmentDiscount": "33.29",
+                        "tags": [
+                            "Pak",
+                            "Export"
+                        ]
+                    },
+                    {
+                        "service": "FedEx International Priority",
+                        "billing": "Unknown",
+                        "zone": "G",
+                        "adjustmentDiscount": "33.23",
+                        "tags": [
+                            "Pak",
+                            "Export"
+                        ]
+                    },
+                    {
+                        "service": "FedEx International Priority",
+                        "billing": "Unknown",
+                        "zone": "H",
+                        "adjustmentDiscount": "38.82",
+                        "tags": [
+                            "Pak",
+                            "Export"
+                        ]
+                    },
+                    {
+                        "service": "FedEx International Priority",
+                        "billing": "Unknown",
+                        "zone": "A",
+                        "adjustmentDiscount": "26.71",
+                        "tags": [
+                            "Export"
+                        ]
+                    },
+                    {
+                        "service": "FedEx International Priority",
+                        "billing": "Unknown",
+                        "zone": "B",
+                        "adjustmentDiscount": "25.86",
+                        "tags": [
+                            "Export"
+                        ]
+                    },
+                    {
+                        "service": "FedEx International Priority",
+                        "billing": "Unknown",
+                        "zone": "C",
+                        "adjustmentDiscount": "27.68",
+                        "tags": [
+                            "Export"
+                        ]
+                    },
+                    {
+                        "service": "FedEx International Priority",
+                        "billing": "Unknown",
+                        "zone": "D",
+                        "adjustmentDiscount": "34.71",
+                        "tags": [
+                            "Export"
+                        ]
+                    },
+                    {
+                        "service": "FedEx International Priority",
+                        "billing": "Unknown",
+                        "zone": "E",
+                        "adjustmentDiscount": "78.34",
+                        "tags": [
+                            "Export"
+                        ]
+                    },
+                    {
+                        "service": "FedEx International Priority",
+                        "billing": "Unknown",
+                        "zone": "F",
+                        "adjustmentDiscount": "36.90",
+                        "tags": [
+                            "Export"
+                        ]
+                    },
+                    {
+                        "service": "FedEx International Priority",
+                        "billing": "Unknown",
+                        "zone": "G",
+                        "adjustmentDiscount": "36.37",
+                        "tags": [
+                            "Export"
+                        ]
+                    },
+                    {
+                        "service": "FedEx International Priority",
+                        "billing": "Unknown",
+                        "zone": "H",
+                        "adjustmentDiscount": "44.83",
+                        "tags": [
+                            "Export"
+                        ]
+                    },
+                    {
+                        "service": "FedEx International Economy",
+                        "billing": "Unknown",
+                        "zone": "A",
+                        "adjustmentDiscount": "21.60",
+                        "tags": [
+                            "Export"
+                        ]
+                    },
+                    {
+                        "service": "FedEx International Economy",
+                        "billing": "Unknown",
+                        "zone": "B",
+                        "adjustmentDiscount": "24.14",
+                        "tags": [
+                            "Export"
+                        ]
+                    },
+                    {
+                        "service": "FedEx International Economy",
+                        "billing": "Unknown",
+                        "zone": "C",
+                        "adjustmentDiscount": "23.28",
+                        "tags": [
+                            "Export"
+                        ]
+                    },
+                    {
+                        "service": "FedEx International Economy",
+                        "billing": "Unknown",
+                        "zone": "D",
+                        "adjustmentDiscount": "25.68",
+                        "tags": [
+                            "Export"
+                        ]
+                    },
+                    {
+                        "service": "FedEx International Economy",
+                        "billing": "Unknown",
+                        "zone": "E",
+                        "adjustmentDiscount": "62.88",
+                        "tags": [
+                            "Export"
+                        ]
+                    },
+                    {
+                        "service": "FedEx International Economy",
+                        "billing": "Unknown",
+                        "zone": "F",
+                        "adjustmentDiscount": "24.63",
+                        "tags": [
+                            "Export"
+                        ]
+                    },
+                    {
+                        "service": "FedEx International Economy",
+                        "billing": "Unknown",
+                        "zone": "G",
+                        "adjustmentDiscount": "24.69",
+                        "tags": [
+                            "Export"
+                        ]
+                    },
+                    {
+                        "service": "FedEx International Economy",
+                        "billing": "Unknown",
+                        "zone": "H",
+                        "adjustmentDiscount": "35.93",
+                        "tags": [
+                            "Export"
+                        ]
+                    },
+                    {
+                        "service": "FedEx International Priority",
+                        "billing": "Unknown",
+                        "zone": "A",
+                        "adjustmentDiscount": "14.60",
+                        "tags": [
+                            "Envelope",
+                            "Third",
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "FedEx International Priority",
+                        "billing": "Unknown",
+                        "zone": "B",
+                        "adjustmentDiscount": "21.46",
+                        "tags": [
+                            "Envelope",
+                            "Third",
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "FedEx International Priority",
+                        "billing": "Unknown",
+                        "zone": "C",
+                        "adjustmentDiscount": "22.88",
+                        "tags": [
+                            "Envelope",
+                            "Third",
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "FedEx International Priority",
+                        "billing": "Unknown",
+                        "zone": "D",
+                        "adjustmentDiscount": "22.98",
+                        "tags": [
+                            "Envelope",
+                            "Third",
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "FedEx International Priority",
+                        "billing": "Unknown",
+                        "zone": "E",
+                        "adjustmentDiscount": "28.22",
+                        "tags": [
+                            "Envelope",
+                            "Third",
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "FedEx International Priority",
+                        "billing": "Unknown",
+                        "zone": "F",
+                        "adjustmentDiscount": "27.42",
+                        "tags": [
+                            "Envelope",
+                            "Third",
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "FedEx International Priority",
+                        "billing": "Unknown",
+                        "zone": "G",
+                        "adjustmentDiscount": "25.28",
+                        "tags": [
+                            "Envelope",
+                            "Third",
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "FedEx International Priority",
+                        "billing": "Unknown",
+                        "zone": "H",
+                        "adjustmentDiscount": "26.80",
+                        "tags": [
+                            "Envelope",
+                            "Third",
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Priority Pak",
+                        "billing": "Unknown",
+                        "zone": "A",
+                        "adjustmentDiscount": "20.21",
+                        "tags": [
+                            "Third",
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Priority Pak",
+                        "billing": "Unknown",
+                        "zone": "B",
+                        "adjustmentDiscount": "29.70",
+                        "tags": [
+                            "Third",
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Priority Pak",
+                        "billing": "Unknown",
+                        "zone": "C",
+                        "adjustmentDiscount": "31.68",
+                        "tags": [
+                            "Third",
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Priority Pak",
+                        "billing": "Unknown",
+                        "zone": "D",
+                        "adjustmentDiscount": "31.80",
+                        "tags": [
+                            "Third",
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Priority Pak",
+                        "billing": "Unknown",
+                        "zone": "E",
+                        "adjustmentDiscount": "39.06",
+                        "tags": [
+                            "Third",
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Priority Pak",
+                        "billing": "Unknown",
+                        "zone": "F",
+                        "adjustmentDiscount": "37.96",
+                        "tags": [
+                            "Third",
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Priority Pak",
+                        "billing": "Unknown",
+                        "zone": "G",
+                        "adjustmentDiscount": "35.01",
+                        "tags": [
+                            "Third",
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Priority Pak",
+                        "billing": "Unknown",
+                        "zone": "H",
+                        "adjustmentDiscount": "37.11",
+                        "tags": [
+                            "Third",
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Priority Third",
+                        "billing": "Unknown",
+                        "zone": "A",
+                        "adjustmentDiscount": "22.46",
+                        "tags": [
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Priority Third",
+                        "billing": "Unknown",
+                        "zone": "B",
+                        "adjustmentDiscount": "33.00",
+                        "tags": [
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Priority Third",
+                        "billing": "Unknown",
+                        "zone": "C",
+                        "adjustmentDiscount": "35.20",
+                        "tags": [
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Priority Third",
+                        "billing": "Unknown",
+                        "zone": "D",
+                        "adjustmentDiscount": "35.34",
+                        "tags": [
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Priority Third",
+                        "billing": "Unknown",
+                        "zone": "E",
+                        "adjustmentDiscount": "43.40",
+                        "tags": [
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Priority Third",
+                        "billing": "Unknown",
+                        "zone": "F",
+                        "adjustmentDiscount": "42.17",
+                        "tags": [
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Priority Third",
+                        "billing": "Unknown",
+                        "zone": "G",
+                        "adjustmentDiscount": "38.90",
+                        "tags": [
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Priority Third",
+                        "billing": "Unknown",
+                        "zone": "H",
+                        "adjustmentDiscount": "41.23",
+                        "tags": [
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Economy Third",
+                        "billing": "Unknown",
+                        "zone": "A",
+                        "adjustmentDiscount": "21.33",
+                        "tags": [
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Economy Third",
+                        "billing": "Unknown",
+                        "zone": "B",
+                        "adjustmentDiscount": "31.35",
+                        "tags": [
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Economy Third",
+                        "billing": "Unknown",
+                        "zone": "C",
+                        "adjustmentDiscount": "33.44",
+                        "tags": [
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Economy Third",
+                        "billing": "Unknown",
+                        "zone": "D",
+                        "adjustmentDiscount": "33.57",
+                        "tags": [
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Economy Third",
+                        "billing": "Unknown",
+                        "zone": "E",
+                        "adjustmentDiscount": "41.23",
+                        "tags": [
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Economy Third",
+                        "billing": "Unknown",
+                        "zone": "F",
+                        "adjustmentDiscount": "40.06",
+                        "tags": [
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Economy Third",
+                        "billing": "Unknown",
+                        "zone": "G",
+                        "adjustmentDiscount": "36.96",
+                        "tags": [
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Economy Third",
+                        "billing": "Unknown",
+                        "zone": "H",
+                        "adjustmentDiscount": "39.17",
+                        "tags": [
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Priority Envelope",
+                        "billing": "Unknown",
+                        "zone": "J",
+                        "adjustmentDiscount": "31.96",
+                        "tags": [
+                            "Third",
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Priority Envelope",
+                        "billing": "Unknown",
+                        "zone": "K",
+                        "adjustmentDiscount": "31.02",
+                        "tags": [
+                            "Third",
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Priority Envelope",
+                        "billing": "Unknown",
+                        "zone": "L",
+                        "adjustmentDiscount": "35.66",
+                        "tags": [
+                            "Third",
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Priority Envelope",
+                        "billing": "Unknown",
+                        "zone": "M",
+                        "adjustmentDiscount": "38.82",
+                        "tags": [
+                            "Third",
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Priority Envelope",
+                        "billing": "Unknown",
+                        "zone": "N",
+                        "adjustmentDiscount": "37.04",
+                        "tags": [
+                            "Third",
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Priority Envelope",
+                        "billing": "Unknown",
+                        "zone": "O",
+                        "adjustmentDiscount": "44.34",
+                        "tags": [
+                            "Third",
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Priority Envelope",
+                        "billing": "Unknown",
+                        "zone": "P",
+                        "adjustmentDiscount": "47.70",
+                        "tags": [
+                            "Third",
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Priority Envelope",
+                        "billing": "Unknown",
+                        "zone": "I",
+                        "adjustmentDiscount": "61.16",
+                        "tags": [
+                            "Third",
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Priority Pak",
+                        "billing": "Unknown",
+                        "zone": "J",
+                        "adjustmentDiscount": "44.26",
+                        "tags": [
+                            "Third",
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Priority Pak",
+                        "billing": "Unknown",
+                        "zone": "K",
+                        "adjustmentDiscount": "42.94",
+                        "tags": [
+                            "Third",
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Priority Pak",
+                        "billing": "Unknown",
+                        "zone": "L",
+                        "adjustmentDiscount": "49.38",
+                        "tags": [
+                            "Third",
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Priority Pak",
+                        "billing": "Unknown",
+                        "zone": "M",
+                        "adjustmentDiscount": "53.76",
+                        "tags": [
+                            "Third",
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Priority Pak",
+                        "billing": "Unknown",
+                        "zone": "N",
+                        "adjustmentDiscount": "51.28",
+                        "tags": [
+                            "Third",
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Priority Pak",
+                        "billing": "Unknown",
+                        "zone": "O",
+                        "adjustmentDiscount": "61.41",
+                        "tags": [
+                            "Third",
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Priority Pak",
+                        "billing": "Unknown",
+                        "zone": "P",
+                        "adjustmentDiscount": "66.06",
+                        "tags": [
+                            "Third",
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Priority Pak",
+                        "billing": "Unknown",
+                        "zone": "I",
+                        "adjustmentDiscount": "84.69",
+                        "tags": [
+                            "Third",
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Priority Third",
+                        "billing": "Unknown",
+                        "zone": "J",
+                        "adjustmentDiscount": "49.18",
+                        "tags": [
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Priority Third",
+                        "billing": "Unknown",
+                        "zone": "K",
+                        "adjustmentDiscount": "47.71",
+                        "tags": [
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Priority Third",
+                        "billing": "Unknown",
+                        "zone": "L",
+                        "adjustmentDiscount": "54.87",
+                        "tags": [
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Priority Third",
+                        "billing": "Unknown",
+                        "zone": "M",
+                        "adjustmentDiscount": "59.73",
+                        "tags": [
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Priority Third",
+                        "billing": "Unknown",
+                        "zone": "N",
+                        "adjustmentDiscount": "56.98",
+                        "tags": [
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Priority Third",
+                        "billing": "Unknown",
+                        "zone": "O",
+                        "adjustmentDiscount": "68.23",
+                        "tags": [
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Priority Third",
+                        "billing": "Unknown",
+                        "zone": "P",
+                        "adjustmentDiscount": "73.40",
+                        "tags": [
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Priority Third",
+                        "billing": "Unknown",
+                        "zone": "I",
+                        "adjustmentDiscount": "94.10",
+                        "tags": [
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Economy Third",
+                        "billing": "Unknown",
+                        "zone": "J",
+                        "adjustmentDiscount": "46.72",
+                        "tags": [
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Economy Third",
+                        "billing": "Unknown",
+                        "zone": "K",
+                        "adjustmentDiscount": "45.33",
+                        "tags": [
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Economy Third",
+                        "billing": "Unknown",
+                        "zone": "L",
+                        "adjustmentDiscount": "52.12",
+                        "tags": [
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Economy Third",
+                        "billing": "Unknown",
+                        "zone": "M",
+                        "adjustmentDiscount": "56.74",
+                        "tags": [
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Economy Third",
+                        "billing": "Unknown",
+                        "zone": "N",
+                        "adjustmentDiscount": "54.14",
+                        "tags": [
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Economy Third",
+                        "billing": "Unknown",
+                        "zone": "O",
+                        "adjustmentDiscount": "64.82",
+                        "tags": [
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Economy Third",
+                        "billing": "Unknown",
+                        "zone": "P",
+                        "adjustmentDiscount": "69.73",
+                        "tags": [
+                            "Party"
+                        ]
+                    },
+                    {
+                        "service": "International Economy Third",
+                        "billing": "Unknown",
+                        "zone": "I",
+                        "adjustmentDiscount": "89.39",
+                        "tags": [
+                            "Party"
+                        ]
+                    }
+                ],
+                "notes": [
+                    "Extracted 10 minimum net charge tables. 4 minimum net charge tables remaining.",
+                    "Effective Date: January 7, 2019\nMinimums are expressed in USD($).",
+                    "Effective Date: January 7, 2019\nMinimums are expressed in USD($)."
+                ],
+                "validityPeriod": {
+                    "startDate": "January 7, 2019",
+                    "endDate": null
+                }
+            }
+        },
+        {
+            "title": "Service Adjustment",
+            "tableData": {
+                "headers": [
+                    "service",
+                    "minimumPer",
+                    "zone",
+                    "baseRate",
+                    "adjustment",
+                    "currency",
+                    "tags"
+                ],
+                "rows": [
+                    {
+                        "service": "FedEx Priority Overnight Envelope",
+                        "minimumPer": "Zone 2, Envelope",
+                        "zone": "2-8",
+                        "baseRate": "$10.50",
+                        "adjustment": "$10.50",
+                        "currency": "USD",
+                        "tags": [
+                            "Domestic",
+                            "Express"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Priority Overnight Pak",
+                        "minimumPer": "Zone 2, 1.0 lb",
+                        "zone": "2-8",
+                        "baseRate": "$13.75",
+                        "adjustment": "$13.75",
+                        "currency": "USD",
+                        "tags": [
+                            "Domestic",
+                            "Express"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Priority Overnight",
+                        "minimumPer": "Zone 2, 1.0 lb",
+                        "zone": "2-8",
+                        "baseRate": "$13.75",
+                        "adjustment": "$13.75",
+                        "currency": "USD",
+                        "tags": [
+                            "Domestic",
+                            "Express"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Standard Overnight Envelope",
+                        "minimumPer": "Zone 2, Envelope",
+                        "zone": "2-8",
+                        "baseRate": "$10.25",
+                        "adjustment": "$10.25",
+                        "currency": "USD",
+                        "tags": [
+                            "Domestic",
+                            "Express"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Standard Overnight Pak",
+                        "minimumPer": "Zone 2, 1.0 lb",
+                        "zone": "2-8",
+                        "baseRate": "$11.90",
+                        "adjustment": "$11.90",
+                        "currency": "USD",
+                        "tags": [
+                            "Domestic",
+                            "Express"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Standard Overnight",
+                        "minimumPer": "Zone 2, 1.0 lb",
+                        "zone": "2-8",
+                        "baseRate": "$11.90",
+                        "adjustment": "$11.90",
+                        "currency": "USD",
+                        "tags": [
+                            "Domestic",
+                            "Express"
+                        ]
+                    },
+                    {
+                        "service": "FedEx 2Day A.M. Envelope",
+                        "minimumPer": "Zone 2, Envelope",
+                        "zone": "2-8",
+                        "baseRate": "$5.80",
+                        "adjustment": "$5.80",
+                        "currency": "USD",
+                        "tags": [
+                            "Domestic",
+                            "Express"
+                        ]
+                    },
+                    {
+                        "service": "FedEx 2Day A.M. Pak",
+                        "minimumPer": "Zone 2, 1.0 lb",
+                        "zone": "2-8",
+                        "baseRate": "$6.30",
+                        "adjustment": "$6.30",
+                        "currency": "USD",
+                        "tags": [
+                            "Domestic",
+                            "Express"
+                        ]
+                    },
+                    {
+                        "service": "FedEx 2Day A.M.",
+                        "minimumPer": "Zone 2, 1.0 lb",
+                        "zone": "2-8",
+                        "baseRate": "$6.30",
+                        "adjustment": "$6.30",
+                        "currency": "USD",
+                        "tags": [
+                            "Domestic",
+                            "Express"
+                        ]
+                    },
+                    {
+                        "service": "FedEx 2Day Envelope",
+                        "minimumPer": "Zone 2, Envelope",
+                        "zone": "2-8",
+                        "baseRate": "$5.50",
+                        "adjustment": "$5.50",
+                        "currency": "USD",
+                        "tags": [
+                            "Domestic",
+                            "Express"
+                        ]
+                    },
+                    {
+                        "service": "FedEx 2Day Pak",
+                        "minimumPer": "Zone 2, 1.0 lb",
+                        "zone": "2-8",
+                        "baseRate": "$5.45",
+                        "adjustment": "$5.45",
+                        "currency": "USD",
+                        "tags": [
+                            "Domestic",
+                            "Express"
+                        ]
+                    },
+                    {
+                        "service": "FedEx 2Day",
+                        "minimumPer": "Zone 2, 1.0 lb",
+                        "zone": "2-8",
+                        "baseRate": "$5.45",
+                        "adjustment": "$5.45",
+                        "currency": "USD",
+                        "tags": [
+                            "Domestic",
+                            "Express"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Express Saver Envelope",
+                        "minimumPer": "Zone 2, Envelope",
+                        "zone": "2-8",
+                        "baseRate": "$4.80",
+                        "adjustment": null,
+                        "currency": "USD",
+                        "tags": [
+                            "Domestic",
+                            "Express"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Express Saver Pak",
+                        "minimumPer": "Zone 2, 1.0 lb",
+                        "zone": "2-8",
+                        "baseRate": "$4.80",
+                        "adjustment": null,
+                        "currency": "USD",
+                        "tags": [
+                            "Domestic",
+                            "Express"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Express Saver",
+                        "minimumPer": "Zone 2, 1.0 lb",
+                        "zone": "2-8",
+                        "baseRate": "$4.80",
+                        "adjustment": null,
+                        "currency": "USD",
+                        "tags": [
+                            "Domestic",
+                            "Express"
+                        ]
+                    }
+                ],
+                "notes": [
+                    "Minimum charges are subject to change with any increase in applicable base rate during the time period of the Agreement.",
+                    "The following reductions are off the published list rates for the billable weight stated and are in USD($)"
+                ],
+                "validityPeriod": {
+                    "startDate": "Effective Date",
+                    "endDate": "Does Not Expire"
+                }
+            }
+        },
+        {
+            "title": "Electronic PLD Bonus",
+            "found": false,
+            "message": "No Electronic PLD Bonus information found in the document"
+        }
+    ]
+}

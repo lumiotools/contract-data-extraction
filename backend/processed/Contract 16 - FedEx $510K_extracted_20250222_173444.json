@@ -1,0 +1,1611 @@
+{
+    "details": {
+        "carrier": "FedEx",
+        "eligible_accounts": [
+            {
+                "account_number": "488156051",
+                "name": "KURIYAMA HOLDINGS CORPORATION",
+                "address": "Not available from the document",
+                "zip": "Not available from the document",
+                "commodity_tier": "Not available from the document"
+            }
+        ]
+    },
+    "tables": [
+        {
+            "title": "Incentives off effective rate",
+            "tableData": {
+                "headers": [
+                    "service",
+                    "billing",
+                    "zone",
+                    "weight",
+                    "weightUnit",
+                    "discount",
+                    "tags",
+                    "destination"
+                ],
+                "rows": [
+                    {
+                        "service": "FedEx Priority Overnight Envelope",
+                        "billing": "Prepaid, Collect, 3rd Party",
+                        "zone": "All Zones",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "0%",
+                        "tags": [
+                            "Priority Overnight",
+                            "Envelope"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx Priority Overnight Pak",
+                        "billing": "Prepaid, Collect, 3rd Party",
+                        "zone": "All Zones",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "0%",
+                        "tags": [
+                            "Priority Overnight",
+                            "Pak"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx Priority Overnight",
+                        "billing": "Prepaid, Collect, 3rd Party",
+                        "zone": "All Zones",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "0%",
+                        "tags": [
+                            "Priority Overnight"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx Standard Overnight Envelope",
+                        "billing": "Prepaid, Collect, 3rd Party",
+                        "zone": "All Zones",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "0%",
+                        "tags": [
+                            "Standard Overnight",
+                            "Envelope"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx Standard Overnight Pak",
+                        "billing": "Prepaid, Collect, 3rd Party",
+                        "zone": "All Zones",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "0%",
+                        "tags": [
+                            "Standard Overnight",
+                            "Pak"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx Standard Overnight",
+                        "billing": "Prepaid, Collect, 3rd Party",
+                        "zone": "All Zones",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "0%",
+                        "tags": [
+                            "Standard Overnight"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx 2Day A.M. Envelope",
+                        "billing": "Prepaid, Collect, 3rd Party",
+                        "zone": "All Zones",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "0%",
+                        "tags": [
+                            "2Day A.M.",
+                            "Envelope"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx Express Saver Envelope",
+                        "billing": "Prepaid, Collect, 3rd Party",
+                        "zone": "All Zones",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "0%",
+                        "tags": [
+                            "Express Saver",
+                            "Envelope"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx 2Day A.M.",
+                        "billing": "Prepaid, Collect, 3rd Party",
+                        "zone": "All Zones",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "0%",
+                        "tags": [
+                            "2Day A.M."
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx 2Day",
+                        "billing": "Prepaid, Collect, 3rd Party",
+                        "zone": "All Zones",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "0%",
+                        "tags": [
+                            "2Day"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx Express Saver",
+                        "billing": "Prepaid, Collect, 3rd Party",
+                        "zone": "All Zones",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "0%",
+                        "tags": [
+                            "Express Saver"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx 1Day Freight",
+                        "billing": "Prepaid, Collect, 3rd Party",
+                        "zone": "All Zones",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "0%",
+                        "tags": [
+                            "1Day",
+                            "Freight"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx 2Day Freight",
+                        "billing": "Prepaid, Collect, 3rd Party",
+                        "zone": "All Zones",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "0%",
+                        "tags": [
+                            "2Day",
+                            "Freight"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx 3Day Freight",
+                        "billing": "Prepaid, Collect, 3rd Party",
+                        "zone": "All Zones",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "0%",
+                        "tags": [
+                            "3Day",
+                            "Freight"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx International Priority Envelope Export",
+                        "billing": "Prepaid, Collect, 3rd Party",
+                        "zone": "All Zones",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "65%",
+                        "tags": [
+                            "International Priority",
+                            "Envelope",
+                            "Export"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx International Priority Pak Export",
+                        "billing": "Prepaid, Collect, 3rd Party",
+                        "zone": "All Zones",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "65%",
+                        "tags": [
+                            "International Priority",
+                            "Pak",
+                            "Export"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx International Priority Export",
+                        "billing": "Prepaid, Collect, 3rd Party",
+                        "zone": "All Zones",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "65%",
+                        "tags": [
+                            "International Priority",
+                            "Export"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx International Economy Export",
+                        "billing": "Prepaid, Collect, 3rd Party",
+                        "zone": "All Zones",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "65%",
+                        "tags": [
+                            "International Economy",
+                            "Export"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx International Priority Freight (ATA) Export",
+                        "billing": "Prepaid, Collect, 3rd Party",
+                        "zone": "All Zones",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "65%",
+                        "tags": [
+                            "International Priority",
+                            "Freight (ATA)",
+                            "Export"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx International Priority Freight Export",
+                        "billing": "Prepaid, Collect, 3rd Party",
+                        "zone": "All Zones",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "65%",
+                        "tags": [
+                            "International Priority",
+                            "Freight",
+                            "Export"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx International Economy Freight (ATA) Export",
+                        "billing": "Prepaid, Collect, 3rd Party",
+                        "zone": "All Zones",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "65%",
+                        "tags": [
+                            "International Economy",
+                            "Freight (ATA)",
+                            "Export"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "FedEx International Economy Freight Export",
+                        "billing": "Prepaid, Collect, 3rd Party",
+                        "zone": "All Zones",
+                        "weight": "All Applicable Weights",
+                        "weightUnit": null,
+                        "discount": "65%",
+                        "tags": [
+                            "International Economy",
+                            "Freight",
+                            "Export"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "Ground Domestic Single Piece (OB, IB, RB,3P)",
+                        "billing": "Prepaid, Collect, 3rd Party",
+                        "zone": "2-8",
+                        "weight": "1.0 - 10.0",
+                        "weightUnit": "lbs",
+                        "discount": "30%",
+                        "tags": [
+                            "Domestic Single Piece"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "Ground Domestic Single Piece (OB, IB, RB,3P)",
+                        "billing": "Prepaid, Collect, 3rd Party",
+                        "zone": "2-8",
+                        "weight": "11.0 - 20.0",
+                        "weightUnit": "lbs",
+                        "discount": "35%",
+                        "tags": [
+                            "Domestic Single Piece"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "Ground Domestic Single Piece (OB, IB, RB,3P)",
+                        "billing": "Prepaid, Collect, 3rd Party",
+                        "zone": "2-8",
+                        "weight": "21.0 - 30.0",
+                        "weightUnit": "lbs",
+                        "discount": "38%",
+                        "tags": [
+                            "Domestic Single Piece"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "Ground Domestic Single Piece (OB, IB, RB,3P)",
+                        "billing": "Prepaid, Collect, 3rd Party",
+                        "zone": "2-8",
+                        "weight": "31.0 +",
+                        "weightUnit": "lbs",
+                        "discount": "42%",
+                        "tags": [
+                            "Domestic Single Piece"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "Ground Domestic Single Piece RM (OB,3P)",
+                        "billing": "Prepaid, 3rd Party",
+                        "zone": "2-8",
+                        "weight": "1.0 - 10.0",
+                        "weightUnit": "lbs",
+                        "discount": "30%",
+                        "tags": [
+                            "Domestic Single Piece",
+                            "Return Manager"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "Ground Domestic Single Piece RM (OB,3P)",
+                        "billing": "Prepaid, 3rd Party",
+                        "zone": "2-8",
+                        "weight": "11.0 - 20.0",
+                        "weightUnit": "lbs",
+                        "discount": "35%",
+                        "tags": [
+                            "Domestic Single Piece",
+                            "Return Manager"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "Ground Domestic Single Piece RM (OB,3P)",
+                        "billing": "Prepaid, 3rd Party",
+                        "zone": "2-8",
+                        "weight": "21.0 - 30.0",
+                        "weightUnit": "lbs",
+                        "discount": "38%",
+                        "tags": [
+                            "Domestic Single Piece",
+                            "Return Manager"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "Ground Domestic Single Piece RM (OB,3P)",
+                        "billing": "Prepaid, 3rd Party",
+                        "zone": "2-8",
+                        "weight": "31.0 +",
+                        "weightUnit": "lbs",
+                        "discount": "42%",
+                        "tags": [
+                            "Domestic Single Piece",
+                            "Return Manager"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "Home Delivery Domestic Single Piece (OB,3P)",
+                        "billing": "Prepaid, 3rd Party",
+                        "zone": "2-8",
+                        "weight": "1.0 - 10.0",
+                        "weightUnit": "lbs",
+                        "discount": "15%",
+                        "tags": [
+                            "Home Delivery",
+                            "Domestic Single Piece"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "Home Delivery Domestic Single Piece (OB,3P)",
+                        "billing": "Prepaid, 3rd Party",
+                        "zone": "2-8",
+                        "weight": "11.0 - 30.0",
+                        "weightUnit": "lbs",
+                        "discount": "20%",
+                        "tags": [
+                            "Home Delivery",
+                            "Domestic Single Piece"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "Home Delivery Domestic Single Piece (OB,3P)",
+                        "billing": "Prepaid, 3rd Party",
+                        "zone": "2-8",
+                        "weight": "31.0 +",
+                        "weightUnit": "lbs",
+                        "discount": "25%",
+                        "tags": [
+                            "Home Delivery",
+                            "Domestic Single Piece"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "Ground Domestic Single Piece (OB, IB, RB,3P)",
+                        "billing": "Prepaid, Collect, 3rd Party",
+                        "zone": "9",
+                        "weight": "1.0 - 20.0",
+                        "weightUnit": "lbs",
+                        "discount": "15%",
+                        "tags": [
+                            "Domestic Single Piece"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "Ground Domestic Single Piece (OB, IB, RB,3P)",
+                        "billing": "Prepaid, Collect, 3rd Party",
+                        "zone": "9",
+                        "weight": "21.0 +",
+                        "weightUnit": "lbs",
+                        "discount": "20%",
+                        "tags": [
+                            "Domestic Single Piece"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "Ground Domestic Single Piece (OB, IB, RB,3P)",
+                        "billing": "Prepaid, Collect, 3rd Party",
+                        "zone": "17",
+                        "weight": "1.0 - 20.0",
+                        "weightUnit": "lbs",
+                        "discount": "15%",
+                        "tags": [
+                            "Domestic Single Piece"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "Ground Domestic Single Piece (OB, IB, RB,3P)",
+                        "billing": "Prepaid, Collect, 3rd Party",
+                        "zone": "17",
+                        "weight": "21.0 +",
+                        "weightUnit": "lbs",
+                        "discount": "20%",
+                        "tags": [
+                            "Domestic Single Piece"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "Ground International Single Piece (3P)",
+                        "billing": "3rd Party",
+                        "zone": "51",
+                        "weight": "1.0 - 20.0",
+                        "weightUnit": "lbs",
+                        "discount": "15%",
+                        "tags": [
+                            "International Single Piece"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "Ground International Single Piece (3P)",
+                        "billing": "3rd Party",
+                        "zone": "54",
+                        "weight": "1.0 - 20.0",
+                        "weightUnit": "lbs",
+                        "discount": "15%",
+                        "tags": [
+                            "International Single Piece"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "Ground International Single Piece (3P)",
+                        "billing": "3rd Party",
+                        "zone": "51",
+                        "weight": "21.0 +",
+                        "weightUnit": "lbs",
+                        "discount": "20%",
+                        "tags": [
+                            "International Single Piece"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "Ground International Single Piece (3P)",
+                        "billing": "3rd Party",
+                        "zone": "54",
+                        "weight": "21.0 +",
+                        "weightUnit": "lbs",
+                        "discount": "20%",
+                        "tags": [
+                            "International Single Piece"
+                        ],
+                        "destination": null
+                    },
+                    {
+                        "service": "LTL US Domestic Economy",
+                        "billing": "Prepaid, Collect, 3rd Party",
+                        "zone": "Points in Zone A of the FXF A-D Zone Matrix eff 12/1/12",
+                        "weight": null,
+                        "weightUnit": null,
+                        "discount": "81.2%",
+                        "tags": [
+                            "LTL",
+                            "Domestic Economy"
+                        ],
+                        "destination": "All Points in the Contiguous US"
+                    },
+                    {
+                        "service": "LTL US Domestic Economy",
+                        "billing": "Prepaid, Collect, 3rd Party",
+                        "zone": "Points in Zone B of the FXF A-D Zone Matrix eff 12/1/12",
+                        "weight": null,
+                        "weightUnit": null,
+                        "discount": "80.9%",
+                        "tags": [
+                            "LTL",
+                            "Domestic Economy"
+                        ],
+                        "destination": "All Points in the Contiguous US"
+                    },
+                    {
+                        "service": "LTL US Domestic Economy",
+                        "billing": "Prepaid, Collect, 3rd Party",
+                        "zone": "Points in Zone C of the FXF A-D Zone Matrix eff 12/1/12",
+                        "weight": null,
+                        "weightUnit": null,
+                        "discount": "80.7%",
+                        "tags": [
+                            "LTL",
+                            "Domestic Economy"
+                        ],
+                        "destination": "All Points in the Contiguous US"
+                    },
+                    {
+                        "service": "LTL US Domestic Economy",
+                        "billing": "Prepaid, Collect, 3rd Party",
+                        "zone": "Points in Zone D of the FXF A-D Zone Matrix eff 12/1/12",
+                        "weight": null,
+                        "weightUnit": null,
+                        "discount": "80.5%",
+                        "tags": [
+                            "LTL",
+                            "Domestic Economy"
+                        ],
+                        "destination": "All Points in the Contiguous US"
+                    },
+                    {
+                        "service": "LTL US Domestic Economy",
+                        "billing": "Prepaid, Collect, 3rd Party",
+                        "zone": "All Points in the States of FL, ME, ND, NH, OR, SD, VT, WA",
+                        "weight": null,
+                        "weightUnit": null,
+                        "discount": "79.2%",
+                        "tags": [
+                            "LTL",
+                            "Domestic Economy"
+                        ],
+                        "destination": "All Points in the Contiguous US"
+                    },
+                    {
+                        "service": "LTL US Domestic Priority",
+                        "billing": "Prepaid, Collect, 3rd Party",
+                        "zone": "Points in Zone A of the FXF A-D Zone Matrix eff 12/1/12",
+                        "weight": null,
+                        "weightUnit": null,
+                        "discount": "81.1%",
+                        "tags": [
+                            "LTL",
+                            "Domestic Priority"
+                        ],
+                        "destination": "All Points in the Contiguous US"
+                    },
+                    {
+                        "service": "LTL US Domestic Priority",
+                        "billing": "Prepaid, Collect, 3rd Party",
+                        "zone": "Points in Zone B of the FXF A-D Zone Matrix eff 12/1/12",
+                        "weight": null,
+                        "weightUnit": null,
+                        "discount": "80.8%",
+                        "tags": [
+                            "LTL",
+                            "Domestic Priority"
+                        ],
+                        "destination": "All Points in the Contiguous US"
+                    },
+                    {
+                        "service": "LTL US Domestic Priority",
+                        "billing": "Prepaid, Collect, 3rd Party",
+                        "zone": "Points in Zone C of the FXF A-D Zone Matrix eff 12/1/12",
+                        "weight": null,
+                        "weightUnit": null,
+                        "discount": "80.6%",
+                        "tags": [
+                            "LTL",
+                            "Domestic Priority"
+                        ],
+                        "destination": "All Points in the Contiguous US"
+                    },
+                    {
+                        "service": "LTL US Domestic Priority",
+                        "billing": "Prepaid, Collect, 3rd Party",
+                        "zone": "Points in Zone D of the FXF A-D Zone Matrix eff 12/1/12",
+                        "weight": null,
+                        "weightUnit": null,
+                        "discount": "80.4%",
+                        "tags": [
+                            "LTL",
+                            "Domestic Priority"
+                        ],
+                        "destination": "All Points in the Contiguous US"
+                    },
+                    {
+                        "service": "LTL US Domestic Priority",
+                        "billing": "Prepaid, Collect, 3rd Party",
+                        "zone": "All Points in the States of FL, ME, ND, NH, OR, SD, VT, WA",
+                        "weight": null,
+                        "weightUnit": null,
+                        "discount": "79.1%",
+                        "tags": [
+                            "LTL",
+                            "Domestic Priority"
+                        ],
+                        "destination": "All Points in the Contiguous US"
+                    },
+                    {
+                        "service": "LTL US to CA Export Priority",
+                        "billing": "Prepaid, Collect, 3rd Party",
+                        "zone": "All Points in Canada",
+                        "weight": null,
+                        "weightUnit": null,
+                        "discount": "80.8%",
+                        "tags": [
+                            "LTL",
+                            "Export Priority",
+                            "to CA"
+                        ],
+                        "destination": "All Points in the Contiguous US"
+                    },
+                    {
+                        "service": "LTL US to CA Export Economy",
+                        "billing": "Prepaid, Collect, 3rd Party",
+                        "zone": "All Points in Canada",
+                        "weight": null,
+                        "weightUnit": null,
+                        "discount": "80.9%",
+                        "tags": [
+                            "LTL",
+                            "Export Economy",
+                            "to CA"
+                        ],
+                        "destination": "All Points in the Contiguous US"
+                    },
+                    {
+                        "service": "LTL US from CA Import Priority",
+                        "billing": "Collect, 3rd Party",
+                        "zone": "All Points in Canada",
+                        "weight": null,
+                        "weightUnit": null,
+                        "discount": "80.8%",
+                        "tags": [
+                            "LTL",
+                            "Import Priority",
+                            "from CA"
+                        ],
+                        "destination": "All Points in the Contiguous US"
+                    },
+                    {
+                        "service": "LTL US from CA Import Economy",
+                        "billing": "Collect, 3rd Party",
+                        "zone": "All Points in Canada",
+                        "weight": null,
+                        "weightUnit": null,
+                        "discount": "80.9%",
+                        "tags": [
+                            "LTL",
+                            "Import Economy",
+                            "from CA"
+                        ],
+                        "destination": "All Points in the Contiguous US"
+                    },
+                    {
+                        "service": "LTL US to MX Export Priority",
+                        "billing": "Prepaid, Collect, 3rd Party",
+                        "zone": "All Points in Mexico",
+                        "weight": null,
+                        "weightUnit": null,
+                        "discount": "10%",
+                        "tags": [
+                            "LTL",
+                            "Export Priority",
+                            "to MX"
+                        ],
+                        "destination": "All Points in the Contiguous US"
+                    }
+                ]
+            },
+            "metadata": [
+                {
+                    "service": "FedEx Priority Overnight Envelope",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "FedEx Priority Overnight Pak",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "FedEx Priority Overnight",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "FedEx Standard Overnight Envelope",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "FedEx Standard Overnight Pak",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "FedEx Standard Overnight",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "FedEx 2Day A.M. Envelope",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "FedEx 2Day A.M.",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "FedEx 2Day",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "FedEx Express Saver Envelope",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "FedEx Express Saver",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "FedEx 1Day Freight",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "FedEx 2Day Freight",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "FedEx 3Day Freight",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "FedEx International Priority Envelope Export",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "FedEx International Priority Pak Export",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "FedEx International Priority Export",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "FedEx International Economy Export",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "FedEx International Priority Freight (ATA) Export",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "FedEx International Priority Freight Export",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "FedEx International Economy Freight (ATA) Export",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "FedEx International Economy Freight Export",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "Ground Domestic Single Piece (OB, IB, RB,3P)",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "Ground Domestic Single Piece RM (OB,3P)",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "Home Delivery Domestic Single Piece (OB,3P)",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "Effective Date",
+                        "endDate": "Does Not Expire"
+                    }
+                },
+                {
+                    "service": "LTL US Domestic Economy",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "08/08/2018",
+                        "endDate": "03/31/2019"
+                    }
+                },
+                {
+                    "service": "LTL US Domestic Priority",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "08/08/2018",
+                        "endDate": "03/31/2019"
+                    }
+                },
+                {
+                    "service": "LTL US to CA Export Priority",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "08/08/2018",
+                        "endDate": "03/31/2019"
+                    }
+                },
+                {
+                    "service": "LTL US to CA Export Economy",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "08/08/2018",
+                        "endDate": "03/31/2019"
+                    }
+                },
+                {
+                    "service": "LTL US to MX Export Priority",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "08/08/2018",
+                        "endDate": "03/31/2019"
+                    }
+                },
+                {
+                    "service": "LTL US from CA Import Economy",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "08/08/2018",
+                        "endDate": "03/31/2019"
+                    }
+                },
+                {
+                    "service": "LTL US from CA Import Priority",
+                    "notes": [],
+                    "validityPeriod": {
+                        "startDate": "08/08/2018",
+                        "endDate": "03/31/2019"
+                    }
+                }
+            ]
+        },
+        {
+            "title": "Portfolio Tier Incentive",
+            "tableData": {
+                "headers": [
+                    "service",
+                    "land_zone",
+                    "weeklySpendMin",
+                    "weeklySpendMax",
+                    "currency",
+                    "discount",
+                    "tags"
+                ],
+                "rows": [],
+                "notes": [],
+                "validityPeriod": {
+                    "startDate": "",
+                    "endDate": ""
+                }
+            }
+        },
+        {
+            "title": "Minimum Net Charge",
+            "tableData": {
+                "headers": [
+                    "service",
+                    "billing",
+                    "zone",
+                    "adjustmentDiscount",
+                    "tags"
+                ],
+                "rows": [
+                    {
+                        "service": "FedEx Priority Overnight",
+                        "billing": "Unknown",
+                        "zone": "Zone 2, Envelope",
+                        "adjustmentDiscount": "-$10.50",
+                        "tags": [
+                            "Envelope"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Priority Overnight",
+                        "billing": "Unknown",
+                        "zone": "Zone 2, 1.0 lb",
+                        "adjustmentDiscount": "-$13.75",
+                        "tags": [
+                            "Pak"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Priority Overnight",
+                        "billing": "Unknown",
+                        "zone": "Zone 2, 1.0 lb",
+                        "adjustmentDiscount": "-$13.75",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx Standard Overnight",
+                        "billing": "Unknown",
+                        "zone": "Zone 2, Envelope",
+                        "adjustmentDiscount": "-$10.25",
+                        "tags": [
+                            "Envelope"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Standard Overnight",
+                        "billing": "Unknown",
+                        "zone": "Zone 2, 1.0 lb",
+                        "adjustmentDiscount": "-$11.90",
+                        "tags": [
+                            "Pak"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Standard Overnight",
+                        "billing": "Unknown",
+                        "zone": "Zone 2, 1.0 lb",
+                        "adjustmentDiscount": "-$11.90",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx 2Day A.M.",
+                        "billing": "Unknown",
+                        "zone": "Zone 2, Envelope",
+                        "adjustmentDiscount": "-$6.00",
+                        "tags": [
+                            "Envelope"
+                        ]
+                    },
+                    {
+                        "service": "FedEx 2Day A.M.",
+                        "billing": "Unknown",
+                        "zone": "Zone 2, 1.0 lb",
+                        "adjustmentDiscount": "-$6.30",
+                        "tags": [
+                            "Pak"
+                        ]
+                    },
+                    {
+                        "service": "FedEx 2Day A.M.",
+                        "billing": "Unknown",
+                        "zone": "Zone 2, 1.0 lb",
+                        "adjustmentDiscount": "-$6.30",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx 2Day Envelope",
+                        "billing": "Unknown",
+                        "zone": "Zone 2, Envelope",
+                        "adjustmentDiscount": "-$5.50",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx 2Day Pak",
+                        "billing": "Unknown",
+                        "zone": "Zone 2, 1.0 lb",
+                        "adjustmentDiscount": "-$5.45",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx 2Day",
+                        "billing": "Unknown",
+                        "zone": "Zone 2, 1.0 lb",
+                        "adjustmentDiscount": "-$5.45",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx Express Saver",
+                        "billing": "Unknown",
+                        "zone": "Zone 2, Envelope",
+                        "adjustmentDiscount": "-$4.80",
+                        "tags": [
+                            "Envelope"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Express Saver",
+                        "billing": "Unknown",
+                        "zone": "Zone 2, 1.0 lb",
+                        "adjustmentDiscount": "-$4.80",
+                        "tags": [
+                            "Pak"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Express Saver",
+                        "billing": "Unknown",
+                        "zone": "Zone 2, 1.0 lb",
+                        "adjustmentDiscount": "-$4.80",
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx 1Day Freight",
+                        "billing": "Unknown",
+                        "zone": "Per Service Guide",
+                        "adjustmentDiscount": null,
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx 2Day Freight",
+                        "billing": "Unknown",
+                        "zone": "Per Service Guide",
+                        "adjustmentDiscount": null,
+                        "tags": []
+                    },
+                    {
+                        "service": "FedEx 3Day Freight",
+                        "billing": "Unknown",
+                        "zone": "Per Service Guide",
+                        "adjustmentDiscount": null,
+                        "tags": []
+                    }
+                ],
+                "notes": [
+                    "Extracted 10 minimum charge tables. There are 4 more tables of this type in the document. The adjustment values are in USD.",
+                    "Extracted 8 minimum charge tables. There are no more tables of this type in the document. The adjustment values are in USD."
+                ],
+                "validityPeriod": {
+                    "startDate": "08/08/2018",
+                    "endDate": "03/31/2019"
+                }
+            }
+        },
+        {
+            "title": "Service Adjustment",
+            "tableData": {
+                "headers": [
+                    "service",
+                    "minimumPer",
+                    "zone",
+                    "baseRate",
+                    "adjustment",
+                    "currency",
+                    "tags"
+                ],
+                "rows": [
+                    {
+                        "service": "FedEx Priority Overnight Envelope",
+                        "minimumPer": "Zone 2, Envelope",
+                        "zone": "2-8",
+                        "baseRate": null,
+                        "adjustment": "-$10.50",
+                        "currency": "USD",
+                        "tags": [
+                            "Priority Overnight",
+                            "Envelope"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Priority Overnight Envelope",
+                        "minimumPer": "Zone 2, Envelope",
+                        "zone": "9",
+                        "baseRate": null,
+                        "adjustment": "-$10.50",
+                        "currency": "USD",
+                        "tags": [
+                            "Priority Overnight",
+                            "Envelope"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Priority Overnight Envelope",
+                        "minimumPer": "Zone 2, Envelope",
+                        "zone": "10-12",
+                        "baseRate": null,
+                        "adjustment": "-$10.50",
+                        "currency": "USD",
+                        "tags": [
+                            "Priority Overnight",
+                            "Envelope"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Priority Overnight Envelope",
+                        "minimumPer": "Zone 2, Envelope",
+                        "zone": "13-16",
+                        "baseRate": null,
+                        "adjustment": "-$10.50",
+                        "currency": "USD",
+                        "tags": [
+                            "Priority Overnight",
+                            "Envelope"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Priority Overnight Pak",
+                        "minimumPer": "Zone 2, 1.0 lb",
+                        "zone": "2-8",
+                        "baseRate": null,
+                        "adjustment": "-$13.75",
+                        "currency": "USD",
+                        "tags": [
+                            "Priority Overnight",
+                            "Pak"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Priority Overnight Pak",
+                        "minimumPer": "Zone 2, 1.0 lb",
+                        "zone": "9",
+                        "baseRate": null,
+                        "adjustment": "-$13.75",
+                        "currency": "USD",
+                        "tags": [
+                            "Priority Overnight",
+                            "Pak"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Priority Overnight Pak",
+                        "minimumPer": "Zone 2, 1.0 lb",
+                        "zone": "10-12",
+                        "baseRate": null,
+                        "adjustment": "-$13.75",
+                        "currency": "USD",
+                        "tags": [
+                            "Priority Overnight",
+                            "Pak"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Priority Overnight Pak",
+                        "minimumPer": "Zone 2, 1.0 lb",
+                        "zone": "13-16",
+                        "baseRate": null,
+                        "adjustment": "-$13.75",
+                        "currency": "USD",
+                        "tags": [
+                            "Priority Overnight",
+                            "Pak"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Priority Overnight",
+                        "minimumPer": "Zone 2, 1.0 lb",
+                        "zone": "2-8",
+                        "baseRate": null,
+                        "adjustment": "-$13.75",
+                        "currency": "USD",
+                        "tags": [
+                            "Priority Overnight"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Priority Overnight",
+                        "minimumPer": "Zone 2, 1.0 lb",
+                        "zone": "9",
+                        "baseRate": null,
+                        "adjustment": "-$13.75",
+                        "currency": "USD",
+                        "tags": [
+                            "Priority Overnight"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Priority Overnight",
+                        "minimumPer": "Zone 2, 1.0 lb",
+                        "zone": "10-12",
+                        "baseRate": null,
+                        "adjustment": "-$13.75",
+                        "currency": "USD",
+                        "tags": [
+                            "Priority Overnight"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Priority Overnight",
+                        "minimumPer": "Zone 2, 1.0 lb",
+                        "zone": "13-16",
+                        "baseRate": null,
+                        "adjustment": "-$13.75",
+                        "currency": "USD",
+                        "tags": [
+                            "Priority Overnight"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Standard Overnight Envelope",
+                        "minimumPer": "Zone 2, Envelope",
+                        "zone": "2-8",
+                        "baseRate": null,
+                        "adjustment": "-$10.25",
+                        "currency": "USD",
+                        "tags": [
+                            "Standard Overnight",
+                            "Envelope"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Standard Overnight Envelope",
+                        "minimumPer": "Zone 2, Envelope",
+                        "zone": "10.25",
+                        "baseRate": null,
+                        "adjustment": null,
+                        "currency": "USD",
+                        "tags": [
+                            "Standard Overnight",
+                            "Envelope"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Standard Overnight Pak",
+                        "minimumPer": "Zone 2, 1.0 lb",
+                        "zone": "2-8",
+                        "baseRate": null,
+                        "adjustment": "-$11.90",
+                        "currency": "USD",
+                        "tags": [
+                            "Standard Overnight",
+                            "Pak"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Standard Overnight Pak",
+                        "minimumPer": "Zone 2, 1.0 lb",
+                        "zone": "11.90",
+                        "baseRate": null,
+                        "adjustment": null,
+                        "currency": "USD",
+                        "tags": [
+                            "Standard Overnight",
+                            "Pak"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Standard Overnight",
+                        "minimumPer": "Zone 2, 1.0 lb",
+                        "zone": "2-8",
+                        "baseRate": null,
+                        "adjustment": "-$11.90",
+                        "currency": "USD",
+                        "tags": [
+                            "Standard Overnight"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Standard Overnight",
+                        "minimumPer": "Zone 2, 1.0 lb",
+                        "zone": "11.90",
+                        "baseRate": null,
+                        "adjustment": null,
+                        "currency": "USD",
+                        "tags": [
+                            "Standard Overnight"
+                        ]
+                    },
+                    {
+                        "service": "FedEx 2Day A.M. Envelope",
+                        "minimumPer": "Zone 2, Envelope",
+                        "zone": "2-8",
+                        "baseRate": null,
+                        "adjustment": "-$6.00",
+                        "currency": "USD",
+                        "tags": [
+                            "2Day A.M.",
+                            "Envelope"
+                        ]
+                    },
+                    {
+                        "service": "FedEx 2Day A.M. Envelope",
+                        "minimumPer": "Zone 2, Envelope",
+                        "zone": "6.00",
+                        "baseRate": null,
+                        "adjustment": null,
+                        "currency": "USD",
+                        "tags": [
+                            "2Day A.M.",
+                            "Envelope"
+                        ]
+                    },
+                    {
+                        "service": "FedEx 2Day A.M. Pak",
+                        "minimumPer": "Zone 2, 1.0 lb",
+                        "zone": "2-8",
+                        "baseRate": null,
+                        "adjustment": "-$6.30",
+                        "currency": "USD",
+                        "tags": [
+                            "2Day A.M.",
+                            "Pak"
+                        ]
+                    },
+                    {
+                        "service": "FedEx 2Day A.M. Pak",
+                        "minimumPer": "Zone 2, 1.0 lb",
+                        "zone": "6.30",
+                        "baseRate": null,
+                        "adjustment": null,
+                        "currency": "USD",
+                        "tags": [
+                            "2Day A.M.",
+                            "Pak"
+                        ]
+                    },
+                    {
+                        "service": "FedEx 2Day A.M.",
+                        "minimumPer": "Zone 2, 1.0 lb",
+                        "zone": "2-8",
+                        "baseRate": null,
+                        "adjustment": "-$6.30",
+                        "currency": "USD",
+                        "tags": [
+                            "2Day A.M."
+                        ]
+                    },
+                    {
+                        "service": "FedEx 2Day A.M.",
+                        "minimumPer": "Zone 2, 1.0 lb",
+                        "zone": "6.30",
+                        "baseRate": null,
+                        "adjustment": null,
+                        "currency": "USD",
+                        "tags": [
+                            "2Day A.M."
+                        ]
+                    },
+                    {
+                        "service": "FedEx 2Day Envelope",
+                        "minimumPer": "Zone 2, Envelope",
+                        "zone": "2-8",
+                        "baseRate": null,
+                        "adjustment": "-$5.50",
+                        "currency": "USD",
+                        "tags": [
+                            "2Day",
+                            "Envelope"
+                        ]
+                    },
+                    {
+                        "service": "FedEx 2Day Envelope",
+                        "minimumPer": "Zone 2, Envelope",
+                        "zone": "5.50",
+                        "baseRate": null,
+                        "adjustment": null,
+                        "currency": "USD",
+                        "tags": [
+                            "2Day",
+                            "Envelope"
+                        ]
+                    },
+                    {
+                        "service": "FedEx 2Day Pak",
+                        "minimumPer": "Zone 2, 1.0 lb",
+                        "zone": "2-8",
+                        "baseRate": null,
+                        "adjustment": "-$5.45",
+                        "currency": "USD",
+                        "tags": [
+                            "2Day",
+                            "Pak"
+                        ]
+                    },
+                    {
+                        "service": "FedEx 2Day Pak",
+                        "minimumPer": "Zone 2, 1.0 lb",
+                        "zone": "5.45",
+                        "baseRate": null,
+                        "adjustment": null,
+                        "currency": "USD",
+                        "tags": [
+                            "2Day",
+                            "Pak"
+                        ]
+                    },
+                    {
+                        "service": "FedEx 2Day",
+                        "minimumPer": "Zone 2, 1.0 lb",
+                        "zone": "2-8",
+                        "baseRate": null,
+                        "adjustment": "-$5.45",
+                        "currency": "USD",
+                        "tags": [
+                            "2Day"
+                        ]
+                    },
+                    {
+                        "service": "FedEx 2Day",
+                        "minimumPer": "Zone 2, 1.0 lb",
+                        "zone": "5.45",
+                        "baseRate": null,
+                        "adjustment": null,
+                        "currency": "USD",
+                        "tags": [
+                            "2Day"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Express Saver Envelope",
+                        "minimumPer": "Zone 2, Envelope",
+                        "zone": "2-8",
+                        "baseRate": null,
+                        "adjustment": "-$4.80",
+                        "currency": "USD",
+                        "tags": [
+                            "Express Saver",
+                            "Envelope"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Express Saver Pak",
+                        "minimumPer": "Zone 2, 1.0 lb",
+                        "zone": "2-8",
+                        "baseRate": null,
+                        "adjustment": "-$4.80",
+                        "currency": "USD",
+                        "tags": [
+                            "Express Saver",
+                            "Pak"
+                        ]
+                    },
+                    {
+                        "service": "FedEx Express Saver",
+                        "minimumPer": "Zone 2, 1.0 lb",
+                        "zone": "2-8",
+                        "baseRate": null,
+                        "adjustment": "-$4.80",
+                        "currency": "USD",
+                        "tags": [
+                            "Express Saver"
+                        ]
+                    }
+                ],
+                "notes": [
+                    "Minimum charges are subject to change with any increase in applicable base rate during the time period of the Agreement.",
+                    "The following minimum reductions are off the published list rates for the billable weight stated and are in USD($)"
+                ],
+                "validityPeriod": {
+                    "startDate": "08/08/2018",
+                    "endDate": "03/31/2019"
+                }
+            }
+        },
+        {
+            "title": "Electronic PLD Bonus",
+            "found": false,
+            "message": "No Electronic PLD Bonus information found in the document"
+        }
+    ]
+}
